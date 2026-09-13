@@ -308,9 +308,32 @@ Both syllabi below are from 2018 and were read directly; whether the courses sti
 `classes.berkeley.edu`. Neither has a required textbook — *"lecture notes and references will be
 provided on the class website"*, which means bCourses.
 
-### berkeley-stat245cd — Stat C245C–D, *Computational Statistics with Applications in Biology and Medicine* { #berkeley-stat245cd }
+### berkeley-stat245c-leishi — Stat C245C, *Computational Statistics with Applications in Biology and Medicine* (Lei Shi, Fall 2021) { #berkeley-stat245c-leishi }
 
-**Kind:** course · **Access:** unreadable — notes on the class website (bCourses); syllabus public
+**Kind:** course · **Access:** local · `sources/berkeley-stat-c245c-leishi/` — 24 files: 11 lecture PDFs, 3 labs with R code, 2 homework sets **with solutions**, datasets
+**Licence:** **unresolved** — no statement on the site. Adaptations stay in `adapted-private/`
+**Status:** unvetted · **Adapted:** none
+<https://leishi-rocks.github.io/courses/ph240c/ph240c-materials.html> · [schedule](https://leishi-rocks.github.io/courses/ph240c/ph240c-schedule.html)
+
+*(unvetted)* **The one complete, public offering of a C245 course.** Lei Shi, Fall 2021, on a
+personal GitHub Pages site rather than anything the department links. Dudoit's offerings of the same
+course are on bCourses; this one is not.
+
+Lectures: GLM and SVM, empirical risk minimisation and kernel methods, metric learning, CART,
+bagging and boosting, semi-supervised learning, neural networks, streaming data in electronic
+medical records, design of experiments, adaptive clinical trials and reinforcement learning.
+Two lectures (deep learning, Mendelian randomisation) have no PDF on the schedule.
+
+**Homework with solutions is the rare part.** Most of the catalogue is notes without exercises or
+exercises without answers; this has both, plus the datasets to run them on.
+
+Note the drift in what "C245C" means: this offering is machine-learning-shaped, where Dudoit's is
+classical computational statistics. Same course code, materially different course — the year and
+instructor matter more than the number.
+
+### berkeley-stat245cd-dudoit — Stat C245C–D, *Computational Statistics with Applications in Biology and Medicine* (Dudoit) { #berkeley-stat245cd-dudoit }
+
+**Kind:** syllabus · **Access:** unreadable — notes on the class website (bCourses); syllabus public
 **Licence:** unresolved
 **Status:** unvetted · **Adapted:** none
 Also listed as PB HLTH C240C–D · syllabus: <https://www.stat.berkeley.edu/~sandrine/Teaching/syllabus_PHC240C_F18.pdf>
@@ -324,6 +347,30 @@ programming. Prerequisite Stat 201A–B.
 
 Overlaps heavily with what is already held — PCA, HMMs, spectral methods — which makes it a
 *connective* source rather than a new one: the same machinery aimed at assay data.
+
+**Only the syllabus is reachable**, so this entry is a topic map, not material. Its value is as a
+curriculum to work through using sources that *are* public.
+
+### berkeley-stat245ab-vanderlaan — Stat C245A–B, *Modern Biostatistical Theory* and *Survival Analysis and Causality* { #berkeley-stat245ab-vanderlaan }
+
+**Kind:** course notes · **Access:** local · `sources/berkeley-stat-c245b-vanderlaan/` — 16 files
+**Licence:** **all rights reserved** — the site footer reads "© 2018-2021. All rights reserved." Adaptations stay in `adapted-private/`
+**Status:** unvetted · **Adapted:** none
+<https://vanderlaan-lab.org/teaching/>
+
+*(unvetted)* Mark van der Laan's teaching archive, and the substantial public half of the C245
+sequence. Full course notes, not syllabi: *Survival Analysis and Causality* (2004), the *Marginal
+Structural Models* lecture, *Causal Inference* (2004) with its syllabus, *Theoretical Statistics
+210B* notes with the loss-based estimation lecture, *Computational Biology* (2001), and
+*Multivariate Statistical Methods in Genomics* (2007).
+
+The notes are old and unpolished — typos, steps left half-worked. That is arguably the point: the
+reasoning is still visible rather than compressed into a theorem sequence, which is the failure
+mode a finished textbook has by construction.
+
+Nonparametric models, loss-based estimation, asymptotic linearity, **influence functions**, the
+bootstrap, and TMLE. The influence-function material is the theoretical spine, and the papers below
+are the better entry point into it.
 
 ### berkeley-stat245ef — Stat C245E–F, *Statistical Genomics I and II* { #berkeley-stat245ef }
 
@@ -339,6 +386,39 @@ protein–nucleic acid interactions (ChIP-Seq), DNA methylation (methyl-Seq), co
 The Spring 2018 offering *"will first discuss the statistical analysis of meiosis and then focus on
 **single-cell transcriptome sequencing (scRNA-Seq)**"*. Part I covers meiosis, population genetics
 and genetic mapping.
+
+## The way into C245A — papers, because the course notes are not the best route
+
+The influence-function machinery under C245A is one of the places where the primary literature is
+simply better than the course material: the notes assume the construction, and the papers derive
+it. Catalogued here rather than in [statistics](statistics.md) because this is the trail from the
+course, and that is the thing worth not losing.
+
+### hines-2021-demystifying-eif — Hines, Dukes, Diaz-Ordaz & Vansteelandt 2021, *Demystifying statistical learning based on efficient influence functions* { #hines-2021-demystifying-eif }
+
+**Kind:** paper · **Access:** fetchable · <https://arxiv.org/abs/2107.00681>
+**Licence:** arXiv — check the per-paper licence before adapting
+**Status:** unvetted · **Adapted:** none
+
+*(unvetted)* Derives the efficient influence function as a Gâteaux derivative of the target
+functional, then uses the von Mises expansion to show why the plug-in bias correction is *forced*
+rather than clever. That is precisely a **how could I have come up with this?** answer for an object
+normally introduced by assertion — which is why it is here rather than the course notes.
+
+The stated problem is the one worth holding: data-adaptive methods are tuned for minimal prediction
+error, not minimal mean squared error of an estimator, and the bias that follows does not shrink
+fast enough for inference. Short, and it defers the tangent-space geometry elsewhere.
+
+### fisher-kennedy-influence-functions — Fisher & Kennedy, *Visually Communicating and Teaching Intuition for Influence Functions* { #fisher-kennedy-influence-functions }
+
+**Kind:** paper · **Access:** fetchable · <https://arxiv.org/abs/1810.03260>
+**Licence:** arXiv — check the per-paper licence before adapting
+**Status:** unvetted · **Adapted:** none
+
+*(unvetted)* The geometric companion to the above: the influence function as a direction in
+$L^2(P)$. Should land quickly given the PCA-as-Gram-matrix and $L^2$ picture already held — it is
+the same geometry with a different object in it, which makes it a candidate for the *Attached to*
+section of a topic file before it is even read.
 
 ### dudoit-multiple-testing-genomics — Dudoit & van der Laan, *Multiple Testing Procedures with Applications to Genomics* { #dudoit-multiple-testing-genomics }
 
