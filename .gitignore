@@ -15,6 +15,10 @@ sources/*
 # that may not be redistributed, so they never reach the published site.
 adapted-private/
 
+# Conversions of books and paywalled papers. The two categories AGENTS.md
+# excludes from republishing under "What may be republished".
+reference-private/
+
 # Site build
 _site/
 .venv/

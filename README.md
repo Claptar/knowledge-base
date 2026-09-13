@@ -21,13 +21,16 @@ docs/                          the knowledge base, and the published site
   practice/<topic>.md          attempts, mistakes, and what each mistake revealed
   adapted/<topic>-<src>.md     external material rewritten into the form I learn from
   notes/<subject>/             my own exposition — material, not evidence of understanding
+  reference/<slug>/            external material converted to markdown, split so it can be linked
 
 skills/study-mentor/           runs study sessions; reads and writes all of the above
 skills/adapt-material/         rewrites a written source into adapted/
 skills/adapt-recordings/       turns lecture transcripts into notes, not tidied speech
 skills/collect-materials/      finds material from a provider; owns the per-provider recipes
+skills/normalise-materials/    converts a source into markdown split by section, so it can be linked
 sources/                       downloaded source material — gitignored, never published
 adapted-private/               adaptations of all-rights-reserved sources — gitignored
+reference-private/             conversions of books and paywalled papers — gitignored
 
 AGENTS.md                      the one instruction file, for any agent
 CLAUDE.md                      imports AGENTS.md; Claude-specific notes only
@@ -57,7 +60,7 @@ question, the definition, and the proof technique. Every convention here follows
 
 ## Using the skills
 
-Run Claude Code from the repo root and all four skills load from `skills/`, via the
+Run Claude Code from the repo root and all five skills load from `skills/`, via the
 `.claude/skills` symlink. To use them outside this repo, install it as a plugin:
 
 ```
@@ -80,9 +83,12 @@ Run Claude Code from the repo root and all four skills load from `skills/`, via 
   material: where a course site's files actually live, what is gated behind a campus login, and
   which licence claim is about the website template rather than the content. It locates; it does
   not judge, so its entries are always `unvetted`.
+- **`normalise-materials`** — converts a collected source into markdown split by lecture or section
+  so every part has a URL. It preserves rather than rewrites, and always converts the source file
+  rather than the PDF built from it, because a PDF keeps the prose and mangles the maths.
 
 Route by the shape of the output first — a conversation is `study-mentor`, a file is one of the
-adapters, a catalogue entry is `collect-materials` — then by the source. All four hand off in every
+adapters, a catalogue entry is `collect-materials` — then by the source. All five hand off in every
 direction: find a chapter, adapt it, then work through it in a session.
 
 See [AGENTS.md](AGENTS.md) for the conventions both follow and
