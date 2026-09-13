@@ -21,6 +21,7 @@ The verdict is the expensive part; it is why this exists rather than a bookmark 
 | [Statistics](statistics.md) | inference, modelling judgement, experimental design |
 | [Stochastic processes](stochastic-processes.md) | the probability map and the mechanism map |
 | [CME and transcription](cme-transcription.md) | the primary literature the [learning path](../path.md) terminates in |
+| [Omics statistics](omics-statistics.md) | inference on proteomics and single-cell data — the closest material here to the day job |
 | [Modelling](modelling.md) | modelling craft, optimisation, validation and uncertainty |
 
 ## Entry format

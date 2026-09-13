@@ -91,6 +91,7 @@ nav:
       - Statistics: resources/statistics.md
       - Stochastic processes: resources/stochastic-processes.md
       - CME and transcription: resources/cme-transcription.md
+      - Omics statistics: resources/omics-statistics.md
       - Modelling: resources/modelling.md
   - Notes:
       - Overview: notes/index.md
