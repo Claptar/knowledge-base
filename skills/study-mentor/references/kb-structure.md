@@ -12,6 +12,7 @@ study-kb/
   docs/                     # <- the knowledge base root, and the site
     index.md                # the site front door
     questions.md            # open questions — the index, and where each one lives
+    path.md                 # the learning path — the one page written before the work
     profile.md              # background, notation habits, what he knows cold
     log.md                  # dated sessions, newest first, next step at the top
     resources.md            # evaluated materials with verdicts
@@ -34,6 +35,53 @@ Topic slugs are lowercase and hyphenated: `martingales.md`, `chemical-master-equ
 Seeded from `references/background.md`, then maintained. Holds what is durable: mathematical
 background, working context, notation preferences, recurring anchors, and study habits learned
 over time. Update when something *changes*, not every session.
+
+## path.md
+
+The one page written *before* the work: a concept dependency map from what he already holds to a
+named destination. It answers "what should I study next" without pretending anything has been
+studied.
+
+```markdown
+# Learning path
+
+**Destination:** what he will be able to do, not what he will have covered.
+**Designed:** YYYY-MM-DD
+
+> **Provenance.** Designed, not harvested. Nothing here is evidence of understanding.
+
+## Layer N — <what this layer is for>
+
+### <n>. <Concept>
+
+**Needs** <node numbers>.  **[live]** — if it is already in questions.md
+
+The question that would force this concept, in two or three lines.
+
+**Anchor.** The specific existing thing it attaches to — same standard as a topic file.
+**Source.** A link into resources.md, never a verdict restated here.
+
+Optional, only where there is something real to say:
+**Trap to watch.** A false analogy the node invites.
+**Conjecture to test.** What the node should turn out to show — phrased so it can fail.
+**Connects to.** A topic file this node bears on.
+**Decision point.** What to do if the node comes out empty, including deleting a layer.
+
+## What this path deliberately leaves out
+
+Named, so the absence is a decision rather than an oversight.
+```
+
+Rules, because this page inverts the repo's usual one:
+
+- **No `Status` field, no markers, nothing that reads as evidence.** Planned is not held.
+- **A node is not a page.** Completing one does not create `topics/<node>.md`; a session does, and
+  most nodes never get a file.
+- **Its questions are proposed, not asked.** They stay out of the `questions.md` Live table until
+  he holds one without re-reading the node. The reverse move — an already-live question acquiring
+  a path node — is the normal direction.
+- **One path page only.** A second plan is a layer in this one, or nowhere.
+- **Delete nodes that turn out to be wrong**, and say so in `log.md`. That is the page working.
 
 ## topics/<topic>.md
 

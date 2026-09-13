@@ -7,7 +7,7 @@
 > session. It is borrowed structure, not my own trajectory — nothing below has been worked through,
 > and no phrasing here is mine yet. The sections that matter (*How I could have come up with this*,
 > *Derived / proved myself*) are deliberately empty. Sources are in
-> [resources.md](../resources.md); the live questions this file is attached to are in
+> [resources/index.md](../resources/index.md); the live questions this file is attached to are in
 > [questions.md](../questions.md).
 
 ## The question that opened it

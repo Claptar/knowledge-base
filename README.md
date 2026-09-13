@@ -13,9 +13,10 @@ make sense to a human reading it directly: these are notes, not a machine log.
 docs/                          the knowledge base, and the published site
   index.md                     site front door
   questions.md                 open questions — the index, and where each one lives
+  path.md                      the learning path — a plan, and the only page written in advance
   profile.md                   durable background, notation habits, anchors, how I study
   log.md                       dated sessions, newest first, next step at the top
-  resources.md                 evaluated materials with verdicts
+  resources/                      evaluated materials with verdicts
   topics/<topic>.md            one per topic: the trajectory through it, not a summary
   practice/<topic>.md          attempts, mistakes, and what each mistake revealed
   adapted/<topic>-<src>.md     external material rewritten into the form I learn from

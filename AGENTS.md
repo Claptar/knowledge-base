@@ -13,7 +13,7 @@ The repo has two halves, and they are edited for different reasons:
 
 | Path | What it is | Edit when |
 | --- | --- | --- |
-| `docs/` — `index.md`, `questions.md`, `profile.md`, `log.md`, `resources.md`, `topics/`, `practice/`, `adapted/` | the knowledge base — his notes and material. Also the published site | a study session happened, or something durable changed |
+| `docs/` — `index.md`, `questions.md`, `path.md`, `profile.md`, `log.md`, `resources/`, `topics/`, `practice/`, `adapted/` | the knowledge base — his notes and material. Also the published site | a study session happened, or something durable changed |
 | `skills/` | the skills: `SKILL.md`, `references/`, `scripts/` | the *way* sessions run should change |
 
 Don't let one drift into the other. Material learned goes in `docs/topics/`; instructions about how
@@ -56,6 +56,23 @@ Practical consequences:
 - **Never route a new question to the nearest existing topic file.** A wrong attachment is worse
   than none: it implies the connection was already checked, and it quietly imports the wrong
   anchors. Say the knowledge base does not cover it and work from the source.
+
+## A plan is a separate kind of object
+
+[`docs/path.md`](docs/path.md) is the one page written *before* the work rather than after it: a
+concept dependency map toward a destination, each node carrying the question that would force the
+concept. It exists because a route is genuinely useful and there was nowhere to keep one — but it
+is the exact thing *harvest, don't design* forbids a topic file from being, so it is quarantined on
+its own page and never claims understanding: no `Status`, no markers, nothing that reads as
+evidence. A node is not a page, and its questions stay out of the `questions.md` Live table until
+he actually holds one.
+
+**Keep exactly one path page.** A second plan — a syllabus, a reading order, a checklist — belongs
+as a node or a layer in this one, or nowhere.
+
+The full rules and the page template are in
+`skills/study-mentor/references/kb-structure.md`, which is the single copy: the skill has to stand
+alone when installed as a plugin, so that file carries them rather than this one.
 
 ## Writing to the knowledge base
 
@@ -105,7 +122,7 @@ Full templates are in `skills/study-mentor/references/kb-structure.md`. The rule
 Downloaded sources — OCW notes, lecture PDFs, slides, preprints, scanned chapters — go in
 `sources/`, which is **gitignored in full**. See [`sources/README.md`](sources/README.md).
 
-What gets committed is the durable half: the URL and verdict in `resources.md`, the rewrite in
+What gets committed is the durable half: the URL and verdict in `resources/`, the rewrite in
 `adapted/`, and the trajectory in `topics/`. A source is a cache; the judgement about it is not.
 This is the same rule as *Link, never restate* — a repo that vendors its sources starts drifting
 from them the day it copies them, and it is the copy that goes stale.
@@ -122,7 +139,7 @@ have to read a page to use it.
 - **Open with the question**, then what it attaches to. That header is the navigation — it is how
   someone on the wrong page leaves in five seconds.
 - **Prefer a link to a paragraph.** Every fact lives in exactly one place: sources and verdicts in
-  `resources.md`, background and anchors in `profile.md`, file templates in the skill's
+  `resources/`, background and anchors in `profile.md`, file templates in the skill's
   `references/kb-structure.md`. Restating one creates a second thing to update and a future
   contradiction. The site build fails on a broken internal link or a missing anchor, by design.
 - **Length is a smell.** A topic file much past ~200 lines is usually carrying a restatement of the

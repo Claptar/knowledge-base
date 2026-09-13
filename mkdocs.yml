@@ -77,8 +77,19 @@ validation:
 nav:
   - Home: index.md
   - Open questions: questions.md
+  - Learning path: path.md
   - Study log: log.md
   - Profile: profile.md
-  - Resources: resources.md
+  - Resources:
+      - Overview: resources/index.md
+      - Courses: resources/courses.md
+      - Doing mathematics: resources/doing-mathematics.md
+      - Analysis: resources/analysis.md
+      - Linear algebra: resources/linear-algebra.md
+      - Probability: resources/probability.md
+      - Statistics: resources/statistics.md
+      - Stochastic processes: resources/stochastic-processes.md
+      - CME and transcription: resources/cme-transcription.md
+      - Modelling: resources/modelling.md
   - Topics:
       - Mathematical modelling: topics/mathematical-modelling.md

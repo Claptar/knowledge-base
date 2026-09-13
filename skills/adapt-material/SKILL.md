@@ -174,7 +174,7 @@ random variable is. Maths in LaTeX, `$…$` and `$$…$$`, so it renders on his 
 
 - Save as `adapted/<topic>-<source-slug>.md` — for example
   `adapted/martingales-williams-ch10.md`. Start from `adapted/_template.md`.
-- Add the source to `resources.md` with the verdict from step 4.6. The judgement is the expensive
+- Add the source to `resources/` with the verdict from step 4.6. The judgement is the expensive
   part; it is why that file exists.
 - If the topic has a `topics/` file, link the adaptation from it. If it doesn't and this opens a
   real topic, create one — the adaptation is material, the topic file is his trajectory through

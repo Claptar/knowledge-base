@@ -56,7 +56,7 @@ is a bad recommendation for him even when it is the standard reference.
   "a comprehensive introduction" is not.
 - **Search fresh every time.** What is best for a topic changes, and a stale recommendation from
   recall is worse than none.
-- **Record the verdict in `resources.md`.** The judgement is the expensive part; it is why that
+- **Record the verdict in `resources/`.** The judgement is the expensive part; it is why that
   file exists instead of a bookmark folder.
 
 ## Signals an explanation isn't landing

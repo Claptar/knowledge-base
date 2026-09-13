@@ -17,7 +17,11 @@ subjects; subjects are how textbooks index, and the textbooks already exist.
 **Resuming?** → [Study log](log.md). Newest first, with the next step at the top, specific enough
 to start from cold.
 
-**Looking something up?** → [Resources](resources.md) for evaluated sources with verdicts, or
+**Wondering what comes next?** → [Learning path](path.md). A concept dependency map toward the
+stochastic-biophysics literature. It is a *plan*, not a record — nothing on it is evidence that
+anything has been understood.
+
+**Looking something up?** → [Resources](resources/index.md) for evaluated sources with verdicts, or
 [Profile](profile.md) for background, notation habits and the anchors explanations get built on.
 
 ## The organising idea
@@ -45,7 +49,7 @@ more useful than counting pages:
 | **Unverified.** | inferred or recalled rather than checked against the source |
 
 Source material itself — lecture PDFs, course notes, papers — is **not** published here and not
-committed. [Resources](resources.md) carries the link and the verdict instead; the judgement is the
+committed. [Resources](resources/index.md) carries the link and the verdict instead; the judgement is the
 expensive part, and a vendored copy goes stale the day it is made.
 
 The skills that maintain this knowledge base live in the repository but are not part of this site.

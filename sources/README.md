@@ -21,7 +21,7 @@ exists so that a source sits at a stable path while it is being adapted, not so 
 
 | Thing | Where | Why it is the durable part |
 | --- | --- | --- |
-| The source's URL, and the verdict on it | [`../docs/resources.md`](../docs/resources.md) | the judgement is expensive; the bytes are not |
+| The source's URL, and the verdict on it | [`../docs/resources/`](../docs/resources/) | the judgement is expensive; the bytes are not |
 | The rewritten version | [`../docs/adapted/`](../docs/adapted/) | his own document, with motivation supplied and proofs converted |
 | What he actually got from it | [`../docs/topics/`](../docs/topics/) | the trajectory, which exists nowhere else |
 
@@ -30,8 +30,8 @@ away and the adaptation can be checked against it.
 
 ## Using it
 
-Drop a download in, adapt it, and let it be deleted. If it matters, it is in `resources.md` with a
-link — and if the link dies, that is what `resources.md` is for recording.
+Drop a download in, adapt it, and let it be deleted. If it matters, it is in `resources/` with a
+link — and if the link dies, that is what `resources/` is for recording.
 
 To keep a durable personal library across machines, point this directory at a synced folder rather
 than storing files in the repo:

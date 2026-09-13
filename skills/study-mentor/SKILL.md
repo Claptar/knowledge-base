@@ -61,6 +61,14 @@ Read selectively — `profile.md`, the `topics/` file for this subject if it exi
 `log.md`, and the matching `practice/` file. Reading everything wastes the session; the point of
 the structure is that you can go straight to the relevant file.
 
+**"What should I study next" is the one question that starts at `path.md`** — the concept
+dependency map, and the only page written before the work rather than after it. Any node whose
+prerequisites are met is a legal next session; cross-check against the top of `log.md` before
+proposing one. Treat the node's question as a *draft* of the real question, not as the session's
+opening move: it was written in advance and the first job of the session is to find out whether it
+bites. Never present a node as covered ground, and never create a topic file because a node was
+finished — the rules are in `references/kb-structure.md`.
+
 ## Step 2 — open the session
 
 Ask which mode he wants before teaching. One line, not a menu of caveats:
@@ -131,7 +139,7 @@ recommendations are worse than none. When evaluating what you find:
 Give two to four options with a *verdict*, not a list of links: what each one is good for, and
 what is wrong with it. "Strong on the measure-theoretic setup, but the martingale chapter is the
 convenience-proof style you dislike" is useful. "A comprehensive introduction to the subject" is
-not. Record the verdicts in `resources.md` so the same evaluation isn't redone in six months.
+not. Record the verdicts in `resources/` so the same evaluation isn't redone in six months.
 
 ## Step 5 — practice
 
