@@ -13,3 +13,16 @@ dev = [
     "mkdocs<2",
     "mkdocs-material<10",
 ]
+
+# Source conversion. A separate group so the site build stays small, and declared here
+# rather than installed with brew so that `uv sync --group convert` reproduces the toolchain
+# on any machine — the same reason sources/ has a lockfile.
+#
+# All four ship as wheels with no system libraries: pymupdf4llm replaces poppler for PDFs,
+# pypandoc-binary bundles the pandoc executable itself.
+convert = [
+    "pymupdf4llm",      # PDF -> markdown, preserving headings and layout
+    "pypandoc-binary",  # LaTeX/HTML/docx -> markdown; bundles pandoc, no system install
+    "markdownify",      # HTML -> markdown, when pandoc is heavier than the job needs
+    "nbconvert",        # .ipynb -> markdown
+]
