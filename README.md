@@ -79,9 +79,13 @@ MathJax so the LaTeX actually renders.
 
 ```bash
 uv sync --group dev
-uv run mkdocs serve           # preview at http://127.0.0.1:8000
+uv run mkdocs serve           # preview — see the note below on the URL
 uv run mkdocs build --strict  # what CI runs
 ```
+
+**`mkdocs serve` serves under the `site_url` path, not the root.** This is a project page, so the
+preview is at <http://127.0.0.1:8000/knowledge-base-claude/> — plain `127.0.0.1:8000` returns a
+302 and every deeper path a 404.
 
 `--strict` turns a broken internal link or a missing anchor into a build failure — the notes
 cross-reference heavily, and a stale link is worse than none.
