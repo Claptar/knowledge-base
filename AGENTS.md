@@ -131,6 +131,25 @@ Licence matters here because this repo is published: most course notes, papers a
 not be redistributed, and the permissively-licensed ones still carry conditions a notes repo should
 not take on. **Never commit a source file, and never publish one to the site.**
 
+## An adaptation is a derivative work
+
+The raw source is a *redistribution* question, settled above. An adaptation is a *derivative work*
+question, and it is settled by the source's licence:
+
+| Source licence | Adaptation goes to |
+| --- | --- |
+| CC BY-NC-SA (MIT OCW), CC BY, public domain | `docs/adapted/` — published, with attribution, and carrying **the same licence**, because share-alike propagates |
+| all rights reserved | `adapted-private/` — gitignored, never published |
+| unclear | `adapted-private/`, and say the licence is unresolved |
+
+**Never guess in the publishing direction.** `adapted-private/` is the safe default and costs
+nothing; a wrongly published derivative cannot be recalled from a public site. Both trees use the
+same template and the same rules — only the destination differs, and `docs/topics/` is unaffected
+either way, because a trajectory in his own words is not a derivative of anyone.
+
+Every catalogue entry in `docs/resources/` carries the licence that decides this. If it does not,
+resolve it before adapting, and record it there.
+
 ## How a page is shaped
 
 This is a site as well as a repo, and a reader arrives mid-topic with one question. They should not

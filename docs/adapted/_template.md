@@ -1,6 +1,8 @@
 # <Topic> — adapted from <source>
 
 **Source:** <author, title, section; link; timestamps if a lecture>
+**Catalogue:** <slug in docs/resources/, e.g. resources/courses.md#ocw-6041sc>
+**Licence:** <the source's licence, and therefore this file's — see below>
 **Adapted:** YYYY-MM-DD  **Depth:** full | delta | teaching
 **Assumed known:** <cut as already held — listed so the cuts are visible>
 **Prerequisites:** <what the source assumes beyond that>
@@ -42,3 +44,9 @@
 <!-- Left blank on purpose. One prompt per central definition or result; I fill these in. -->
 
 ## What I cut, and why
+
+---
+
+<!-- Required for a CC-licensed source. Delete only if this file is in adapted-private/. -->
+*Adapted from <author, title>, <course/publisher>, licensed <licence>. This adaptation is a
+derivative work and is offered under the same licence.*

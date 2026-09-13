@@ -8,6 +8,10 @@ __pycache__/
 sources/*
 !sources/README.md
 
+# Adaptations of all-rights-reserved sources. Derivative works of material
+# that may not be redistributed, so they never reach the published site.
+adapted-private/
+
 # Site build
 _site/
 .venv/

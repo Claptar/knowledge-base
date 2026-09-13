@@ -172,10 +172,31 @@ random variable is. Maths in LaTeX, `$…$` and `$$…$$`, so it renders on his 
 
 ## Step 6 — file it
 
-- Save as `adapted/<topic>-<source-slug>.md` — for example
-  `adapted/martingales-williams-ch10.md`. Start from `adapted/_template.md`.
-- Add the source to `resources/` with the verdict from step 4.6. The judgement is the expensive
-  part; it is why that file exists.
+### First: check the licence, because it decides where this goes
+
+An adaptation is a **derivative work**, and `docs/` is a public site. Before writing the file,
+settle the source's licence and file accordingly. The catalogue entry in `docs/resources/` carries
+it; if it does not, resolve it now and record it there.
+
+| Source licence | Goes to | Published |
+| --- | --- | --- |
+| CC BY-NC-SA (MIT OCW), CC BY, public domain | `docs/adapted/<topic>-<source-slug>.md` | yes — with attribution, and the file carries **the same licence**, because share-alike propagates |
+| all rights reserved — textbooks, paywalled papers, unlicensed course pages | `adapted-private/<topic>-<source-slug>.md` | no — gitignored |
+| unclear | `adapted-private/` | no — and say plainly that the licence is unresolved |
+
+**Never guess in the publishing direction.** An unresolved licence goes to `adapted-private/`, not
+to `docs/`. Say which you chose and why, in one line, when you hand the work over — this is a
+decision he should be able to overrule.
+
+Both locations use the same template and the same rules; only the destination differs.
+
+### Then
+
+- Start from `adapted/_template.md`, and fill the `**Licence:**` and `**Source:**` fields first —
+  they are what a later reader needs to know whether the file can be shared.
+- Add the source to `docs/resources/` with the verdict from step 4.6, its `Access:` and `Licence:`,
+  and set its `Adapted:` field to point at what you just wrote. The judgement is the expensive
+  part; it is why that catalogue exists.
 - If the topic has a `topics/` file, link the adaptation from it. If it doesn't and this opens a
   real topic, create one — the adaptation is material, the topic file is his trajectory through
   it, and they are not the same record.
