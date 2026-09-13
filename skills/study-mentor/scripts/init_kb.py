@@ -38,10 +38,59 @@ _Nothing queued yet._
 ---
 """
 
-RESOURCES = """# Resources
+QUESTIONS = """# Open questions
 
-Evaluated materials, grouped by topic. Every entry carries a verdict — what it's good for and
-what's wrong with it.
+The front door. This knowledge base is indexed by **question**, not by subject — subjects are what
+textbooks index, and the textbooks already exist.
+
+A question earns a place here the moment it is asked properly. It earns a *page* only once a
+session has been spent on it: harvest, don't design.
+
+## Live
+
+| Question | Status | Where |
+| --- | --- | --- |
+
+## Status vocabulary
+
+| Status | Means |
+| --- | --- |
+| `open` | live — the next session could pick it up |
+| `parked` | a real question, deliberately not being worked now |
+| `answered` | a topic file answers it in my own words |
+
+## Markers
+
+`**Not yet derived.**` for something taken on trust from a source; `**Unverified.**` for something
+inferred rather than checked. Their count is the honest progress metric.
+
+```bash
+grep -rn "Not yet derived\\|Unverified" topics/ adapted/ practice/ | wc -l
+```
+"""
+
+RESOURCES_INDEX = """# Resources
+
+Evaluated materials, one file per subject. Every entry carries a verdict — what it's good for and
+what's wrong with it — and a reachability, which says whether the source can actually be opened.
+
+## Entry format
+
+```markdown
+### <slug> — <Author, Title> { #<slug> }
+
+**Kind:** book · **Access:** local · `sources/<slug>/book.pdf`
+**Licence:** all rights reserved — adaptation stays unpublished
+**Status:** unvetted · **Adapted:** none · **Work:** topics/<topic>.md
+
+The verdict in prose.
+```
+
+**Access:** `fetchable` / `local` / `private-host` / `unreadable`. An out-of-reach source is
+reported as such, never reconstructed from memory.
+
+**Licence:** decides where an adaptation may live — `adapted/` for CC-licensed sources (carrying
+the same licence), `adapted-private/` for everything else.
 """
 
 TOPIC_TEMPLATE = """# <Topic>
@@ -125,7 +174,8 @@ def main() -> int:
         root / "README.md": README,
         root / "profile.md": PROFILE,
         root / "log.md": LOG,
-        root / "resources.md": RESOURCES,
+        root / "questions.md": QUESTIONS,
+        root / "resources" / "index.md": RESOURCES_INDEX,
         root / "topics" / "_template.md": TOPIC_TEMPLATE.format(today=today),
         root / "practice" / "_template.md": PRACTICE_TEMPLATE.format(today=today),
         root / "adapted" / "_template.md": ADAPTED_TEMPLATE.format(today=today),
