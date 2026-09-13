@@ -251,8 +251,21 @@ by licence:
 | a **course** or **lecture notes**, public on the web | yes, **cited and linked to the original** | `docs/reference/` |
 | a **paper** — open access, arXiv, bioRxiv, PMC | yes, cited | `docs/reference/` |
 | a **paper** behind a paywall | no | `reference-private/` |
+| a **thesis** | no, unless its record's rights row has been read and permits it | `reference-private/` |
 | a **book** | **never**, however obtained | `reference-private/` |
 | anything with a visible "all rights reserved" | no | `reference-private/` |
+
+A thesis is its own row because "open access" is asserted by the repository and the *rights* are
+asserted per record by the author — CaltechTHESIS carries a Creative Commons grant on some theses
+and "no commercial reproduction rights are provided" on others. Reading the row is cheap; assuming
+it is the mistake this table exists to prevent.
+
+**The mechanism is `material:` in `sources/sources.lock.yml`** — `course`, `notes`, `paper`,
+`thesis`, `book`, `archive` or `data`, written by hand and never detected. `normalise_source.py`
+reads it to pick the destination, and anything unclassified, plus anything with no URL to cite,
+goes to `reference-private/`. `open_access: true` alongside `paper` or `thesis` is the one switch
+that promotes a source into the published tree, and it is an assertion someone made, not a
+detection.
 
 `reference-private/` is gitignored, exactly like `adapted-private/`.
 

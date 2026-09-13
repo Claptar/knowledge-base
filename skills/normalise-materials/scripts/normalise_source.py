@@ -57,7 +57,8 @@ TODAY = date.today().isoformat()
 # and is about restoring the download.
 # ---------------------------------------------------------------------------
 PUBLISHABLE = {"course", "notes"}          # public course material — republished, cited
-PRIVATE = {"book", "paper"}                # books always; papers unless open_access: true
+PRIVATE = {"book", "paper", "thesis"}      # a book always; the rest unless open_access is set
+OPEN_ACCESS = {"paper", "thesis"}          # may be promoted, and only by a hand-set assertion
 NOT_MATERIAL = {"archive", "data", "scaffolding"}
 
 # ---------------------------------------------------------------------------
@@ -221,24 +222,27 @@ def upstream(entry, relpath, raw=False):
 
 
 def destination(entry):
-    """(output_root, published, reason). Never guess in the publishing direction."""
+    """(output_root, published, reason). Never guess in the publishing direction.
+
+    Everything that is not positively known to be publishable goes to the gitignored tree. The
+    asymmetry is deliberate: an unpublished conversion costs nothing and is one lockfile edit
+    away from being published, while a wrongly published derivative cannot be recalled.
+    """
     mat = entry.get("material")
-    slug = entry["slug"]
+    private = REPO / "reference-private" / entry["slug"]
+
     if mat in NOT_MATERIAL:
         return None, False, f"material: {mat} — not a document source"
     if mat is None:
-        return REPO / "reference-private" / slug, False, "no `material:` in the lockfile"
-    if mat in PRIVATE:
-        if mat == "paper" and entry.get("open_access"):
-            pass
-        else:
-            return REPO / "reference-private" / slug, False, f"material: {mat}"
-    if mat not in PUBLISHABLE and not (mat == "paper" and entry.get("open_access")):
-        return REPO / "reference-private" / slug, False, f"unknown material: {mat}"
+        return private, False, "no `material:` in the lockfile"
+    if mat in PRIVATE and not (mat in OPEN_ACCESS and entry.get("open_access")):
+        return private, False, f"material: {mat}"
+    if mat not in PUBLISHABLE and mat not in OPEN_ACCESS:
+        return private, False, f"unknown material: {mat}"
     if not (entry.get("url") or entry.get("base")):
-        # A published page must cite its original. One that cannot is not published.
-        return REPO / "reference-private" / slug, False, "no source URL to cite"
-    return REPO / "docs" / "reference" / slug, True, ""
+        # Every published page cites its original. One that cannot is not published.
+        return private, False, "no source URL to cite"
+    return REPO / "docs" / "reference" / entry["slug"], True, ""
 
 
 # ---------------------------------------------------------------------------

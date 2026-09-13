@@ -62,10 +62,14 @@ behind it, is in [AGENTS.md](../../AGENTS.md) under *What may be republished*:
 | a **book** | `reference-private/` — always, regardless of how it was obtained |
 | a **paper** that is open access, arXiv, bioRxiv or PMC | `docs/reference/` |
 | a **paper** behind a paywall | `reference-private/` |
+| a **thesis** whose rights row has not been read | `reference-private/` |
 | licence explicitly reserved — a visible "all rights reserved" | `reference-private/` |
 
-`Kind:` in the catalogue entry decides the first column, so resolve the catalogue entry before
-converting. When a source carries a real licence — CC BY, CC0, BSD, CC BY-NC-SA — record it in the
+**`material:` in `sources/sources.lock.yml` is what the script reads** — `course`, `notes`,
+`paper`, `thesis`, `book`, `archive` or `data`. It is written by hand, because guessing it is
+guessing in the publishing direction. A source with no `material`, and a source with no URL to
+cite, converts to `reference-private/` and is named in the report. `open_access: true` promotes a
+paper or a thesis into the published tree, and nothing else does. When a source carries a real licence — CC BY, CC0, BSD, CC BY-NC-SA — record it in the
 output's front matter and honour its conditions: share-alike propagates, and the adapted file
 carries the same licence.
 
@@ -87,6 +91,11 @@ whole arrangement rests on, so it is generated, not left to the author to rememb
 
 Install the toolchain with `uv sync --group convert`; it is declared in `pyproject.toml` and needs
 no system packages.
+
+Where a document exists in several formats the script keeps only the best: a lecture present as
+`.qmd`, `.html` and `.pdf` converts once, from the `.qmd`, and the other two are reported as
+dropped renders. Course administrivia — install guides, rubrics, codes of conduct — is skipped by
+default and listed; `--include-all` keeps it. A syllabus is **not** administrivia.
 
 A transcript is not a document, and converting one is not this skill's job beyond the mechanical
 step — `../adapt-recordings/SKILL.md` owns what speech requires, and it is the authority.
@@ -149,8 +158,10 @@ this step, with the rules above.
 - **An `index.md` per source**, listing its parts in order with links. This is the page a topic
   file links to, and for a source that cannot be published it is the *only* page — structure and
   links, no body text.
-- **Add to `mkdocs.yml` nav**, or the strict build fails. With hundreds of pages the nav is
-  generated: one section per source, its parts as children. Never a flat list of 400 entries.
+- **The nav is generated into `docs/reference/SUMMARY.md`**, which `mkdocs-literate-nav` reads.
+  Never list converted pages in `mkdocs.yml` — it carries one line, `- Reference: reference/`, and
+  the several hundred entries below it are regenerated on every run. `--summary-only` rebuilds the
+  nav and the landing page without converting anything.
 - **Link it from the catalogue entry** in `docs/resources/`, so the source and its converted form
   are one click apart.
 - **Never edit a converted file by hand.** It is regenerable output; a hand edit is lost on the next
