@@ -82,28 +82,29 @@ unlicensed — which means all rights reserved.
 
 `unresolved` is a legitimate and safe answer. `adapted-private/` costs nothing.
 
-## Step 4 — look for the papers, not only the course
+## Step 4 — collect the papers too, as their own kind of source
 
-**Lecture notes are not always the best available source, and for a research-facing topic they are
-often not even close.** A course is a route through settled material; a paper is the moment someone
-had to argue for something. He wants motivation at full depth, and the argument is where motivation
-actually lives — see `../study-mentor/references/taste.md`.
+**A paper is not a better course; it is a different object.** Notes and books teach a subject as it
+is now understood. A paper is the record of someone arriving at the idea — the problem they were
+stuck on, the alternative that looked equally good, the argument they had to make. That record is
+what this knowledge base is for, because *how could I have come up with this?* is a question about
+the route, and the route is what a published exposition removes.
 
-Reach for primary sources when:
+The failure this step exists to prevent is **papers being absent from the harvest entirely**,
+leaving a catalogue built only on second-hand accounts of other people's reasoning.
 
-- **The topic is recent or contested.** No textbook has caught up, and the course notes are a
-  summary of the papers you could read directly.
-- **The course is the wrong shape.** A syllabus's reading list is frequently more valuable than its
-  slides — it is an expert's judgement about which papers matter, which is the expensive part.
-- **The question is "why is it done this way".** The original paper argues for the choice. The
-  textbook presents the winner and drops the argument, which is exactly the artificiality he
-  objects to.
-- **A method is named after its paper** — Gillespie's SSA, the finite state projection, the
-  Poisson representation. Read the paper. The secondary account almost always drops the conditions.
+So, concretely, on any harvest:
 
-Harvest a syllabus's bibliography as entries in its own right, and catalogue a paper the same way
-as a course. When a course and its key papers both exist, say which is the better entry point in
-the handoff to `study-mentor` — but do not write the verdict yourself.
+- **Catalogue papers as first-class entries**, with `Kind: paper`, in the same subject file as the
+  courses. `docs/resources/cme-transcription.md` is what a paper catalogue looks like.
+- **Harvest a syllabus's bibliography.** It is an expert's judgement about which papers matter,
+  which is the expensive part, and it is usually the most valuable thing on a syllabus — often more
+  so than the slides, and reachable even when the slides are behind a login.
+- **When a method carries a name, find its paper.** Gillespie's SSA, the finite state projection,
+  the Poisson representation. The secondary account almost always drops the conditions.
+- **Collect both where both exist.** The paper carries the motivation, the notes carry the
+  machinery and the exercises. Say which is which in the handoff to `study-mentor` — but do not
+  write the verdict yourself.
 
 ## Step 5 — file it
 

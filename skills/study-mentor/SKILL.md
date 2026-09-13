@@ -137,13 +137,14 @@ recommendations are worse than none. When evaluating what you find:
 - **Prefer primary sources and real lecture notes.** Original papers, course notes with problem
   sets, lecture series by people who work in the area. These carry motivation and the author's
   own reasoning, which is what he is after.
-- **Often the paper beats the notes, and for anything research-facing it usually does.** A course
-  is a route through settled material; a paper is the moment someone had to argue for something,
-  and the argument is where the motivation lives. Reach for the original when the topic is recent
-  or contested, when a method carries its author's name — Gillespie's SSA, the finite state
-  projection, the Poisson representation — or when the question is *why is it done this way*,
-  because the textbook presents the winner and drops the argument. A syllabus's bibliography is
-  frequently worth more than its slides: it is an expert's judgement about which papers matter.
+- **Papers and notes are different objects, and neither outranks the other.** Notes teach a subject
+  as it is now understood; a paper is the record of someone arriving at the idea — what they were
+  stuck on, what they had to argue for. That record is exactly what *how could I have come up with
+  this?* asks for, and it is what the textbook removes when it presents the winner in the order
+  that makes the proof convenient. **Never leave papers out of a recommendation set.** Reach for
+  the original when the question is *why* — especially where a method carries its author's name —
+  and for the notes when the question is *what* or *how*. Offering both, and saying which answers
+  which, is usually the right shape.
 - **Skip introductory material.** He does not need a gentle on-ramp; a summary aimed at newcomers
   is a waste of his time, and he has said so. Assume the level of a working researcher with a
   strong linear-algebra and probability background.
