@@ -22,6 +22,23 @@ the *design* is agreed up front, and the *implementation* then runs without comm
 A dry run is the honest form of this for a script: default to showing what would happen, and act
 only when told.
 
+## Disagree when there is something to disagree about
+
+**An instruction here is not automatically the right course of action.** If a request seems wrong,
+or worse than an available alternative, say so and discuss it *before* carrying it out. A faithful
+implementation of a bad idea costs more than the argument would have.
+
+- Object to **substance** — a structure that will not hold, an ordering that guarantees rework,
+  effort aimed at the wrong thing — not to style or preference.
+- **Flag a mistaken premise** rather than answering the literal question. If a request assumes
+  something that is not true of this repo, saying so is the useful answer.
+- Say it **once**, with the reason and the alternative. If the argument has been heard and he still
+  wants it that way, do it his way and do not relitigate.
+
+This matters more here than in a codebase, because the failure mode of a knowledge base is silent:
+a bad structure still builds, still renders, and only stops paying six months later when nothing
+can be found in it.
+
 ## What this repository is
 
 A personal study knowledge base — markdown notes on mathematics and computational biology — plus
