@@ -58,6 +58,11 @@ exclude_docs: |
 
 plugins:
   - search
+  # Reads docs/reference/SUMMARY.md as the nav for the converted tree. That file is generated
+  # by skills/normalise-materials/scripts/normalise_source.py and is not edited by hand.
+  - literate-nav:
+      nav_file: SUMMARY.md
+      implicit_index: true
 
 # Broken internal links and missing anchors fail the build. The knowledge base
 # cross-references heavily by design — a stale link is worse than no link.
@@ -119,5 +124,8 @@ nav:
           - Gaussian vectors (conceptual): notes/probability/gaussian-vectors-covariance-geometry-alt.md
           - Sample variance as quadratic form: notes/probability/sample-variance-quadratic-form.md
           - Sample variance geometry: notes/probability/sample-variance-quadratic-form-geometry.md
+  # Converted source material. The subtree's own nav is generated into
+  # docs/reference/SUMMARY.md — never list its pages here.
+  - Reference: reference/
   # - Topics:  … no topic file exists yet; a topic file is harvested from a session, never seeded.
   #     Add entries here as sessions produce them, or the strict build fails on the new page.
