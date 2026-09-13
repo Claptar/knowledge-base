@@ -223,3 +223,98 @@ entry point to Monod, biVI, meK-Means and Chronocell.
 
 *(unvetted)* Binomial capture inside a Bayesian normalisation method; read for the model, not the
 tool.
+
+## Pachter lab theses — the same work, in long form
+
+Six CaltechTHESIS dissertations from Lior Pachter's group. A thesis is the one place the route to
+an idea survives at length: the papers above are the compressed results, and the thesis is the
+chapter that says which alternative was tried first and why it was abandoned. Each also carries a
+bibliography assembled by someone working on exactly this — an expert's reading list, and a source
+in its own right.
+
+> **Not yet fetched.** CaltechTHESIS refuses automated requests from here — both `curl` and an
+> agent fetch time out or are refused, while `github.com`, `pypi.org` and `ocw.mit.edu` answer
+> normally. The metadata below came through before the block. **Download the PDFs by hand** into
+> the `sources/` slug named in each entry; everything downstream then works. See
+> `skills/collect-materials/references/caltech-thesis.md`.
+
+> **Licence unresolved for all six.** The rights row on each record could not be read before the
+> block, and CaltechTHESIS records vary: some carry a Creative Commons grant, many carry "no
+> commercial reproduction, distribution, display or performance rights". Until one is read,
+> conversions stay in `reference-private/` and adaptations in `adapted-private/`. Open access is
+> not a licence.
+
+### gorin-2023-scrnaseq-foundations — Gorin 2023, *Stochastic Foundations for Single-Cell RNA Sequencing* { #gorin-2023-scrnaseq-foundations }
+
+**Kind:** thesis · **Access:** unreadable — fetch by hand to `sources/gorin-2023-scrnaseq-foundations/`
+**Licence:** unresolved — conversion stays in `reference-private/`
+**Status:** unvetted · **Adapted:** none
+[Record](https://thesis.library.caltech.edu/16062/) · [PDF](https://thesis.library.caltech.edu/16062/03/gg_thesis_230602.pdf)
+
+*(unvetted)* **Biophysical — the central one.** Gorin is the first author of four entries above
+([bursty splicing](#gorin-pachter-2022-bursty-splicing),
+[interpretable and tractable](#gorin-2022-interpretable-tractable),
+[intrinsic and extrinsic](#gorin-pachter-2020-intrinsic-extrinsic),
+[transient and delay CME](#gorin-2022-transient-delay-cme)), so this is those papers with the
+connective argument restored. From the record's abstract: generic strategies for modelling the
+biological and technical components of sequencing experiments, with case studies motivating them.
+Advisor Pachter.
+
+### fang-2025-biophysical-normalisation — Fang 2025, *A Biophysical Approach to Normalization and Trajectory Inference in Single-Cell RNA Sequencing Data Analysis* { #fang-2025-biophysical-normalisation }
+
+**Kind:** thesis · **Access:** unreadable — fetch by hand to `sources/fang-2025-biophysical-normalisation/`
+**Licence:** unresolved — conversion stays in `reference-private/`
+**Status:** unvetted · **Adapted:** none
+[Record](https://thesis.library.caltech.edu/17389/) · [DOI](https://doi.org/10.7907/asek-t904)
+
+*(unvetted)* **Biophysical.** The record's abstract names the CME as the theoretical foundation for
+stochastic gene expression models and claims a gap in the uniform approximations — which is
+directly the question the [approximations section](#gillespie-2000-cle) above circles. Then two
+mechanistic models for normalisation and trajectory inference, both of which are normally done by
+heuristics with no mechanistic grounding. Advisor Pachter; committee Thomson, Bois, Chong.
+
+### felce-2026-biophysical-evolution — Felce 2026, *Biophysical Modeling for Gene Expression and Evolution* { #felce-2026-biophysical-evolution }
+
+**Kind:** thesis · **Access:** unreadable — fetch by hand to `sources/felce-2026-biophysical-evolution/`
+**Licence:** unresolved — conversion stays in `reference-private/`
+**Status:** unvetted · **Adapted:** none
+[Record](https://thesis.library.caltech.edu/17880/) · [PDF](https://thesis.library.caltech.edu/17880/01/Thesis_final_CF.pdf)
+
+*(unvetted)* **Biophysical.** Joint models of chromatin accessibility (ATAC-seq) and protein counts
+alongside transcriptomic counts — the multi-modal extension of the single-modality models above —
+then the same machinery pushed into phylogenetics to test competing mechanistic hypotheses for how
+gene expression evolves. Advisor Pachter.
+
+### carilli-2026-expression-regulation — Carilli 2026, *Genetic Interrogation of Expression Regulation* { #carilli-2026-expression-regulation }
+
+**Kind:** thesis · **Access:** unreadable — fetch by hand to `sources/carilli-2026-expression-regulation/`
+**Licence:** unresolved — conversion stays in `reference-private/`
+**Status:** unvetted · **Adapted:** none
+[Record](https://thesis.library.caltech.edu/18729/) · [PDF](https://thesis.library.caltech.edu/18729/02/Thesis_Carilli_Maria.pdf)
+
+*(unvetted)* **Biophysical.** Accelerated inference for biophysical models of scRNA-seq, a genetic
+testing framework, and an application across eight tissues in eight mouse strains. The abstract's
+framing — moving past average expression to transcription, splicing and degradation as processes —
+is the same move as the bursty-splicing paper, so read it against that.
+
+### luebbert-2024-transcriptomic-complexity — Luebbert 2024, *Complexity of Transcriptomic Data Analysis and Implications for Biological Discovery* { #luebbert-2024-transcriptomic-complexity }
+
+**Kind:** thesis · **Access:** unreadable — fetch by hand to `sources/luebbert-2024-transcriptomic-complexity/`
+**Licence:** unresolved — conversion stays in `reference-private/`
+**Status:** unvetted · **Adapted:** none
+[Record](https://thesis.library.caltech.edu/16368/) · [DOI](https://doi.org/10.7907/xnw5-v914)
+
+*(unvetted)* **Not biophysical** — software tools, references for organisms without good genomes,
+and virus identification from scRNA-seq. Lower priority for the CME track. Kept catalogued because
+the bibliography is still a Pachter-lab reading list.
+
+### galvez-merchan-2023-mrna-degradation — Gálvez Merchán 2023, *Studies of mRNA Expression and Degradation* { #galvez-merchan-2023-mrna-degradation }
+
+**Kind:** thesis · **Access:** unreadable — fetch by hand to `sources/galvez-merchan-2023-mrna-degradation/`
+**Licence:** unresolved — conversion stays in `reference-private/`
+**Status:** unvetted · **Adapted:** none
+[Record](https://thesis.library.caltech.edu/16081/) · [DOI](https://doi.org/10.7907/esxk-ch24)
+
+*(unvetted)* **Mostly not biophysical** — nonsense-mediated decay and the Commons Cell Atlas. The
+degradation half touches the same rate constants the CME models carry, so it may be worth the
+chapter rather than the thesis. Advisors Pachter and Voorhees.
