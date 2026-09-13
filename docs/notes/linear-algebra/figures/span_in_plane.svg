@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f4e79"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <style>
+    .axis { stroke: #ccc; stroke-width: 1; }
+    .span-line { stroke: #1f4e79; stroke-width: 2; stroke-opacity: 0.35; }
+    .span-fill { fill: #1f4e79; fill-opacity: 0.10; }
+    .vec { stroke: #1f4e79; stroke-width: 2.5; fill: none; }
+    .vec-red { stroke: #c0392b; stroke-width: 2; fill: none; stroke-dasharray: 5 3; }
+    .ghost { stroke: #888; stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .label { font-size: 16px; font-style: italic; }
+    .title { font-size: 15px; fill: #333; }
+    .caption { font-size: 13px; fill: #555; }
+    .origin { fill: #333; }
+  </style>
+
+  <!-- =================================================================== -->
+  <!-- Panel 1: one vector spans a line                                    -->
+  <!-- =================================================================== -->
+  <g transform="translate(20,20)">
+    <rect x="0" y="0" width="280" height="280" fill="none" stroke="#e0e0e0"/>
+    <text x="140" y="20" text-anchor="middle" class="title">One vector: spans a line</text>
+
+    <!-- axes; origin at (140,160) -->
+    <line x1="20"  y1="160" x2="260" y2="160" class="axis"/>
+    <line x1="140" y1="40"  x2="140" y2="280" class="axis"/>
+
+    <!-- span line through origin with slope -0.5 (screen). 
+         Passes (20,220) and (260,100). Through (140,160)? 220-(140-20)/2=160 ✓ -->
+    <line x1="20" y1="220" x2="260" y2="100" class="span-line"/>
+
+    <!-- vector v: tip at (200,130). On span line? y at x=200 is 220-90=130 ✓ -->
+    <line x1="140" y1="160" x2="200" y2="130" class="vec" marker-end="url(#arrow)"/>
+    <circle cx="140" cy="160" r="3" class="origin"/>
+
+    <text x="205" y="123" class="label" fill="#1f4e79">v</text>
+    <!-- span(v) label: place near the right end of the span line, slightly above it.
+         Span line at x=232 has y=220-106=114. Label tail at (235,108). -->
+    <text x="235" y="108" class="caption" fill="#1f4e79" font-style="italic">span(v)</text>
+  </g>
+
+  <!-- =================================================================== -->
+  <!-- Panel 2: two non-collinear span the plane                           -->
+  <!-- =================================================================== -->
+  <g transform="translate(310,20)">
+    <rect x="0" y="0" width="280" height="280" fill="none" stroke="#e0e0e0"/>
+    <text x="140" y="20" text-anchor="middle" class="title">Two non-collinear: span the plane</text>
+
+    <!-- light fill to suggest entire plane is covered -->
+    <rect x="20" y="40" width="240" height="240" class="span-fill"/>
+
+    <line x1="20"  y1="160" x2="260" y2="160" class="axis"/>
+    <line x1="140" y1="40"  x2="140" y2="280" class="axis"/>
+
+    <!-- u: from (140,160) to (210,135). Shift = (70,-25). -->
+    <line x1="140" y1="160" x2="210" y2="135" class="vec" marker-end="url(#arrow)"/>
+    <!-- v: from (140,160) to (170,90). Shift = (30,-70). -->
+    <line x1="140" y1="160" x2="170" y2="90"  class="vec" marker-end="url(#arrow)"/>
+
+    <!-- x = u + v: shift = (100,-95). Tip at (240, 65). -->
+    <line x1="140" y1="160" x2="240" y2="65"  class="vec-red" marker-end="url(#arrowRed)"/>
+
+    <!-- Parallelogram dashed edges:
+         from u-tip (210,135) to x-tip (240,65)  — direction v ✓
+         from v-tip (170,90)  to x-tip (240,65)  — direction u ✓ -->
+    <line x1="210" y1="135" x2="240" y2="65" class="ghost"/>
+    <line x1="170" y1="90"  x2="240" y2="65" class="ghost"/>
+
+    <circle cx="140" cy="160" r="3" class="origin"/>
+
+    <text x="215" y="132" class="label" fill="#1f4e79">u</text>
+    <text x="153" y="86"  class="label" fill="#1f4e79">v</text>
+    <text x="245" y="60"  class="caption" fill="#c0392b">x = α u + β v</text>
+  </g>
+
+  <!-- =================================================================== -->
+  <!-- Panel 3: collinear — still just a line                              -->
+  <!-- =================================================================== -->
+  <g transform="translate(600,20)">
+    <rect x="0" y="0" width="280" height="280" fill="none" stroke="#e0e0e0"/>
+    <text x="140" y="20" text-anchor="middle" class="title">Two collinear: still just a line</text>
+
+    <line x1="20"  y1="160" x2="260" y2="160" class="axis"/>
+    <line x1="140" y1="40"  x2="140" y2="280" class="axis"/>
+
+    <!-- span line, slope -0.5, through origin -->
+    <line x1="20" y1="220" x2="260" y2="100" class="span-line"/>
+
+    <!-- u: shift (50,-25), tip at (190,135). On line: y=220-(190-20)/2=220-85=135 ✓ -->
+    <line x1="140" y1="160" x2="190" y2="135" class="vec" marker-end="url(#arrow)"/>
+    <!-- v: shift (90,-45), tip at (230,115). On line: y=220-(230-20)/2=220-105=115 ✓ 
+         v is longer than u, so its arrow head is past u's. -->
+    <line x1="140" y1="160" x2="230" y2="115" class="vec" marker-end="url(#arrow)"/>
+
+    <circle cx="140" cy="160" r="3" class="origin"/>
+
+    <!-- Labels offset perpendicular to the line so they don't sit on top of each other.
+         Line direction is (2,-1)/√5; perpendicular pointing up-right is (1,2)/√5.
+         For u tip (190,135): label above-right at (195,128).
+         For v tip (230,115): label above-right at (236,108). -->
+    <text x="184" y="128" class="label" fill="#1f4e79">u</text>
+    <text x="236" y="108" class="label" fill="#1f4e79">v</text>
+    <!-- span(u,v) label off the right end of the line -->
+    <text x="225" y="142" class="caption" fill="#1f4e79" font-style="italic">span(u,v)</text>
+  </g>
+</svg>

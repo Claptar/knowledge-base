@@ -91,5 +91,31 @@ nav:
       - Stochastic processes: resources/stochastic-processes.md
       - CME and transcription: resources/cme-transcription.md
       - Modelling: resources/modelling.md
+  - Notes:
+      - Overview: notes/index.md
+      - Structures:
+          - 01 Binary operations: notes/structures/01-binary-operations-and-associativity.md
+          - 02 Semigroups and monoids: notes/structures/02-semigroups-and-monoids.md
+          - 03 Groups and reversibility: notes/structures/03-groups-and-reversibility.md
+          - 04 Symmetries and groups: notes/structures/04-symmetries-and-groups.md
+          - 05 Commutativity and abelian groups: notes/structures/05-commutativity-and-abelian-groups.md
+          - 06 Rings and distributivity: notes/structures/06-rings-and-distributivity.md
+          - 07 Fields and scalars: notes/structures/07-fields-and-scalars.md
+          - 08 Vector spaces: notes/structures/08-vector-spaces.md
+          - 09 Algebras over fields: notes/structures/09-algebras-over-fields.md
+          - 10 Sigma-algebras: notes/structures/10-sigma-algebras.md
+          - 11 Map of structures: notes/structures/11-map-of-structures.md
+      - Linear algebra:
+          - Linear subspaces: notes/linear-algebra/linear-subspaces.md
+          - Basis and coordinates: notes/linear-algebra/basis-coordinates.md
+          - Change of basis: notes/linear-algebra/change-of-basis.md
+          - Isomorphism: notes/linear-algebra/isomorphism.md
+          - Direct sums and complements: notes/linear-algebra/direct-sums-and-complements.md
+          - Quotient spaces: notes/linear-algebra/quotient-spaces.md
+      - Probability:
+          - Gaussian vectors (confusion): notes/probability/gaussian-vectors-covariance-geometry.md
+          - Gaussian vectors (conceptual): notes/probability/gaussian-vectors-covariance-geometry-alt.md
+          - Sample variance as quadratic form: notes/probability/sample-variance-quadratic-form.md
+          - Sample variance geometry: notes/probability/sample-variance-quadratic-form-geometry.md
   - Topics:
       - Mathematical modelling: topics/mathematical-modelling.md

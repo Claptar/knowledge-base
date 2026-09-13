@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <marker id="arrTop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f4e79"/>
+    </marker>
+    <marker id="arrBot" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <style>
+    .blob-V { fill: #f3f3f3; stroke: #555; stroke-width: 2; }
+    .blob-Kn-top { fill: #e8f0f8; stroke: #1f4e79; stroke-width: 2; }
+    .blob-Kn-bot { fill: #e8f5e9; stroke: #2e7d32; stroke-width: 2; }
+    .arrow-top { stroke: #1f4e79; stroke-width: 2; fill: none; }
+    .arrow-bot { stroke: #2e7d32; stroke-width: 2; fill: none; }
+    .label-big { font-size: 28px; font-style: italic; }
+    .label-med { font-size: 22px; font-style: italic; }
+    .label { font-size: 15px; font-style: italic; }
+    .caption { font-size: 13px; fill: #555; }
+    .title { font-size: 15px; fill: #333; }
+    .map-label { font-size: 16px; font-style: italic; }
+  </style>
+
+  <text x="380" y="30" text-anchor="middle" class="title">One vector space, many isomorphisms to Kⁿ — one for each basis</text>
+
+  <!-- Central V -->
+  <ellipse cx="150" cy="200" rx="110" ry="120" class="blob-V"/>
+  <text x="150" y="180" text-anchor="middle" class="label-big" fill="#333">V</text>
+  <text x="150" y="205" text-anchor="middle" class="caption">(abstract space,</text>
+  <text x="150" y="222" text-anchor="middle" class="caption">no built-in basis)</text>
+
+  <!-- A representative vector v -->
+  <circle cx="160" cy="260" r="5" fill="#c0392b"/>
+  <text x="170" y="265" class="label" fill="#c0392b">v</text>
+
+  <!-- Top right: Kⁿ via basis e -->
+  <ellipse cx="600" cy="110" rx="100" ry="80" class="blob-Kn-top"/>
+  <text x="600" y="100" text-anchor="middle" class="label-med" fill="#1f4e79">Kⁿ</text>
+  <text x="600" y="125" text-anchor="middle" class="caption" fill="#1f4e79">(coordinates in e)</text>
+
+  <!-- Image of v under top map -->
+  <circle cx="595" cy="145" r="5" fill="#c0392b"/>
+  <text x="565" y="148" class="label" fill="#c0392b">[v]ₑ</text>
+
+  <!-- Bottom right: Kⁿ via basis b -->
+  <ellipse cx="600" cy="290" rx="100" ry="80" class="blob-Kn-bot"/>
+  <text x="600" y="280" text-anchor="middle" class="label-med" fill="#2e7d32">Kⁿ</text>
+  <text x="600" y="305" text-anchor="middle" class="caption" fill="#2e7d32">(coordinates in b)</text>
+
+  <!-- Image of v under bottom map -->
+  <circle cx="610" cy="265" r="5" fill="#c0392b"/>
+  <text x="618" y="262" class="label" fill="#c0392b">[v]_b</text>
+
+  <!-- Arrows -->
+  <path d="M 230 160 Q 400 110 510 125" class="arrow-top" marker-end="url(#arrTop)"/>
+  <text x="370" y="100" text-anchor="middle" class="map-label" fill="#1f4e79">[ · ]ₑ &#160; via basis e</text>
+
+  <path d="M 230 250 Q 400 300 510 280" class="arrow-bot" marker-end="url(#arrBot)"/>
+  <text x="370" y="335" text-anchor="middle" class="map-label" fill="#2e7d32">[ · ]_b &#160; via basis b</text>
+
+  <!-- bottom message -->
+  <text x="380" y="365" text-anchor="middle" font-size="13" fill="#666" font-style="italic">
+    Both maps are isomorphisms, but they differ. The statement V ≅ Kⁿ asserts existence, not a canonical choice.
+  </text>
+</svg>

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 320" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <style>
+    .box { fill: #fafafa; stroke: #999; stroke-width: 1.5; rx: 6; }
+    .arr { stroke: #555; stroke-width: 1.8; fill: none; }
+    .bracket { stroke: #333; stroke-width: 2; fill: none; }
+    .scalar-a { fill: #c0392b; }
+    .scalar-b { fill: #1f4e79; }
+    .scalar-c { fill: #2e7d32; }
+    .scalar-d { fill: #b9770e; }
+    .panel-title { font-size: 14px; fill: #333; font-weight: bold; }
+    .space-name { font-size: 13px; fill: #666; font-style: italic; }
+    .iso-label { font-size: 20px; fill: #333; }
+    .scalar-text { font-size: 22px; font-style: italic; font-family: 'Cambria Math', 'Times New Roman', serif; }
+    .plus { font-size: 20px; fill: #333; }
+    .lit { font-size: 22px; font-style: italic; font-family: 'Times New Roman', serif; }
+    .sup { font-size: 14px; fill: #333; }
+  </style>
+
+  <text x="410" y="30" text-anchor="middle" class="panel-title">The same scalars (a, b, c, d) live in three isomorphic spaces</text>
+
+  <!-- =================================================================== -->
+  <!-- Box 1: 2x2 matrix                                                   -->
+  <!-- =================================================================== -->
+  <g transform="translate(40, 80)">
+    <rect class="box" width="200" height="170"/>
+    <text x="100" y="22" text-anchor="middle" class="space-name">Mat₂ₓ₂(K)</text>
+
+    <!-- Left bracket: from (50,65) to (50,145), with little hooks -->
+    <path class="bracket"
+          d="M 56 65 L 50 65 L 50 145 L 56 145"/>
+    <!-- Right bracket -->
+    <path class="bracket"
+          d="M 144 65 L 150 65 L 150 145 L 144 145"/>
+
+    <!-- entries: row1 at y=98, row2 at y=128; columns at x=75 and x=125 -->
+    <text x="75"  y="98"  class="scalar-text scalar-a" text-anchor="middle">a</text>
+    <text x="125" y="98"  class="scalar-text scalar-b" text-anchor="middle">b</text>
+    <text x="75"  y="128" class="scalar-text scalar-c" text-anchor="middle">c</text>
+    <text x="125" y="128" class="scalar-text scalar-d" text-anchor="middle">d</text>
+  </g>
+
+  <!-- =================================================================== -->
+  <!-- Box 2: column vector in K^4                                         -->
+  <!-- =================================================================== -->
+  <g transform="translate(310, 80)">
+    <rect class="box" width="200" height="170"/>
+    <text x="100" y="22" text-anchor="middle" class="space-name">K⁴</text>
+
+    <!-- Left bracket from (75,45) to (75,155) -->
+    <path class="bracket"
+          d="M 81 45 L 75 45 L 75 155 L 81 155"/>
+    <!-- Right bracket -->
+    <path class="bracket"
+          d="M 119 45 L 125 45 L 125 155 L 119 155"/>
+
+    <!-- column entries: y = 70, 95, 120, 145 -->
+    <text x="100" y="70"  class="scalar-text scalar-a" text-anchor="middle">a</text>
+    <text x="100" y="95"  class="scalar-text scalar-b" text-anchor="middle">b</text>
+    <text x="100" y="120" class="scalar-text scalar-c" text-anchor="middle">c</text>
+    <text x="100" y="145" class="scalar-text scalar-d" text-anchor="middle">d</text>
+  </g>
+
+  <!-- =================================================================== -->
+  <!-- Box 3: polynomial a + b t + c t^2 + d t^3                           -->
+  <!-- =================================================================== -->
+  <g transform="translate(580, 80)">
+    <rect class="box" width="200" height="170"/>
+    <text x="100" y="22" text-anchor="middle" class="space-name">K≤₃[t]</text>
+
+    <!-- Compact polynomial. Plan x-positions (within box, 0..200):
+         a (10) + b (35) t (50) + c (80) t² (95) + d (140) t³ (165)
+         Need to fit comfortably; centering by trimming to start at x=15. 
+         Let me lay out widths: a:14, +:18, b:14, t:10, +:18, c:14, t:10, sup:10, +:18, d:14, t:10, sup:10
+         Total ≈ 160 px. Pad 20 each side. Start x=20. -->
+    <g transform="translate(0, 105)">
+      <text x="20"  y="0" class="scalar-text scalar-a">a</text>
+      <text x="38"  y="0" class="plus">+</text>
+      <text x="58"  y="0" class="scalar-text scalar-b">b</text>
+      <text x="74"  y="0" class="lit">t</text>
+      <text x="88"  y="0" class="plus">+</text>
+      <text x="108" y="0" class="scalar-text scalar-c">c</text>
+      <text x="124" y="0" class="lit">t</text>
+      <text x="135" y="-10" class="sup">2</text>
+      <text x="148" y="0" class="plus">+</text>
+      <text x="168" y="0" class="scalar-text scalar-d">d</text>
+      <text x="184" y="0" class="lit">t</text>
+      <text x="194" y="-10" class="sup">3</text>
+    </g>
+  </g>
+
+  <!-- =================================================================== -->
+  <!-- Arrows between boxes                                                -->
+  <!-- =================================================================== -->
+  <!-- Box 1 ends at x=240; Box 2 starts at x=310. Center of gap: 275.
+       Box 2 ends at x=510; Box 3 starts at x=580. Center: 545. -->
+  <line x1="252" y1="165" x2="298" y2="165" class="arr" marker-end="url(#arrG)"/>
+  <line x1="522" y1="165" x2="568" y2="165" class="arr" marker-end="url(#arrG)"/>
+
+  <!-- ≅ symbols centered above the arrows (no overlap with line) -->
+  <text x="275" y="158" text-anchor="middle" class="iso-label">≅</text>
+  <text x="545" y="158" text-anchor="middle" class="iso-label">≅</text>
+
+  <text x="410" y="290" text-anchor="middle" font-size="13" fill="#666" font-style="italic">
+    Different objects, identical linear data — all three spaces have dimension 4 and are mutually isomorphic.
+  </text>
+</svg>

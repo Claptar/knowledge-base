@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <style>
+    .title { font-size: 14px; fill: #333; font-weight: bold; }
+    .bracket { stroke: #333; stroke-width: 1.5; fill: none; }
+    .formula { font-size: 15px; font-style: italic; fill: #333; }
+    .cell-text { font-size: 15px; font-family: 'Cambria Math', 'Times New Roman', serif; font-style: italic; }
+    .col-1-fill { fill: #1f4e79; fill-opacity: 0.15; }
+    .col-2-fill { fill: #2e7d32; fill-opacity: 0.15; }
+    .col-3-fill { fill: #b9770e; fill-opacity: 0.15; }
+    .arrow { stroke: #555; stroke-width: 1.5; fill: none; }
+    .caption { font-size: 12px; fill: #555; font-style: italic; }
+    .col-label { font-size: 12px; fill: #555; font-style: italic; }
+  </style>
+
+  <!-- TITLE -->
+  <text x="400" y="30" text-anchor="middle" class="title">
+    The j-th column of C is the coordinate column of e′ⱼ in the old basis e
+  </text>
+
+  <!-- ===========================
+       LEFT SIDE: three expansions
+       y range: 75 to 175 (lines at 90, 130, 170)
+       =========================== -->
+  <text x="40" y="95" class="formula" fill="#1f4e79">e′₁ = c₁₁ e₁ + c₂₁ e₂ + c₃₁ e₃</text>
+  <text x="40" y="135" class="formula" fill="#2e7d32">e′₂ = c₁₂ e₁ + c₂₂ e₂ + c₃₂ e₃</text>
+  <text x="40" y="175" class="formula" fill="#b9770e">e′₃ = c₁₃ e₁ + c₂₃ e₂ + c₃₃ e₃</text>
+
+  <text x="180" y="220" text-anchor="middle" class="caption">three new basis vectors</text>
+  <text x="180" y="237" text-anchor="middle" class="caption">expanded in the old basis</text>
+
+  <!-- Arrow from left to right (around y=130) -->
+  <line x1="350" y1="130" x2="420" y2="130" class="arrow" marker-end="url(#arr2)"/>
+  <text x="385" y="120" text-anchor="middle" class="caption">stack as</text>
+  <text x="385" y="148" text-anchor="middle" class="caption">columns</text>
+
+  <!-- ===========================
+       RIGHT SIDE: matrix C
+       bracket spans y=65 to y=195 (height 130)
+       three columns each ~50 wide
+       =========================== -->
+
+  <!-- Left bracket -->
+  <path d="M 450 65 L 440 65 L 440 195 L 450 195" class="bracket"/>
+
+  <!-- Column highlights: column j at x = 455 + (j-1)*55, width 50, y 70-190 (height 120) -->
+  <rect x="455" y="70" width="50" height="120" class="col-1-fill"/>
+  <rect x="510" y="70" width="50" height="120" class="col-2-fill"/>
+  <rect x="565" y="70" width="50" height="120" class="col-3-fill"/>
+
+  <!-- Entries: rows at y = 95, 130, 165; columns centered at x = 480, 535, 590 -->
+  <text x="480" y="100" text-anchor="middle" class="cell-text" fill="#1f4e79">c₁₁</text>
+  <text x="480" y="135" text-anchor="middle" class="cell-text" fill="#1f4e79">c₂₁</text>
+  <text x="480" y="170" text-anchor="middle" class="cell-text" fill="#1f4e79">c₃₁</text>
+
+  <text x="535" y="100" text-anchor="middle" class="cell-text" fill="#2e7d32">c₁₂</text>
+  <text x="535" y="135" text-anchor="middle" class="cell-text" fill="#2e7d32">c₂₂</text>
+  <text x="535" y="170" text-anchor="middle" class="cell-text" fill="#2e7d32">c₃₂</text>
+
+  <text x="590" y="100" text-anchor="middle" class="cell-text" fill="#b9770e">c₁₃</text>
+  <text x="590" y="135" text-anchor="middle" class="cell-text" fill="#b9770e">c₂₃</text>
+  <text x="590" y="170" text-anchor="middle" class="cell-text" fill="#b9770e">c₃₃</text>
+
+  <!-- Right bracket -->
+  <path d="M 620 65 L 630 65 L 630 195 L 620 195" class="bracket"/>
+
+  <!-- Matrix label -->
+  <text x="650" y="135" class="formula">= C</text>
+
+  <!-- Column labels under each column -->
+  <text x="480" y="215" text-anchor="middle" class="col-label" fill="#1f4e79">[e′₁]ₑ</text>
+  <text x="535" y="215" text-anchor="middle" class="col-label" fill="#2e7d32">[e′₂]ₑ</text>
+  <text x="590" y="215" text-anchor="middle" class="col-label" fill="#b9770e">[e′₃]ₑ</text>
+
+  <text x="535" y="237" text-anchor="middle" class="caption">three coordinate columns</text>
+  <text x="535" y="254" text-anchor="middle" class="caption">stacked side by side</text>
+
+  <!-- Compact equation at the bottom -->
+  <text x="400" y="305" text-anchor="middle" class="formula">e′ = e · C &#160;&#160;(simultaneous matrix form of the three expansions)</text>
+
+  <!-- bottom caption -->
+  <text x="400" y="345" text-anchor="middle" class="caption">
+    The matrix C is invertible because its columns are coordinate columns of a basis, hence linearly independent.
+  </text>
+</svg>

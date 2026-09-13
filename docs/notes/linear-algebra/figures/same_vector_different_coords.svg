@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <marker id="arrBlue2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f4e79"/>
+    </marker>
+    <marker id="arrRed2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c0392b"/>
+    </marker>
+    <marker id="arrGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <style>
+    .grid { stroke: #eaeaea; stroke-width: 1; }
+    .axis { stroke: #999; stroke-width: 1.2; }
+    .vec-basis { stroke: #1f4e79; stroke-width: 2.5; fill: none; }
+    .vec-basis2 { stroke: #2e7d32; stroke-width: 2.5; fill: none; }
+    .vec-x { stroke: #c0392b; stroke-width: 2.8; fill: none; }
+    .ghost { stroke: #888; stroke-width: 1.2; stroke-dasharray: 5 4; fill: none; }
+    .label { font-size: 16px; font-style: italic; }
+    .caption { font-size: 13px; fill: #555; }
+    .title { font-size: 15px; fill: #333; }
+    .formula { font-size: 14px; fill: #333; font-style: italic; }
+  </style>
+
+  <!-- Panel 1: standard basis -->
+  <g transform="translate(20,20)">
+    <text x="190" y="20" text-anchor="middle" class="title">In basis e = (e₁, e₂)</text>
+
+    <g class="grid">
+      <line x1="60" y1="60" x2="60" y2="320"/>
+      <line x1="140" y1="60" x2="140" y2="320"/>
+      <line x1="220" y1="60" x2="220" y2="320"/>
+      <line x1="300" y1="60" x2="300" y2="320"/>
+      <line x1="20" y1="100" x2="340" y2="100"/>
+      <line x1="20" y1="180" x2="340" y2="180"/>
+      <line x1="20" y1="260" x2="340" y2="260"/>
+    </g>
+
+    <line x1="20" y1="260" x2="340" y2="260" class="axis"/>
+    <line x1="140" y1="60" x2="140" y2="320" class="axis"/>
+
+    <!-- e1, e2 -->
+    <line x1="140" y1="260" x2="220" y2="260" class="vec-basis" marker-end="url(#arrBlue2)"/>
+    <line x1="140" y1="260" x2="140" y2="180" class="vec-basis" marker-end="url(#arrBlue2)"/>
+
+    <!-- x = (1,1) decomposed -->
+    <line x1="140" y1="260" x2="220" y2="260" class="ghost"/>
+    <line x1="220" y1="260" x2="220" y2="180" class="ghost"/>
+
+    <!-- x vector -->
+    <line x1="140" y1="260" x2="220" y2="180" class="vec-x" marker-end="url(#arrRed2)"/>
+
+    <text x="225" y="275" class="label" fill="#1f4e79">e₁</text>
+    <text x="120" y="178" class="label" fill="#1f4e79">e₂</text>
+    <text x="227" y="172" class="label" fill="#c0392b">x</text>
+
+    <circle cx="140" cy="260" r="3" fill="#333"/>
+
+    <text x="190" y="355" text-anchor="middle" class="formula">x = 1·e₁ + 1·e₂ &#160;&#160;⇒&#160;&#160; [x]ₑ = (1, 1)ᵀ</text>
+  </g>
+
+  <!-- Panel 2: different basis -->
+  <g transform="translate(420,20)">
+    <text x="190" y="20" text-anchor="middle" class="title">In basis b = (b₁, b₂)</text>
+
+    <g class="grid">
+      <line x1="60" y1="60" x2="60" y2="320"/>
+      <line x1="140" y1="60" x2="140" y2="320"/>
+      <line x1="220" y1="60" x2="220" y2="320"/>
+      <line x1="300" y1="60" x2="300" y2="320"/>
+      <line x1="20" y1="100" x2="340" y2="100"/>
+      <line x1="20" y1="180" x2="340" y2="180"/>
+      <line x1="20" y1="260" x2="340" y2="260"/>
+    </g>
+
+    <line x1="20" y1="260" x2="340" y2="260" class="axis"/>
+    <line x1="140" y1="60" x2="140" y2="320" class="axis"/>
+
+    <!-- b1 = (1,0), b2 = (1,1) -->
+    <line x1="140" y1="260" x2="220" y2="260" class="vec-basis2" marker-end="url(#arrGreen)"/>
+    <line x1="140" y1="260" x2="220" y2="180" class="vec-basis2" marker-end="url(#arrGreen)"/>
+
+    <!-- x vector — same as before (1,1) -->
+    <line x1="140" y1="260" x2="220" y2="180" class="vec-x" marker-end="url(#arrRed2)"/>
+
+    <text x="225" y="278" class="label" fill="#2e7d32">b₁</text>
+    <text x="227" y="172" class="label" fill="#c0392b">x = b₂</text>
+
+    <circle cx="140" cy="260" r="3" fill="#333"/>
+
+    <text x="190" y="355" text-anchor="middle" class="formula">x = 0·b₁ + 1·b₂ &#160;&#160;⇒&#160;&#160; [x]_b = (0, 1)ᵀ</text>
+  </g>
+
+  <!-- Bottom message -->
+  <text x="410" y="375" text-anchor="middle" font-size="13" fill="#777" font-style="italic">
+    The arrow x does not move. Only the basis — and therefore the coordinate column — changes.
+  </text>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 270" font-family="Georgia, 'Times New Roman', serif">
+  <style>
+    .title { font-size: 14px; fill: #333; font-weight: bold; }
+    .bracket { stroke: #333; stroke-width: 1.5; fill: none; }
+    .cell-text { font-size: 16px; font-family: 'Cambria Math', 'Times New Roman', serif; font-style: italic; }
+    .row-fill { fill: #e8f0f8; stroke: #1f4e79; stroke-width: 1.2; }
+    .col-fill { fill: #fdf2e9; stroke: #b9770e; stroke-width: 1.2; }
+    .vec-fill { fill: #fce4ec; stroke: #c0392b; stroke-width: 1.5; }
+    .equals { font-size: 24px; fill: #333; }
+    .shape-label { font-size: 11px; fill: #777; font-style: italic; }
+    .caption { font-size: 12px; fill: #555; font-style: italic; }
+  </style>
+
+  <text x="380" y="30" text-anchor="middle" class="title">
+    x = e · X &#160; — &#160; a row of basis vectors times a column of coordinates
+  </text>
+
+  <rect x="60" y="100" width="50" height="60" class="vec-fill" rx="4"/>
+  <text x="85" y="137" text-anchor="middle" class="cell-text" fill="#c0392b">x</text>
+  <text x="85" y="210" text-anchor="middle" class="shape-label">vector ∈ V</text>
+
+  <text x="130" y="138" class="equals">=</text>
+
+  <path d="M 172 110 L 165 110 L 165 150 L 172 150" class="bracket"/>
+  <rect x="180" y="115" width="180" height="30" class="row-fill"/>
+  <text x="200" y="137" class="cell-text" fill="#1f4e79">e₁</text>
+  <text x="232" y="137" class="cell-text" fill="#1f4e79">e₂</text>
+  <text x="270" y="137" class="cell-text" fill="#1f4e79">···</text>
+  <text x="335" y="137" class="cell-text" fill="#1f4e79">eₙ</text>
+  <path d="M 363 110 L 370 110 L 370 150 L 363 150" class="bracket"/>
+  <text x="270" y="210" text-anchor="middle" class="shape-label">basis: 1 × n row of vectors</text>
+
+  <text x="385" y="138" class="equals">·</text>
+
+  <path d="M 422 75 L 410 75 L 410 185 L 422 185" class="bracket"/>
+  <rect x="430" y="80" width="40" height="100" class="col-fill"/>
+  <text x="450" y="105" text-anchor="middle" class="cell-text" fill="#b9770e">x₁</text>
+  <text x="450" y="135" text-anchor="middle" class="cell-text" fill="#b9770e">⋮</text>
+  <text x="450" y="165" text-anchor="middle" class="cell-text" fill="#b9770e">xₙ</text>
+  <path d="M 478 75 L 490 75 L 490 185 L 478 185" class="bracket"/>
+  <text x="450" y="210" text-anchor="middle" class="shape-label">coordinates: n × 1 column</text>
+
+  <text x="515" y="138" class="equals">=</text>
+
+  <text x="552" y="141" class="cell-text" fill="#333">x₁ e₁ + ··· + xₙ eₙ</text>
+  <text x="630" y="210" text-anchor="middle" class="shape-label">a vector in V</text>
+
+  <text x="380" y="240" text-anchor="middle" class="caption">
+    The basis sits on the LEFT because it is a row; the coordinates sit on the RIGHT because they are a column.
+  </text>
+  <text x="380" y="258" text-anchor="middle" class="caption">
+    Matrix multiplication forces these sides — the shapes of the operands determine the geometry.
+  </text>
+</svg>

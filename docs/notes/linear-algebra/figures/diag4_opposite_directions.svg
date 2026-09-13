@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <marker id="arrF1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f4e79"/>
+    </marker>
+    <marker id="arrF2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b9770e"/>
+    </marker>
+  </defs>
+
+  <style>
+    .title { font-size: 14px; fill: #333; font-weight: bold; }
+    .panel-label { font-size: 13px; fill: #333; font-weight: bold; }
+    .box-e { fill: #e8f0f8; stroke: #1f4e79; stroke-width: 1.8; rx: 8; }
+    .box-ep { fill: #fdf2e9; stroke: #b9770e; stroke-width: 1.8; rx: 8; }
+    .arrow-basis { stroke: #1f4e79; stroke-width: 2.5; fill: none; }
+    .arrow-coords { stroke: #b9770e; stroke-width: 2.5; fill: none; }
+    .symbol { font-size: 22px; font-style: italic; }
+    .label { font-size: 16px; font-style: italic; }
+    .matrix-tag { font-size: 16px; font-style: italic; }
+    .small-label { font-size: 12px; fill: #555; }
+    .caption { font-size: 12px; fill: #666; font-style: italic; }
+  </style>
+
+  <!-- TITLE -->
+  <text x="380" y="30" text-anchor="middle" class="title">
+    The basis changes by C; the coordinate column changes by C⁻¹
+  </text>
+
+  <!-- ===========================
+       TOP ROW: BASIS
+       y for boxes: 65 to 125 (height 60)
+       =========================== -->
+  <text x="40" y="100" class="panel-label">Basis:</text>
+
+  <!-- Left box: e -->
+  <rect x="180" y="65" width="160" height="60" class="box-e"/>
+  <text x="260" y="100" text-anchor="middle" class="symbol" fill="#1f4e79">e</text>
+  <text x="260" y="143" text-anchor="middle" class="small-label">old basis (row)</text>
+
+  <!-- Right box: e' -->
+  <rect x="490" y="65" width="160" height="60" class="box-ep"/>
+  <text x="570" y="100" text-anchor="middle" class="symbol" fill="#b9770e">e′</text>
+  <text x="570" y="143" text-anchor="middle" class="small-label">new basis (row)</text>
+
+  <!-- Arrow from e to e' -->
+  <line x1="345" y1="95" x2="485" y2="95" class="arrow-basis" marker-end="url(#arrF1)"/>
+  <text x="415" y="85" text-anchor="middle" class="matrix-tag" fill="#1f4e79">C</text>
+  <text x="415" y="115" text-anchor="middle" class="caption">e′ = e · C</text>
+
+  <!-- Divider -->
+  <line x1="40" y1="180" x2="720" y2="180" stroke="#ddd" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- ===========================
+       BOTTOM ROW: COORDINATES
+       y for boxes: 210 to 270 (height 60)
+       =========================== -->
+  <text x="40" y="245" class="panel-label">Coordinates of fixed x:</text>
+
+  <!-- Left box: X -->
+  <rect x="180" y="210" width="160" height="60" class="box-e"/>
+  <text x="260" y="248" text-anchor="middle" class="label" fill="#1f4e79">X</text>
+  <text x="260" y="288" text-anchor="middle" class="small-label">old coords (column)</text>
+
+  <!-- Right box: X' -->
+  <rect x="490" y="210" width="160" height="60" class="box-ep"/>
+  <text x="570" y="248" text-anchor="middle" class="label" fill="#b9770e">X′</text>
+  <text x="570" y="288" text-anchor="middle" class="small-label">new coords (column)</text>
+
+  <!-- Arrow from X to X' (going right but labeled C^-1) -->
+  <line x1="345" y1="240" x2="485" y2="240" class="arrow-coords" marker-end="url(#arrF2)"/>
+  <text x="415" y="230" text-anchor="middle" class="matrix-tag" fill="#b9770e">C⁻¹</text>
+  <text x="415" y="260" text-anchor="middle" class="caption">X′ = C⁻¹ · X</text>
+
+  <!-- Bottom caption -->
+  <text x="380" y="320" text-anchor="middle" class="caption">
+    They must move oppositely so that the actual vector x = eX = e′X′ stays unchanged.
+  </text>
+</svg>

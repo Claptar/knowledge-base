@@ -1,0 +1,623 @@
+---
+title: "linear-subspaces"
+---
+
+> **Imported note.** Written by me with an AI assistant in [Claptar/math-notes](https://github.com/Claptar/math-notes), imported 2026-09-13. It is *material* — my own exposition — not a record of a worked session. Nothing here is evidence that it has been derived from scratch; a [topic file](../../questions.md) is earned separately.
+
+# Linear Subspaces
+
+## 0. The guiding question
+
+A vector space is a place where we can add vectors and multiply them by scalars. A subspace is a smaller place inside it where those same operations still make sense.
+
+So the basic question is:
+
+> When does a subset of a vector space still behave like a vector space?
+
+This is the first serious structural idea in linear algebra. We do not only study individual vectors; we study collections of vectors that are stable under linear operations. Such collections are the natural objects that appear as solution sets of homogeneous systems, spans of vectors, intersections of conditions, and pieces of decompositions.
+
+Throughout this note, let $V$ be a vector space over a field $K$.
+
+---
+
+## 1. Definition of a subspace
+
+A nonempty subset $U \subseteq V$ is called a **linear subspace** of $V$ if:
+
+1. whenever $u,v \in U$, then
+
+   $$
+   u+v \in U;
+   $$
+
+2. whenever $u \in U$ and $\lambda \in K$, then
+
+   $$
+   \lambda u \in U.
+   $$
+
+The important word is **closed**. A subspace is closed under the operations inherited from the ambient vector space.
+
+This means that once we are inside $U$, linear algebra does not force us to leave $U$. We can add, rescale, and take linear combinations, and the result is still inside $U$.
+
+A useful equivalent form is:
+
+> A nonempty subset $U\subseteq V$ is a subspace if and only if every finite linear combination of vectors from $U$ again lies in $U$.
+
+That is, if
+
+$$
+u_1,\dots,u_m \in U, \qquad \lambda_1,\dots,\lambda_m \in K,
+$$
+
+then
+
+$$
+\lambda_1u_1+\cdots+\lambda_m u_m \in U.
+$$
+
+### Proof idea
+
+If $U$ is closed under addition and scalar multiplication, then repeated use of these two properties gives closure under any finite linear combination. Conversely, addition and scalar multiplication are just special cases of taking a linear combination.
+
+---
+
+## 2. Immediate consequences
+
+### The zero vector belongs to every subspace
+
+If $U$ is a subspace, then
+
+$$
+0 \in U.
+$$
+
+Indeed, since $U$ is nonempty, choose some $u\in U$. Since $U$ is closed under scalar multiplication,
+
+$$
+0u=0 \in U.
+$$
+
+This gives a fast way to reject many subsets: if a subset does not contain the zero vector, it cannot be a subspace.
+
+For example, the line
+
+$$
+x+y=1
+$$
+
+in $\mathbb R^2$ is not a subspace, because it does not pass through the origin.
+
+![Subspace versus not-a-subspace: a line through the origin in the plane (left) is closed under addition and scaling, while the shifted line x+y=1 (right) fails because it does not contain the zero vector.](figures/01-subspace-vs-not.svg)
+
+### A subspace is itself a vector space
+
+If $U\subseteq V$ is a subspace, then $U$ is a vector space using the same addition and scalar multiplication as $V$.
+
+The closure conditions are exactly what is needed to make the operations stay inside $U$. The vector space axioms themselves are inherited from $V$.
+
+So a subspace is not merely a subset. It is a smaller vector space living inside a larger one.
+
+---
+
+## 3. Basic examples
+
+### The smallest and largest subspaces
+
+Every vector space $V$ has two trivial subspaces:
+
+$$
+\{0\}
+$$
+
+and
+
+$$
+V.
+$$
+
+The first is the smallest possible subspace. The second is the whole space.
+
+### Lines and planes through the origin
+
+In $\mathbb R^2$, every line through the origin is a subspace.
+
+In $\mathbb R^3$, every line through the origin and every plane through the origin is a subspace.
+
+The phrase **through the origin** is essential. A shifted line or shifted plane is usually not a subspace because it does not contain $0$ and is not closed under scalar multiplication.
+
+### Homogeneous systems
+
+In $K^n$, the solution set of a homogeneous linear system
+
+$$
+Ax=0
+$$
+
+is a subspace.
+
+The reason is that if $Ax=0$ and $Ay=0$, then
+
+$$
+A(x+y)=Ax+Ay=0,
+$$
+
+and if $\lambda\in K$, then
+
+$$
+A(\lambda x)=\lambda Ax=0.
+$$
+
+So homogeneous linear equations define subspaces.
+
+Non-homogeneous systems usually define shifted subspaces, not subspaces. For example, $Ax=b$ with $b\neq 0$ usually does not contain the zero vector.
+
+### Function spaces
+
+Let $V$ be the vector space of all functions $\mathbb R\to\mathbb R$. The continuous functions form a subspace:
+
+$$
+C(\mathbb R,\mathbb R) \subseteq V.
+$$
+
+Indeed, sums and scalar multiples of continuous functions are continuous.
+
+This example is useful because it reminds us that vectors do not have to be arrows or coordinate columns. Functions can also be vectors.
+
+---
+
+## 4. The linear span: the subspace generated by vectors
+
+Given any subset $S\subseteq V$, its **linear span** is
+
+$$
+\langle S\rangle
+=
+\left\{
+\lambda_1v_1+\cdots+\lambda_m v_m
+\mid
+v_i\in S,\ \lambda_i\in K
+\right\}.
+$$
+
+It is the set of all finite linear combinations of vectors from $S$.
+
+The span is the subspace generated by $S$. If $S$ is a raw collection of vectors, then $\langle S\rangle$ is the full linear world that those vectors force us to include.
+
+Examples:
+
+$$
+\langle v\rangle
+$$
+
+is the line through the origin in the direction $v$, provided $v\neq 0$.
+
+If $v,w\in\mathbb R^3$ are linearly independent, then
+
+$$
+\langle v,w\rangle
+$$
+
+is the plane through the origin spanned by $v$ and $w$.
+
+![Linear spans: the span of one nonzero vector v is a line through the origin (left), and the span of two linearly independent vectors v and w is a plane through the origin (right). The span consists of all finite linear combinations.](figures/02-span.svg)
+
+### Theorem: the span is the smallest subspace containing $S$
+
+For any $S\subseteq V$, the span $\langle S\rangle$ is a subspace of $V$. Moreover, if $W\subseteq V$ is any subspace with $S\subseteq W$, then
+
+$$
+\langle S\rangle \subseteq W.
+$$
+
+So $\langle S\rangle$ is the smallest subspace containing $S$.
+
+### Proof idea
+
+The span is closed under addition and scalar multiplication because sums and scalar multiples of linear combinations are again linear combinations. If a subspace $W$ contains every vector of $S$, then closure under linear combinations forces $W$ to contain every vector in $\langle S\rangle$. Therefore no smaller subspace containing $S$ is possible.
+
+---
+
+## 5. Subspaces as solution sets of homogeneous equations
+
+Subspaces can be described in two complementary ways:
+
+1. **from inside**, by giving spanning vectors;
+2. **from outside**, by giving homogeneous linear equations that vectors must satisfy.
+
+For example, a plane in $\mathbb R^3$ can be described as
+
+$$
+\langle v,w\rangle,
+$$
+
+or as the set of solutions of one equation
+
+$$
+ax+by+cz=0.
+$$
+
+### Theorem: solution sets of homogeneous systems are subspaces
+
+Let $A$ be an $m\times n$ matrix over $K$. Then
+
+$$
+\ker A=\{x\in K^n\mid Ax=0\}
+$$
+
+is a subspace of $K^n$.
+
+### Proof idea
+
+If $x$ and $y$ both solve $Ax=0$, then linearity of matrix multiplication gives
+
+$$
+A(x+y)=Ax+Ay=0.
+$$
+
+Also,
+
+$$
+A(\lambda x)=\lambda Ax=0.
+$$
+
+Thus the solution set is closed under addition and scalar multiplication.
+
+### Dimension of a homogeneous solution space
+
+If $A$ has rank $r$, then
+
+$$
+\dim\ker A=n-r.
+$$
+
+This is the usual rank-nullity principle for a matrix.
+
+### Proof idea
+
+After row reduction, there are $r$ pivot variables and $n-r$ free variables. A solution is determined uniquely by choosing the free variables, so the solution space has $n-r$ independent parameters. Those parameters produce a basis of the kernel.
+
+---
+
+## 6. Intersections: imposing several conditions at once
+
+If $U_1,
+\dots,U_m\subseteq V$ are subspaces, then their intersection
+
+$$
+U_1\cap\cdots\cap U_m
+$$
+
+is also a subspace.
+
+This is one of the most natural constructions. Intersecting subspaces means imposing several linear restrictions at the same time.
+
+For example, in $\mathbb R^3$, two different planes through the origin often intersect in a line through the origin. That line is again a subspace.
+
+![Intersection of two planes through the origin in R^3 is a line through the origin. Any vector that lies in both planes lies in their intersection, and the intersection inherits closure under addition and scaling from each plane.](figures/03-intersection.svg)
+
+### Proof idea
+
+If $x,y$ lie in the intersection, then they lie in every $U_i$. Since each $U_i$ is closed under addition, $x+y$ lies in every $U_i$. So $x+y$ lies in the intersection. Scalar multiplication is the same argument.
+
+---
+
+## 7. Why unions usually fail
+
+If $U,W\subseteq V$ are subspaces, their union
+
+$$
+U\cup W
+$$
+
+is usually not a subspace.
+
+The problem is addition.
+
+Take two different lines through the origin in $\mathbb R^2$. Each line is a subspace. But if $u$ lies on the first line and $w$ lies on the second line, then $u+w$ usually lies on neither line. Therefore $u+w\notin U\cup W$.
+
+So the union is not closed under addition.
+
+![Why the union of two subspaces usually fails to be a subspace: pick u on the first line U and w on the second line W. The sum u+w is constructed by the parallelogram rule and lands off both lines, so u+w is not in U union W.](figures/04-union-fails.svg)
+
+### Theorem: union of two subspaces
+
+For two subspaces $U,W\subseteq V$, the union $U\cup W$ is a subspace if and only if
+
+$$
+U\subseteq W
+$$
+
+or
+
+$$
+W\subseteq U.
+$$
+
+### Proof idea
+
+If one subspace contains the other, then the union is just the larger subspace. Conversely, suppose neither contains the other. Choose $u\in U\setminus W$ and $w\in W\setminus U$. If $U\cup W$ were a subspace, then $u+w$ would lie in $U\cup W$. If $u+w\in U$, then $w=(u+w)-u\in U$, contradiction. If $u+w\in W$, then $u=(u+w)-w\in W$, contradiction. Thus the union cannot be a subspace.
+
+---
+
+## 8. Sums of subspaces: the correct replacement for union
+
+The union is usually too small to be stable under addition. The correct construction is the **sum of subspaces**.
+
+For subspaces $U,W\subseteq V$, define
+
+$$
+U+W=\{u+w\mid u\in U,\ w\in W\}.
+$$
+
+More generally,
+
+$$
+U_1+\cdots+U_m
+=
+\{u_1+\cdots+u_m\mid u_i\in U_i\}.
+$$
+
+![The sum U + W consists of every vector that can be written as u + w with u in U and w in W. Geometrically the parallelogram rule completes every pair into a new vector, and the resulting set fills the smallest subspace containing both U and W.](figures/05-sum.svg)
+
+### Theorem: the sum is the smallest subspace containing the given subspaces
+
+The sum
+
+$$
+U_1+\cdots+U_m
+$$
+
+is a subspace of $V$, and it is the smallest subspace containing every $U_i$.
+
+Equivalently,
+
+$$
+U_1+\cdots+U_m
+=
+\langle U_1\cup\cdots\cup U_m\rangle.
+$$
+
+### Proof idea
+
+The sum is closed under addition because
+
+$$
+(u_1+\cdots+u_m)+(u'_1+\cdots+u'_m)
+=
+(u_1+u'_1)+\cdots+(u_m+u'_m),
+$$
+
+and each $u_i+u'_i$ lies in $U_i$. Closure under scalar multiplication is similar. Any subspace that contains all $U_i$ must contain all sums $u_1+\cdots+u_m$, so it must contain $U_1+\cdots+U_m$.
+
+---
+
+## 9. Dimension and basis extension
+
+Now assume $V$ is finite-dimensional.
+
+If $U\subseteq V$ is a subspace, then one expects $U$ to have dimension no larger than $V$. This is true, but the stronger fact is more useful: a basis of $U$ can be extended to a basis of $V$.
+
+### Theorem: basis extension theorem
+
+Let $V$ be finite-dimensional and let $U\subseteq V$ be a subspace. Then:
+
+1. $\dim U\leq \dim V$;
+2. if $(e_1,\dots,e_m)$ is a basis of $U$, then there exist vectors $e_{m+1},\dots,e_n\in V$ such that
+
+   $$
+   (e_1,\dots,e_m,e_{m+1},\dots,e_n)
+   $$
+
+   is a basis of $V$;
+3. if $\dim U=\dim V$, then $U=V$.
+
+### Proof idea
+
+A linearly independent system in $U$ is also linearly independent in $V$, so it cannot have more than $\dim V$ vectors. Start with a basis of $U$. If it does not yet span $V$, add a vector of $V$ outside its span. This keeps the system linearly independent. Repeat until the system spans $V$. Since $V$ is finite-dimensional, this process stops and gives a basis of $V$.
+
+---
+
+## 10. Adapted bases: making a subspace look like coordinates
+
+A basis of $V$ is called **adapted** to a subspace $U\subseteq V$ if some part of it is a basis of $U$.
+
+Using the basis extension theorem, we may choose a basis
+
+$$
+(e_1,\dots,e_m,e_{m+1},\dots,e_n)
+$$
+
+of $V$ such that
+
+$$
+(e_1,\dots,e_m)
+$$
+
+is a basis of $U$.
+
+In coordinates relative to this basis, every vector $x\in V$ has the form
+
+$$
+x=x_1e_1+\cdots+x_me_m+x_{m+1}e_{m+1}+\cdots+x_ne_n.
+$$
+
+The vectors of $U$ are exactly those with
+
+$$
+x_{m+1}=\cdots=x_n=0.
+$$
+
+So in an adapted basis,
+
+$$
+U=\{x\in V\mid x_{m+1}=\cdots=x_n=0\}.
+$$
+
+This is a crucial viewpoint:
+
+> After choosing a good coordinate system, every subspace becomes a coordinate subspace.
+
+This does not mean every subspace is simple in every coordinate system. It means that the right basis makes the structure visible.
+
+![Adapted basis: in V, choose basis vectors e_1 and e_2 spanning the subspace U, then extend by e_3 outside U. In these coordinates, a vector lies in U exactly when its e_3 coordinate is zero, so U becomes a coordinate subspace.](figures/06-adapted-basis.svg)
+
+---
+
+## 11. A basis adapted to two subspaces
+
+Let $U,W\subseteq V$ be subspaces of a finite-dimensional vector space. It is often useful to choose a basis that sees $U$, $W$, their intersection, and their sum at the same time.
+
+### Theorem: simultaneous adapted basis for two subspaces
+
+There exists a basis of $U+W$ of the form
+
+$$
+(e_1,\dots,e_m,u_1,\dots,u_k,w_1,\dots,w_l),
+$$
+
+where:
+
+$$
+(e_1,\dots,e_m)
+$$
+
+is a basis of $U\cap W$,
+
+$$
+(e_1,\dots,e_m,u_1,\dots,u_k)
+$$
+
+is a basis of $U$, and
+
+$$
+(e_1,\dots,e_m,w_1,\dots,w_l)
+$$
+
+is a basis of $W$.
+
+If needed, this basis of $U+W$ can then be extended to a basis of all of $V$.
+
+### Proof idea
+
+Start with a basis of the overlap $U\cap W$. Extend it to a basis of $U$ by adding vectors $u_1,
+\dots,u_k$. Separately extend the same intersection basis to a basis of $W$ by adding vectors $w_1,\dots,w_l$. The combined list spans $U+W$. To prove it is linearly independent, suppose a linear combination is zero. Move the $W$-part to the other side. Then the same vector lies both in $U$ and in $W$, hence in $U\cap W$. Uniqueness of coordinates in the chosen bases forces all added coefficients to be zero, and then the intersection coefficients are also zero.
+
+This theorem gives a very concrete picture: a pair of subspaces can be organized into three parts:
+
+1. the common part $U\cap W$;
+2. the part of $U$ outside the common part;
+3. the part of $W$ outside the common part.
+
+![Simultaneous adapted basis for two subspaces U and W: a basis e_i of the intersection U intersect W (purple, lying on the intersection line of the planes), extended by vectors u_j inside U but transverse to the intersection (blue), and by vectors w_k inside W but transverse to the intersection (orange). Together they form a basis of U + W.](figures/07-simultaneous-basis.svg)
+
+---
+
+## 12. The Grassmann formula
+
+For finite-dimensional subspaces $U,W\subseteq V$,
+
+$$
+\dim(U+W)=\dim U+\dim W-\dim(U\cap W).
+$$
+
+This is the **Grassmann formula**.
+
+![Grassmann formula as inclusion-exclusion: adding dim U and dim W counts the dimension of the overlap U intersect W twice, so we subtract it once to obtain dim(U + W).](figures/08-grassmann.svg)
+
+### Why the formula makes sense
+
+If we add $\dim U$ and $\dim W$, the intersection $U\cap W$ has been counted twice: once as part of $U$, and once as part of $W$. We subtract it once to correct the count.
+
+### Proof idea
+
+Use the simultaneous adapted basis above. Suppose
+
+$$
+\dim(U\cap W)=m,
+$$
+
+$$
+\dim U=m+k,
+$$
+
+and
+
+$$
+\dim W=m+l.
+$$
+
+The constructed basis of $U+W$ has
+
+$$
+m+k+l
+$$
+
+vectors. Therefore
+
+$$
+\dim(U+W)=m+k+l.
+$$
+
+But
+
+$$
+\dim U+\dim W-\dim(U\cap W)
+=(m+k)+(m+l)-m=m+k+l.
+$$
+
+So the formula follows.
+
+### Consequence
+
+If
+
+$$
+\dim U+\dim W>\dim V,
+$$
+
+then
+
+$$
+U\cap W\neq \{0\}.
+$$
+
+Indeed, since $U+W\subseteq V$, we have
+
+$$
+\dim(U+W)\leq \dim V.
+$$
+
+The Grassmann formula then forces $\dim(U\cap W)>0$.
+
+Geometrically, two planes through the origin in $\mathbb R^3$ must intersect in at least a line, because $2+2>3$.
+
+---
+
+## 13. Summary of the main ideas
+
+A subspace is a subset that is stable under linear operations.
+
+The span $\langle S\rangle$ is the smallest subspace containing a given set of vectors.
+
+The intersection of subspaces is a subspace because it preserves all the restrictions at once.
+
+The union of subspaces is usually not a subspace because addition can leave the union.
+
+The sum $U+W$ is the correct linear replacement for the union.
+
+In finite dimensions, every basis of a subspace can be extended to a basis of the whole space.
+
+An adapted basis makes a subspace look like a coordinate subspace.
+
+The Grassmann formula
+
+$$
+\dim(U+W)=\dim U+\dim W-\dim(U\cap W)
+$$
+
+is the dimension-counting rule for sums of subspaces.
+
+The central mental model is:
+
+> Subspaces are the linear pieces of a vector space. They can be generated by vectors, described by equations, intersected, added, and simplified by a good choice of basis.
