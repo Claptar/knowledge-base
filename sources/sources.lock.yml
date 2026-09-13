@@ -2,6 +2,7 @@ version: 1
 generated: '2026-09-14'
 sources:
 - slug: _archives
+  material: archive
   licence: unresolved
   holds: scaffolding
   files: 6
@@ -31,6 +32,7 @@ sources:
     sha256: 2d57de63d54086fce92a332b774f31d2dce2f661a37372213d4998fe9bdc4a85
   note: publisher zips for the OCW courses — the route back to original filenames
 - slug: berkeley-guntuboyina-notes
+  material: notes
   licence: unresolved
   holds: material
   files: 4
@@ -53,6 +55,7 @@ sources:
     bytes: 740633
     sha256: f752d67594a87c04943c0560217304c82c034d6c46275e3aac876fb7aa3876d6
 - slug: berkeley-stat-c245b-vanderlaan
+  material: course
   licence: unresolved
   holds: material
   files: 16
@@ -112,6 +115,7 @@ sources:
     sha256: 2033e9d09ab1a0fcd757478cd946bcc2d87e9355842ede84fb292ab8be793eb0
   catalogue: docs/resources/berkeley-statistics.md
 - slug: berkeley-stat-c245c-leishi
+  material: course
   licence: unresolved
   holds: material
   files: 24
@@ -195,6 +199,7 @@ sources:
     sha256: 9a32648a3b257e3ffc8076bb8240bf91036d94598ec74587ac5a90c6121aac63
   catalogue: docs/resources/berkeley-statistics.md
 - slug: berkeley-stat150/aldous-legacy
+  material: course
   licence: unresolved
   holds: material
   files: 40
@@ -325,6 +330,7 @@ sources:
     bytes: 585081
     sha256: e6f9cc0796575b407869a79c39713de3c61333aff3c276958fcf80cfcd459e9d
 - slug: berkeley-stat150/au-f21
+  material: course
   licence: unresolved
   holds: material
   files: 27
@@ -416,6 +422,7 @@ sources:
     bytes: 7405
     sha256: b8d4ca95cc15e471a3ba23e628bde9f540896862a50841170ac7ba8ec63ec939
 - slug: berkeley-stat150/au-f22
+  material: course
   licence: unresolved
   holds: material
   files: 23
@@ -495,6 +502,7 @@ sources:
     bytes: 7314
     sha256: 1297a0bb0259fd1daa940fd9af41d7a9f723e61ffe26cb046d03d53ddbf3b621
 - slug: berkeley-stat150/au-f23
+  material: course
   licence: unresolved
   holds: material
   files: 25
@@ -580,6 +588,7 @@ sources:
     bytes: 8155
     sha256: 24653da49bddc503d637b16a99ce279dd3449c5bfc1bc0a2beed4abd930fa723
 - slug: berkeley-stat150/au-s23
+  material: course
   licence: unresolved
   holds: material
   files: 25
@@ -665,6 +674,7 @@ sources:
     bytes: 140289
     sha256: 3d6d96502507fc3063574951f22e39d9aff76fb40271b54862e9ad0080e5ad16
 - slug: berkeley-stat150/au-s24
+  material: course
   licence: unresolved
   holds: material
   files: 25
@@ -750,6 +760,7 @@ sources:
     bytes: 142648
     sha256: 46931d5b0eda04263a8da0de392c258576e281186637fe51a609e04597868460
 - slug: berkeley-stat150/spring-2026
+  material: course
   licence: CC BY 4.0
   holds: unclear
   files: 28
@@ -762,6 +773,7 @@ sources:
   commit: 88be72c5f14551686a5be663f67adc7dd6db7af7
   restorable: upstream
 - slug: berkeley-stat153/fall-2024
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 221
@@ -774,6 +786,7 @@ sources:
   commit: 94c943d315ea7361f1f660f42881d219a7e7f009
   restorable: upstream
 - slug: berkeley-stat153/fall-2025
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 105
@@ -786,6 +799,7 @@ sources:
   commit: df8e8e972b95eb1235ce8a17f88722e852802200
   restorable: upstream
 - slug: berkeley-stat153/fall-2026
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 38
@@ -798,6 +812,7 @@ sources:
   commit: 1df2e362c312415dc83d910dc9e724e1646fafab
   restorable: upstream
 - slug: berkeley-stat153/spring-2025
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 89
@@ -810,6 +825,7 @@ sources:
   commit: 60232ff1b10a6e871e4de968015b36891a606030
   restorable: upstream
 - slug: berkeley-stat153/spring-2026
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 880
@@ -822,6 +838,7 @@ sources:
   commit: c08dd12c146698bb6ea1d0c6887d1898a8d98c6e
   restorable: upstream
 - slug: berkeley-stat156/fall-2024
+  material: course
   licence: CC BY-NC 4.0
   holds: material
   files: 51
@@ -834,6 +851,7 @@ sources:
   commit: bbfe05b00bcc6fcbcf3140ad89cda2c5b36ed75e
   restorable: upstream
 - slug: berkeley-stat158/spring-2025
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 15
@@ -846,6 +864,7 @@ sources:
   commit: 02be3b577c9af913bfbbda698495471c2f909adb
   restorable: upstream
 - slug: berkeley-stat158/spring-2026
+  material: course
   licence: unresolved
   holds: material
   files: 513
@@ -857,6 +876,7 @@ sources:
   commit: 3863c023585286c55df692b83ee6cd5c56dbe822
   restorable: upstream
 - slug: berkeley-stat201a/fall-2024
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 15
@@ -869,6 +889,7 @@ sources:
   commit: 517ddd578d1f24f3338ec3c929606d3d28a70704
   restorable: upstream
 - slug: berkeley-stat201b/fall-2024
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 14
@@ -881,6 +902,7 @@ sources:
   commit: 302a8048139aab44435eb98c8e3f9ab42df2074c
   restorable: upstream
 - slug: berkeley-stat205a/aldous-legacy
+  material: course
   licence: unresolved
   holds: material
   files: 6
@@ -909,6 +931,7 @@ sources:
     bytes: 659728
     sha256: 6003458ca28e128812e972e58270e3a0ab9aed3d45bed8f8a9edefc2d509c8ca
 - slug: berkeley-stat205a/fall-2024
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 13
@@ -921,6 +944,7 @@ sources:
   commit: 0daa2bb40a1269b6c951b118a1196ccff8761fa5
   restorable: upstream
 - slug: berkeley-stat205b/aldous-legacy
+  material: course
   licence: unresolved
   holds: material
   files: 14
@@ -973,6 +997,7 @@ sources:
     bytes: 659728
     sha256: 6003458ca28e128812e972e58270e3a0ab9aed3d45bed8f8a9edefc2d509c8ca
 - slug: berkeley-stat205b/spring-2026
+  material: course
   licence: CC BY 4.0
   holds: unclear
   files: 26
@@ -985,6 +1010,7 @@ sources:
   commit: db22baac43fb4c39112acd706940c72e2deccac4
   restorable: upstream
 - slug: berkeley-stat206a/fall-2024
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 13
@@ -997,6 +1023,7 @@ sources:
   commit: 67b33919409b2507b48465b8d9e92b11fb41a983
   restorable: upstream
 - slug: berkeley-stat206b/spring-2025
+  material: course
   licence: CC BY 4.0
   holds: scaffolding
   files: 15
@@ -1009,6 +1036,7 @@ sources:
   commit: 010df60fbc31daa6fbb19503f12d1b45ff8d8e6d
   restorable: upstream
 - slug: berkeley-stat206b/spring-2026
+  material: course
   licence: CC BY 4.0
   holds: unclear
   files: 28
@@ -1021,6 +1049,7 @@ sources:
   commit: 3f3ba771e972d8544e021243999531ad753161b9
   restorable: upstream
 - slug: berkeley-stat210a/fall-2024
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 184
@@ -1033,6 +1062,7 @@ sources:
   commit: 812543bde50398a54db3044bf8ba7120189a4dfa
   restorable: upstream
 - slug: berkeley-stat210a/fall-2025
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 243
@@ -1045,6 +1075,7 @@ sources:
   commit: 5eb849a4924c34eb73e098cdfc812ffa8d806501
   restorable: upstream
 - slug: berkeley-stat210a/fall-2026
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 135
@@ -1057,6 +1088,7 @@ sources:
   commit: 7dc8f80da94dff74532d9e3923afdb16a255262d
   restorable: upstream
 - slug: berkeley-stat210b/spring-2025
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 13
@@ -1069,6 +1101,7 @@ sources:
   commit: 6a725bda2894de573659dd9ae38e3ca1b5cb41d5
   restorable: upstream
 - slug: berkeley-stat230a/spring-2025
+  material: course
   licence: CC BY 4.0
   holds: scaffolding
   files: 21
@@ -1081,6 +1114,7 @@ sources:
   commit: e876671afc2665ae79c2a5263b03c3377f6e2836
   restorable: upstream
 - slug: berkeley-stat230a/spring-2026
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 15
@@ -1093,6 +1127,7 @@ sources:
   commit: 3999c62f8688b734d0aebe5759554705ed20fd3e
   restorable: upstream
 - slug: berkeley-stat243/fall-2024
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 209
@@ -1105,6 +1140,7 @@ sources:
   commit: 9c62305d05fca31df0d9c6a3b68b350ad8722fee
   restorable: upstream
 - slug: berkeley-stat243/fall-2025
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 232
@@ -1117,6 +1153,7 @@ sources:
   commit: 035a19ebd7ab88cffca907cade6d40212d575a1f
   restorable: upstream
 - slug: berkeley-stat243/fall-2026
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 54
@@ -1129,6 +1166,7 @@ sources:
   commit: c74395ec9c420005c80bbcc5f315729aaee3dc32
   restorable: upstream
 - slug: berkeley-stat243/stat243-fall-2014
+  material: course
   licence: unresolved
   holds: material
   files: 172
@@ -1140,6 +1178,7 @@ sources:
   commit: 49fcee4ef42342d81d010e586b69d92a94bbb12f
   restorable: upstream
 - slug: berkeley-stat243/stat243-fall-2015
+  material: course
   licence: unresolved
   holds: material
   files: 121
@@ -1151,6 +1190,7 @@ sources:
   commit: ee3c3c2c523a96eefceddf8703d4938396730993
   restorable: upstream
 - slug: berkeley-stat243/stat243-fall-2017
+  material: course
   licence: unresolved
   holds: material
   files: 122
@@ -1162,6 +1202,7 @@ sources:
   commit: 0e9c7fe58194834b0d43b3dbf152d28a37044d05
   restorable: upstream
 - slug: berkeley-stat243/stat243-fall-2018
+  material: course
   licence: unresolved
   holds: material
   files: 127
@@ -1173,6 +1214,7 @@ sources:
   commit: be0e210baad11c83cecdb23dcb9e91f609bc536a
   restorable: upstream
 - slug: berkeley-stat243/stat243-fall-2019
+  material: course
   licence: unresolved
   holds: material
   files: 187
@@ -1184,6 +1226,7 @@ sources:
   commit: b2795324dec367a50f578b01c67d907994ff40f5
   restorable: upstream
 - slug: berkeley-stat243/stat243-fall-2020
+  material: course
   licence: unresolved
   holds: material
   files: 159
@@ -1195,6 +1238,7 @@ sources:
   commit: fd024cc8537586f4869f79be1492009acfe62d76
   restorable: upstream
 - slug: berkeley-stat243/stat243-fall-2021
+  material: course
   licence: CC0-1.0
   holds: material
   files: 143
@@ -1207,6 +1251,7 @@ sources:
   commit: c918dcc56a197cc539e270f1f7d076010b175c52
   restorable: upstream
 - slug: berkeley-stat243/stat243-fall-2022
+  material: course
   licence: unresolved
   holds: material
   files: 212
@@ -1218,6 +1263,7 @@ sources:
   commit: 34dee34760386ed7a0ea4f1fd1c9e7d088e637ff
   restorable: upstream
 - slug: berkeley-stat243/stat243-fall-2023
+  material: course
   licence: BSD-3-Clause
   holds: material
   files: 295
@@ -1230,6 +1276,7 @@ sources:
   commit: 14ac5335a61c8e78d9c36ec381d606a22cb95bf9
   restorable: upstream
 - slug: degroot-schervish
+  material: book
   licence: unresolved
   holds: scaffolding
   files: 2
@@ -1247,6 +1294,7 @@ sources:
     sha256: 89a9c7538df5945fda47a93c8d1b820fcf29de69ff9781ea044022c2eadbd470
   note: book PDF, added by hand
 - slug: gtpb-psls20
+  material: course
   licence: CC BY 4.0
   holds: material
   files: 125
@@ -1259,14 +1307,15 @@ sources:
   commit: 55acd654e639f1d5297dc0f2e46d8fd6855b5bad
   restorable: upstream
 - slug: ocw-6041sc
-  licence: unresolved
+  material: course
+  licence: CC BY-NC-SA 4.0
   holds: material
   files: 402
   bytes: 80416757
   fetched: '2026-09-13'
   kind: files
-  base: null
-  restorable: never
+  base: https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/
+  restorable: upstream
   contents:
   - name: _manifest.csv
     bytes: 48490
@@ -2476,14 +2525,15 @@ sources:
     sha256: 205743f87ab083ae0d304a9b5078b426fe06fbb927b40f1eb3485390a85c9573
   note: MIT OCW export, unpacked from sources/_archives/
 - slug: ocw-6047
-  licence: unresolved
+  material: course
+  licence: CC BY-NC-SA 4.0
   holds: material
   files: 20
   bytes: 92977891
   fetched: '2026-09-13'
   kind: files
-  base: null
-  restorable: never
+  base: https://ocw.mit.edu/courses/6-047-computational-biology-fall-2015/
+  restorable: upstream
   contents:
   - name: _manifest.csv
     bytes: 1517
@@ -2547,14 +2597,15 @@ sources:
     sha256: ffdc57792d3f6854f506184a0cc90daf0a45060f5a6125ce0e858654c924f968
   note: MIT OCW export, unpacked from sources/_archives/
 - slug: ocw-7091j
-  licence: unresolved
+  material: course
+  licence: CC BY-NC-SA 4.0
   holds: material
   files: 112
   bytes: 104296866
   fetched: '2026-09-13'
   kind: files
-  base: null
-  restorable: never
+  base: https://ocw.mit.edu/courses/7-91j-foundations-of-computational-and-systems-biology-spring-2014/
+  restorable: upstream
   contents:
   - name: _manifest.csv
     bytes: 9762
@@ -2894,14 +2945,15 @@ sources:
     sha256: 6e598a01e6337deae49d73b502dcd4dee144db0aa1e3657a1534494d59f30a93
   note: MIT OCW export, unpacked from sources/_archives/
 - slug: ocw-8591j-2004
-  licence: unresolved
+  material: course
+  licence: CC BY-NC-SA 4.0
   holds: material
   files: 35
   bytes: 9869599
   fetched: '2026-09-13'
   kind: files
-  base: null
-  restorable: never
+  base: https://ocw.mit.edu/courses/8-591j-systems-biology-fall-2004/
+  restorable: upstream
   contents:
   - name: _manifest.csv
     bytes: 2484
@@ -3010,14 +3062,15 @@ sources:
     sha256: 05df5f24a39e0147e3078b4fb4f77a77c0e636a9e4428a19a21f4217de76a485
   note: MIT OCW export, unpacked from sources/_archives/
 - slug: ocw-8591j-2014
-  licence: unresolved
+  material: course
+  licence: CC BY-NC-SA 4.0
   holds: material
   files: 89
   bytes: 14830806
   fetched: '2026-09-13'
   kind: files
-  base: null
-  restorable: never
+  base: https://ocw.mit.edu/courses/8-591j-systems-biology-fall-2014/
+  restorable: upstream
   contents:
   - name: _manifest.csv
     bytes: 7659
@@ -3288,14 +3341,15 @@ sources:
     sha256: d02448ee8895491a4b3c35b55d53b4329f83cb2745fb38609d94e218968a0cea
   note: MIT OCW export, unpacked from sources/_archives/
 - slug: ocw-8592j
-  licence: unresolved
+  material: course
+  licence: CC BY-NC-SA 4.0
   holds: material
   files: 25
   bytes: 4602441
   fetched: '2026-09-13'
   kind: files
-  base: null
-  restorable: never
+  base: https://ocw.mit.edu/courses/8-592j-statistical-physics-in-biology-spring-2011/
+  restorable: upstream
   contents:
   - name: _manifest.csv
     bytes: 1719
@@ -3374,6 +3428,7 @@ sources:
     sha256: 2740e4d9d861c62cab77292c32a0dc60b14913f30bbdeb09de1032aafc520a4f
   note: MIT OCW export, unpacked from sources/_archives/
 - slug: resnick-adventures
+  material: book
   licence: unresolved
   holds: scaffolding
   files: 2
@@ -3391,6 +3446,7 @@ sources:
     sha256: ee2328209c8807912345b0a0e3809ef2ac5c61a37116e4dbf8551ca123d942aa
   note: book PDF, added by hand
 - slug: statomics-sga2020
+  material: course
   licence: unresolved
   holds: scaffolding
   files: 5
@@ -3402,6 +3458,7 @@ sources:
   commit: 0ee44bf6f117bb7ad65ee3ca3e35b127c91348ff
   restorable: upstream
 - slug: statomics-sga2020-data
+  material: data
   licence: unresolved
   holds: unclear
   files: 50
@@ -3413,6 +3470,7 @@ sources:
   commit: 61292e8a6774234b030daa1e4eb6d18be7456068
   restorable: upstream
 - slug: statomics-sga2020-data-rnaseq
+  material: data
   licence: unresolved
   holds: unclear
   files: 157
@@ -3424,6 +3482,7 @@ sources:
   commit: ad071208efb7e0ffe0e021f1bda9de6669edb267
   restorable: upstream
 - slug: statomics-sga2020-ghpages
+  material: course
   licence: CC0-1.0
   holds: material
   files: 227
@@ -3436,6 +3495,7 @@ sources:
   commit: ded99ebf046477d39ae1950eed10a4ba901b948d
   restorable: upstream
 - slug: statomics-sga21
+  material: course
   licence: unresolved
   holds: material
   files: 147
@@ -3447,6 +3507,7 @@ sources:
   commit: 0ad787d4cc2bb2f4636440840a8a923cf6c09839
   restorable: upstream
 - slug: statomics-statistiekcursusnotas
+  material: course
   licence: unresolved
   holds: scaffolding
   files: 1
@@ -3458,6 +3519,7 @@ sources:
   commit: 04ba54790276697eac9a9635a2e28ce5c2c83380
   restorable: upstream
 - slug: statomics-statistiekcursusnotas-ghpages
+  material: course
   licence: unresolved
   holds: material
   files: 219
@@ -3469,6 +3531,7 @@ sources:
   commit: a1c505bbdddd3d602fa9cc629bef7ee772233d14
   restorable: upstream
 - slug: van-kampen-sppc
+  material: book
   licence: unresolved
   holds: scaffolding
   files: 2
