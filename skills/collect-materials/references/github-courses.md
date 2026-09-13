@@ -57,6 +57,21 @@ the same course.
 
 ## Gotchas
 
+- **The content may not be on the default branch, and this is the one that wastes a session.**
+  A site served from `<org>.github.io/<repo>/` is often built from a **`gh-pages` branch** while the
+  default branch holds a stub. `git clone --depth 1` takes the default branch and returns almost
+  nothing — `statOmics/SGA2020` gives **5 files** on `master` and **229 files, 515 MB** on
+  `gh-pages`. Data is sometimes split off again onto its own branches (`data`, `data-rnaseq`).
+  **List branches before concluding a repo is empty:**
+
+  ```bash
+  gh api "repos/<org>/<repo>" --jq .default_branch
+  gh api "repos/<org>/<repo>/branches" --jq '.[].name'
+  git clone --depth 1 -b gh-pages https://github.com/<org>/<repo>.git <dest>
+  ```
+
+  A repo whose size in the API is large but whose clone is tiny is this, every time — the API
+  reports the whole repository, all branches included.
 - **Course orgs accumulate junk.** `test-repo`, `sec08`, abandoned scaffolds. Judge by
   `pushed_at` and by whether the repo has content, not by its name.
 - **Solutions are often on a separate branch or a private sibling repo.** `gh api
