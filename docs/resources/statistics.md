@@ -10,7 +10,7 @@ The division of labour worth holding onto: DeGroot is machinery, Cox is meaning.
 
 ### degroot-schervish — DeGroot & Schervish, *Probability and Statistics* { #degroot-schervish }
 
-**Kind:** book · **Access:** local · `sources/degroot-schervish-probability-and-statistics.pdf`
+**Kind:** book · **Access:** local · `sources/degroot-schervish/book.pdf`
 **Licence:** all rights reserved — any adaptation stays unpublished
 **Status:** reading — the current main text · **Adapted:** none
 

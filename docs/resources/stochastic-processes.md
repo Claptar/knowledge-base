@@ -10,7 +10,7 @@ locally; both are all-rights-reserved, so neither may be adapted into the publis
 
 ### van-kampen-sppc — van Kampen, *Stochastic Processes in Physics and Chemistry* { #van-kampen-sppc }
 
-**Kind:** book · **Access:** local · `sources/van-kampen-sppc.pdf`
+**Kind:** book · **Access:** local · `sources/van-kampen-sppc/book.pdf`
 **Licence:** all rights reserved — any adaptation goes to `adapted-private/`
 **Status:** unvetted · **Adapted:** none
 
@@ -25,7 +25,7 @@ would be most useful and least publishable.
 
 ### resnick-adventures — Resnick, *Adventures in Stochastic Processes* { #resnick-adventures }
 
-**Kind:** book · **Access:** local · `sources/resnick-adventures-in-stochastic-processes.pdf`
+**Kind:** book · **Access:** local · `sources/resnick-adventures/book.pdf`
 **Licence:** all rights reserved — any adaptation goes to `adapted-private/`
 **Status:** unvetted · **Adapted:** none
 

@@ -15,12 +15,13 @@ study-kb/
     path.md                 # the learning path — the one page written before the work
     profile.md              # background, notation habits, what he knows cold
     log.md                  # dated sessions, newest first, next step at the top
-    resources.md            # evaluated materials with verdicts
+    resources/              # evaluated materials, one file per subject
     topics/<topic>.md       # one per topic: the trajectory through it
     practice/<topic>.md     # attempts, mistakes, what each mistake revealed
     adapted/<topic>-<src>.md  # external material rewritten into the form he learns from
   skills/                   # these skills. Not published.
-  sources/                  # downloaded source material. Gitignored, never published.
+  sources/<slug>/           # source material, normalised at ingest. Gitignored.
+  adapted-private/          # adaptations of all-rights-reserved sources. Gitignored.
   mkdocs.yml                # site config
 ```
 
@@ -59,7 +60,7 @@ studied.
 The question that would force this concept, in two or three lines.
 
 **Anchor.** The specific existing thing it attaches to — same standard as a topic file.
-**Source.** A link into resources.md, never a verdict restated here.
+**Source.** A link into `resources/`, never a verdict restated here.
 
 Optional, only where there is something real to say:
 **Trap to watch.** A false analogy the node invites.
@@ -163,16 +164,42 @@ What was covered, what clicked, what didn't. Two to five lines. Link to the topi
 than duplicating its content.
 ```
 
-## resources.md
+## resources/
 
-Grouped by topic. Each entry gets a verdict, including what's wrong with it — that judgement is
-the expensive part and the reason not to re-search the same ground later.
+A directory, one file per subject, indexed by `resources/index.md`. Each entry gets a verdict —
+including what is wrong with the source — because that judgement is the expensive part and the
+reason not to re-search the same ground later.
 
 ```markdown
-## <Topic>
-- **<Author, Title>** (book/notes/paper/course) — what it's good for; what's weak about it;
-  whether it motivates or just states. Link.
+### <slug> — <Author, Title> { #<slug> }
+
+**Kind:** book · **Access:** local · `sources/<slug>/book.pdf`
+**Licence:** all rights reserved — adaptation stays unpublished
+**Status:** unvetted · **Adapted:** none · **Work:** topics/<topic>.md, practice/<topic>.md
+
+The verdict in prose: what it is good for, what is weak, whether it motivates or merely states.
 ```
+
+The explicit `{ #slug }` anchor matters: the slug is the source's identity everywhere — the
+catalogue entry, the `sources/<slug>/` directory, and the `adapted/<topic>-<slug>.md` filename —
+so it must be linkable directly rather than through a generated heading slug.
+
+Three fields carry the weight:
+
+- **`Access`** — `fetchable` / `local` / `private-host` / `unreadable`. It answers whether an agent
+  can actually open the source. An out-of-reach source is to be reported as such, **never**
+  reconstructed from memory.
+- **`Licence`** — decides where an adaptation may live. CC-licensed sources adapt into
+  `adapted/` and carry the same licence; all-rights-reserved ones adapt into `adapted-private/`,
+  which is gitignored. Unclear licence goes private.
+- **`Work`** — points at `topics/` and `practice/` files. His own notes and worked sessions on a
+  source are **record**, so they live in the knowledge base and are committed; they never go in
+  `sources/`, which is gitignored and would lose them. Practice is organised by *topic*, not by
+  book, because understanding is topic-shaped.
+
+`sources/<slug>/` holds the material itself, normalised at ingest to one layout regardless of
+publisher, with a `_manifest.csv` mapping back to the original filenames. The full convention is in
+`resources/index.md`; the scripts are in `skills/adapt-recordings/scripts/`.
 
 ## Update rules
 

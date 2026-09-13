@@ -30,20 +30,56 @@ be linked to directly — `resources/stochastic-processes.md#van-kampen-sppc` �
 ```markdown
 ### van-kampen-sppc — van Kampen, *Stochastic Processes in Physics and Chemistry* { #van-kampen-sppc }
 
-**Kind:** book · **Access:** local · `sources/van-kampen-sppc.pdf`
+**Kind:** book · **Access:** local · `sources/van-kampen-sppc/book.pdf`
 **Licence:** all rights reserved — adaptation stays unpublished
 **Status:** unvetted · **Adapted:** none
 
 The verdict, in prose: what it is good for, what is weak, whether it motivates or merely states.
 ```
 
-That one slug ties the three places a source appears:
+That one slug ties every place a source appears, and the directory name **is** the slug:
 
 ```
 docs/resources/stochastic-processes.md#van-kampen-sppc   the entry and the verdict
-sources/van-kampen-sppc.pdf                              the local copy, gitignored
+sources/van-kampen-sppc/                                 the local copy, gitignored
 docs/adapted/<topic>-van-kampen-sppc.md                  the adaptation, if one exists
+docs/topics/…, docs/practice/…                           what he actually did with it
 ```
+
+## How a source folder is laid out
+
+Sources arrive from different places with incompatible naming — MIT OCW alone uses four schemes
+across six courses. They are normalised **once at ingest** so that everything downstream reads one
+layout instead of learning each publisher's conventions:
+
+```
+sources/<slug>/
+  lectures/       01-slides.pdf  01-transcript.pdf  01-captions.srt
+  recitations/    2014-02-11-slides.pdf        # dated material keeps its date
+  psets/          03-questions.pdf
+  solutions/      exams/  tutorials/  lecture-outlines/
+  worked-examples/  coupon-collector-transcript.pdf
+  recordings/     video-derived files with no better name than their id
+  other/          genuinely miscellaneous
+  _manifest.csv   every file's original publisher filename
+  book.pdf        for a book rather than a course
+```
+
+Filenames are `<index-or-slug>-<artefact type>.<ext>`. An **index** is used where the title carries
+nothing ("Lecture 4"); a **slugified title** is kept where it does, because for a worked-example
+clip the title is the content and `07` would throw that away; a **date** is used where the source
+dates rather than numbers its material, since inventing an index there produces four different
+recitations all claiming to be number 2.
+
+**`_manifest.csv` is not optional.** It maps every normalised path back to the publisher's original
+filename, which is the only route back to the thing on their site. Without it a renamed file cannot
+be checked against its source, and the rule that every claim is checkable would be broken. It also
+makes the rename reversible, which is how two bugs in this repo's own normaliser were caught and
+fixed without data loss.
+
+Scripts live in `skills/adapt-recordings/scripts/` — `course_inventory.py` to see what a source
+holds, `organise_course.py` to sort a flat export into the folders above, `normalise_names.py` to
+rename. All three default to a dry run.
 
 ## Access — can this actually be opened?
 
