@@ -58,7 +58,7 @@ to teach go in the skill.
 **The knowledge base root is `docs/`.** Bare filenames below (`profile.md`, `topics/`) mean relative
 to it. Everything in `docs/` is published; nothing outside it is.
 
-## The three skills
+## The four skills
 
 The real tree is `skills/`. `.claude/skills` and `.agents/skills` are **symlinks** to it, so both
 audiences read one copy and there is no way for them to drift. Never edit through a symlink path
@@ -75,10 +75,15 @@ Each `SKILL.md` is the authority on its own workflow.
   speech: reconstructing mathematics that was spoken and written on an uncaptured board, naming
   what the recording points at but does not contain, and triaging which recordings are worth
   adapting at all. Hands the document shape to `adapt-material`.
+- **`collect-materials`** — a provider in, catalogue entries out. Owns the per-provider recipes:
+  where a site's material actually lives, what is gated behind a campus login, and which licence
+  claim is about the website template rather than the content. **It locates; it does not judge** —
+  its entries are always `unvetted`, and `study-mentor` step 4 is what earns a verdict. Its
+  standing obligation: harvesting from a provider with no recipe means writing one.
 
 Route by the shape of the output first — a conversation is `study-mentor`, a file is one of the
-adapters — then by the source: a transcript or recording is `adapt-recordings`, anything written is
-`adapt-material`. All three hand off in every direction.
+adapters, a catalogue entry is `collect-materials` — then by the source: a transcript or recording
+is `adapt-recordings`, anything written is `adapt-material`. All four hand off in every direction.
 
 When working inside this repo, read and write the files under `docs/` directly, summarise the
 changes as a diff, and let him commit.
@@ -179,6 +184,15 @@ from them the day it copies them, and it is the copy that goes stale.
 Licence matters here because this repo is published: most course notes, papers and chapters may
 not be redistributed, and the permissively-licensed ones still carry conditions a notes repo should
 not take on. **Never commit a source file, and never publish one to the site.**
+
+**Look for the papers, not only the lecture notes.** A course is a route through settled material;
+a paper is the moment someone had to argue for something, and the argument is the half he is
+actually after. Prefer the original where the topic is recent or contested, where the method
+carries its author's name, or where the question is *why is it done this way* — the textbook
+presents the winner and drops the argument, which is the artificiality he objects to. A syllabus's
+bibliography is often worth more than its slides, being an expert's judgement about which papers
+matter; harvest it as entries in its own right. This cuts both ways: a paper is not automatically
+better, and a good set of notes with problem sets beats a paper he has no route into.
 
 ## An adaptation is a derivative work
 

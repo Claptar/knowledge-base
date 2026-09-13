@@ -33,6 +33,12 @@ lecture notes, slides, a paper — goes to `../adapt-material/SKILL.md`; a recor
 and a document does not. The reverse handoff is also common: once an adaptation exists, working
 through it is a session for this skill.
 
+If the job is *gathering* material from a provider rather than judging it — a course site, a
+university department, a GitHub course org — that is `../collect-materials/SKILL.md`, which owns
+the per-provider recipes and the licence traps. It hands back catalogue entries marked `unvetted`;
+step 4 below is what turns one into a verdict. The two halves are deliberate: it knows where things
+are, this skill knows whether they are any good.
+
 ## Step 1 — load the knowledge base
 
 The knowledge base lives at **https://github.com/Claptar/knowledge-base** — a git
@@ -131,6 +137,13 @@ recommendations are worse than none. When evaluating what you find:
 - **Prefer primary sources and real lecture notes.** Original papers, course notes with problem
   sets, lecture series by people who work in the area. These carry motivation and the author's
   own reasoning, which is what he is after.
+- **Often the paper beats the notes, and for anything research-facing it usually does.** A course
+  is a route through settled material; a paper is the moment someone had to argue for something,
+  and the argument is where the motivation lives. Reach for the original when the topic is recent
+  or contested, when a method carries its author's name — Gillespie's SSA, the finite state
+  projection, the Poisson representation — or when the question is *why is it done this way*,
+  because the textbook presents the winner and drops the argument. A syllabus's bibliography is
+  frequently worth more than its slides: it is an expert's judgement about which papers matter.
 - **Skip introductory material.** He does not need a gentle on-ramp; a summary aimed at newcomers
   is a waste of his time, and he has said so. Assume the level of a working researcher with a
   strong linear-algebra and probability background.

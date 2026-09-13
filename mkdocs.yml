@@ -83,6 +83,7 @@ nav:
   - Resources:
       - Overview: resources/index.md
       - Courses: resources/courses.md
+      - Berkeley statistics: resources/berkeley-statistics.md
       - Doing mathematics: resources/doing-mathematics.md
       - Analysis: resources/analysis.md
       - Linear algebra: resources/linear-algebra.md

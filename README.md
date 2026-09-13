@@ -25,6 +25,7 @@ docs/                          the knowledge base, and the published site
 skills/study-mentor/           runs study sessions; reads and writes all of the above
 skills/adapt-material/         rewrites a written source into adapted/
 skills/adapt-recordings/       turns lecture transcripts into notes, not tidied speech
+skills/collect-materials/      finds material from a provider; owns the per-provider recipes
 sources/                       downloaded source material — gitignored, never published
 adapted-private/               adaptations of all-rights-reserved sources — gitignored
 
@@ -56,7 +57,7 @@ question, the definition, and the proof technique. Every convention here follows
 
 ## Using the skills
 
-Run Claude Code from the repo root and all three skills load from `skills/`, via the
+Run Claude Code from the repo root and all four skills load from `skills/`, via the
 `.claude/skills` symlink. To use them outside this repo, install it as a plugin:
 
 ```
@@ -75,9 +76,14 @@ Run Claude Code from the repo root and all three skills load from `skills/`, via
   uncaptured board, naming what the recording points at but does not contain, and triaging which
   recordings are worth adapting at all.
 
+- **`collect-materials`** — a provider in, catalogue entries out. Owns the recipes for finding
+  material: where a course site's files actually live, what is gated behind a campus login, and
+  which licence claim is about the website template rather than the content. It locates; it does
+  not judge, so its entries are always `unvetted`.
+
 Route by the shape of the output first — a conversation is `study-mentor`, a file is one of the
-adapters — then by the source. All three hand off in every direction: adapt a chapter, then work
-through it in a session.
+adapters, a catalogue entry is `collect-materials` — then by the source. All four hand off in every
+direction: find a chapter, adapt it, then work through it in a session.
 
 See [AGENTS.md](AGENTS.md) for the conventions both follow and
 `skills/study-mentor/references/kb-structure.md` for the file templates in full.

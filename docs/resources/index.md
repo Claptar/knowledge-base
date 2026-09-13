@@ -13,6 +13,7 @@ The verdict is the expensive part; it is why this exists rather than a bookmark 
 | | |
 | --- | --- |
 | [Courses](courses.md) | MIT OCW course exports held locally — lecture notes, problem sets, transcripts |
+| [Berkeley statistics](berkeley-statistics.md) | Berkeley course sites and their GitHub repositories — located, not yet read |
 | [Doing mathematics](doing-mathematics.md) | process and heuristics rather than content |
 | [Analysis](analysis.md) | real and complex |
 | [Linear algebra](linear-algebra.md) | sources of *problems*, not courses |

@@ -15,6 +15,28 @@ renames that heading to the version and date, and the release job publishes the 
 
 ## Unreleased
 
+### Skills
+
+- **New skill: `collect-materials`.** Finds and fetches material from a provider, and owns the
+  per-provider recipes — URL patterns, where the real files live, what is gated behind a campus
+  login, which licence claims are traps. It **locates and does not judge**: entries are always
+  `unvetted`, and `study-mentor` step 4 remains the only thing that earns a verdict. Its standing
+  obligation is that harvesting from a provider with no recipe means writing one. Ships with
+  recipes for MIT OCW, Berkeley and GitHub-hosted courses.
+- **Prefer the paper over the lecture notes where the paper is the argument.** Added to
+  `AGENTS.md` and to `study-mentor` step 4: a course is a route through settled material, a paper
+  is the moment someone had to argue for something, and a syllabus's bibliography is often worth
+  more than its slides. Stated as a judgement rather than a rule — a good set of notes with problem
+  sets still beats a paper with no route into it.
+
+### Knowledge base
+
+- **Catalogued 16 Berkeley statistics courses** in `docs/resources/berkeley-statistics.md`, all
+  `unvetted`. Two of the requested courses turned out to be retired — `Stat 200A–B` was replaced by
+  `201A–B` in 2012–13, and `Stat C239A` was succeeded by `Stat 256` — and both are recorded as
+  such so the dead numbers resolve to their successors. `Stat C245E–F` (Statistical Genomics,
+  Dudoit) covers scRNA-Seq and is the closest thing in the set to the day job.
+
 ### Conventions
 
 - **Two long-lived branches.** Work happens on `draft`; `main` holds what is released and
