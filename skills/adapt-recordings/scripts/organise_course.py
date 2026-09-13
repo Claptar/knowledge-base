@@ -19,7 +19,7 @@ Layout produced:
       lectures/      recitations/   tutorials/
       psets/         solutions/     exams/
       worked-examples/              the named clips: slides + captions together
-      transcripts/                  .srt/.vtt for full lectures
+      recordings/                   video-derived files we could not name further
       transcripts-pdf/              OCW's PDF transcripts, which duplicate the above
       other/                        whatever the classifier could not place
 
@@ -38,6 +38,8 @@ from course_inventory import classify  # noqa: E402
 
 FOLDER = {
     "lecture notes": "lectures",
+    "lecture outlines": "lecture-outlines",
+    "recordings": "recordings",
     "recitation": "recitations",
     "tutorial": "tutorials",
     "problem sets": "psets",
@@ -59,10 +61,12 @@ def plan(d):
             continue
         label = classify(p.name)
         if p.suffix.lower() in {".srt", ".vtt"}:
-            # A caption file belongs with its material, not in a pile of its own.
-            folder = FOLDER.get(label, "other")
+            # A caption belongs with the material it captions, not in a pile of
+            # its own -- a clip's slides and its transcript are one object. Only
+            # a caption we could not place at all falls back to recordings/.
+            folder = FOLDER.get(label, "recordings")
             if folder in ("other", "transcripts-pdf"):
-                folder = "transcripts"
+                folder = "recordings"
         else:
             folder = FOLDER.get(label, "other")
         moves.append((p, d / folder / p.name))
