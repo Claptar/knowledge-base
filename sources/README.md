@@ -21,9 +21,9 @@ exists so that a source sits at a stable path while it is being adapted, not so 
 
 | Thing | Where | Why it is the durable part |
 | --- | --- | --- |
-| The source's URL, and the verdict on it | [`../resources.md`](../resources.md) | the judgement is expensive; the bytes are not |
-| The rewritten version | [`../adapted/`](../adapted/) | his own document, with motivation supplied and proofs converted |
-| What he actually got from it | [`../topics/`](../topics/) | the trajectory, which exists nowhere else |
+| The source's URL, and the verdict on it | [`../docs/resources.md`](../docs/resources.md) | the judgement is expensive; the bytes are not |
+| The rewritten version | [`../docs/adapted/`](../docs/adapted/) | his own document, with motivation supplied and proofs converted |
+| What he actually got from it | [`../docs/topics/`](../docs/topics/) | the trajectory, which exists nowhere else |
 
 An adapted file names its source, the section, and the date accessed, so the original is one click
 away and the adaptation can be checked against it.

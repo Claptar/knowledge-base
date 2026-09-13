@@ -3,15 +3,28 @@
 A git repository of plain markdown, readable on its own and renderable by a static site generator.
 Every file should make sense to a human reading it directly — it is his notes, not a machine log.
 
+The knowledge base root is `docs/` — everything below is relative to it, and it is what the
+published site is built from. Paths named bare elsewhere in these skills (`profile.md`, `topics/`)
+mean relative to this root, not to the repository root.
+
 ```
 study-kb/
-  profile.md              # background, notation habits, what he knows cold
-  log.md                  # dated sessions, newest first, next step at the top
-  resources.md            # evaluated materials with verdicts
-  topics/<topic>.md       # one per topic: the trajectory through it
-  practice/<topic>.md     # attempts, mistakes, what each mistake revealed
-  adapted/<topic>-<src>.md  # external material rewritten into the form he learns from
+  docs/                     # <- the knowledge base root, and the site
+    index.md                # the site front door
+    questions.md            # open questions — the index, and where each one lives
+    profile.md              # background, notation habits, what he knows cold
+    log.md                  # dated sessions, newest first, next step at the top
+    resources.md            # evaluated materials with verdicts
+    topics/<topic>.md       # one per topic: the trajectory through it
+    practice/<topic>.md     # attempts, mistakes, what each mistake revealed
+    adapted/<topic>-<src>.md  # external material rewritten into the form he learns from
+  skills/                   # these skills. Not published.
+  sources/                  # downloaded source material. Gitignored, never published.
+  mkdocs.yml                # site config
 ```
+
+**A new question goes in `questions.md` first, with no page behind it.** That is the normal resting
+state of a question. A topic file is written after a session, not before one.
 
 Topic slugs are lowercase and hyphenated: `martingales.md`, `chemical-master-equation.md`,
 `spectral-clustering.md`. Practice files mirror topic slugs so the pair is obvious.

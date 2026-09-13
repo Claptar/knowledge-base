@@ -7,3 +7,7 @@ __pycache__/
 # Downloaded source material — never committed. See sources/README.md.
 sources/*
 !sources/README.md
+
+# Site build
+_site/
+.venv/

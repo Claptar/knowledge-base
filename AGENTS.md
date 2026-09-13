@@ -13,11 +13,14 @@ The repo has two halves, and they are edited for different reasons:
 
 | Path | What it is | Edit when |
 | --- | --- | --- |
-| `questions.md`, `profile.md`, `log.md`, `resources.md`, `topics/`, `practice/`, `adapted/` | the knowledge base — his notes and material | a study session happened, or something durable changed |
+| `docs/` — `index.md`, `questions.md`, `profile.md`, `log.md`, `resources.md`, `topics/`, `practice/`, `adapted/` | the knowledge base — his notes and material. Also the published site | a study session happened, or something durable changed |
 | `skills/` | the skills: `SKILL.md`, `references/`, `scripts/` | the *way* sessions run should change |
 
-Don't let one drift into the other. Material learned goes in `topics/`; instructions about how to
-teach go in the skill.
+Don't let one drift into the other. Material learned goes in `docs/topics/`; instructions about how
+to teach go in the skill.
+
+**The knowledge base root is `docs/`.** Bare filenames below (`profile.md`, `topics/`) mean relative
+to it. Everything in `docs/` is published; nothing outside it is.
 
 ## The two skills
 
@@ -40,7 +43,8 @@ directly, summarise the changes as a diff, and let him commit.
 
 ## The knowledge base is indexed by question
 
-[`questions.md`](questions.md) is the front door, and the unit of navigation is a **question**, not
+[`docs/questions.md`](docs/questions.md) is the front door, and the unit of navigation is a
+**question**, not
 a subject. Subjects are how textbooks index, and the textbooks already exist. What is not in a
 textbook is which question was live, what it attached to, and where it broke down.
 
@@ -121,7 +125,7 @@ have to read a page to use it.
 - **Prefer a link to a paragraph.** Every fact lives in exactly one place: sources and verdicts in
   `resources.md`, background and anchors in `profile.md`, file templates in the skill's
   `references/kb-structure.md`. Restating one creates a second thing to update and a future
-  contradiction.
+  contradiction. The site build fails on a broken internal link or a missing anchor, by design.
 - **Length is a smell.** A topic file much past ~200 lines is usually carrying a restatement of the
   source. Cut rather than reorganise.
 - **Cross-link heavily and keep the links live.** A stale link is worse than no link.
@@ -156,6 +160,26 @@ exist, and the two copies had already begun to diverge. That is the failure this
 **Skill bodies must not hardcode an install path.** A skill refers to its own files as
 `references/<file>.md` and to a sibling skill's as `../<skill>/references/<file>.md`, so the same
 text is correct whether it is loaded from the repo, from a symlink, or as an installed plugin.
+
+## The site
+
+`docs/` is published to GitHub Pages at <https://claptar.github.io/knowledge-base-claude/> by
+`.github/workflows/deploy-docs.yml` on every push to `main`. MkDocs Material, built with `uv`.
+
+```bash
+uv sync --group dev
+uv run mkdocs serve           # preview at http://127.0.0.1:8000
+uv run mkdocs build --strict  # what CI runs — do this before committing
+```
+
+- **Always build with `--strict`.** Broken internal links *and* missing anchors fail the build.
+  That is the point: the notes cross-reference heavily and a stale link is worse than none.
+- **A new page must be added to `nav:` in `mkdocs.yml`**, or the strict build fails on it.
+- Maths is `pymdownx.arithmatex` with MathJax. Write `$…$` and `$$…$$`; never `\(…\)` or `\[…\]`,
+  which arithmatex does not pick up from source.
+- **MkDocs 1.x is pinned (`<2`) deliberately** — Material has announced 2.0 removes the plugin
+  system with no migration path. Not a stale pin.
+- `_site/` and `.venv/` are gitignored. Nothing outside `docs/` is ever published.
 
 ## Git
 

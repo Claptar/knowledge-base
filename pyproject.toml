@@ -1,0 +1,15 @@
+[project]
+name = "knowledge-base"
+version = "0.1.0"
+description = "Static site build for the study knowledge base"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+# MkDocs 1.x is pinned deliberately. Material has announced that MkDocs 2.0
+# removes the plugin system and rewrites theming, with no migration path.
+# This is not a stale pin — read before bumping it.
+dev = [
+    "mkdocs<2",
+    "mkdocs-material<10",
+]

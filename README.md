@@ -10,27 +10,30 @@ make sense to a human reading it directly: these are notes, not a machine log.
 ## Layout
 
 ```
-questions.md              the front door — open questions, and where each one lives
-profile.md                durable background, notation habits, anchors, how I study
-log.md                    dated sessions, newest first, next step at the top
-resources.md              evaluated materials with verdicts
-topics/<topic>.md         one per topic: the trajectory through it, not a summary
-practice/<topic>.md       attempts, mistakes, and what each mistake revealed
-adapted/<topic>-<src>.md  external material rewritten into the form I learn from
-sources/                  downloaded source material — gitignored, never committed
+docs/                          the knowledge base, and the published site
+  index.md                     site front door
+  questions.md                 open questions — the index, and where each one lives
+  profile.md                   durable background, notation habits, anchors, how I study
+  log.md                       dated sessions, newest first, next step at the top
+  resources.md                 evaluated materials with verdicts
+  topics/<topic>.md            one per topic: the trajectory through it, not a summary
+  practice/<topic>.md          attempts, mistakes, and what each mistake revealed
+  adapted/<topic>-<src>.md     external material rewritten into the form I learn from
 
-skills/study-mentor/      runs study sessions; reads and writes all of the above
-skills/adapt-material/    rewrites a chapter, lecture or paper into adapted/
+skills/study-mentor/           runs study sessions; reads and writes all of the above
+skills/adapt-material/         rewrites a chapter, lecture or paper into adapted/
+sources/                       downloaded source material — gitignored, never published
 
-AGENTS.md                 the one instruction file, for any agent
-CLAUDE.md                 imports AGENTS.md; Claude-specific notes only
-.claude/skills            symlink to skills/
-.agents/skills            symlink to skills/
-.claude-plugin/           makes the repo installable as a Claude Code plugin
+AGENTS.md                      the one instruction file, for any agent
+CLAUDE.md                      imports AGENTS.md; Claude-specific notes only
+.claude/skills, .agents/skills symlinks to skills/
+.claude-plugin/                makes the repo installable as a Claude Code plugin
+mkdocs.yml                     site config
 ```
 
-The index is **questions**, not subjects — subjects are how textbooks index, and the textbooks
-already exist. Start at [questions.md](questions.md).
+**Everything in `docs/` is published; nothing outside it is.** The index is **questions**, not
+subjects — subjects are how textbooks index, and the textbooks already exist. Start at
+[docs/questions.md](docs/questions.md).
 
 Topic slugs are lowercase and hyphenated — `martingales.md`, `chemical-master-equation.md` — and
 practice files mirror topic slugs so the pair is obvious. Start new files from the `_template.md`
@@ -67,3 +70,18 @@ They hand off to each other — adapt a chapter, then work through it in a sessi
 
 See [AGENTS.md](AGENTS.md) for the conventions both follow and
 `skills/study-mentor/references/kb-structure.md` for the file templates in full.
+
+## The site
+
+Published to <https://claptar.github.io/knowledge-base-claude/> on every push to `main`, by
+[`.github/workflows/deploy-docs.yml`](.github/workflows/deploy-docs.yml). MkDocs Material, with
+MathJax so the LaTeX actually renders.
+
+```bash
+uv sync --group dev
+uv run mkdocs serve           # preview at http://127.0.0.1:8000
+uv run mkdocs build --strict  # what CI runs
+```
+
+`--strict` turns a broken internal link or a missing anchor into a build failure — the notes
+cross-reference heavily, and a stale link is worse than none.

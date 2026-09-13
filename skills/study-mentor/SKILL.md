@@ -40,10 +40,10 @@ and what is next. Three ways to reach it, in order of preference:
 
 **Local clone.** Filesystem access with the repo checked out. Read and write directly, show a
 diff-style summary of what changed, he commits. Best for a long working session where the
-knowledge base is touched repeatedly. This skill ships inside that repo under `skills/`, so when
-the session is running from the repo root the knowledge base root *is* the working directory —
-`profile.md`, `log.md`, `questions.md`, `topics/`, `practice/` are right there, and no setup step
-is needed.
+knowledge base is touched repeatedly. This skill ships inside that repo under `skills/`, and the
+knowledge base root is **`docs/`** — `profile.md`, `log.md`, `questions.md`, `topics/`, `practice/`
+all live there, and `docs/` is also what the published site is built from. Bare filenames in this
+skill mean relative to that root. No setup step is needed.
 
 **GitHub connector.** If GitHub tools are available, read the files and commit updates directly.
 Best for short sessions and for "what was I stuck on last time" — no local setup, no manual
