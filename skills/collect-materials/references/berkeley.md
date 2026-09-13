@@ -69,9 +69,21 @@ reconstruct the notes from the topic list.
 
 ## Licence
 
-**Berkeley course material carries no blanket licence.** Unlike MIT OCW, there is no
-institution-wide CC grant, so the default is all rights reserved and adaptations go to
-`adapted-private/`.
+**Berkeley course material carries no blanket licence**, and the licence varies *per offering* —
+the same course can be CC BY one semester and unlicensed the next. Resolve it per repo, never per
+course.
+
+**The declaration is a `license.qmd` page inside the repo, not a `LICENSE` file.** GitHub cannot
+classify a Quarto page, reports the repo as `NOASSERTION`, and an agent reading the API field
+concludes "unlicensed" for material that is in fact **CC BY 4.0**. Verified on 30 cloned repos:
+11 are CC BY 4.0, one CC BY-NC 4.0, one CC0, one BSD-3-Clause, the rest nothing.
+
+```bash
+find <repo> -maxdepth 2 -iname 'licen[sc]e*' -not -path '*/.git/*' -exec cat {} \;
+```
+
+`NOASSERTION` is therefore a prompt to look harder, not a verdict. Absence of a root `LICENSE` file
+proves nothing.
 
 **The trap.** Every `berkeley-stat<num>.github.io` repo reports `MIT` through the GitHub API. Its
 LICENSE file reads:
@@ -109,5 +121,19 @@ Content repos are nearly all unlicensed. Two verified exceptions, both in `berke
   has no domain of its own — its syllabus sits under `stat156.berkeley.edu/fall-2024/`.
 - **An org with only a `.github.io` repo is an empty shell.** `berkeley-stat157` and
   `berkeley-stat241b` have the theme and no content.
+- **A public repo is not public material, and this is the big one.** Many semester repos contain
+  *only* the Quarto site — `index`, `syllabus`, `schedule`, `staff`, `license`, a stylesheet and a
+  logo, about 13–15 files — with every note and problem set on bCourses. **Check before cataloguing
+  it as reachable:**
+
+  ```bash
+  find <repo> -type f -not -path '*/.git/*' | wc -l     # under ~25 means scaffolding
+  find <repo> -iname '*.pdf' -not -path '*/.git/*' | wc -l
+  ```
+
+  The split runs along a predictable line: **theory courses publish a syllabus, applied and
+  computational courses publish everything.** Stat 201, 205, 206 are empty; Stat 153, 243, 158, 156
+  hold 30–90 PDFs per offering. A permissive licence is no evidence either way — the CC BY licences
+  here sit mostly on the *empty* repos.
 - **Syllabus PDFs do not parse through a fetch tool** but are saved to disk, and the reading list is
   usually the most valuable thing on them. See `github-courses.md` for the extraction snippet.
