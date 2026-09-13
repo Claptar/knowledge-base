@@ -17,6 +17,49 @@ renames that heading to the version and date, and the release job publishes the 
 
 ### Skills
 
+- **`normalise-materials` now has its converter.** `normalise_source.py` turns a collected source
+  into markdown split on the source's own headings, one page per logical section, so a topic file
+  can cite a lecture's third argument rather than a page range. It prefers the source over the
+  render (a `.qmd` beside its `.pdf` converts from the `.qmd`, and the render is reported as
+  dropped), skips course administrivia unless `--include-all` is given, and rewrites every relative
+  link — to the converted sibling where there is one, to the upstream original otherwise, and to
+  plain text where the source has no upstream, because the site builds `--strict` and a dangling
+  link fails CI. Dry run by default.
+
+  Two things it refuses to do. It will not publish a source it cannot classify or cannot cite: no
+  `material:`, no source URL, anything unclassified — all go to `reference-private/`. And it will
+  not convert a scanned PDF, which has no text layer; those are reported, because a near-empty page
+  that looks like a conversion is worse than an honest absence.
+
+- **A thesis is its own source kind.** Added to the republishing table in `AGENTS.md` and to the
+  skill: a repository asserts open access, but the author asserts the rights, per record —
+  CaltechTHESIS carries a Creative Commons grant on some theses and "no commercial reproduction
+  rights are provided" on others. A thesis converts to `reference-private/` until its rights row
+  has actually been read.
+
+- **New recipe: CaltechTHESIS.** Record-page layout, the non-constant document slot in the PDF
+  path (`/16062/03/`, `/16368/10/`), and the failure worth naming — the site began refusing
+  automated requests partway through a harvest, with a timeout from `curl` and an `ECONNREFUSED`
+  from an agent fetch, while other hosts answered normally in the same minute. Diagnose it by
+  fetching an unrelated host.
+
+### Tooling
+
+- **`material:` in `sources.lock.yml`.** `course`, `notes`, `paper`, `thesis`, `book`, `archive` or
+  `data` — written by hand and never detected, because it decides whether a conversion may be
+  published and guessing it guesses in the publishing direction. `open_access: true` is the one
+  switch that promotes a paper or a thesis into the published tree. All 63 sources are classified.
+- **A licence rescan no longer downgrades a resolved licence.** Several were settled by reading a
+  course site rather than a file in the repo; `unresolved` means *not found*, and re-running
+  `lock_sources.py` must not undo that work.
+- **The converted tree's nav is generated.** `mkdocs-literate-nav` reads
+  `docs/reference/SUMMARY.md`, so several hundred entries stay out of the hand-written
+  `mkdocs.yml`, which carries one line for the whole subtree. `nbconvert` is dropped: notebooks are
+  read straight from their JSON, so that image outputs become a named omission rather than links to
+  files the converter never writes.
+
+### Skills
+
 - **New skill: `collect-materials`.** Finds and fetches material from a provider, and owns the
   per-provider recipes — URL patterns, where the real files live, what is gated behind a campus
   login, which licence claims are traps. It **locates and does not judge**: entries are always

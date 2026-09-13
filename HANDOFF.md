@@ -19,38 +19,52 @@ are counter-intuitive on purpose.
 
 | | |
 | --- | --- |
-| Branch | **`draft`**, 20 commits ahead of `main`. Working tree clean |
+| Branch | **`draft`**, 28 commits ahead of `main` |
 | Released | `v0.2.0`, tagged and published as a GitHub release |
 | Skills | 5 — `study-mentor`, `adapt-material`, `adapt-recordings`, `collect-materials`, `normalise-materials` |
-| `sources/` | 5.2 GB, 63 sources, gitignored. 53 restorable from upstream, 10 local-only |
-| Licences | 24 CC BY 4.0, 2 CC0, 1 BSD-3, 1 CC BY-NC, **35 unresolved** |
+| `sources/` | 63 sources, gitignored. 59 restorable from upstream, 4 local-only. All 63 classified with `material:` |
+| Licences | 24 CC BY 4.0, 6 CC BY-NC-SA 4.0 (MIT OCW), 2 CC0, 1 BSD-3, 1 CC BY-NC, **29 unresolved** |
+| `docs/reference/` | the converted tree, wired into the site nav. Stat 210A fall 2026 converted |
 | Site | builds `--strict` clean; `uv run mkdocs build --strict` |
 
 **Never commit to `main`.** Work lands on `draft`; promoting `draft` to `main` cuts a release.
 `gh pr create` defaults to `main`, so `--base draft` is mandatory — see AGENTS.md § Git.
 
-## The one unfinished thing
+## What was just finished
 
-**`skills/normalise-materials/scripts/normalise_source.py` does not exist.** The skill, the policy,
-the toolchain and the verified approach are all in place; the converter is not written. It is the
-next job and it is well specified:
+**The converter exists.** `skills/normalise-materials/scripts/normalise_source.py` — the job the
+previous handoff named as the one unfinished thing. It converts one source at a time, prefers the
+source format over the render, splits on the source's own headings, generates front matter and the
+nav, and routes anything it cannot classify or cite to the gitignored `reference-private/`. Dry run
+by default, like every script here.
 
-- Read the tier from AGENTS.md § *What may be republished* — courses and notes to `docs/reference/`,
-  books and paywalled papers to `reference-private/` (gitignored, already in `.gitignore`).
-- Dispatch by format, **preferring the source over the render** — see below.
-- Split on the source's own headings, one file per lecture or section, numbering preserved.
-- Generate front matter: title, source URL, `source_file`, licence, conversion route and date.
-- Emit an `index.md` per source. For a non-publishable source that index is the *only* published
-  page — structure and links, no body.
-- **Generate the `nav:` block.** `mkdocs.yml` has `validation.nav.omitted_files: warn` and the
-  build runs `--strict`, so every published page must be in the nav. The publishable set is ~424
-  source-format files; a flat nav is unusable, so it needs one section per source with its parts as
-  children.
-- Dry run by default, `--apply` to write. Every script in this repo works that way.
+```bash
+uv sync --group dev --group convert
+uv run --group convert --group dev python \
+    skills/normalise-materials/scripts/normalise_source.py sources/<slug>            # dry run
+uv run ... normalise_source.py sources/<slug> --apply                                # write
+uv run ... normalise_source.py --all                                                 # plan the corpus
+uv run ... normalise_source.py --summary-only --apply                                # rebuild nav only
+```
 
-Install its toolchain with `uv sync --group convert` — `pymupdf4llm`, `pypandoc-binary` (pandoc 3.9
-ships inside the wheel), `markdownify`, `nbconvert`. No system packages; do **not** reach for brew,
-because `pyproject.toml` + `uv.lock` is what makes it reproducible.
+## The unfinished things
+
+- **Only one source of 63 is converted.** Stat 210A fall 2026: 83 documents, 408 pages, 26 skipped.
+  The decision taken was to convert two or three, look at the output, then sweep. Pick sources that
+  exercise different routes — a Quarto course, a PDF-and-transcripts OCW course, an `.Rmd` course
+  with material and logistics mixed.
+- **The six Pachter-lab theses are catalogued but not fetched.** See
+  [`docs/resources/cme-transcription.md`](docs/resources/cme-transcription.md) — CaltechTHESIS
+  began refusing automated requests partway through the harvest. **Download the PDFs by hand** into
+  the `sources/` slug each entry names, then convert. Four of the six are biophysical and sit
+  directly on the CME track; Gorin 2023 is the long-form version of four papers already catalogued.
+- **The theses' rights rows were never read**, so all six are `unresolved` and their conversions go
+  to `reference-private/`. Reading one row promotes a thesis into the published tree by setting
+  `open_access: true` in the lockfile.
+- **A maths-repair pass is designed but not built.** `normalise-materials` step 3a specifies it:
+  repair mangled equations against the original page, mark every repair `**Unverified.**`, report
+  the count. Now more valuable than before, because the lossy PDF route is actually producing
+  pages. Precedent is `adapt-recordings` step 3.
 
 ## Traps found the hard way
 
@@ -59,14 +73,20 @@ things most likely to be rediscovered.
 
 - **PDF → markdown destroys mathematics.** Verified: $\lambda(t) = f(t)/S(t)$ converts to
   `Sf((tt))becauseTiscontinuous`. Prose survives; equations do not. Convert `.qmd`/`.Rmd`/`.tex`
-  instead — there are 1,027 source-format files against 1,585 PDFs.
+  instead — there are 1,027 source-format files against 1,585 PDFs, and the converter now drops the
+  render automatically when a source with the same stem sits beside it.
+- **A PDF's biggest text is not its title.** Converted exam papers came out titled
+  `**Student ID (NOT your name):**`. Titles are now cleaned and fall back to the filename.
+- **Internal links need two passes.** Whether a document becomes one page or a directory of them is
+  only known after it is split, so the link map cannot be built before converting. Building it
+  first produced 45 links to directories rather than to pages, and `--strict` caught all of them.
 - **Some PDFs are scans of handwriting** — Stat 210A's lectures. 219 characters of OCR fragments.
   Emit an index entry, never a near-empty page that looks like a conversion.
 - **A licence is rarely in a `LICENSE` file.** Course sites use `license.qmd`, `license.html`, or
   `myst.yml` declaring `license: {code: MIT, content: CC-BY-4.0}` — where the *content* licence
   governs and the code licence is a decoy. GitHub reports all of these as `NOASSERTION`.
-  `lock_sources.py` now reads all of them; trusting the API's licence field is how 24 CC BY sources
-  were first misfiled as unlicensed.
+  `lock_sources.py` reads all of them, and no longer lets a rescan downgrade a licence that was
+  resolved by reading the course site.
 - **A `*.github.io` repo's MIT licence is the Jekyll theme's**, with the template author in the
   copyright line. It says nothing about course content.
 - **Content is often on `gh-pages`, not the default branch.** `statOmics/SGA2020` is 5 files on
@@ -78,12 +98,18 @@ things most likely to be rediscovered.
 - **Berkeley has a second publishing system.** Instructor pages under `stat.berkeley.edu/~<user>/`
   hold the material for exactly the courses whose repos are scaffolds. Directory listing is off, so
   fetch `index.html` and extract hrefs.
+- **A blocked host looks like a broken agent.** CaltechTHESIS timed out from `curl` and refused an
+  agent fetch while `github.com`, `pypi.org` and `ocw.mit.edu` answered in the same minute. Always
+  test an unrelated host before concluding anything about the source.
 
 ## Open threads
 
-- **35 sources have an unresolved licence.** They are *unchecked*, not restricted, and several are
-  near-certainly CC BY — `berkeley-stat210a/fall-2025` sits between two CC BY offerings. A targeted
-  sweep is cheap and moves material into the publishable tier.
+- **29 sources have an unresolved licence.** They are *unchecked*, not restricted. A targeted sweep
+  is cheap and moves material into the publishable tier. MIT OCW's six were resolved this session.
+- **`mkdocs-literate-nav` prints a MkDocs 2.0 advertisement on every build.** Its author now
+  maintains a fork, and the plugin nags about it. Harmless, silenced with
+  `DISABLE_MKDOCS_2_WARNING=true`, but worth knowing given that `mkdocs<2` is pinned deliberately —
+  the pin's reasoning is in `pyproject.toml` and has not changed.
 - **`normalise_names.py` is not idempotent.** A second `--apply` re-suffixes already-normalised
   files (`final-f09-exam.pdf` → `final-f09-exam-exam.pdf`) and rewrites `_manifest.csv` with the
   mangled names, destroying the mapping back to publisher filenames. 354 files in `ocw-6041sc`
@@ -97,10 +123,6 @@ things most likely to be rediscovered.
 - **`Stat C247C` was never found.** The only course from the original request still missing. No
   vanity domain, no GitHub org, no public syllabus; offered in even-numbered years. The Wayback
   Machine is the untried route.
-- **A maths-repair pass is designed but not built.** `normalise-materials` step 3a specifies it:
-  repair mangled equations against the original page, mark every repair `**Unverified.**`, report
-  the count. Precedent is `adapt-recordings` step 3. A dedicated lightweight skill for it is a
-  reasonable thing to add.
 
 ## Working habits this user has corrected
 
@@ -109,8 +131,13 @@ Stated because they were corrected more than once.
 - **Atomic commits.** One logical change each, short messages. A component and the edits that
   register it are *separate* commits. One request is not one commit.
 - **Plan before acting**, and ask where the approach is unclear — AGENTS.md § Plan first.
-- **Push back on substance before executing**, once, with the reason and the alternative.
-- **Verify rather than assume.** Several confident claims in this session were wrong — the licence
+- **Push back on substance before executing**, once, with the reason and the alternative. And read
+  the answer carefully: "don't publish raw source files" is not "don't publish conversions", and
+  acting on the misreading would have deleted a policy decided the same day.
+- **The knowledge base is for connecting ideas, not for being exhaustive.** Coverage is not the
+  goal; navigability is. It is why converted material is split into sections and cross-linked
+  rather than mirrored file for file.
+- **Verify rather than assume.** Several confident claims have been wrong — the licence
   classification twice, `Access: fetchable` for scaffold-only repos. Checking took minutes.
 
 ## Environment
