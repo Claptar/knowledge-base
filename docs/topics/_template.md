@@ -1,7 +1,7 @@
 # <Topic>
 
 **Status:** open
-**Opened:** 2026-09-13  **Last touched:** 2026-09-13
+**Opened:** YYYY-MM-DD  **Last touched:** YYYY-MM-DD
 
 ## The question that opened it
 

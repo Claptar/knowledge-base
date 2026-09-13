@@ -79,7 +79,13 @@ fixed without data loss.
 
 Scripts live in `skills/adapt-recordings/scripts/` — `course_inventory.py` to see what a source
 holds, `organise_course.py` to sort a flat export into the folders above, `normalise_names.py` to
-rename. All three default to a dry run.
+rename, and `transcript_text.py` to turn a `.srt`/`.vtt` caption file into readable timestamped
+prose. Only the two that move files take `--apply`, and neither does anything without it;
+the other two only read.
+
+The original publisher archives stay in `sources/_archives/`. With `_manifest.csv` they are what
+makes the normalisation reversible — the zip is the source of truth for what a file was called
+before this repo renamed it.
 
 ## Access — can this actually be opened?
 

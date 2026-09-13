@@ -106,6 +106,8 @@ Work this out explicitly before writing a line of the adaptation. It is most of 
 # <Topic> — adapted from <source>
 
 **Source:** <author, title, section; link; timestamps if a lecture>
+**Catalogue:** <the source's entry, e.g. [ocw-6041sc](../resources/courses.md#ocw-6041sc)>
+**Licence:** <the source's licence, and therefore this file's — see step 6>
 **Adapted:** YYYY-MM-DD  **Depth:** full | delta | teaching
 **Assumed known:** what was cut as already held — listed so the cuts are visible
 **Prerequisites:** what the source assumes that isn't in the list above
@@ -135,7 +137,14 @@ Left blank, for him. One prompt per central definition or result.
 
 ## What I cut, and why
 Every omission, one line each, so nothing disappears silently.
+
+---
+*Attribution footer — required for a CC-licensed source, naming the original and stating that this
+adaptation carries the same licence. Omitted only in `adapted-private/`.*
 ```
+
+`adapted/_template.md` is this shape as a working file, with the hint ladder and the footer spelled
+out. Keep the two in step: this block is the authority, and a change here is a change there.
 
 ### Rules that are not negotiable
 
@@ -174,7 +183,8 @@ invented is a trap, and he will hit it later at the worst moment.
 translation in one small table near the top rather than leaving him to infer it mid-derivation.
 
 **Write for a working researcher.** No on-ramps, no "intuitively speaking", no recap of what a
-random variable is. Maths in LaTeX, `$…$` and `$$…$$`, so it renders on his Jekyll site.
+random variable is. Maths in LaTeX, `$…$` and `$$…$$` — never `\(…\)` or `\[…\]`, which the site's
+arithmatex extension does not pick up from source and which do not survive as plain text either.
 
 ## Step 6 — file it
 

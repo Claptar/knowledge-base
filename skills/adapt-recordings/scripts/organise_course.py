@@ -6,7 +6,7 @@ structure is the naming convention. This moves them into named folders using the
 same classifier as course_inventory.py, so "the problem sets" is a path rather
 than a grep.
 
-    python3 organise_course.py sources/ocw-6.041sc-fall-2013          # dry run
+    python3 organise_course.py sources/ocw-6041sc                     # dry run
     python3 organise_course.py sources/ocw-*  --apply                 # do it
 
 **Dry run is the default.** Nothing moves until --apply, and the plan printed by

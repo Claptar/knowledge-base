@@ -39,6 +39,10 @@ where I want rigour and where I don't._
   (Gorin & Pachter).
 - **Sampling artifacts, noise models, count data** -> 10x chemistry and daily QC work.
 
+**The gap next to the last two:** convex optimisation theory is held (EE364A), but *formulation* is
+not — how a real problem becomes $\min_x c^T x$ subject to $Ax \le b$ in the first place. Named
+here because it is a recurring one, not specific to any topic.
+
 ## Current directions
 
 - Stochastic processes, aimed at the Pachter lab biophysics curriculum.

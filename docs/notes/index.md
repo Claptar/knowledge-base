@@ -10,9 +10,9 @@ sharp:
 
 | | Holds | Earned by |
 | --- | --- | --- |
-| [Topics](../topics/mathematical-modelling.md) | the **record** of my trajectory through a subject | a session. `Status: solid` requires *How I could have come up with this* in my own words |
+| **Topics** | the **record** of my trajectory through a subject — none yet | a session. `Status: solid` requires *How I could have come up with this* in my own words |
 | **Notes** (here) | **material** I wrote — exposition, aimed at a reader | writing it |
-| [Adapted](../adapted/_template.md) | someone else's material, rewritten motivation-first | a source going through `adapt-material` |
+| **Adapted** | someone else's material, rewritten motivation-first — nothing filed yet | a source going through `adapt-material` |
 
 **A note is not evidence of understanding.** These were written with an AI assistant, and a clean
 exposition can be produced without having derived anything. Every note carries a provenance banner

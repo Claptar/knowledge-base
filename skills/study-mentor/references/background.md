@@ -21,8 +21,8 @@ Strong. Treat as a researcher, not a learner needing on-ramps.
 - Linear algebra held deeply, in the Russian tradition (Kostrikin, Gelfand). Comfortable with
   bilinear and quadratic forms, spectral theory, tensor constructions.
 - Wrote his own Russian-language lecture notes on tensor analysis, in Markdown/LaTeX.
-- Maintains a personal math notes site built with Jekyll — the knowledge base should feel
-  continuous with that, not like a foreign tool.
+- Writes his own expository notes in Markdown/LaTeX and publishes them as a site — the knowledge
+  base should feel continuous with that, not like a foreign tool.
 - Probability and statistics: working through Murphy's probabilistic ML series; compared ISL
   against ESL; has studied HMMs via Rabiner and Durbin et al.
 - Convex optimization via Boyd & Vandenberghe / EE364A.

@@ -1,6 +1,6 @@
 # <Topic> — practice
 
-## 2026-09-13
+## YYYY-MM-DD
 **Problem:**
 **Attempt:**
 **Outcome:**

@@ -11,10 +11,8 @@ session has actually been spent on it — see [Harvest, don't design](#harvest-d
 
 | Question | Status | Where |
 | --- | --- | --- |
-| What problem forces the definition of a martingale? Specifically: what breaks if you only have "conditional expectation of the future equals the present" as a slogan, and why is the filtration the load-bearing part? | open | no page yet — [path node 3](path.md#3-martingale) |
-| What do generators and semigroups buy over writing the chemical master equation out directly? | open | no page yet — [path node 6](path.md#6-generator-and-semigroup) |
-| Does organising applied maths by *modelling task* rather than by technique survive contact with a real derivation, or does it dissolve? | open | [mathematical-modelling](topics/mathematical-modelling.md) |
-| Is the verification/validation split meaningful in single-cell work, where "reality" is itself a noisy, heavily-processed measurement rather than a clean experiment? | open | [mathematical-modelling](topics/mathematical-modelling.md) |
+| Does organising applied maths by *modelling task* rather than by technique survive contact with a real derivation, or does it dissolve? | open | no page yet |
+| Is the verification/validation split meaningful in single-cell work, where "reality" is itself a noisy, heavily-processed measurement rather than a clean experiment? | open | no page yet — the [capstone](path.md#capstone) is where it gets answered |
 
 ## Proposed, not live
 
@@ -23,9 +21,13 @@ each concept, written in advance. Those are candidates and they stay off this ta
 written by a plan is not the same object as one I actually hold, and mixing them would make this
 page a syllabus.
 
-A proposed question moves here when I can feel its force without re-reading the node. The two
-entries above marked with a path node went the other way — they were live first, and the path
-attached to them.
+A proposed question moves here when I can feel its force without re-reading the node — and the test
+is whether it bites without the node in front of me, not whether it reads well on the page.
+
+The martingale and generator questions sat in the table above until 2026-09-13 and were moved back
+out, because neither had been started and both turned out to be the path's phrasing rather than
+mine. They remain as [nodes 3](path.md#3-martingale) and [6](path.md#6-generator-and-semigroup).
+That direction of travel is normal and is not a loss — an empty Live table is a truthful one.
 
 ## Status vocabulary
 

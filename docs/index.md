@@ -35,7 +35,7 @@ question, the definition, and the proof technique. Every convention here follows
 
 | | |
 | --- | --- |
-| [Topics](topics/mathematical-modelling.md) | the trajectory through a subject. `Status: solid` is earned by the *How I could have come up with this* section being filled in — not by having covered the material |
+| Topics | the trajectory through a subject. `Status: solid` is earned by the *How I could have come up with this* section being filled in — not by having covered the material. **None yet** — a topic file is harvested from a session, never seeded |
 | Practice | attempts and mistakes, recording what each mistake *revealed*. A right answer by an unconvincing route is a gap, not a success |
 | Adapted | external material rewritten motivation-first: the problem before the definition, proofs converted to exercises |
 

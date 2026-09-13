@@ -1,5 +1,5 @@
 ---
-title: "Gaussian Vectors, Coordinate Random Variables, and Covariance Geometry"
+title: "Gaussian Vectors and Covariance Geometry — the source of the confusion"
 ---
 
 > **Imported note.** Written by me with an AI assistant in [Claptar/math-notes](https://github.com/Claptar/math-notes), imported 2026-09-13. It is *material* — my own exposition — not a record of a worked session. Nothing here is evidence that it has been derived from scratch; a [topic file](../../questions.md) is earned separately.

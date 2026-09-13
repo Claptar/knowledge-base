@@ -17,11 +17,17 @@ The primary literature the [learning path](../path.md) terminates in. These are 
 > usually means "fetch it yourself and drop it in `sources/`", not "unavailable". Preprints and
 > open-access articles are marked `fetchable` because an agent really can read them.
 
+> **Licences are unresolved on this page**, so every adaptation of one of these goes to
+> `adapted-private/` until the licence is checked and recorded here. Open access is not a licence:
+> a Nature Communications article and a bioRxiv preprint each carry a specific one, and which it is
+> decides whether a derivative may be published. Resolve before adapting, never in the adapting.
+
 ## Foundations — the CME and its approximations
 
 ### gillespie-1976-ssa — Gillespie 1976, *A general method for numerically simulating the stochastic time evolution of coupled chemical reactions* { #gillespie-1976-ssa }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](<https://doi.org/10.1016/0021-9991(76)90041-3>)
 
@@ -31,6 +37,7 @@ argument is the reason to read it here rather than a modern summary.
 ### gillespie-2000-cle — Gillespie 2000, *The chemical Langevin equation* { #gillespie-2000-cle }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1063/1.481811)
 
@@ -40,6 +47,7 @@ precisely because the conditions are stated as conditions rather than absorbed i
 ### gillespie-2001-tau-leaping — Gillespie 2001, *Approximate accelerated stochastic simulation* { #gillespie-2001-tau-leaping }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1063/1.1378322)
 
@@ -49,6 +57,7 @@ traded away.
 ### gardiner-chaturvedi-1977-poisson-representation — Gardiner & Chaturvedi 1977, *The Poisson Representation I* { #gardiner-chaturvedi-1977-poisson-representation }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1007/BF01014349)
 
@@ -59,6 +68,7 @@ and SDE form. The likely bridge to why count data is mixed-Poisson rather than P
 ### munsky-khammash-2006-fsp — Munsky & Khammash 2006, *The finite state projection algorithm* { #munsky-khammash-2006-fsp }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1063/1.2145882)
 
@@ -67,6 +77,7 @@ and SDE form. The likely bridge to why count data is mixed-Poisson rather than P
 ### jahnke-huisinga-2007-monomolecular — Jahnke & Huisinga 2007, *Solving the CME for monomolecular reaction systems analytically* { #jahnke-huisinga-2007-monomolecular }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1007/s00285-006-0034-x)
 
@@ -76,6 +87,7 @@ product-Poisson distributions. This is the paper that marks the boundary of what
 ### vastola-holmes-2020-path-integral-cle — Vastola & Holmes 2020, *Chemical Langevin equation: a path-integral view* { #vastola-holmes-2020-path-integral-cle }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1103/PhysRevE.101.032417)
 
@@ -85,6 +97,7 @@ the cross-check on whether the routes agree.
 ### paulsson-2004-summing-up-noise — Paulsson 2004, *Summing up the noise in gene networks* { #paulsson-2004-summing-up-noise }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1038/nature02257)
 
@@ -94,6 +107,7 @@ results.
 ### thomas-2014-conditional-lna — Thomas et al. 2014, *Phenotypic switching in gene regulatory networks* { #thomas-2014-conditional-lna }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1073/pnas.1400049111)
 
@@ -104,6 +118,7 @@ results.
 ### peccoud-ycart-1995-telegraph — Peccoud & Ycart 1995, *Markovian modeling of gene-product synthesis* { #peccoud-ycart-1995-telegraph }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1006/tpbi.1995.1027)
 
@@ -113,6 +128,7 @@ picture everything downstream assumes.
 ### shahrezaei-swain-2008-analytical-distributions — Shahrezaei & Swain 2008, *Analytical distributions for stochastic gene expression* { #shahrezaei-swain-2008-analytical-distributions }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1073/pnas.0803850105)
 
@@ -121,6 +137,7 @@ picture everything downstream assumes.
 ### singh-bokes-2012-mrna-transport — Singh & Bokes 2012, *Consequences of mRNA transport on stochastic variability in protein levels* { #singh-bokes-2012-mrna-transport }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1016/j.bpj.2012.07.015)
 
@@ -130,6 +147,7 @@ more than the biological conclusion.
 ### grima-2012-feedback-loop — Grima et al. 2012, *Steady-state fluctuations of a genetic feedback loop* { #grima-2012-feedback-loop }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1063/1.4736721)
 
@@ -140,6 +158,7 @@ more than the biological conclusion.
 ### gorin-pachter-2022-bursty-splicing — Gorin & Pachter 2022, *Modeling bursty transcription and splicing with the chemical master equation* { #gorin-pachter-2022-bursty-splicing }
 
 **Kind:** paper · **Access:** unreadable — institutional access only
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1016/j.bpj.2022.02.004)
 
@@ -149,6 +168,7 @@ argument turns on.
 ### gorin-2022-interpretable-tractable — Gorin, Vastola, Fang & Pachter 2022, *Interpretable and tractable models of transcriptional noise* { #gorin-2022-interpretable-tractable }
 
 **Kind:** paper · **Access:** fetchable — Nature Communications is open access
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1038/s41467-022-34857-7)
 
@@ -158,6 +178,7 @@ is solvable shapes what is modelled — is what the path's inference layer is me
 ### gorin-pachter-2020-intrinsic-extrinsic — Gorin & Pachter 2020, *Intrinsic and extrinsic noise are distinguishable in a synthesis–export–degradation model* { #gorin-pachter-2020-intrinsic-extrinsic }
 
 **Kind:** paper · **Access:** fetchable — bioRxiv preprint
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1101/2020.09.25.312868)
 
@@ -166,6 +187,7 @@ is solvable shapes what is modelled — is what the path's inference layer is me
 ### gorin-2022-transient-delay-cme — Gorin, Yoshida & Pachter 2022, *Transient and delay chemical master equations* { #gorin-2022-transient-delay-cme }
 
 **Kind:** paper · **Access:** fetchable — bioRxiv preprint
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1101/2022.10.17.512599)
 
@@ -174,6 +196,7 @@ is solvable shapes what is modelled — is what the path's inference layer is me
 ### pachter-biophysics-docs — Pachter Lab, *Biophysics* documentation { #pachter-biophysics-docs }
 
 **Kind:** site · **Access:** fetchable · <https://biophysics.readthedocs.io/>
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 
 *(unvetted)* The lab's own tool table and reading list, and the source of this section. Also the
@@ -184,6 +207,7 @@ entry point to Monod, biVI, meK-Means and Chronocell.
 ### tang-2023-capture-efficiency — Tang et al. 2023, *Modelling capture efficiency of single-cell RNA-sequencing data* { #tang-2023-capture-efficiency }
 
 **Kind:** paper · **Access:** fetchable — *Bioinformatics* is open access
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1093/bioinformatics/btad395)
 
@@ -193,6 +217,7 @@ entry point to Monod, biVI, meK-Means and Chronocell.
 ### tang-2020-baynorm — Tang et al. 2020, *bayNorm* { #tang-2020-baynorm }
 
 **Kind:** paper · **Access:** fetchable — *Bioinformatics* is open access
+**Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [DOI](https://doi.org/10.1093/bioinformatics/btz726)
 

@@ -26,10 +26,12 @@ the session as his work with your pressure behind it.
 a library name, or a quick factual lookup, just answer. Consult the knowledge base and the session
 machinery when the request is about *understanding* something.
 
-**Sibling skill.** If he hands over a source — a book chapter, lecture notes, slides, a paper —
-and wants it *reshaped into a document* rather than taught live, that is the `adapt-material`
-skill. Hand off rather than improvising a rewrite here. The reverse handoff is also common: once
-an adaptation exists, working through it is a session for this skill.
+**Sibling skills.** If he wants a source *reshaped into a document* rather than taught live, hand
+off rather than improvising a rewrite here. Route by the source: a written one — book chapter,
+lecture notes, slides, a paper — goes to `../adapt-material/SKILL.md`; a recording or a
+`.srt`/`.vtt` transcript goes to `../adapt-recordings/SKILL.md`, which handles what speech requires
+and a document does not. The reverse handoff is also common: once an adaptation exists, working
+through it is a session for this skill.
 
 ## Step 1 — load the knowledge base
 

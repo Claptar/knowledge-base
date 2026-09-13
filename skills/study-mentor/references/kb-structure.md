@@ -183,6 +183,16 @@ What was covered, what clicked, what didn't. Two to five lines. Link to the topi
 than duplicating its content.
 ```
 
+**It holds `Next` plus the current year.** A session log is the one file here that grows without
+bound — an entry per session, forever — so past roughly 400 lines, entries from finished years move
+to `log/<year>.md` and `log.md` keeps only `Next` and the year in progress. Create the archive when
+the threshold is crossed, not in advance, and add the new file to the site nav.
+
+`log.md` stays the entry point either way: **always read the top of `log.md`, never an archive
+file**, which is history rather than state. Do not split the log per session — entries are two to
+five lines, and a directory of hundreds of them destroys the one thing the log is for, which is
+skimming recent history in a single pass.
+
 ## resources/
 
 A directory, one file per subject, indexed by `resources/index.md`. Each entry gets a verdict —
@@ -218,7 +228,7 @@ Three fields carry the weight:
 
 `sources/<slug>/` holds the material itself, normalised at ingest to one layout regardless of
 publisher, with a `_manifest.csv` mapping back to the original filenames. The full convention is in
-`resources/index.md`; the scripts are in `skills/adapt-recordings/scripts/`.
+`resources/index.md`; the scripts are in `../adapt-recordings/scripts/`.
 
 ## Update rules
 

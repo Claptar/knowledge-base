@@ -5,8 +5,8 @@ title: Modelling
 # Modelling
 
 Modelling craft, optimisation as a modelling activity, and the credibility half — validation and
-uncertainty. See [topics/mathematical-modelling](../topics/mathematical-modelling.md) for the
-methodology these support.
+uncertainty. Nothing here has been worked with yet; the [capstone](../path.md#capstone) is where
+this material would first earn its place.
 
 ## Modelling craft
 

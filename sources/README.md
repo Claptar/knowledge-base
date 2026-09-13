@@ -28,6 +28,13 @@ exists so that a source sits at a stable path while it is being adapted, not so 
 An adapted file names its source, the section, and the date accessed, so the original is one click
 away and the adaptation can be checked against it.
 
+## `_archives/`
+
+The publisher's original zips, kept beside the unpacked directories. Together with each source's
+`_manifest.csv` they are what makes the rename reversible: the manifest maps a normalised path back
+to the publisher's filename, and the zip is the thing that filename came from. Gitignored like
+everything else here — if it is lost, the catalogue entry's URL is the route back.
+
 ## Using it
 
 Drop a download in, adapt it, and let it be deleted. If it matters, it is in `resources/` with a

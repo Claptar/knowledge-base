@@ -117,5 +117,5 @@ nav:
           - Gaussian vectors (conceptual): notes/probability/gaussian-vectors-covariance-geometry-alt.md
           - Sample variance as quadratic form: notes/probability/sample-variance-quadratic-form.md
           - Sample variance geometry: notes/probability/sample-variance-quadratic-form-geometry.md
-  - Topics:
-      - Mathematical modelling: topics/mathematical-modelling.md
+  # - Topics:  … no topic file exists yet; a topic file is harvested from a session, never seeded.
+  #     Add entries here as sessions produce them, or the strict build fails on the new page.

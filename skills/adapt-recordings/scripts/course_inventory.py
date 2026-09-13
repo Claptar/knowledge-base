@@ -5,7 +5,7 @@ OCW exports arrive as a flat pile of files whose only structure is the naming
 convention, so "what is in this course and what is worth adapting" is otherwise
 a question you answer by reading 400 filenames.
 
-    python3 course_inventory.py sources/ocw-6.041sc-fall-2013
+    python3 course_inventory.py sources/ocw-6041sc
     python3 course_inventory.py sources/ocw-*  --full
 
 Groups are a guess from filenames and nothing more. `unclassified` is not a bug

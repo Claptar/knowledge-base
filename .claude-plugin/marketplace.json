@@ -8,7 +8,7 @@
     {
       "name": "study-kb",
       "source": "./",
-      "description": "Study mentor and material adapter for a personal maths / comp-bio knowledge base."
+      "description": "Study mentor and material adapters for a personal maths / comp-bio knowledge base."
     }
   ]
 }

@@ -1,0 +1,88 @@
+name: Release
+
+# A merge to main cuts a release: a tag at the merge commit, with the release
+# notes for that version taken from CHANGELOG.md and attached to it.
+#
+# The version comes from .claude-plugin/plugin.json, and the job stops if a tag
+# for that version already exists. So the release fires on the merges that bump
+# the version and stays quiet on the ones that don't — which is what keeps a
+# repo whose docs/ changes every study session from accumulating a tag per note.
+#
+# To release on *every* merge instead, replace the version resolution below with
+# a date or run-number scheme; the rest of the job is unchanged.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve version
+        id: v
+        run: |
+          version=$(jq -r .version .claude-plugin/plugin.json)
+          if [ -z "$version" ] || [ "$version" = "null" ]; then
+            echo "::error::no version in .claude-plugin/plugin.json"
+            exit 1
+          fi
+          echo "version=$version"     >> "$GITHUB_OUTPUT"
+          echo "tag=v$version"        >> "$GITHUB_OUTPUT"
+
+      - name: Skip if this version is already released
+        id: check
+        run: |
+          if git rev-parse -q --verify "refs/tags/${{ steps.v.outputs.tag }}" >/dev/null; then
+            echo "${{ steps.v.outputs.tag }} exists — nothing to release."
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # The notes are the CHANGELOG section for this version: everything between
+      # its heading and the next one. A release with no section is a mistake, so
+      # fail rather than publish an empty one.
+      - name: Extract release notes
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          awk -v v="## ${{ steps.v.outputs.version }}" '
+            index($0, v) == 1 { found = 1; next }
+            found && /^## / { exit }
+            found { print }
+          ' CHANGELOG.md > RELEASE_NOTES.md
+          if [ ! -s RELEASE_NOTES.md ]; then
+            echo "::error::CHANGELOG.md has no section for ${{ steps.v.outputs.version }}"
+            exit 1
+          fi
+          cat RELEASE_NOTES.md
+
+      - name: Create annotated tag
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "${{ steps.v.outputs.tag }}" -F RELEASE_NOTES.md
+          git push origin "${{ steps.v.outputs.tag }}"
+
+      - name: Publish release
+        if: steps.check.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ steps.v.outputs.tag }}" \
+            --title "${{ steps.v.outputs.tag }}" \
+            --notes-file RELEASE_NOTES.md \
+            --verify-tag
