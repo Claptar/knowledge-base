@@ -11,23 +11,48 @@ the harvesting recipe is in that skill's `references/berkeley.md`.
 > read, and a list is not a verdict. The useful work this page does today is saying which courses
 > have public material and which do not.
 
-> **No blanket licence.** Unlike [MIT OCW](courses.md), Berkeley makes no institution-wide CC grant.
-> The default is all rights reserved, so adaptations go to `adapted-private/` unless an entry below
-> names a real licence. Two do.
+> **Licence is per offering, and it is not where you would look for it.** Berkeley makes no
+> institution-wide grant, so it varies course by course and *year by year* — the same course can be
+> CC BY in one semester and unlicensed the next.
 >
-> The `berkeley-stat<num>.github.io` repos all report `MIT` through GitHub's API. That is the
-> licence of the *Jekyll theme* — its copyright line names the template's author, not Berkeley — and
-> it says nothing about course content. It is recorded here so nobody trusts it twice.
+> The declaration is usually a **`license.qmd` page inside the repo**, not a `LICENSE` file. GitHub
+> cannot classify it, reports the repo as `NOASSERTION`, and an agent reading the API's licence
+> field concludes "no licence" for material that is in fact CC BY 4.0. Verified 2026-09-13 by
+> reading every cloned repo: **11 offerings are CC BY 4.0**, one is CC BY-NC 4.0, one CC0, one
+> BSD-3-Clause, and the rest genuinely carry nothing.
+>
+> The opposite trap also holds: every `berkeley-stat<num>.github.io` repo reports `MIT`, which is
+> the licence of the *Jekyll theme* — its copyright line names the template's author, not Berkeley.
+> Both traps are recorded so nobody trusts either field twice.
+
+## What is actually in the repositories
+
+All 30 content repositories were cloned and inspected on 2026-09-13. **A public repo is not the
+same as public material**, and the split is sharp:
+
+| | Repos | What is in them |
+| --- | --- | --- |
+| **Real material** | 153 (all 5 offerings), 243 (all 12), 158 Spring 2026, 156 Fall 2024, 230A Spring 2025 | 30–90 PDFs each, notebooks, labs, problem sets. Stat 243 Fall 2019 alone has 42 PDFs |
+| **Scaffolding only** | 201A, 201B, 205A, 206A, 206B Spring 2025, 158 Spring 2025, 230A Spring 2026 | a Quarto site and nothing else: `index`, `syllabus`, `schedule`, `staff`, `license`, a stylesheet and a logo. **No notes, no problem sets** |
+| **Thin** | 150, 205B, 206B Spring 2026 | ~28 files, one notebook. A shell with a little in it |
+
+**The theory courses are the empty ones.** Probability and statistical theory — 201, 205, 206 — put
+their material on bCourses and publish only a syllabus. The applied and computational courses —
+153, 243, 158, 156 — put everything in the open. If the material matters more than the reading
+list, Stat 243 and Stat 153 are the entire value of this page.
+
+There is an irony worth naming, because it will mislead anyone scanning licences: **the CC BY
+licence sits mostly on the empty repositories.** Stat 201A is CC BY 4.0 and contains nothing;
+Stat 243's content-rich legacy years are unlicensed. A permissive licence on a scaffold grants
+nothing worth having.
 
 ## How to read these entries
 
-`Access: local` never appears yet — nothing has been downloaded. The distinction that matters:
-
 | | Means |
 | --- | --- |
-| `fetchable` | the GitHub repo is public and has content in it |
+| `local` | cloned into `sources/<org>/<term>/`, and it contains actual material |
+| `fetchable` | the repo is public, but holds only site scaffolding — clone it and you get a syllabus |
 | `unreadable` | the material is behind **bCourses**, Berkeley's Canvas. Not reachable, and no mirror exists |
-| `unresolved` | the course exists but where its material lives has not been established |
 
 ## Probability and stochastic processes
 
@@ -46,8 +71,8 @@ inaccessibility worth a login rather than a shrug.
 
 ### berkeley-stat205a — Stat C205A, *Probability Theory* { #berkeley-stat205a }
 
-**Kind:** course · **Access:** fetchable · <https://github.com/berkeley-stat205a/fall-2024>
-**Licence:** unresolved — content repo carries no licence
+**Kind:** course · **Access:** fetchable — **scaffolding only**; the Aldous pages are the real material
+**Licence:** **CC BY 4.0** on the (empty) course repo; the Aldous notes carry none
 **Status:** unvetted · **Adapted:** none
 <https://stat205a.berkeley.edu/> · also listed as Math C218A
 
@@ -58,8 +83,8 @@ the better starting point: <https://www.stat.berkeley.edu/~aldous/205A>.
 
 ### berkeley-stat205b — Stat C205B, *Probability Theory* { #berkeley-stat205b }
 
-**Kind:** course · **Access:** fetchable · <https://github.com/berkeley-stat205b/spring-2026>
-**Licence:** unresolved
+**Kind:** course · **Access:** fetchable — thin; the Aldous pages are the real material
+**Licence:** unresolved — no declaration in the repo
 **Status:** unvetted · **Adapted:** none
 <https://stat205b.berkeley.edu/> · also listed as Math C218B
 
@@ -69,8 +94,8 @@ Aldous's 205B page carries per-lecture PDFs including a measure-theory recap:
 
 ### berkeley-stat206a — Stat C206A, *Advanced Topics in Probability* { #berkeley-stat206a }
 
-**Kind:** course · **Access:** fetchable · <https://github.com/berkeley-stat206a/fall-2024>
-**Licence:** unresolved
+**Kind:** course · **Access:** fetchable — **scaffolding only**, no material in the repo
+**Licence:** **CC BY 4.0** — on a repo containing only a syllabus
 **Status:** unvetted · **Adapted:** none
 <https://stat206a.berkeley.edu/> · also listed as Math C223A
 
@@ -78,8 +103,8 @@ Aldous's 205B page carries per-lecture PDFs including a measure-theory recap:
 
 ### berkeley-stat206b — Stat C206B, *Advanced Topics in Probability* { #berkeley-stat206b }
 
-**Kind:** course · **Access:** fetchable · <https://github.com/berkeley-stat206b/spring-2026>
-**Licence:** unresolved
+**Kind:** course · **Access:** fetchable — thin; Spring 2025 is scaffolding only
+**Licence:** unresolved — no declaration in either offering
 **Status:** unvetted · **Adapted:** none
 <https://stat206b.berkeley.edu/> · also listed as Math C223B
 
@@ -89,8 +114,8 @@ Aldous's 205B page carries per-lecture PDFs including a measure-theory recap:
 
 ### berkeley-stat201a — Stat 201A, *Introduction to Probability at an Advanced Level* { #berkeley-stat201a }
 
-**Kind:** course · **Access:** fetchable · <https://github.com/berkeley-stat201a/fall-2024>
-**Licence:** unresolved
+**Kind:** course · **Access:** fetchable — **scaffolding only**, no material in the repo
+**Licence:** **CC BY 4.0** — on a repo containing only a syllabus
 **Status:** unvetted · **Adapted:** none
 <https://stat201a.berkeley.edu/>
 
@@ -102,8 +127,8 @@ not be taught in the near future"*. Seven weeks rather than a semester. Search r
 
 ### berkeley-stat201b — Stat 201B, *Introduction to Statistics at an Advanced Level* { #berkeley-stat201b }
 
-**Kind:** course · **Access:** fetchable · <https://github.com/berkeley-stat201b/fall-2024>
-**Licence:** unresolved
+**Kind:** course · **Access:** fetchable — **scaffolding only**, no material in the repo
+**Licence:** **CC BY 4.0** — on a repo containing only a syllabus
 **Status:** unvetted · **Adapted:** none
 <https://stat201b.berkeley.edu/>
 
@@ -126,8 +151,8 @@ material, which is the only reason to keep the entry.
 
 ### berkeley-stat230a — Stat 230A, *Linear Models* { #berkeley-stat230a }
 
-**Kind:** course · **Access:** fetchable · <https://github.com/berkeley-stat230a/spring-2026>
-**Licence:** unresolved — `NOASSERTION` on the 2026 repo, unread
+**Kind:** course · **Access:** local · `sources/berkeley-stat230a/spring-2025/` — thin; Spring 2026 is scaffolding only
+**Licence:** Spring 2026 **CC BY 4.0** (scaffolding); Spring 2025 unlicensed
 **Status:** unvetted · **Adapted:** none
 <https://stat230a.berkeley.edu/>
 
@@ -138,8 +163,8 @@ file opened before any adaptation.
 
 ### berkeley-stat243 — Stat 243, *Introduction to Statistical Computing* { #berkeley-stat243 }
 
-**Kind:** course · **Access:** fetchable · <https://github.com/berkeley-stat243>
-**Licence:** **varies by year** — `stat243-fall-2021` is CC0-1.0, `stat243-fall-2023` is BSD-3-Clause, the rest unlicensed
+**Kind:** course · **Access:** local · `sources/berkeley-stat243/` — 12 offerings, 30–53 PDFs each
+**Licence:** **varies by offering** — 2024/2025/2026 CC BY 4.0; `stat243-fall-2021` CC0; `stat243-fall-2023` BSD-3-Clause; 2014–2020 and 2022 unlicensed
 **Status:** unvetted · **Adapted:** none
 <https://stat243.berkeley.edu/>
 
@@ -153,8 +178,8 @@ methods, optimisation, simulation, reproducibility, working in R and Python.
 
 ### berkeley-stat153 — Stat 153, *Introduction to Time Series* { #berkeley-stat153 }
 
-**Kind:** course · **Access:** fetchable · <https://github.com/berkeley-stat153>
-**Licence:** unresolved — `NOASSERTION` on fall-2024, none on the rest
+**Kind:** course · **Access:** local · `sources/berkeley-stat153/` — 5 offerings, 91 PDFs in Fall 2024 alone
+**Licence:** Fall 2024 **CC BY 4.0**; the other four offerings unlicensed
 **Status:** unvetted · **Adapted:** none
 <https://stat153.berkeley.edu/>
 
@@ -163,8 +188,8 @@ one where consecutive semesters are all present.
 
 ### berkeley-stat158 — Stat 158, *The Design and Analysis of Experiments* { #berkeley-stat158 }
 
-**Kind:** course · **Access:** fetchable · <https://github.com/berkeley-stat158/spring-2026>
-**Licence:** unresolved — `NOASSERTION` on spring-2025
+**Kind:** course · **Access:** local · `sources/berkeley-stat158/spring-2026/` — 46 PDFs, 513 files
+**Licence:** Spring 2025 **CC BY 4.0** (but that offering is scaffolding only); Spring 2026 unlicensed
 **Status:** unvetted · **Adapted:** none
 <https://stat158.berkeley.edu/>
 
@@ -185,8 +210,8 @@ repositories. Topics vary by offering; check `classes.berkeley.edu` for whether 
 
 ### berkeley-stat156-256 — Stat 156 / Stat 256, *Causal Inference* { #berkeley-stat156-256 }
 
-**Kind:** course · **Access:** fetchable · <https://github.com/berkeley-stat156/fall-2024>
-**Licence:** unresolved — `NOASSERTION` on fall-2024
+**Kind:** course · **Access:** local · `sources/berkeley-stat156/fall-2024/` — 11 PDFs incl. the 256 syllabus
+**Licence:** **CC BY-NC 4.0** — adaptable and publishable with attribution, non-commercial
 **Status:** unvetted · **Adapted:** none
 <https://stat156.berkeley.edu/> · syllabus: <https://stat156.berkeley.edu/fall-2024/stat256-syllabus.pdf>
 
