@@ -270,21 +270,43 @@ uv run mkdocs build --strict  # what CI runs — do this before committing
 Commit only when asked. One commit per session, with a message naming what was studied — not
 "update kb".
 
-**Never commit to `main`.** Every change — a study session's notes as much as a skill edit — starts
-on a branch and reaches `main` through a pull request. Open it as a **draft** and mark it ready
-when it is; a draft says the work is visible but not finished, which is the honest state for most
-of a session.
+### Two long-lived branches
+
+| Branch | Is | Receives |
+| --- | --- | --- |
+| `main` | what is released and published. The site deploys from it and every arrival is a candidate release | a merge from `draft`, when enough has accumulated to be worth releasing |
+| `draft` | where the work happens — the integration branch, `dev` under another name | day-to-day commits, and short branches for anything large enough to want reviewing on its own |
+
+**Never commit to `main`.** Work on `draft`. A session's notes can be committed straight to it; a
+change big enough that you would want to see it whole first — a skill rewrite, a structural move —
+gets its own branch off `draft` and a pull request back into `draft`.
 
 ```bash
-git checkout -b <kind>/<short-slug>     # session/martingales, chore/…, fix/…, skill/…
+git checkout draft && git pull          # always start here
 # work, commit
+
+# …or, for something substantial:
+git checkout -b <kind>/<short-slug>     # session/martingales, chore/…, fix/…, skill/…
 git push -u origin HEAD
-gh pr create --draft --fill             # gh pr ready <n>, when it is
+gh pr create --draft --base draft --fill
 ```
 
-Branch on the first edit, not after. Discovering forty modified files on `main` means the work has
-to be moved before it can be reviewed, and that is the moment it usually gets committed straight to
-`main` instead.
+**`--base draft` is not optional.** `gh pr create` targets the repository's default branch, which
+is `main`, so a PR opened without it proposes a release rather than a change.
+
+### Releasing: `draft` -> `main`
+
+Promoting `draft` is the deliberate act that cuts a release, and it is the one time `main` is
+touched:
+
+```bash
+gh pr create --base main --head draft --title "Release <version>"
+```
+
+Before opening it: bump the version in `.claude-plugin/plugin.json` and rename the `CHANGELOG`
+`## Unreleased` section to that version with today's date. Accumulate entries under `## Unreleased`
+as you go — writing the note when the change is fresh is the only time it is cheap, and a release
+then costs a rename rather than an archaeology session through `git log`.
 
 ### A merge to `main` cuts a release
 
@@ -296,14 +318,19 @@ they describe, rather than only in GitHub's database.
 
 Two consequences worth holding on to:
 
-- **A PR that changes a skill, a convention or a script bumps the version and adds its `CHANGELOG`
-  section.** The build fails the release if the section is missing, which is deliberate: a version
-  with no notes is a version nobody can tell you about.
-- **A PR that only adds notes to `docs/` bumps nothing**, and the workflow stays quiet. The content
-  changes every session and is not what a release is for — `git log` already records it, and a tag
-  per note would make the tag list useless for the thing it is actually for, which is telling
-  someone which version of the skills they installed.
+- **A promotion that carries a skill, convention or script change bumps the version and names its
+  `CHANGELOG` section.** The job fails the release if the section is missing, which is deliberate:
+  a version with no notes is a version nobody can tell you about.
+- **A promotion that only carries `docs/` notes bumps nothing**, and the workflow stays quiet. The
+  content changes every session and is not what a release is for — `git log` already records it,
+  and a tag per note would make the tag list useless for the thing it is actually for, which is
+  telling someone which version of the skills they installed.
 
 The second point is a deliberate softening of "every merge cuts a release": every merge *runs* the
 release job, and every merge that changes the versioned artefact produces one. To release on every
 merge regardless, change the version resolution step in the workflow — the comment there says how.
+
+`main` is still the deploy branch, so a promotion also publishes the site. Notes that are merely
+*written* are not published until `draft` is promoted, which is usually what you want and
+occasionally a surprise — if something needs to be live now, that is a reason to promote, not a
+reason to commit to `main`.

@@ -10,6 +10,18 @@ Versions are `MAJOR.MINOR.PATCH`:
 - **MINOR** — a skill, script or rule added or meaningfully reshaped.
 - **PATCH** — corrections that change no behaviour.
 
+Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
+renames that heading to the version and date, and the release job publishes the section as-is.
+
+## Unreleased
+
+### Conventions
+
+- **Two long-lived branches.** Work happens on `draft`; `main` holds what is released and
+  published. Promoting `draft` to `main` is the deliberate act that cuts a release. `AGENTS.md`
+  carries the rule and the commands, including the `--base draft` that `gh pr create` needs and
+  does not default to.
+
 ## 0.2.0 — 2026-09-13
 
 First tagged release. The repo had drifted since the three-skill split; this is the pass that

@@ -1,19 +1,19 @@
-<!-- Open as a draft; mark ready when it is. See AGENTS.md § Git. -->
+<!-- Check the base branch first. Work merges into `draft`; only a release targets `main`.
+     See AGENTS.md § Git. -->
 
 ## What changed, and why
 
 <!-- The reason, not the diff. If this is a study session, say what was studied. -->
 
-## Release
+## Which kind of PR is this?
 
-Tick one:
-
-- [ ] **Content only** — `docs/` notes, no version bump. The release job will stay quiet.
-- [ ] **Versioned change** — a skill, convention, script or the site config. Then:
+- [ ] **Into `draft`** — ordinary work. Add a note under `## Unreleased` in `CHANGELOG.md` if this
+      touches a skill, convention or script; `docs/` notes need nothing.
+- [ ] **`draft` -> `main`, a release.** Then:
   - [ ] bumped `version` in `.claude-plugin/plugin.json` (and `pyproject.toml` if it moved too)
-  - [ ] added the matching `## <version>` section to `CHANGELOG.md`
+  - [ ] renamed `## Unreleased` to `## <version> — <date>` in `CHANGELOG.md`
 
-A versioned change without a `CHANGELOG` section fails the release job on merge, by design.
+A release whose version has no `CHANGELOG` section fails the release job on merge, by design.
 
 ## Checks
 
