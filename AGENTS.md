@@ -22,7 +22,7 @@ to teach go in the skill.
 **The knowledge base root is `docs/`.** Bare filenames below (`profile.md`, `topics/`) mean relative
 to it. Everything in `docs/` is published; nothing outside it is.
 
-## The two skills
+## The three skills
 
 The real tree is `skills/`. `.claude/skills` and `.agents/skills` are **symlinks** to it, so both
 audiences read one copy and there is no way for them to drift. Never edit through a symlink path
@@ -32,11 +32,17 @@ Each `SKILL.md` is the authority on its own workflow.
 
 - **`study-mentor`** — a live session. Ask which mode he wants, start from the problem rather than
   the definition, hold back the proof, close by asking *how could you have come up with this?*
-- **`adapt-material`** — a source in, a document out. Rewrites a chapter, lecture, or paper
-  motivation-first into `adapted/`, cutting what he holds cold and converting proofs to exercises.
+- **`adapt-material`** — a written source in, a document out. Rewrites a chapter, lecture notes or
+  paper motivation-first, cutting what he holds cold and converting proofs to exercises. **It owns
+  the shape of an adapted document**, and the other two defer to it rather than restating it.
+- **`adapt-recordings`** — a lecture recording in, a document out. Owns only what is specific to
+  speech: reconstructing mathematics that was spoken and written on an uncaptured board, naming
+  what the recording points at but does not contain, and triaging which recordings are worth
+  adapting at all. Hands the document shape to `adapt-material`.
 
-Route between them by the shape of the output: a conversation is `study-mentor`, a file is
-`adapt-material`. They hand off in both directions.
+Route by the shape of the output first — a conversation is `study-mentor`, a file is one of the
+adapters — then by the source: a transcript or recording is `adapt-recordings`, anything written is
+`adapt-material`. All three hand off in every direction.
 
 When working inside this repo, read and write the files under `docs/` directly, summarise the
 changes as a diff, and let him commit.

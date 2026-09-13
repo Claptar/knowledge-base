@@ -22,7 +22,8 @@ docs/                          the knowledge base, and the published site
   adapted/<topic>-<src>.md     external material rewritten into the form I learn from
 
 skills/study-mentor/           runs study sessions; reads and writes all of the above
-skills/adapt-material/         rewrites a chapter, lecture or paper into adapted/
+skills/adapt-material/         rewrites a written source into adapted/
+skills/adapt-recordings/       turns lecture transcripts into notes, not tidied speech
 sources/                       downloaded source material — gitignored, never published
 
 AGENTS.md                      the one instruction file, for any agent

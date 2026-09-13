@@ -15,6 +15,12 @@ in `sources/_archives/`.
 > **Reachability.** `sources/` is gitignored, so these exist only on the machine that downloaded
 > them. Every entry records the OCW course page so the export can be re-acquired.
 
+**Transcripts are OCW's own**, published as caption files beside the videos — nothing here was
+produced by speech-to-text. Three of the six courses have them; the other three have no recordings
+at all, so there is nothing to transcribe. A recording without published captions would need a
+speech-to-text pass first, which is a separate job with its own failure modes — see
+`skills/adapt-recordings/SKILL.md`.
+
 ## Probability
 
 ### ocw-6041sc — MIT 6.041SC, *Probabilistic Systems Analysis and Applied Probability* { #ocw-6041sc }

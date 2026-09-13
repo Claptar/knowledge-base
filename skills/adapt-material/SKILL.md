@@ -27,6 +27,12 @@ usually *longer* than the source, because the motivation the source omitted has 
 If your output is shorter and smoother than the input, you have almost certainly done the wrong
 thing.
 
+**Sibling skill.** If the source is a lecture *recording* — a `.srt`/`.vtt` transcript, or audio or
+video — use `../adapt-recordings/SKILL.md` instead. It handles what speech requires and a document
+does not: reconstructing mathematics spoken aloud, and naming what the recording points at but does
+not contain. It then defers to this file for the shape of the finished document, so **this skill
+stays the authority on that shape** — do not let the two drift.
+
 ## Step 1 — get the source, whole
 
 Do not start rewriting from a partial read. Whatever the form:
