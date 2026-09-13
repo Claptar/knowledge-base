@@ -91,27 +91,57 @@ def find_units(root: Path):
     return units
 
 
+# A licence declaration hides in more places than a LICENSE file. Course sites put it in a
+# rendered page (`license.qmd`, `license.html`) that GitHub cannot classify, and a MyST site
+# declares it in config as `license: {code: MIT, content: CC-BY-4.0}` — where the *content*
+# licence is the one that governs an adaptation and the code licence is a decoy.
+LICENCE_CANDIDATES = (
+    "[Ll][Ii][Cc][Ee][Nn][SsCc]*", "*/[Ll][Ii][Cc][Ee][Nn][SsCc]*",
+    "myst.yml", "*/myst.yml", "_quarto.yml", "*/_quarto.yml", "_config.yml", "*/_config.yml",
+)
+# Longest/most-restrictive fragments first: "licenses/by-nc-sa" must win over "licenses/by".
+URL_LICENCES = (
+    ("licenses/by-nc-sa", "CC BY-NC-SA 4.0"), ("licenses/by-nc", "CC BY-NC 4.0"),
+    ("licenses/by-sa", "CC BY-SA 4.0"), ("licenses/by/", "CC BY 4.0"),
+    ("publicdomain/zero", "CC0-1.0"), ("publicdomain/mark", "public domain"),
+)
+SPDX_LICENCES = (
+    ("cc-by-nc-sa", "CC BY-NC-SA 4.0"), ("cc-by-nc", "CC BY-NC 4.0"),
+    ("cc-by-sa", "CC BY-SA 4.0"), ("cc-by-4.0", "CC BY 4.0"), ("cc-by", "CC BY 4.0"),
+    ("cc0", "CC0-1.0"), ("creative commons legal code", "CC0-1.0"),
+    ("bsd 3-clause", "BSD-3-Clause"), ("apache license", "Apache-2.0"),
+)
+
+
 def detect_licence(d: Path):
-    """Read the licence, never trust a metadata field. A course site's declaration is often a
-    `license.qmd` page rather than a LICENSE file, and GitHub cannot classify one."""
-    for p in list(d.glob("[Ll][Ii][Cc][Ee][Nn]*")) + list(d.glob("*/[Ll][Ii][Cc][Ee][Nn]*")):
-        if not p.is_file():
-            continue
+    """Read the licence, never trust a metadata field.
+
+    Returns (name, file). `unresolved` means *not found*, which is not the same as
+    *not licensed* — it is an instruction to look harder before assuming the restrictive answer.
+    """
+    seen = []
+    for pat in LICENCE_CANDIDATES:
+        seen += [p for p in d.glob(pat) if p.is_file()]
+    for p in seen:
         try:
-            t = p.read_text(encoding="utf-8", errors="replace")[:4000]
+            t = p.read_text(encoding="utf-8", errors="replace")[:8000]
         except Exception:
             continue
         low = t.lower()
-        for frag, name in (
-            ("licenses/by-nc-sa", "CC BY-NC-SA 4.0"), ("licenses/by-nc", "CC BY-NC 4.0"),
-            ("licenses/by-sa", "CC BY-SA 4.0"), ("licenses/by/4.0", "CC BY 4.0"),
-            ("creative commons legal code", "CC0-1.0"), ("bsd 3-clause", "BSD-3-Clause"),
-            ("apache license", "Apache-2.0"),
-        ):
+        # A config file may name two licences; the content one governs the material.
+        if p.name.endswith((".yml", ".yaml")) and "content:" in low:
+            tail = low.split("content:", 1)[1][:120]
+            for frag, name in SPDX_LICENCES:
+                if frag in tail:
+                    return name, p.name
+        for frag, name in URL_LICENCES:
+            if frag in low:
+                return name, p.name
+        for frag, name in SPDX_LICENCES:
             if frag in low:
                 return name, p.name
         if "mit license" in low:
-            # Frequently the website theme's licence, with the template author in the copyright.
+            # Usually the website theme's licence, with the template author in the copyright line.
             owner = next((l for l in t.splitlines() if "copyright" in l.lower()), "").strip()
             return "MIT (verify: %s)" % (owner or "no copyright line"), p.name
     return "unresolved", None

@@ -1,5 +1,5 @@
 version: 1
-generated: '2026-09-13'
+generated: '2026-09-14'
 sources:
 - slug: _archives
   licence: unresolved
@@ -750,11 +750,12 @@ sources:
     bytes: 142648
     sha256: 46931d5b0eda04263a8da0de392c258576e281186637fe51a609e04597868460
 - slug: berkeley-stat150/spring-2026
-  licence: unresolved
+  licence: CC BY 4.0
   holds: unclear
   files: 28
   bytes: 411052
   fetched: '2026-09-13'
+  licence_file: myst.yml
   kind: git
   url: https://github.com/berkeley-stat150/spring-2026.git
   branch: main
@@ -773,44 +774,48 @@ sources:
   commit: 94c943d315ea7361f1f660f42881d219a7e7f009
   restorable: upstream
 - slug: berkeley-stat153/fall-2025
-  licence: unresolved
+  licence: CC BY 4.0
   holds: material
   files: 105
   bytes: 128532985
   fetched: '2026-09-13'
+  licence_file: myst.yml
   kind: git
   url: https://github.com/berkeley-stat153/fall-2025.git
   branch: main
   commit: df8e8e972b95eb1235ce8a17f88722e852802200
   restorable: upstream
 - slug: berkeley-stat153/fall-2026
-  licence: unresolved
+  licence: CC BY 4.0
   holds: material
   files: 38
   bytes: 24558990
   fetched: '2026-09-13'
+  licence_file: myst.yml
   kind: git
   url: https://github.com/berkeley-stat153/fall-2026.git
   branch: main
   commit: 1df2e362c312415dc83d910dc9e724e1646fafab
   restorable: upstream
 - slug: berkeley-stat153/spring-2025
-  licence: unresolved
+  licence: CC BY 4.0
   holds: material
   files: 89
   bytes: 41889993
   fetched: '2026-09-13'
+  licence_file: myst.yml
   kind: git
   url: https://github.com/berkeley-stat153/spring-2025.git
   branch: main
   commit: 60232ff1b10a6e871e4de968015b36891a606030
   restorable: upstream
 - slug: berkeley-stat153/spring-2026
-  licence: unresolved
+  licence: CC BY 4.0
   holds: material
   files: 880
   bytes: 412179841
   fetched: '2026-09-13'
+  licence_file: myst.yml
   kind: git
   url: https://github.com/berkeley-stat153/spring-2026.git
   branch: main
@@ -968,11 +973,12 @@ sources:
     bytes: 659728
     sha256: 6003458ca28e128812e972e58270e3a0ab9aed3d45bed8f8a9edefc2d509c8ca
 - slug: berkeley-stat205b/spring-2026
-  licence: unresolved
+  licence: CC BY 4.0
   holds: unclear
   files: 26
   bytes: 398842
   fetched: '2026-09-13'
+  licence_file: myst.yml
   kind: git
   url: https://github.com/berkeley-stat205b/spring-2026.git
   branch: main
@@ -991,22 +997,24 @@ sources:
   commit: 67b33919409b2507b48465b8d9e92b11fb41a983
   restorable: upstream
 - slug: berkeley-stat206b/spring-2025
-  licence: unresolved
+  licence: CC BY 4.0
   holds: scaffolding
   files: 15
   bytes: 352515
   fetched: '2026-09-13'
+  licence_file: myst.yml
   kind: git
   url: https://github.com/berkeley-stat206b/spring-2025.git
   branch: main
   commit: 010df60fbc31daa6fbb19503f12d1b45ff8d8e6d
   restorable: upstream
 - slug: berkeley-stat206b/spring-2026
-  licence: unresolved
+  licence: CC BY 4.0
   holds: unclear
   files: 28
   bytes: 411766
   fetched: '2026-09-13'
+  licence_file: myst.yml
   kind: git
   url: https://github.com/berkeley-stat206b/spring-2026.git
   branch: main
@@ -1025,11 +1033,12 @@ sources:
   commit: 812543bde50398a54db3044bf8ba7120189a4dfa
   restorable: upstream
 - slug: berkeley-stat210a/fall-2025
-  licence: unresolved
+  licence: CC BY 4.0
   holds: material
   files: 243
   bytes: 129779266
   fetched: '2026-09-13'
+  licence_file: license.html
   kind: git
   url: https://github.com/berkeley-stat210a/fall-2025.git
   branch: gh-pages
@@ -1060,11 +1069,12 @@ sources:
   commit: 6a725bda2894de573659dd9ae38e3ca1b5cb41d5
   restorable: upstream
 - slug: berkeley-stat230a/spring-2025
-  licence: unresolved
+  licence: CC BY 4.0
   holds: scaffolding
   files: 21
   bytes: 587816
   fetched: '2026-09-13'
+  licence_file: myst.yml
   kind: git
   url: https://github.com/berkeley-stat230a/spring-2025.git
   branch: main
@@ -3414,11 +3424,12 @@ sources:
   commit: ad071208efb7e0ffe0e021f1bda9de6669edb267
   restorable: upstream
 - slug: statomics-sga2020-ghpages
-  licence: unresolved
+  licence: CC0-1.0
   holds: material
   files: 227
   bytes: 320834307
   fetched: '2026-09-13'
+  licence_file: License.md
   kind: git
   url: https://github.com/statOmics/SGA2020.git
   branch: gh-pages
