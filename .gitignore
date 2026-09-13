@@ -1,0 +1,9 @@
+.DS_Store
+*.tar.gz
+__pycache__/
+*.pyc
+.claude/settings.local.json
+
+# Downloaded source material — never committed. See sources/README.md.
+sources/*
+!sources/README.md

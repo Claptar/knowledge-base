@@ -1,0 +1,18 @@
+{
+  "name": "study-kb",
+  "description": "A study mentor and a material-adapter for a personal mathematics and computational-biology knowledge base. Teaches motivation-first and Socratically, and rewrites lectures, chapters and papers into the form they are actually learned from.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Claptar",
+    "url": "https://github.com/Claptar"
+  },
+  "homepage": "https://github.com/Claptar/knowledge-base-claude",
+  "keywords": [
+    "study",
+    "mathematics",
+    "probability",
+    "stochastic-processes",
+    "computational-biology",
+    "knowledge-base"
+  ]
+}
