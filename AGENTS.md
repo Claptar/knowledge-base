@@ -185,14 +185,35 @@ Licence matters here because this repo is published: most course notes, papers a
 not be redistributed, and the permissively-licensed ones still carry conditions a notes repo should
 not take on. **Never commit a source file, and never publish one to the site.**
 
-**Look for the papers, not only the lecture notes.** A course is a route through settled material;
-a paper is the moment someone had to argue for something, and the argument is the half he is
-actually after. Prefer the original where the topic is recent or contested, where the method
-carries its author's name, or where the question is *why is it done this way* — the textbook
-presents the winner and drops the argument, which is the artificiality he objects to. A syllabus's
-bibliography is often worth more than its slides, being an expert's judgement about which papers
-matter; harvest it as entries in its own right. This cuts both ways: a paper is not automatically
-better, and a good set of notes with problem sets beats a paper he has no route into.
+### Papers are a source kind, not a better class of source
+
+**A paper and a set of lecture notes are different objects and neither ranks above the other.**
+Notes and books teach a subject as it is now understood. A paper is the record of someone arriving
+at the idea — what problem they were stuck on, what they tried, what they had to argue for against
+the alternative that looked just as good at the time.
+
+That record is the thing this knowledge base exists to capture. *How could I have come up with
+this?* is a question about the route to an idea, and the route is what a paper preserves and a
+textbook deliberately removes: the published version presents the winner, in the order that makes
+the proof convenient, with the search that produced it thrown away. The connections between
+concepts, and the motivations that forced them, are recoverable from the original in a way they are
+usually not from the exposition.
+
+So the failure mode to avoid is not "preferring notes" — it is **papers being absent from the
+workflow altogether**, which would leave the knowledge base built entirely on second-hand accounts
+of other people's reasoning.
+
+- **Catalogue papers as first-class sources**, alongside courses and books. `Kind: paper` already
+  exists and `resources/cme-transcription.md` is already a paper catalogue; that is the norm, not
+  the exception.
+- **A syllabus's bibliography is a source in its own right** — an expert's judgement about which
+  papers matter. Harvest it as entries, not as a footnote to the course.
+- **Reach for the original when the question is *why*.** A method that carries its author's name —
+  Gillespie's SSA, the finite state projection, the Poisson representation — has a paper that
+  argues for it. The secondary account almost always drops the conditions and the argument.
+- **Reach for the notes when the question is *what* or *how*.** A good course with problem sets
+  beats a paper he has no route into, and the two are complementary: the paper for the motivation,
+  the notes for the machinery and the exercises.
 
 ## An adaptation is a derivative work
 
