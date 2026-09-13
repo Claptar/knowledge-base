@@ -34,7 +34,9 @@ GROUPS = [
     ("tutorial",        rf"{SEP}tut(orial)?[\s_-]*\d|tutorial"),
     ("problem sets",    rf"pset|problem[\s_-]*set|{SEP}ps[\s_-]*\d|assn|assignment"
                         rf"|{SEP}hw[\s_-]*\d|homework"),
-    ("exams",           rf"exam|quiz|{SEP}qu\d|final|midterm"),
+    # `exam` must not fire inside "Example" -- it filed 13 worked-example
+    # clips as exams before this negative lookahead was added.
+    ("exams",           rf"exam(?!ple)|quiz|{SEP}qu\d|final|midterm"),
     ("solutions",       rf"sol(ution)?s?{SEP}|sol(ution)?s?$|soln"),
     ("compiled",        r"compiled|complete|full[\s_-]*text|notes[\s_-]*all"),
     # Video-derived items with a descriptive title and no lecture/exam marker are
