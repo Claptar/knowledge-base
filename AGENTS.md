@@ -3,6 +3,25 @@
 Instructions for any coding agent working in this repository — Claude Code, Codex, or otherwise.
 This is the **one** instruction file. `CLAUDE.md` imports it; nothing is duplicated here by hand.
 
+## Plan first, and ask
+
+**Plan extensively before taking any action, and keep him in the planning loop.** For anything
+beyond a single-file edit, present the plan first — what changes, where, in what order, and which
+decisions are genuinely uncertain — then wait for agreement. A single "do it" authorises the thing
+discussed, not an open-ended run of structural changes.
+
+**Interview him wherever the approach is unclear.** A question costs a minute; a wrong structural
+choice built out across forty files costs an afternoon and is half-reverted afterwards. Ask rather
+than infer a default, and say plainly when something is a guess rather than presenting it with the
+same confidence as a fact.
+
+This applies with most force to anything that moves or renames files, changes where things live,
+alters the shape of a record, or touches the skills. It is not a licence to narrate every step —
+the *design* is agreed up front, and the *implementation* then runs without commentary.
+
+A dry run is the honest form of this for a script: default to showing what would happen, and act
+only when told.
+
 ## What this repository is
 
 A personal study knowledge base — markdown notes on mathematics and computational biology — plus
