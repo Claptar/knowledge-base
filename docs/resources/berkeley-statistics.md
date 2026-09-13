@@ -36,10 +36,24 @@ same as public material**, and the split is sharp:
 | **Scaffolding only** | 201A, 201B, 205A, 206A, 206B Spring 2025, 158 Spring 2025, 230A Spring 2026 | a Quarto site and nothing else: `index`, `syllabus`, `schedule`, `staff`, `license`, a stylesheet and a logo. **No notes, no problem sets** |
 | **Thin** | 150, 205B, 206B Spring 2026 | ~28 files, one notebook. A shell with a little in it |
 
-**The theory courses are the empty ones.** Probability and statistical theory — 201, 205, 206 — put
-their material on bCourses and publish only a syllabus. The applied and computational courses —
-153, 243, 158, 156 — put everything in the open. If the material matters more than the reading
-list, Stat 243 and Stat 153 are the entire value of this page.
+**The theory courses' repos are the empty ones.** Probability and statistical theory — 201, 205,
+206 — put their material on bCourses and publish only a syllabus. The applied and computational
+courses — 153, 243, 158, 210A — put everything in the open.
+
+**But an empty repo does not mean an unavailable course**, and this is the correction that matters:
+Berkeley has a second, older publishing system that the `stat<num>` sites do not index at all.
+Instructor pages under `stat.berkeley.edu/~<user>/` carry complete notes and problem sets for
+exactly the courses whose repos are scaffolds:
+
+| Course | Repo | What the instructor page has |
+| --- | --- | --- |
+| 205A / 205B | scaffold | Sinho Chewi's **full scribe notes for both halves**, plus a Brownian motion book and the Diaconis–Freedman paper — `~aldous/` |
+| 201A | scaffold | Guntuboyina's **complete lecture notes**, Fall 2019 and Fall 2022 — `~aditya/resources/` |
+| 210B | scaffold | Guntuboyina's **complete Spring 2018 notes** — same page |
+| 150 | bCourses | Benson Au's **five offerings of problem sets, with LaTeX source** — `~bensonau/` |
+
+So the value of this page is not the four applied courses. It is that **every course in it now has
+material except 206 and the Public Health cross-listings.**
 
 There is an irony worth naming, because it will mislead anyone scanning licences: **the CC BY
 licence sits mostly on the empty repositories.** Stat 201A is CC BY 4.0 and contains nothing;
@@ -58,8 +72,8 @@ nothing worth having.
 
 ### berkeley-stat150 — Stat 150, *Stochastic Processes* { #berkeley-stat150 }
 
-**Kind:** course · **Access:** unreadable — Spring 2026 runs on bCourses
-**Licence:** unresolved — no licence on the content repo
+**Kind:** course · **Access:** local · `sources/berkeley-stat150/` — 222 files from 7 offerings
+**Licence:** unresolved — instructor pages carry no statement; the Spring 2026 repo none
 **Status:** unvetted · **Adapted:** none
 <https://stat150.berkeley.edu/> · <https://github.com/berkeley-stat150/spring-2026>
 
@@ -71,8 +85,8 @@ inaccessibility worth a login rather than a shrug.
 
 ### berkeley-stat205a — Stat C205A, *Probability Theory* { #berkeley-stat205a }
 
-**Kind:** course · **Access:** fetchable — **scaffolding only**; the Aldous pages are the real material
-**Licence:** **CC BY 4.0** on the (empty) course repo; the Aldous notes carry none
+**Kind:** course · **Access:** local · `sources/berkeley-stat205a/aldous-legacy/` — Chewi's full scribe notes
+**Licence:** **CC BY 4.0** on the (empty) course repo; the Aldous page carries no statement
 **Status:** unvetted · **Adapted:** none
 <https://stat205a.berkeley.edu/> · also listed as Math C218A
 
@@ -83,8 +97,8 @@ the better starting point: <https://www.stat.berkeley.edu/~aldous/205A>.
 
 ### berkeley-stat205b — Stat C205B, *Probability Theory* { #berkeley-stat205b }
 
-**Kind:** course · **Access:** fetchable — thin; the Aldous pages are the real material
-**Licence:** unresolved — no declaration in the repo
+**Kind:** course · **Access:** local · `sources/berkeley-stat205b/aldous-legacy/` — 13 files incl. a Brownian motion book
+**Licence:** unresolved — no statement on either the repo or the Aldous page
 **Status:** unvetted · **Adapted:** none
 <https://stat205b.berkeley.edu/> · also listed as Math C218B
 
@@ -114,8 +128,8 @@ Aldous's 205B page carries per-lecture PDFs including a measure-theory recap:
 
 ### berkeley-stat201a — Stat 201A, *Introduction to Probability at an Advanced Level* { #berkeley-stat201a }
 
-**Kind:** course · **Access:** fetchable — **scaffolding only**, no material in the repo
-**Licence:** **CC BY 4.0** — on a repo containing only a syllabus
+**Kind:** course · **Access:** local · `sources/berkeley-guntuboyina-notes/` — full lecture notes, 2019 and 2022
+**Licence:** **CC BY 4.0** on the (empty) course repo; Guntuboyina's notes carry no statement
 **Status:** unvetted · **Adapted:** none
 <https://stat201a.berkeley.edu/>
 
@@ -148,6 +162,48 @@ sequence.
 archive pages that searches still surface are not mistaken for a current course. Use
 [201A](#berkeley-stat201a) and [201B](#berkeley-stat201b). Rice's 200B page persists and holds real
 material, which is the only reason to keep the entry.
+
+### berkeley-stat210a — Stat 210A, *Theoretical Statistics* { #berkeley-stat210a }
+
+**Kind:** course · **Access:** local · `sources/berkeley-stat210a/` — **211 PDFs** across three offerings
+**Licence:** **CC BY 4.0** — all three offerings. Adaptable *and* publishable with attribution
+**Status:** unvetted · **Adapted:** none
+<https://stat210a.berkeley.edu/> · <https://github.com/berkeley-stat210a>
+
+*(unvetted)* **The best-licensed substantial holding in this catalogue.** Fall 2024, 2025 and 2026,
+each a complete course: 55–80 PDFs per offering, 829 MB in total. Decision theory, exponential
+families, sufficiency, estimation, testing — the measure-theoretic treatment of inference rather
+than the methods survey.
+
+Unlike almost everything else here, the CC BY licence sits on repositories that **actually contain
+the material**, which makes this the one Berkeley course where an adaptation could go straight to
+`docs/adapted/` and be published.
+
+### berkeley-stat210b — Stat 210B, *Theoretical Statistics* { #berkeley-stat210b }
+
+**Kind:** course · **Access:** local · `sources/berkeley-stat210b/spring-2025/` — scaffolding, but see the notes below
+**Licence:** **CC BY 4.0** on the repo; Guntuboyina's notes carry no statement
+**Status:** unvetted · **Adapted:** none
+<https://stat210b.berkeley.edu/> · notes: `sources/berkeley-guntuboyina-notes/FullNotes210BSpring2018.pdf`
+
+*(unvetted)* The Spring 2025 repo is a scaffold. The material is **Aditya Guntuboyina's complete
+Spring 2018 lecture notes**, a single 1.0 MB PDF from his teaching page — asymptotics, empirical
+process theory, minimax lower bounds. Second half of the 210 sequence.
+
+### berkeley-guntuboyina-notes — Guntuboyina, complete lecture notes for 201A, 210B and 248 { #berkeley-guntuboyina-notes }
+
+**Kind:** lecture notes · **Access:** local · `sources/berkeley-guntuboyina-notes/`
+**Licence:** unresolved — no statement on the page or in the PDFs
+**Status:** unvetted · **Adapted:** none
+<https://www.stat.berkeley.edu/~aditya/styled/index.html>
+
+*(unvetted)* Four self-contained PDFs, each a whole course written out: **201A** (Fall 2019 and Fall
+2022), **210B** (Spring 2018), **248 Time Series** (Spring 2022). None of these are reachable from
+the corresponding `stat<num>` course sites — the 201A repo is an empty scaffold while the notes for
+the same course run to 820 KB.
+
+Catalogued as one entry because it is one page's worth of output by one author, and splitting it
+per course would imply four sources where there is one.
 
 ### berkeley-stat230a — Stat 230A, *Linear Models* { #berkeley-stat230a }
 
