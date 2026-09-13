@@ -38,15 +38,14 @@ Each `SKILL.md` is the authority on its own workflow.
 Route between them by the shape of the output: a conversation is `study-mentor`, a file is
 `adapt-material`. They hand off in both directions.
 
-When working inside this repo, the knowledge base root is the repo root — read and write the files
-directly, summarise the changes as a diff, and let him commit.
+When working inside this repo, read and write the files under `docs/` directly, summarise the
+changes as a diff, and let him commit.
 
 ## The knowledge base is indexed by question
 
 [`docs/questions.md`](docs/questions.md) is the front door, and the unit of navigation is a
-**question**, not
-a subject. Subjects are how textbooks index, and the textbooks already exist. What is not in a
-textbook is which question was live, what it attached to, and where it broke down.
+**question**, not a subject. Subjects are how textbooks index, and the textbooks already exist.
+What is not in a textbook is which question was live, what it attached to, and where it broke down.
 
 Practical consequences:
 
@@ -163,7 +162,7 @@ text is correct whether it is loaded from the repo, from a symlink, or as an ins
 
 ## The site
 
-`docs/` is published to GitHub Pages at <https://claptar.github.io/knowledge-base-claude/> by
+`docs/` is published to GitHub Pages at <https://claptar.github.io/knowledge-base/> by
 `.github/workflows/deploy-docs.yml` on every push to `main`. MkDocs Material, built with `uv`.
 
 ```bash

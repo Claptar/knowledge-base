@@ -33,7 +33,7 @@ an adaptation exists, working through it is a session for this skill.
 
 ## Step 1 — load the knowledge base
 
-The knowledge base lives at **https://github.com/Claptar/knowledge-base-claude** — a git
+The knowledge base lives at **https://github.com/Claptar/knowledge-base** — a git
 repository of markdown files structured like a notes site (see `references/kb-structure.md` for
 the layout and templates). It is the source of truth for what he has studied, where he got stuck,
 and what is next. Three ways to reach it, in order of preference:

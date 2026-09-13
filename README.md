@@ -56,7 +56,7 @@ Run Claude Code from the repo root and both skills load from `skills/`, via the 
 symlink. To use them outside this repo, install it as a plugin:
 
 ```
-/plugin marketplace add Claptar/knowledge-base-claude
+/plugin marketplace add Claptar/knowledge-base
 /plugin install study-kb@claptar-study
 ```
 
@@ -73,7 +73,7 @@ See [AGENTS.md](AGENTS.md) for the conventions both follow and
 
 ## The site
 
-Published to <https://claptar.github.io/knowledge-base-claude/> on every push to `main`, by
+Published to <https://claptar.github.io/knowledge-base/> on every push to `main`, by
 [`.github/workflows/deploy-docs.yml`](.github/workflows/deploy-docs.yml). MkDocs Material, with
 MathJax so the LaTeX actually renders.
 
@@ -84,7 +84,7 @@ uv run mkdocs build --strict  # what CI runs
 ```
 
 **`mkdocs serve` serves under the `site_url` path, not the root.** This is a project page, so the
-preview is at <http://127.0.0.1:8000/knowledge-base-claude/> — plain `127.0.0.1:8000` returns a
+preview is at <http://127.0.0.1:8000/knowledge-base/> — plain `127.0.0.1:8000` returns a
 302 and every deeper path a 404.
 
 `--strict` turns a broken internal link or a missing anchor into a build failure — the notes

@@ -2,8 +2,8 @@ site_name: Study knowledge base
 site_description: >-
   Trajectories through mathematics and computational biology — which question opened a
   topic, what it attached to, where it clicked, and what is still loose.
-site_url: https://claptar.github.io/knowledge-base-claude/
-repo_url: https://github.com/Claptar/knowledge-base-claude
+site_url: https://claptar.github.io/knowledge-base/
+repo_url: https://github.com/Claptar/knowledge-base
 docs_dir: docs
 site_dir: _site
 use_directory_urls: true
