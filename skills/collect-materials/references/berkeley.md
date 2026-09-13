@@ -51,11 +51,52 @@ the instructor's personal page, not under `stat<num>`:
 | `STAT C205A/B` | `MATH C218A/B` | has a vanity domain *and* legacy pages under `~aldous/205A` |
 | `STAT C239A` | `POL SCI C236A` | **retired** — succeeded by `STAT 256` |
 
-Instructor pages follow `https://www.stat.berkeley.edu/~<username>/`, and **directory listing is
-disabled** — the folder 404s while files inside it fetch fine. Find filenames through a search
-engine, not by browsing. Older course pages persist for years after the course stops running and
-are often the only public copy; `~aldous/205A` and `~aldous/205B` carry real lecture notes and
-scribe notes that the current vanity domain does not.
+## Instructor pages — the second system, and often the better one
+
+**This is where the material is when the course repo is a scaffold.** Independent of the
+`stat<num>` system, and it long predates it. Three shapes, all verified:
+
+```
+https://www.stat.berkeley.edu/~<user>/<num>/                 ~aldous/205A, ~aldous/150
+https://www.stat.berkeley.edu/~<user>/<term>.<num>/          ~bensonau/s24.150, f21.150
+https://www.stat.berkeley.edu/~<user>/resources/<Notes>.pdf  ~aditya/resources/FullNotes201AFall2022.pdf
+```
+
+A few faculty use their own subdomain instead — `purdom.stat.berkeley.edu/Syllabi/...`.
+
+**Directory listing is disabled**, so the folder 404s while files inside it fetch fine. Don't
+browse; fetch `index.html`, extract every `href` ending in a document extension, and download those:
+
+```bash
+curl -sfL "$BASE/index.html" -o idx.html
+python3 - idx.html "$BASE" <<'PY' | while read u; do curl -sfLO --output-dir "$DEST" "$u"; done
+import re,sys,urllib.parse
+h=open(sys.argv[1],encoding='utf-8',errors='replace').read()
+for m in re.findall(r'href="([^"]+)"',h,re.I):
+    if re.search(r'\.(pdf|tex|ps|zip|ipynb|R|py)$',m,re.I):
+        print(urllib.parse.urljoin(sys.argv[2]+'/',m))
+PY
+```
+
+Worth knowing before writing a course off:
+
+- **An instructor's teaching page is the index you actually want.** `~aditya/styled/index.html`
+  lists a decade of courses with links to **complete lecture-note PDFs** — 201A, 210B, 248 — none
+  of which are reachable from the corresponding `stat<num>` sites.
+- **Old offerings persist for years** after the course stops running, and are frequently the only
+  public copy. `~aldous/205A` and `~aldous/205B` carry Sinho Chewi's full scribe notes for both
+  halves; the current 205A repo is a scaffold.
+- **One instructor may hold many offerings.** `~bensonau/{f21,f22,s23,f23,s24}.150` is five terms
+  of Stat 150 with complete problem sets, **including the LaTeX source** — while the official
+  Stat 150 repo points at bCourses.
+- **The problem sets are often the whole point.** Instructor pages post homework where the LMS
+  posts everything; homework without solutions is exactly the right shape for this reader.
+
+Find these by searching the department domain rather than guessing usernames:
+
+```
+site:stat.berkeley.edu <course number> lecture notes
+```
 
 ## What is gated
 
