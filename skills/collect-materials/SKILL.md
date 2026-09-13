@@ -115,6 +115,18 @@ So, concretely, on any harvest:
   `mkdocs.yml` nav or the strict build fails.
 - **Files into `sources/<slug>/`** only when actually downloading. Gitignored, normalised at ingest
   by `../adapt-recordings/scripts/`, never committed.
+- **Update the lockfile after any download**, or the new material exists on one machine and nothing
+  records that it should exist at all:
+
+  ```bash
+  uv run python scripts/lock_sources.py --apply
+  ```
+
+  Then **set `base:` by hand** on anything fetched from a web page rather than cloned — the scanner
+  cannot infer an upstream from files on disk, so it marks them `restorable: never` until told
+  otherwise. Getting this right is the difference between a source that rebuilds anywhere and one
+  that quietly depends on a single laptop. `restore_sources.py` rebuilds from the lockfile;
+  `--check` verifies on-disk copies against its checksums.
 - **Say what you could not reach.** A list of thirty courses where eight are login-gated is more
   useful than a list of twenty-two, because the eight are the ones he might have a login for.
 
@@ -125,5 +137,7 @@ three numbers differ, and the gaps between them are the useful part.
 
 - `references/_template.md` — the shape of a provider recipe. Start here for a new one.
 - `references/mit-ocw.md`, `references/berkeley.md`, `references/github-courses.md`
+- `scripts/lock_sources.py` — record what `sources/` holds and what cannot be refetched.
+- `scripts/restore_sources.py` — rebuild `sources/` from the lockfile; `--check` verifies it.
 - `../study-mentor/references/kb-structure.md` — catalogue entry format, licence routing.
 - `../study-mentor/references/taste.md` — read before deciding a paper beats a course.

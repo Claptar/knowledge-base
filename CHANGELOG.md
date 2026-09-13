@@ -29,6 +29,20 @@ renames that heading to the version and date, and the release job publishes the 
   more than its slides. Stated as a judgement rather than a rule — a good set of notes with problem
   sets still beats a paper with no route into it.
 
+### Tooling
+
+- **`sources/` is now reproducible.** `sources.lock.yml` is committed — the one exception to the
+  directory's gitignore — recording every source with a `restorable` field: `upstream` for a git
+  repo pinned to a commit or files under a base URL, `never` for anything added by hand, `dead` for
+  an upstream that stopped resolving. `restore_sources.py` rebuilds what it can and prints what it
+  cannot; `--check` verifies on-disk copies against recorded checksums, which is how link rot and
+  a quietly-replaced PDF become visible. `lock_sources.py` generates the file and reads licences
+  from disk rather than trusting a metadata field.
+
+  The design point is the `never` list: it is what a backup actually needs to cover, and it is a
+  small fraction of the tree — 0.81 GB of 3.5 GB here, mostly books and publisher archives, with
+  everything clonable excluded.
+
 ### Knowledge base
 
 - **Catalogued 16 Berkeley statistics courses** in `docs/resources/berkeley-statistics.md`, all
