@@ -19,6 +19,7 @@ study-kb/
     topics/<topic>.md       # one per topic: the trajectory through it
     practice/<topic>.md     # attempts, mistakes, what each mistake revealed
     adapted/<topic>-<src>.md  # external material rewritten into the form he learns from
+    notes/<subject>/        # his own exposition. Material, not record.
   skills/                   # these skills. Not published.
   sources/<slug>/           # source material, normalised at ingest. Gitignored.
   adapted-private/          # adaptations of all-rights-reserved sources. Gitignored.
@@ -147,6 +148,24 @@ the topic file rather than folding one into the other.
 
 Source slugs identify the text, not just the author: `martingales-williams-ch10.md`,
 `cme-gorin-pachter-2023.md`.
+
+## notes/<subject>/
+
+His own expository writing — the explanation he would give if he had to teach the thing.
+
+Three kinds of object, kept distinct:
+
+| | Holds | Earned by |
+| --- | --- | --- |
+| `topics/` | the **record** of his trajectory | a session; `Status: solid` needs *How I could have come up with this* in his words |
+| `notes/` | **material he wrote** — exposition aimed at a reader | writing it |
+| `adapted/` | **someone else's material**, rewritten motivation-first | a source going through `adapt-material` |
+
+**A note is not evidence of understanding.** A clean exposition can be produced without having
+derived anything, and several of these were written with an AI assistant — each carries a
+provenance banner saying so. When a note's subject is worked through in a session, the session
+produces a *topic file* that links the note as material. Never promote a note by bolting a
+`Status` field onto it.
 
 ## log.md
 

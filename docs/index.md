@@ -24,6 +24,10 @@ anything has been understood.
 **Looking something up?** → [Resources](resources/index.md) for evaluated sources with verdicts, or
 [Profile](profile.md) for background, notation habits and the anchors explanations get built on.
 
+**Want an explanation rather than a record?** → [Notes](notes/index.md). My own exposition —
+algebraic structures, linear algebra, probability. Material, not evidence of understanding; the
+distinction is on that page.
+
 ## The organising idea
 
 Understanding means being able to answer **"how could I have come up with this?"** — for the

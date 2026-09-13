@@ -156,6 +156,13 @@ Full templates are in `skills/study-mentor/references/kb-structure.md`. The rule
   a better version of; a topic file is his trajectory through the subject. Link them, never merge
   them. In `adapted/`, mark supplied motivation as supplied, never hand over a proof, and list
   every cut.
+- **`notes/` holds his own exposition** — the explanation he would give if he had to teach the
+  thing. A third kind of object: `topics/` is record, `adapted/` is someone else's material
+  rewritten, `notes/` is material he wrote. **A note is not evidence of understanding** — a clean
+  exposition can be produced without deriving anything, and several were written with an AI
+  assistant, so each carries a provenance banner saying so. When a note's subject is actually
+  worked through in a session, that produces a topic file which *links* the note as material.
+  Never promote a note to a topic file by adding a `Status` field to it.
 - **Update at natural stopping points and at the end of a session**, not continuously. Breaking a
   derivation to take notes ruins the thing the session is for.
 
