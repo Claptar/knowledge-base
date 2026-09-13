@@ -15,6 +15,13 @@ Each source becomes one entry with a `restorable` field, which is the field that
     never      added by hand, with no upstream. **Back this up; nothing else can bring it back**
     dead       had an upstream once and it stopped resolving. Same as `never` from now on
 
+One field here is **written by hand and never detected**: `material`, which says what kind of
+work the source is — `course`, `notes`, `paper`, `book`, `archive` or `data`. It is what
+`normalise_source.py` reads to decide whether a conversion may be published, under AGENTS.md
+"What may be republished", so guessing it is exactly the wrong move. An entry with no
+`material` converts to `reference-private/` and says so. (It is not `kind`, which is
+git-versus-files and is about restoring the download.)
+
 Run `restore_sources.py` to rebuild from the lockfile. Dry run is the default here too: without
 --apply the lockfile is printed rather than written.
 """
@@ -156,6 +163,7 @@ def build(root: Path):
         lic, licfile = detect_licence(d)
         e = {
             "slug": rel,
+            "material": None,   # hand-written; see the docstring. merge() carries it across
             "licence": lic,
             "holds": "material" if docs >= 3 else ("scaffolding" if len(fs) < 25 else "unclear"),
             "files": len(fs),
@@ -200,9 +208,16 @@ def merge(old, new):
         p = by.get(e["slug"])
         if not p:
             continue
-        for k in ("base", "note", "catalogue"):
+        for k in ("base", "note", "catalogue", "material", "open_access"):
             if p.get(k):
                 e[k] = p[k]
+        # Detection never downgrades a resolved licence. Several licences here were settled by
+        # reading the course site rather than a file in the repo, and a rescan must not undo
+        # that work — `unresolved` means *not found*, not *not licensed*.
+        if e["licence"] == "unresolved" and p.get("licence", "unresolved") != "unresolved":
+            e["licence"] = p["licence"]
+            if p.get("licence_file"):
+                e["licence_file"] = p["licence_file"]
         if p.get("restorable") == "dead":
             e["restorable"] = "dead"
         elif e["kind"] == "files" and e.get("base"):
