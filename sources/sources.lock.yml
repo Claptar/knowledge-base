@@ -52,6 +52,148 @@ sources:
   - name: FullNotes248Spring2022TimeSeries.pdf
     bytes: 740633
     sha256: f752d67594a87c04943c0560217304c82c034d6c46275e3aac876fb7aa3876d6
+- slug: berkeley-stat-c245b-vanderlaan
+  licence: unresolved
+  holds: material
+  files: 16
+  bytes: 7462271
+  fetched: '2026-09-13'
+  kind: files
+  base: https://vanderlaan-lab.org/teach-files/
+  restorable: upstream
+  contents:
+  - name: caus2004.pdf
+    bytes: 398712
+    sha256: 2eed997437eee666f428ff0d09d28c8e065ed6c6c11bc5e145a6c5ab230917d1
+  - name: caus2004syl.pdf
+    bytes: 24235
+    sha256: 5f8e48c1884f6939d375f645eee6c3e31d88e2a1ab9c570ebe83e3cc03ce78f0
+  - name: compbio.pdf
+    bytes: 515963
+    sha256: aaf87782638715c6b57f994e9a93fd2a9c5992ccbac183c9efba466b40194a2e
+  - name: compbiosyl2001.pdf
+    bytes: 37593
+    sha256: a7c201fa42f0202a8b139624280ba70cfb373a6c0eb665a33df163700756b9f5
+  - name: dsaslides.pdf
+    bytes: 163386
+    sha256: 5aa18bf7c9cdc8c2054bde0b2366f7c362b760afa6d2dcd9d1795224818af58e
+  - name: fall2003.pdf
+    bytes: 2859684
+    sha256: 474c24cce7f2515cc506c66d271f8b9df528b82fd3ca41b7cdec631073759269
+  - name: mcp2007.ppt
+    bytes: 839680
+    sha256: bda7a1877232f96be1907459921e8f3b6abaadbad13d1ebb1391523dae68d8fa
+  - name: slcausal.pdf
+    bytes: 491323
+    sha256: 02e4e52037c5cae86147033862577f6cad5e560be79f8760a2f7dbd8ae22bede
+  - name: stat210b.pdf
+    bytes: 302302
+    sha256: 6e5a053fd3e6ac40daa1d7c6682d00551298012af2218399277a6c2e593edfca
+  - name: stat210bsyl.pdf
+    bytes: 45920
+    sha256: d22079a08ee00fb784b2ba32699dd8d3d01a68f8b815b076020befde7d189f2a
+  - name: surv2004.pdf
+    bytes: 412616
+    sha256: ab57f33fe00ddd87915cb42658223f3dd0a739414bf85704c31ecba08a3814bd
+  - name: survMSM2004.pdf
+    bytes: 524541
+    sha256: ebe6bc3f59e035843ea55c29c79531005609b0c8f357fc2ec99db38bbe1afba2
+  - name: syllabus-ph240b_survival-fa2017.pdf
+    bytes: 94948
+    sha256: b42f91dfa87bbdd559a4ec4493f6aed39b55c54c93bfe8a31d80fbb529d2c872
+  - name: syllabus-ph240b_survival-fa2019.pdf
+    bytes: 276568
+    sha256: 06b4a7db0648e19435d0e10c6b231ed97fe835e8e3dbb722dd5d632c2e661fe7
+  - name: syllabus-ph243d_adaptivedesigns-fa2018.pdf
+    bytes: 241795
+    sha256: 75e7cce38c6de9847c13de4367f4e4cf047583f43be4eb09792da5dee8761ccf
+  - name: syllabus-ph290_tlbbd-sp2019.pdf
+    bytes: 233005
+    sha256: 2033e9d09ab1a0fcd757478cd946bcc2d87e9355842ede84fb292ab8be793eb0
+  catalogue: docs/resources/berkeley-statistics.md
+- slug: berkeley-stat-c245c-leishi
+  licence: unresolved
+  holds: material
+  files: 24
+  bytes: 10259531
+  fetched: '2026-09-13'
+  kind: files
+  base: https://leishi-rocks.github.io/courses/ph240c/
+  restorable: upstream
+  contents:
+  - name: hw/Homework-1.pdf
+    bytes: 79835
+    sha256: 161f7cce05ad01100b88cb99bc27d2aee06a6f0b9843f8191da14d9bf5cd931d
+  - name: hw/Homework-2.pdf
+    bytes: 45052
+    sha256: f49dc69037fa99fd4b88258c6a4a1967f5472f8fe0806bffeb48ec133323ec9b
+  - name: hw/dataHW2.Rda
+    bytes: 15814
+    sha256: 692105c5180ad562add07f38e9985a0c282adc3a727520933fff1de18d14e739
+  - name: hw/heart_disease.csv
+    bytes: 15348
+    sha256: e61783d0ccdd8f7d7d2ef71f8a9b08301e620f4f3e13c3bcf3e7360366d9c88c
+  - name: hw/hw1-sol.pdf
+    bytes: 565548
+    sha256: 60bc42c3e5aaf8ca1644647a498f233ca1cc296d69b6ebb7f6c60ecac57cd96c
+  - name: hw/hw2-sol.pdf
+    bytes: 468083
+    sha256: d9d7c039bf834cbd71d7160a17217d7805ae6c5429d1faff595a5172827a955e
+  - name: notes/Lecture_01_Scope_and_Intro.pdf
+    bytes: 3273143
+    sha256: 33aba1d2e7b03a8d2f5577d839bfaa0ec2045d6993056486a8d7337d280e647b
+  - name: notes/Lecture_02_GLM_SVM.pdf
+    bytes: 422653
+    sha256: 85e31628d5e75dcf2f4275593865c7ac81e65f5a001e731947d9fe67c13613b7
+  - name: notes/Lecture_03_Empirical_Risk_Kernel.pdf
+    bytes: 418850
+    sha256: dd27c2f7a05fdd36fa88777b13ee649bba20f16e8d90fc4f7a0cb87b5a09ac28
+  - name: notes/Lecture_04_Metric_Learning.pdf
+    bytes: 396585
+    sha256: e8334f19d4d5b34980a00029c2fef98a48916b4fd535a8f8074e8809359d7595
+  - name: notes/Lecture_05_Trees.pdf
+    bytes: 425369
+    sha256: 909d27e0d5d0a3039fc67dbf949d78a59d2c13095dd891b162f18e772e1cb5b3
+  - name: notes/Lecture_06_Ensemble_methods.pdf
+    bytes: 261083
+    sha256: bf5b44309012468045ef34383eddebc7dc4ac3a35bd5fd66edae60e7dcbc82df
+  - name: notes/Lecture_07_Semi-supervised_learning.pdf
+    bytes: 395021
+    sha256: ad38eeba8a26230406a1bdd8dd87528694c4feac6ad6713c1b0469124df62e33
+  - name: notes/Lecture_08_Neural_Networks.pdf
+    bytes: 581627
+    sha256: 62e765527bc38b532159625f6ee752c6e618874c7ba645433213611a5e72dee5
+  - name: notes/Lecture_11_Streaming_Data_Analyses_in_Electronic_Medical_Record_Data.pdf
+    bytes: 384000
+    sha256: 6b240b7fba31e1c7a8710e02045d4cd838117f48db75b92c4c61e8c2ea881c03
+  - name: notes/Lecture_13_Design_of_Experiments.pdf
+    bytes: 277629
+    sha256: 798d309dfcab33e0a3094a371e306313800d904c4be3c3d78bb4c78fa50523b2
+  - name: notes/Lecture_14_Adaptive_Clinical_Trial_and_Reinforcement_Learning.pdf
+    bytes: 254921
+    sha256: 902be6acd21df9af48175fb1af4fb6a8459329f436d96684bb6e5617adadca9d
+  - name: notes/PH240C-Lab01.pdf
+    bytes: 444667
+    sha256: ab27d1f238c7c13e37693d364d4939c880db759982155385b6b2108905b8755f
+  - name: notes/PH240C-Lab02.pdf
+    bytes: 1140267
+    sha256: 980afa1d3e3eb3bd54cca7e8e441dbfd8cea0b15622ef1fbb02a142dafeb4d34
+  - name: notes/Tree-Missing.R
+    bytes: 1039
+    sha256: 97548aab75c0cbcc034fff4a7a3a9d04ba7d7876cf2633314a341a8c617fcd87
+  - name: notes/bandits.pdf
+    bytes: 33196
+    sha256: cd6d173573806d4e96f84ebf23ce6d3f91e3695cfb5b53fceed213e5b81c6a4c
+  - name: notes/glm_svm.R
+    bytes: 1946
+    sha256: 6cf795a3d58c7f682447d6323234b9773060d49eaf58b8a700bb4b1af8ef58b4
+  - name: notes/multi-armed.Rmd
+    bytes: 12652
+    sha256: fd7db1733e6e04f588a49e6174f3f4b72a1b844aab8479539163b2f3cbee1deb
+  - name: notes/multi-armed.pdf
+    bytes: 345203
+    sha256: 9a32648a3b257e3ffc8076bb8240bf91036d94598ec74587ac5a90c6121aac63
+  catalogue: docs/resources/berkeley-statistics.md
 - slug: berkeley-stat150/aldous-legacy
   licence: unresolved
   holds: material
