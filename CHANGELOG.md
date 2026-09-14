@@ -61,9 +61,10 @@ renames that heading to the version and date, and the release job publishes the 
 
 - **Six Pachter-lab theses catalogued** in `resources/cme-transcription.md`, four of them
   biophysical and directly on the CME track. Gorin 2023 is the long-form version of four papers
-  already catalogued there. Not yet fetched: CaltechTHESIS began refusing automated requests
-  partway through the harvest, which is recorded in the library's provider recipe as rate limiting
-  rather than a gate.
+  already catalogued there. Five of the six are now held; only
+  `galvez-merchan-2023-mrna-degradation` is outstanding, and its entry says so. CaltechTHESIS began
+  refusing automated requests partway through the harvest, which is recorded in the library's
+  provider recipe as rate limiting rather than a gate — the remaining one is fetched by hand.
 
 - **Catalogued 16 Berkeley statistics courses** in `docs/resources/berkeley-statistics.md`, all
   `unvetted`. Two of the requested courses turned out to be retired — `Stat 200A–B` was replaced by
