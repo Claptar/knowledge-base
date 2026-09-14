@@ -43,6 +43,7 @@ runnable. Both are cloned; neither is needed to read the material.
 ### statomics-sga21 — *Statistical Genomics Analysis 2021* { #statomics-sga21 }
 
 **Kind:** course · **Access:** local · `sources/statomics-sga21/` — 148 files: 35 Rmd, 19 PDF
+**Converted:** [321 pages in the reference library](https://claptar.github.io/knowledge-base-library/omics-statistics/statomics/sga21/)
 **Licence:** **unresolved** — no licence file
 **Status:** unvetted · **Adapted:** none
 <https://github.com/statOmics/SGA21>

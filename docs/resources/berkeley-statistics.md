@@ -166,6 +166,7 @@ material, which is the only reason to keep the entry.
 ### berkeley-stat210a — Stat 210A, *Theoretical Statistics* { #berkeley-stat210a }
 
 **Kind:** course · **Access:** local · `sources/berkeley-stat210a/` — **211 PDFs** across three offerings
+**Converted:** [fall 2026, 408 pages](https://claptar.github.io/knowledge-base-library/statistics/berkeley/stat210a/fall-2026/) — the reader converts from `.qmd`, so the LaTeX survives intact
 **Licence:** **CC BY 4.0** — all three offerings. Adaptable *and* publishable with attribution
 **Status:** unvetted · **Adapted:** none
 <https://stat210a.berkeley.edu/> · <https://github.com/berkeley-stat210a>
