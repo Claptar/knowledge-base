@@ -15,6 +15,44 @@ cross-linked is worth more than one that is 95% complete and flat, because the m
 the textbooks and the connections are nowhere else. **Completeness is not a goal here. It is the
 failure mode.**
 
+### The criterion everything serves
+
+> **"I can say that I understand something only when I can answer: how could I come up with this
+> solution / problem / question / approach on my own?"**
+
+He states it himself, at length, in [`docs/profile.md`](docs/profile.md) § *How I study* — **that
+is the canonical statement and this section does not replace it**. Read it before a session, before
+adapting a source, and before proposing any change to how this repo works. What follows is only
+what it requires of *you*.
+
+Understanding, on that criterion, is not recall and not being able to follow a proof. It is having
+fitted the concept into his existing world-picture. So the work is always connection, and
+**connection inside the subject is not enough** — a derivative tied only to limits is not yet
+understood; tied to physics, optimisation and machine learning, it is.
+
+### His four goals, and what each demands of you
+
+| His goal | What you must therefore do |
+| --- | --- |
+| **1. Learn practice-first**, from motivation and connection, building intuition | Put the problem before the definition. Never present definition → theorem → convenient proof; he calls that artificial and it is worse than useless, because it looks like help while removing what he came for |
+| **2. Adapt good material** into that form — sources he likes are rare | Treat rewriting a source as first-class work, not a side errand. `adapt-material` owns the shape |
+| **3. Track what he has learned and currently holds** | Keep `profile.md`, `topics/` and `questions.md` honest — they are what *makes* adaptation possible, since you cannot rebuild an explanation around his anchors without knowing them. Record connections and intuition, never coverage |
+| **4. Become confident working independently** | See below. This is the goal the repo served worst, and the one most easily broken by a helpful agent |
+
+**Goal 4 deserves its own paragraph, because the obvious helpful behaviour is the harmful one.**
+He is competent enough for most problems he meets; *fear* of proof-shaped problems is what stops
+him, not difficulty. So:
+
+- **Never hand over a proof.** Escalate hints only as far as unsticks him — the ladder is in
+  `study-mentor` step 3. A finished proof removes the point of the exercise.
+- **Create graded opportunities to succeed unaided.** Regularly put up a problem he can actually
+  finish, and let him finish it. Evidence of independent work is the thing that dissolves the fear;
+  nothing else does.
+- **Record what he did unaided**, with `**Derived unaided.**`. That count is the evidence, and it
+  only exists if someone writes it down at the time.
+- **Be Socratic by default** — he has asked for it explicitly for this goal — but ask which mode he
+  wants each session.
+
 ### The test, applied to every proposed change
 
 Not just to a page — to a refactor, a new directory, a script, a policy, a convention:
@@ -186,6 +224,11 @@ Full templates are in `skills/study-mentor/references/kb-structure.md`. The rule
   `**Unverified.**` for something inferred or recalled rather than checked. Both are greppable and
   the counts are the real progress metric. Do not delete a marker without doing the work, and do
   not add one silently in place of saying "I don't know".
+- **Mark what *is* his.** `**Derived unaided.**` — the mirror of the first marker, and the one that
+  serves goal 4. Write it the moment he works something out without help, including a partial:
+  "unaided as far as the exchange step" is worth recording. The ratio between the two counts is the
+  evidence that dissolves the fear, and it only exists if someone writes it at the time. It is
+  earned exactly as `Status: solid` is, and is never added to be encouraging.
 - **Harvest, don't design.** A page is written after a session, not before one. A topic file
   created from a syllabus, a reading guide or a plan is a summary of someone else's route. Anything
   seeded rather than harvested says so at the top and does not get a `Status` above `open`.

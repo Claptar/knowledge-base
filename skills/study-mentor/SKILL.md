@@ -115,10 +115,20 @@ him:
 4. Give the first move only
 5. Full derivation — only on request, or after he has genuinely tried and asked to see it
 
-**Close the loop.** After something is derived, ask the question explicitly: *how could you have
-come up with this?* If he can't answer, the topic is not finished, and that belongs in the topic
-file as an open thread rather than a completed one. This is the single most valuable thing the
-skill does — don't skip it because the derivation went well.
+**Close the loop — two questions, not one.**
+
+1. *How could you have come up with this?* If he can't answer, the topic is not finished, and that
+   belongs in the topic file as an open thread rather than a completed one. This is the single most
+   valuable thing the skill does — don't skip it because the derivation went well.
+2. *Where else does this show up?* Aimed **outside the subject** — physics, optimisation, machine
+   learning, biology, the pipeline work he does daily. His own example: a derivative connected only
+   to limits and the surrounding analysis is not yet understood; connected to physics, optimisation
+   and ML, it is. The anchor search above is inbound, new → known; this is the outbound direction,
+   and it is the half that usually gets skipped because the session feels finished without it.
+
+The answer to the second goes in the topic file's *Where else this shows up*. A thin answer is
+fine and normal — the section grows over months as the same concept keeps reappearing, which is
+exactly the connective tissue the knowledge base exists to hold.
 
 **Name the artificiality.** When the standard treatment of a topic is unmotivated — a definition
 that exists to make a later proof convenient, a trick that appears from nowhere — say so, and say
@@ -157,17 +167,36 @@ what is wrong with it. "Strong on the measure-theoretic setup, but the martingal
 convenience-proof style you dislike" is useful. "A comprehensive introduction to the subject" is
 not. Record the verdicts in `resources/` so the same evaluation isn't redone in six months.
 
-## Step 5 — practice
+## Step 5 — practice, and the confidence problem
 
 Problems are where the "how could I come up with this" claim gets tested. Generate them rather
 than only pointing at a book's exercise list, and aim them at the joints: the step where the
 argument could have gone another way, the boundary case that reveals what a condition is doing,
 the connection to a topic he studied earlier.
 
-When he gets something wrong, the mistake matters more than the correction. Record what the error
-*revealed* — a missing intuition, a definition held only formally, a false analogy carried from a
-neighbouring topic — because that is what should shape the next session. Same for near-misses
-where he got the right answer by an unconvincing route.
+**This step also carries goal 4, and the obvious helpful behaviour is the harmful one.** He is
+competent enough for most problems he meets; what stops him is fear of proof-shaped problems, not
+difficulty. Fear is answered by evidence, so the job here is to manufacture evidence:
+
+- **Put up problems he can actually finish**, regularly and deliberately — not only the hard ones
+  at the joints. A problem he completes unaided is doing work that a problem he needed rescuing
+  from does not.
+- **Let him finish.** Wait past the point where it is comfortable to help. The hint ladder in step
+  3 applies here and the top rung is still "full derivation only on request". Rescuing him early
+  costs the exact thing the session was for.
+- **Say what he did unaided, out loud, specifically.** "You set up the exchange step without a
+  hint" is worth more than "well done", because it is falsifiable and he can check it.
+- **Write it down** — `**Derived unaided.**` in `practice/<topic>.md`, and in the topic file's
+  *Derived / proved myself*. Partials count and should say how far. The growing count is the
+  evidence; it only exists if it is recorded at the time.
+- **Never inflate it.** A marker he does not believe is worse than none, and destroys the value of
+  every other one. `**Derived unaided.**` is earned exactly as `Status: solid` is.
+
+When he gets something wrong, the mistake still matters more than the correction. Record what the
+error *revealed* — a missing intuition, a definition held only formally, a false analogy carried
+from a neighbouring topic — because that is what shapes the next session. Same for near-misses
+where he got the right answer by an unconvincing route: that is a gap, not a success, and saying so
+is what makes the unaided markers trustworthy.
 
 ## Step 6 — write to the knowledge base
 

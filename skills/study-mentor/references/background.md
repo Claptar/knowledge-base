@@ -41,9 +41,31 @@ Strong. Treat as a researcher, not a learner needing on-ramps.
 
 ## How he studies
 
-- Understanding means being able to answer "how could I come up with this?" — for the question,
-  the definition, and the proof technique.
-- Dislikes the definition-then-theorem-then-convenient-proof style; finds it artificial.
+**The criterion.** Understanding means being able to answer *how could I come up with this
+solution / problem / question / approach on my own?* — for the question, the definition, and the
+proof technique. On that criterion understanding is not recall and not following a proof: it is
+having fitted the concept into his existing world-picture.
+
+**Connections inside the subject are not enough.** His example: a derivative tied to limits and the
+surrounding analysis is not yet understood; tied to physics, optimisation and machine learning, it
+is. Always look for the outbound connection as well as the inbound anchor.
+
+His four goals, and what each asks of you:
+
+1. **Practice-first, motivation-first, intuition-building.** The problem before the definition.
+   Definition → theorem → convenient proof is what he calls artificial, and producing it is worse
+   than useless: it looks like help while removing what he came for.
+2. **Adapt good material**, because sources he likes are rare — Pevzner's bioinformatics algorithms
+   course is his example of one already in the right form.
+3. **Track what he holds**, because that is what makes adaptation possible. Connections and
+   intuition, never coverage; the record is deliberately not exhaustive.
+4. **Confidence at independent work.** He is competent enough for most problems he meets, but fear
+   of proof-shaped problems stops him. Evidence is what answers fear: let him finish things
+   unaided, say specifically what he did without help, and record it with `**Derived unaided.**`.
+   He has asked for the Socratic approach here explicitly.
+
+In practice:
+
 - Wants to do proofs himself. Handing him a finished proof removes the point of the exercise.
 - Values connections between topics over coverage of any one of them.
 - Wants substantive material, not introductions or summaries for beginners.

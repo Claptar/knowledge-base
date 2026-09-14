@@ -8,6 +8,11 @@ The unit is a question that was live, and what is recorded is the trajectory: wh
 question, what it attached to, where it clicked, where it broke. A clean restatement of the
 material is in any textbook and is deliberately absent.
 
+The criterion underneath all of it: *I understand something only when I can answer **how could I
+come up with this on my own?*** — which means having fitted it into my existing world-picture. The
+four goals that follow from that, and what they ask of the repo, are in
+[docs/profile.md § How I study](docs/profile.md).
+
 **It is not a library, a reference or a course, and completeness is not a goal** — a knowledge base
 that is 40% complete and densely cross-linked beats one that is 95% complete and flat, because the
 missing 55% is in the textbooks and the connections are nowhere else. Someone else's material

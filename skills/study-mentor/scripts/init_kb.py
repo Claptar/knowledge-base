@@ -84,10 +84,13 @@ session has been spent on it: harvest, don't design.
 ## Markers
 
 `**Not yet derived.**` for something taken on trust from a source; `**Unverified.**` for something
-inferred rather than checked. Their count is the honest progress metric.
+inferred rather than checked; `**Derived unaided.**` for something worked out without help,
+partials included. The counts are the honest progress metric, and the ratio between them is the
+evidence that independent work is getting easier.
 
 ```bash
-grep -rn "Not yet derived\\|Unverified" topics/ adapted/ practice/ | wc -l
+grep -rn "Not yet derived\\|Unverified" topics/ adapted/ practice/ | wc -l   # not yet mine
+grep -rn "Derived unaided" topics/ practice/ | wc -l                        # mine
 ```
 """
 
@@ -178,6 +181,8 @@ TOPIC_TEMPLATE = """# <Topic>
 
 ## Attached to
 
+## Where else this shows up
+
 ## How I could have come up with this
 
 ## Still loose
@@ -187,11 +192,15 @@ TOPIC_TEMPLATE = """# <Topic>
 
 PRACTICE_TEMPLATE = """# <Topic> — practice
 
+An attempt log, not a mistake log: what I could do is recorded as carefully as what I could not.
+
 ## YYYY-MM-DD
 **Problem:**
+**Worked unaided up to:**
+**Where I asked for a hint:**
 **Attempt:**
 **Outcome:**
-**What the mistake revealed:**
+**What it revealed:**
 **Revisit:**
 """
 

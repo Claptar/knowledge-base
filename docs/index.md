@@ -20,6 +20,9 @@ available in any textbook and is deliberately not stored.
     lives in a separate [reference library](https://claptar.github.io/knowledge-base-library/).
     What is here is what I wrote.
 
+    **Why it is built this way** — the criterion and the four goals everything serves — is in
+    [Profile § How I study](profile.md#how-i-study).
+
 ## Start here
 
 **Looking for what's live?** → [Open questions](questions.md). The index is questions, not
@@ -55,13 +58,14 @@ words, not in a tidied-up version of them.
 
 ## What is not here
 
-Two greppable markers carry what is not yet known, and their count is the honest progress metric —
-more useful than counting pages:
+Greppable markers carry what is and is not yet mine, and their counts are the honest progress
+metric — more useful than counting pages:
 
 | Marker | Means |
 | --- | --- |
 | **Not yet derived.** | stated here, but taken on trust from a source rather than worked out |
 | **Unverified.** | inferred or recalled rather than checked against the source |
+| **Derived unaided.** | I worked it out without help — partials count, and say how far |
 
 Source material itself — lecture PDFs, course notes, papers — is **not** published here and not
 committed. [Resources](resources/index.md) carries the link and the verdict instead; the judgement is the

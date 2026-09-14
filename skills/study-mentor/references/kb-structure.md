@@ -122,9 +122,13 @@ The heart of the knowledge base. Records the path through a topic, not a summary
 What problem made this topic necessary. Ideally a question he can still feel the force of.
 
 ## Attached to
-Existing knowledge this connects to, and how. Be specific about the connection — "related to
-linear algebra" is worthless; "the covariance operator is the Gram matrix of centred features,
+Inbound: existing knowledge this built on, and how. Be specific about the connection — "related
+to linear algebra" is worthless; "the covariance operator is the Gram matrix of centred features,
 so the spectral story is the same one as in PCA" is the actual content.
+
+## Where else this shows up
+Outbound, and deliberately across domains — physics, optimisation, machine learning, biology,
+engineering. Added whenever a connection is noticed, never filled in at creation.
 
 ## How I could have come up with this
 His own answer, in his own words, for each central definition or result. Absent here means
@@ -134,28 +138,45 @@ not yet understood, regardless of how well the derivation went.
 Open threads with enough context to resume cold — what he tried, where it broke down.
 
 ## Derived / proved myself
-Short list of what he worked out rather than read, with dates. This is the record of what he
-owns rather than recognizes.
+What he worked out rather than read, with dates, each marked `**Derived unaided.**`. This is the
+record of what he owns rather than recognizes, and the evidence goal 4 runs on.
 ```
 
 `Status: solid` is earned by the "how I could have come up with this" section being filled in,
 not by having covered the material.
 
+**Both connection sections matter, and the outbound one is the half usually skipped.** His own
+example: a derivative tied only to limits and the surrounding analysis is not yet understood;
+tied to physics, optimisation and machine learning, it is. Connections inside a subject are the
+cheap ones.
+
 ## practice/<topic>.md
+
+**An attempt log, not a mistake log.** It records what he *could* do as carefully as what he could
+not. The blocker for goal 4 is fear rather than competence, and a file that accumulates only errors
+works against that goal — so the unaided fields are not decoration, they are the point.
 
 ```markdown
 # <Topic> — practice
 
 ## YYYY-MM-DD
 **Problem:** statement or a pointer to it
+**Worked unaided up to:** how far he got with no help. Be precise and generous — "unaided as far
+as setting up the exchange step" is a real result and belongs on the record
+**Where I asked for a hint:** which rung of the ladder, and what unstuck him
 **Attempt:** what he tried
 **Outcome:** solved / solved unconvincingly / stuck
-**What the mistake revealed:** the underlying gap — a definition held only formally, a false
-analogy from a neighbouring topic, a missing intuition. This field is the reason the file exists.
+**What it revealed:** the underlying gap — a definition held only formally, a false analogy from a
+neighbouring topic, a missing intuition — *or* the capability, when the thing revealed is that he
+could do it
 **Revisit:** when and what to try again
 ```
 
-Record near-misses too: right answer by an unconvincing route is a gap, not a success.
+Mark an unaided result `**Derived unaided.**` so it is greppable and counts.
+
+Record near-misses too: right answer by an unconvincing route is a gap, not a success. That rule
+survives unchanged — honesty about a shaky route is not in tension with recording capability, and
+inflating either field destroys the value of both.
 
 ## adapted/<topic>-<source>.md
 
