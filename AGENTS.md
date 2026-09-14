@@ -3,6 +3,63 @@
 Instructions for any coding agent working in this repository — Claude Code, Codex, or otherwise.
 This is the **one** instruction file. `CLAUDE.md` imports it; nothing is duplicated here by hand.
 
+## Why this repository exists — read before proposing anything
+
+**This is one person's route through mathematics and computational biology, indexed by question.**
+Not a library, not a reference, not a course. The unit is *a question that was live for him*, and
+what is recorded is the trajectory: what forced the question, what it attached to, where it clicked,
+where it broke. A clean restatement of the material is in any textbook and is deliberately absent.
+
+**The value is connection, not coverage.** A knowledge base that is 40% complete and densely
+cross-linked is worth more than one that is 95% complete and flat, because the missing 55% is in
+the textbooks and the connections are nowhere else. **Completeness is not a goal here. It is the
+failure mode.**
+
+### The test, applied to every proposed change
+
+Not just to a page — to a refactor, a new directory, a script, a policy, a convention:
+
+1. **Whose is it?** If someone else wrote it, it does not belong here. It belongs in the
+   [library repository](#the-library-repository), or nowhere.
+2. **Which live question does it serve?** Name it, from `questions.md`. "It would be useful to
+   have" is not an answer; neither is "for completeness".
+3. **Does it make something easier to find, or just add something to find?** Adding to the pile
+   is the default outcome and almost never the useful one.
+4. **Would a human reading this in six months be better off?** That is the bar for an edit, and
+   the content *is* the product — there is no application and no build to hide behind.
+
+If a change fails the test, **say so and do not build it**, even when asked. That is
+[Disagree when there is something to disagree about](#disagree-when-there-is-something-to-disagree-about)
+applied to scope, and scope is where it matters most.
+
+### The drift that keeps happening
+
+Recorded because it has happened repeatedly, and each time it looked reasonable at the time:
+
+| The pull | What it looks like | Why it fails the test |
+| --- | --- | --- |
+| **Accumulate** | convert all 63 sources into `docs/`, catalogue everything, fill the gaps | ~9,700 pages of other people's text against ~70 of his. Fails 1 and 3 |
+| **Restate** | write out the definition, summarise the chapter, reproduce the proof | it is in the book, unchanged and better. Fails 4 |
+| **Seed** | create topic files from a syllabus, a reading list, a plan | a page is *harvested* after a session, never written before one. Fails 2 |
+| **Systematise** | a licence tier table, a second plan page, a policy for a case that has not arisen | machinery outgrows the thing it serves. Fails 3 |
+
+The failure mode of a knowledge base is silent: a bad structure still builds, still renders, and
+only stops paying six months later when nothing can be found in it. That is why this section is
+first.
+
+### The two halves of the repo
+
+| Path | What it is | Edit when |
+| --- | --- | --- |
+| `docs/` — `index.md`, `questions.md`, `path.md`, `profile.md`, `log.md`, `resources/`, `topics/`, `practice/`, `adapted/`, `notes/` | the knowledge base — his notes. Also the published site | a study session happened, or something durable changed |
+| `skills/` | the skills: `SKILL.md`, `references/`, `scripts/` | the *way* sessions run should change |
+
+Don't let one drift into the other. Material learned goes in `docs/topics/`; instructions about how
+to teach go in the skill; someone else's text goes in the library repository, not here.
+
+**The knowledge base root is `docs/`.** Bare filenames below (`profile.md`, `topics/`) mean relative
+to it. Everything in `docs/` is published; nothing outside it is.
+
 ## Plan first, and ask
 
 **Plan extensively before taking any action, and keep him in the planning loop.** For anything
@@ -38,26 +95,6 @@ implementation of a bad idea costs more than the argument would have.
 This matters more here than in a codebase, because the failure mode of a knowledge base is silent:
 a bad structure still builds, still renders, and only stops paying six months later when nothing
 can be found in it.
-
-## What this repository is
-
-A personal study knowledge base — markdown notes on mathematics and computational biology — plus
-the skills that maintain it. There is no application and no build. The content *is* the product,
-so the bar for an edit is whether a human reading the file six months from now is better off.
-
-The repo has two halves, and they are edited for different reasons:
-
-| Path | What it is | Edit when |
-| --- | --- | --- |
-| `docs/` — `index.md`, `questions.md`, `path.md`, `profile.md`, `log.md`, `resources/`, `topics/`, `practice/`, `adapted/`, `notes/` | the knowledge base — his notes and material. Also the published site | a study session happened, or something durable changed |
-| `skills/` | the skills: `SKILL.md`, `references/`, `scripts/` | the *way* sessions run should change |
-
-Don't let one drift into the other. Material learned goes in `docs/topics/`; instructions about how
-to teach go in the skill; someone else's text goes in the
-[library repository](#the-library-repository), not here.
-
-**The knowledge base root is `docs/`.** Bare filenames below (`profile.md`, `topics/`) mean relative
-to it. Everything in `docs/` is published; nothing outside it is.
 
 ## The three skills
 

@@ -3,6 +3,25 @@
 A git repository of plain markdown, readable on its own and renderable by a static site generator.
 Every file should make sense to a human reading it directly — it is his notes, not a machine log.
 
+## Before creating anything here
+
+**This is a route through ideas, indexed by question — not a library, a reference or a course.**
+Completeness is not a goal; it is the failure mode. A knowledge base 40% complete and densely
+cross-linked is worth more than one 95% complete and flat, because the missing 55% is in the
+textbooks and the connections are nowhere else.
+
+Four questions, and they apply to a refactor or a convention as much as to a page:
+
+1. **Whose is it?** Someone else's text is not a knowledge base entry. Cite it, or adapt it.
+2. **Which live question does it serve?** Name it. "For completeness" is not an answer.
+3. **Does it make something easier to find, or just add something to find?**
+4. **Would a human reading it in six months be better off?**
+
+If a proposal fails these, say so rather than building it. The failure mode of a knowledge base is
+silent: a bad structure still renders, and only stops paying six months later when nothing can be
+found in it. The four recurring pulls to resist are **accumulate**, **restate**, **seed** and
+**systematise** — each is expanded, with examples, in the repository's `AGENTS.md`.
+
 The knowledge base root is `docs/` — everything below is relative to it, and it is what the
 published site is built from. Paths named bare elsewhere in these skills (`profile.md`, `topics/`)
 mean relative to this root, not to the repository root.

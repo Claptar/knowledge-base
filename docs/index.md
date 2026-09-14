@@ -9,6 +9,17 @@ biology. What is recorded here is the **trajectory**: which question opened a to
 attached to, where it clicked, and what is still loose. A clean restatement of the material is
 available in any textbook and is deliberately not stored.
 
+!!! abstract "What this is, and what it is not"
+
+    **A route through ideas, indexed by question** — not a library, a reference, or a course.
+    Completeness is not a goal here; it is the failure mode. A knowledge base that is 40%
+    complete and densely cross-linked is worth more than one that is 95% complete and flat,
+    because the missing 55% is in the textbooks and the connections are nowhere else.
+
+    Everyone else's material — the courses, lecture notes and transcripts these pages cite —
+    lives in a separate [reference library](https://claptar.github.io/knowledge-base-library/).
+    What is here is what I wrote.
+
 ## Start here
 
 **Looking for what's live?** → [Open questions](questions.md). The index is questions, not

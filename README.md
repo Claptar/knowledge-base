@@ -1,8 +1,18 @@
 # Study knowledge base
 
-Topics, practice, resources and learning trajectories in mathematics (probability, statistics,
-stochastic processes, linear algebra) and computational biology — maintained together with the
+**One person's route through mathematics** (probability, statistics, stochastic processes, linear
+algebra) **and computational biology, indexed by question** — maintained together with the
 `study-mentor` skill that ships in this repo.
+
+The unit is a question that was live, and what is recorded is the trajectory: what forced the
+question, what it attached to, where it clicked, where it broke. A clean restatement of the
+material is in any textbook and is deliberately absent.
+
+**It is not a library, a reference or a course, and completeness is not a goal** — a knowledge base
+that is 40% complete and densely cross-linked beats one that is 95% complete and flat, because the
+missing 55% is in the textbooks and the connections are nowhere else. Someone else's material
+belongs in the [library repository](https://github.com/Claptar/knowledge-base-library), not here.
+The test every change is judged by is at the top of [AGENTS.md](AGENTS.md).
 
 Plain markdown, readable on its own and renderable by a static site generator. Every file should
 make sense to a human reading it directly: these are notes, not a machine log.
