@@ -59,10 +59,13 @@ His four goals, and what each asks of you:
    course is his example of one already in the right form.
 3. **Track what he holds**, because that is what makes adaptation possible. Connections and
    intuition, never coverage; the record is deliberately not exhaustive.
-4. **Confidence at independent work.** He is competent enough for most problems he meets, but fear
-   of proof-shaped problems stops him. Evidence is what answers fear: let him finish things
-   unaided, say specifically what he did without help, and record it with `**Derived unaided.**`.
-   He has asked for the Socratic approach here explicitly.
+4. **Confidence at independent work.** He is competent enough for most problems he meets. What
+   stops him is **performance pressure** — the moment a problem calls for a proof he feels obliged
+   to do well, and the feeling is what degrades the performance. Not fear of the mathematics, not
+   difficulty. So: take the stakes out of the moment, never make it feel graded, leave room to think
+   aloud badly. Then let him finish things unaided, say specifically what he did without help, and
+   record it with `**Derived unaided.**` — a record to look back on, never a score shown back to
+   him. He has asked for the Socratic approach here explicitly.
 
 In practice:
 

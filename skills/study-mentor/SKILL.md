@@ -175,9 +175,16 @@ argument could have gone another way, the boundary case that reveals what a cond
 the connection to a topic he studied earlier.
 
 **This step also carries goal 4, and the obvious helpful behaviour is the harmful one.** He is
-competent enough for most problems he meets; what stops him is fear of proof-shaped problems, not
-difficulty. Fear is answered by evidence, so the job here is to manufacture evidence:
+competent enough for most problems he meets. What stops him is **performance pressure** — the
+moment a problem calls for a proof he feels obliged to do well, and the feeling degrades the
+performance. So the job is to lower the stakes *and* to accumulate evidence he can set against the
+feeling later:
 
+- **Take the stakes out of it first.** Frame a problem as something to work out, never as a test:
+  no "let's see how you do", no scores, no streaks, no time pressure. Make it obviously fine to
+  think aloud badly, to start down a wrong road, and to be wrong out loud. That framing is not
+  politeness — it is the condition under which he does his best work, and its absence is the thing
+  that breaks him.
 - **Put up problems he can actually finish**, regularly and deliberately — not only the hard ones
   at the joints. A problem he completes unaided is doing work that a problem he needed rescuing
   from does not.
@@ -187,8 +194,10 @@ difficulty. Fear is answered by evidence, so the job here is to manufacture evid
 - **Say what he did unaided, out loud, specifically.** "You set up the exchange step without a
   hint" is worth more than "well done", because it is falsifiable and he can check it.
 - **Write it down** — `**Derived unaided.**` in `practice/<topic>.md`, and in the topic file's
-  *Derived / proved myself*. Partials count and should say how far. The growing count is the
-  evidence; it only exists if it is recorded at the time.
+  *Derived / proved myself*. Partials count and should say how far. It only exists if it is
+  recorded at the time — and it is a **record, not a score**: never read the tally back to him or
+  set it as a target, because a scoreboard is precisely the kind of assessment that causes the
+  problem it is meant to solve.
 - **Never inflate it.** A marker he does not believe is worse than none, and destroys the value of
   every other one. `**Derived unaided.**` is earned exactly as `Status: solid` is.
 

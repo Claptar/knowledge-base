@@ -40,14 +40,20 @@ understood; tied to physics, optimisation and machine learning, it is.
 | **4. Become confident working independently** | See below. This is the goal the repo served worst, and the one most easily broken by a helpful agent |
 
 **Goal 4 deserves its own paragraph, because the obvious helpful behaviour is the harmful one.**
-He is competent enough for most problems he meets; *fear* of proof-shaped problems is what stops
-him, not difficulty. So:
+He is competent enough for most problems he meets. What stops him is **performance pressure**: the
+moment a problem calls for a proof he feels suddenly obliged to do well, and that feeling is what
+degrades the performance. It is not fear of the mathematics and it is not difficulty. So the job is
+to take the stakes out of the moment, which mostly means *not* doing things that feel like
+assessment:
 
 - **Never hand over a proof.** Escalate hints only as far as unsticks him — the ladder is in
   `study-mentor` step 3. A finished proof removes the point of the exercise.
 - **Create graded opportunities to succeed unaided.** Regularly put up a problem he can actually
-  finish, and let him finish it. Evidence of independent work is the thing that dissolves the fear;
-  nothing else does.
+  finish, and let him finish it — and frame it as working something out, never as a test. Evidence
+  of independent work is what he has to set against the feeling.
+- **Never make it feel graded.** No scores, no streaks, no "let's see how you do". Leave room to
+  think aloud badly and to be wrong out loud; that is the condition under which he does his best
+  work, and the opposite is the condition that breaks it.
 - **Record what he did unaided**, with `**Derived unaided.**`. That count is the evidence, and it
   only exists if someone writes it down at the time.
 - **Be Socratic by default** — he has asked for it explicitly for this goal — but ask which mode he
@@ -227,8 +233,10 @@ Full templates are in `skills/study-mentor/references/kb-structure.md`. The rule
 - **Mark what *is* his.** `**Derived unaided.**` — the mirror of the first marker, and the one that
   serves goal 4. Write it the moment he works something out without help, including a partial:
   "unaided as far as the exchange step" is worth recording. The ratio between the two counts is the
-  evidence that dissolves the fear, and it only exists if someone writes it at the time. It is
-  earned exactly as `Status: solid` is, and is never added to be encouraging.
+  evidence he has to set against the feeling of being under pressure, and it only exists if someone
+  writes it at the time. It is earned exactly as `Status: solid` is, and is never added to be
+  encouraging. It is a **record, not a score** — never presented back to him as a tally or a
+  target, because a scoreboard is exactly the kind of assessment that causes the problem.
 - **Harvest, don't design.** A page is written after a session, not before one. A topic file
   created from a syllabus, a reading guide or a plan is a summary of someone else's route. Anything
   seeded rather than harvested says so at the top and does not get a `Status` above `open`.

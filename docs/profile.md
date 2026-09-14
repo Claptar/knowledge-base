@@ -89,11 +89,16 @@ anchors are. But the record is **not exhaustive** — I am not trying to record 
 humanity. I am recording connections between concepts, and intuition.
 
 **4. Become confident doing mathematics independently.** Confidence goes hand in hand with
-competence. Right now I get scared whenever I see a problem that needs me to produce a proof, even
-though I think I am competent enough to solve it — and the fear, not the difficulty, is what stops
-me. What fixes that is evidence: a record of me having worked on proofs and problems independently,
-and enough intuition about the concepts that I can extend and improvise rather than only reuse what
-I already have. The Socratic approach should work well here.
+competence. What stops me is not fear of the mathematics: it is that the moment a problem needs a
+proof, **I suddenly feel under pressure to perform well, and that pressure is what prevents me from
+performing well.** The difficulty is rarely the real obstacle — I think I am competent enough for
+most of what I meet.
+
+So what helps is anything that takes the stakes out of the moment: no sense of being assessed,
+room to think aloud badly, and no time pressure. And over the longer run, two things — a record of
+having worked on proofs and problems independently, so the evidence is there when the feeling says
+otherwise, and enough intuition about the concepts that I can extend and improvise rather than only
+reuse what I already have. The Socratic approach should work well here.
 
 ### In practice
 

@@ -59,11 +59,13 @@ grep -rn "Derived unaided" topics/ practice/ | wc -l                        # wh
 Resolving one of the first two is worth more than adding a page. Do not delete a marker without
 actually doing the derivation, and do not add one silently in place of saying "I don't know".
 
-**The third is the one that matters for [goal 4](profile.md#how-i-study).** The problem is fear
-rather than competence, and what answers fear is evidence — so the growing count of things I
-worked out unaided is the point of recording it, and the ratio between the two greps is the real
-measure of where I am. It is earned the same way `Status: solid` is, and is never added to be
-encouraging.
+**The third is the one that matters for [goal 4](profile.md#how-i-study).** The obstacle is
+performance pressure rather than competence, and what answers it is evidence — a record of things I
+worked out unaided, there for when the feeling says otherwise. It is earned the same way
+`Status: solid` is, and never added to be encouraging.
+
+It is a **record, not a score.** The count is something to look back on, not a target to hit; a
+tally to live up to would recreate the pressure it exists to relieve.
 
 ## Harvest, don't design
 

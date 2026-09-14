@@ -153,8 +153,8 @@ cheap ones.
 ## practice/<topic>.md
 
 **An attempt log, not a mistake log.** It records what he *could* do as carefully as what he could
-not. The blocker for goal 4 is fear rather than competence, and a file that accumulates only errors
-works against that goal — so the unaided fields are not decoration, they are the point.
+not. The blocker for goal 4 is performance pressure rather than competence, and a file that
+accumulates only errors works against that goal — so the unaided fields are not decoration, they are the point.
 
 ```markdown
 # <Topic> — practice
