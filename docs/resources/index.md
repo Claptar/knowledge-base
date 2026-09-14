@@ -118,7 +118,8 @@ the adaptation is allowed to live.
 | all rights reserved — textbooks, paywalled papers, unlicensed course pages | `adapted-private/` — gitignored, never published |
 | unclear | `adapted-private/`, and say the licence is unresolved. Never guess in the publishing direction |
 
-Raw sources are never committed under any licence — see [`sources/README.md`](https://github.com/Claptar/knowledge-base/blob/main/sources/README.md).
+Raw sources are never committed under any licence, here or in the library — see the library repo's
+[`sources/README.md`](https://github.com/Claptar/knowledge-base-library/blob/main/sources/README.md).
 
 ## Status
 
