@@ -232,11 +232,12 @@ chapter that says which alternative was tried first and why it was abandoned. Ea
 bibliography assembled by someone working on exactly this — an expert's reading list, and a source
 in its own right.
 
-> **Not yet fetched.** CaltechTHESIS refuses automated requests from here — both `curl` and an
-> agent fetch time out or are refused, while `github.com`, `pypi.org` and `ocw.mit.edu` answer
-> normally. The metadata below came through before the block. **Download the PDFs by hand** into
-> the library repo's `sources/` under the slug each entry names; everything downstream then
-> works. The recipe is that repo's `skills/collect-materials/references/caltech-thesis.md`.
+> **Five of six fetched by hand on 2026-09-14.** CaltechTHESIS refuses automated requests from
+> here — both `curl` and an agent fetch time out or are refused, while `github.com`, `pypi.org`
+> and `ocw.mit.edu` answer normally in the same minute — so they were downloaded in a browser and
+> placed in the library repo's `sources/<slug>/`. Only `galvez-merchan-2023-mrna-degradation` is
+> still missing, and it is the one the lab's own biophysics site does not list as biophysics. The
+> recipe is that repo's `skills/collect-materials/references/caltech-thesis.md`.
 
 > **Licence unresolved for all six.** The rights row on each record could not be read before the
 > block, and CaltechTHESIS records vary: some carry a Creative Commons grant, many carry "no
@@ -247,7 +248,7 @@ in its own right.
 
 ### gorin-2023-scrnaseq-foundations — Gorin 2023, *Stochastic Foundations for Single-Cell RNA Sequencing* { #gorin-2023-scrnaseq-foundations }
 
-**Kind:** thesis · **Access:** unreadable — fetch by hand to `sources/gorin-2023-scrnaseq-foundations/`
+**Kind:** thesis · **Access:** local — `sources/gorin-2023-scrnaseq-foundations/` in the library repo
 **Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [Record](https://thesis.library.caltech.edu/16062/) · [PDF](https://thesis.library.caltech.edu/16062/03/gg_thesis_230602.pdf)
@@ -263,7 +264,7 @@ Advisor Pachter.
 
 ### fang-2025-biophysical-normalisation — Fang 2025, *A Biophysical Approach to Normalization and Trajectory Inference in Single-Cell RNA Sequencing Data Analysis* { #fang-2025-biophysical-normalisation }
 
-**Kind:** thesis · **Access:** unreadable — fetch by hand to `sources/fang-2025-biophysical-normalisation/`
+**Kind:** thesis · **Access:** local — `sources/fang-2025-biophysical-normalisation/` in the library repo
 **Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [Record](https://thesis.library.caltech.edu/17389/) · [DOI](https://doi.org/10.7907/asek-t904)
@@ -276,7 +277,7 @@ heuristics with no mechanistic grounding. Advisor Pachter; committee Thomson, Bo
 
 ### felce-2026-biophysical-evolution — Felce 2026, *Biophysical Modeling for Gene Expression and Evolution* { #felce-2026-biophysical-evolution }
 
-**Kind:** thesis · **Access:** unreadable — fetch by hand to `sources/felce-2026-biophysical-evolution/`
+**Kind:** thesis · **Access:** local — `sources/felce-2026-biophysical-evolution/` in the library repo
 **Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [Record](https://thesis.library.caltech.edu/17880/) · [PDF](https://thesis.library.caltech.edu/17880/01/Thesis_final_CF.pdf)
@@ -288,7 +289,7 @@ gene expression evolves. Advisor Pachter.
 
 ### carilli-2026-expression-regulation — Carilli 2026, *Genetic Interrogation of Expression Regulation* { #carilli-2026-expression-regulation }
 
-**Kind:** thesis · **Access:** unreadable — fetch by hand to `sources/carilli-2026-expression-regulation/`
+**Kind:** thesis · **Access:** local — `sources/carilli-2026-expression-regulation/` in the library repo
 **Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [Record](https://thesis.library.caltech.edu/18729/) · [PDF](https://thesis.library.caltech.edu/18729/02/Thesis_Carilli_Maria.pdf)
@@ -300,7 +301,7 @@ is the same move as the bursty-splicing paper, so read it against that.
 
 ### luebbert-2024-transcriptomic-complexity — Luebbert 2024, *Complexity of Transcriptomic Data Analysis and Implications for Biological Discovery* { #luebbert-2024-transcriptomic-complexity }
 
-**Kind:** thesis · **Access:** unreadable — fetch by hand to `sources/luebbert-2024-transcriptomic-complexity/`
+**Kind:** thesis · **Access:** local — `sources/luebbert-2024-transcriptomic-complexity/` in the library repo
 **Licence:** unresolved — adaptation stays in `adapted-private/` until checked
 **Status:** unvetted · **Adapted:** none
 [Record](https://thesis.library.caltech.edu/16368/) · [DOI](https://doi.org/10.7907/xnw5-v914)
