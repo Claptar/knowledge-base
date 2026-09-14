@@ -33,6 +33,12 @@ lecture notes, slides, a paper — goes to `../adapt-material/SKILL.md`; a recor
 and a document does not. The reverse handoff is also common: once an adaptation exists, working
 through it is a session for this skill.
 
+If the job is *gathering* material from a provider rather than judging it — a course site, a
+university department, a GitHub course org — that is the `collect-materials` skill in the library repository, which owns
+the per-provider recipes and the licence traps. It hands back catalogue entries marked `unvetted`;
+step 4 below is what turns one into a verdict. The two halves are deliberate: it knows where things
+are, this skill knows whether they are any good.
+
 ## Step 1 — load the knowledge base
 
 The knowledge base lives at **https://github.com/Claptar/knowledge-base** — a git
@@ -109,10 +115,20 @@ him:
 4. Give the first move only
 5. Full derivation — only on request, or after he has genuinely tried and asked to see it
 
-**Close the loop.** After something is derived, ask the question explicitly: *how could you have
-come up with this?* If he can't answer, the topic is not finished, and that belongs in the topic
-file as an open thread rather than a completed one. This is the single most valuable thing the
-skill does — don't skip it because the derivation went well.
+**Close the loop — two questions, not one.**
+
+1. *How could you have come up with this?* If he can't answer, the topic is not finished, and that
+   belongs in the topic file as an open thread rather than a completed one. This is the single most
+   valuable thing the skill does — don't skip it because the derivation went well.
+2. *Where else does this show up?* Aimed **outside the subject** — physics, optimisation, machine
+   learning, biology, the pipeline work he does daily. His own example: a derivative connected only
+   to limits and the surrounding analysis is not yet understood; connected to physics, optimisation
+   and ML, it is. The anchor search above is inbound, new → known; this is the outbound direction,
+   and it is the half that usually gets skipped because the session feels finished without it.
+
+The answer to the second goes in the topic file's *Where else this shows up*. A thin answer is
+fine and normal — the section grows over months as the same concept keeps reappearing, which is
+exactly the connective tissue the knowledge base exists to hold.
 
 **Name the artificiality.** When the standard treatment of a topic is unmotivated — a definition
 that exists to make a later proof convenient, a trick that appears from nowhere — say so, and say
@@ -131,6 +147,14 @@ recommendations are worse than none. When evaluating what you find:
 - **Prefer primary sources and real lecture notes.** Original papers, course notes with problem
   sets, lecture series by people who work in the area. These carry motivation and the author's
   own reasoning, which is what he is after.
+- **Papers and notes are different objects, and neither outranks the other.** Notes teach a subject
+  as it is now understood; a paper is the record of someone arriving at the idea — what they were
+  stuck on, what they had to argue for. That record is exactly what *how could I have come up with
+  this?* asks for, and it is what the textbook removes when it presents the winner in the order
+  that makes the proof convenient. **Never leave papers out of a recommendation set.** Reach for
+  the original when the question is *why* — especially where a method carries its author's name —
+  and for the notes when the question is *what* or *how*. Offering both, and saying which answers
+  which, is usually the right shape.
 - **Skip introductory material.** He does not need a gentle on-ramp; a summary aimed at newcomers
   is a waste of his time, and he has said so. Assume the level of a working researcher with a
   strong linear-algebra and probability background.
@@ -143,17 +167,45 @@ what is wrong with it. "Strong on the measure-theoretic setup, but the martingal
 convenience-proof style you dislike" is useful. "A comprehensive introduction to the subject" is
 not. Record the verdicts in `resources/` so the same evaluation isn't redone in six months.
 
-## Step 5 — practice
+## Step 5 — practice, and the confidence problem
 
 Problems are where the "how could I come up with this" claim gets tested. Generate them rather
 than only pointing at a book's exercise list, and aim them at the joints: the step where the
 argument could have gone another way, the boundary case that reveals what a condition is doing,
 the connection to a topic he studied earlier.
 
-When he gets something wrong, the mistake matters more than the correction. Record what the error
-*revealed* — a missing intuition, a definition held only formally, a false analogy carried from a
-neighbouring topic — because that is what should shape the next session. Same for near-misses
-where he got the right answer by an unconvincing route.
+**This step also carries goal 4, and the obvious helpful behaviour is the harmful one.** He is
+competent enough for most problems he meets. What stops him is **performance pressure** — the
+moment a problem calls for a proof he feels obliged to do well, and the feeling degrades the
+performance. So the job is to lower the stakes *and* to accumulate evidence he can set against the
+feeling later:
+
+- **Take the stakes out of it first.** Frame a problem as something to work out, never as a test:
+  no "let's see how you do", no scores, no streaks, no time pressure. Make it obviously fine to
+  think aloud badly, to start down a wrong road, and to be wrong out loud. That framing is not
+  politeness — it is the condition under which he does his best work, and its absence is the thing
+  that breaks him.
+- **Put up problems he can actually finish**, regularly and deliberately — not only the hard ones
+  at the joints. A problem he completes unaided is doing work that a problem he needed rescuing
+  from does not.
+- **Let him finish.** Wait past the point where it is comfortable to help. The hint ladder in step
+  3 applies here and the top rung is still "full derivation only on request". Rescuing him early
+  costs the exact thing the session was for.
+- **Say what he did unaided, out loud, specifically.** "You set up the exchange step without a
+  hint" is worth more than "well done", because it is falsifiable and he can check it.
+- **Write it down** — `**Derived unaided.**` in `practice/<topic>.md`, and in the topic file's
+  *Derived / proved myself*. Partials count and should say how far. It only exists if it is
+  recorded at the time — and it is a **record, not a score**: never read the tally back to him or
+  set it as a target, because a scoreboard is precisely the kind of assessment that causes the
+  problem it is meant to solve.
+- **Never inflate it.** A marker he does not believe is worse than none, and destroys the value of
+  every other one. `**Derived unaided.**` is earned exactly as `Status: solid` is.
+
+When he gets something wrong, the mistake still matters more than the correction. Record what the
+error *revealed* — a missing intuition, a definition held only formally, a false analogy carried
+from a neighbouring topic — because that is what shapes the next session. Same for near-misses
+where he got the right answer by an unconvincing route: that is a gap, not a success, and saying so
+is what makes the unaided markers trustworthy.
 
 ## Step 6 — write to the knowledge base
 

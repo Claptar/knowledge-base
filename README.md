@@ -1,8 +1,23 @@
 # Study knowledge base
 
-Topics, practice, resources and learning trajectories in mathematics (probability, statistics,
-stochastic processes, linear algebra) and computational biology — maintained together with the
+**One person's route through mathematics** (probability, statistics, stochastic processes, linear
+algebra) **and computational biology, indexed by question** — maintained together with the
 `study-mentor` skill that ships in this repo.
+
+The unit is a question that was live, and what is recorded is the trajectory: what forced the
+question, what it attached to, where it clicked, where it broke. A clean restatement of the
+material is in any textbook and is deliberately absent.
+
+The criterion underneath all of it: *I understand something only when I can answer **how could I
+come up with this on my own?*** — which means having fitted it into my existing world-picture. The
+four goals that follow from that, and what they ask of the repo, are in
+[docs/profile.md § How I study](docs/profile.md).
+
+**It is not a library, a reference or a course, and completeness is not a goal** — a knowledge base
+that is 40% complete and densely cross-linked beats one that is 95% complete and flat, because the
+missing 55% is in the textbooks and the connections are nowhere else. Someone else's material
+belongs in the [library repository](https://github.com/Claptar/knowledge-base-library), not here.
+The test every change is judged by is at the top of [AGENTS.md](AGENTS.md).
 
 Plain markdown, readable on its own and renderable by a static site generator. Every file should
 make sense to a human reading it directly: these are notes, not a machine log.
@@ -25,7 +40,6 @@ docs/                          the knowledge base, and the published site
 skills/study-mentor/           runs study sessions; reads and writes all of the above
 skills/adapt-material/         rewrites a written source into adapted/
 skills/adapt-recordings/       turns lecture transcripts into notes, not tidied speech
-sources/                       downloaded source material — gitignored, never published
 adapted-private/               adaptations of all-rights-reserved sources — gitignored
 
 AGENTS.md                      the one instruction file, for any agent
@@ -34,6 +48,13 @@ CLAUDE.md                      imports AGENTS.md; Claude-specific notes only
 .claude-plugin/                makes the repo installable as a Claude Code plugin
 mkdocs.yml                     site config
 ```
+
+Downloaded sources, their converted markdown, and the two skills that fetch and convert them live
+in a **separate repository**:
+[knowledge-base-library](https://github.com/Claptar/knowledge-base-library)
+(<https://claptar.github.io/knowledge-base-library/>). The split is by authorship — this repo holds
+what I wrote, that one holds everyone else's material converted. It runs to roughly ten thousand
+pages against seventy here, which is the whole reason it is not in this repo.
 
 **Everything in `docs/` is published; nothing outside it is.** The index is **questions**, not
 subjects — subjects are how textbooks index, and the textbooks already exist. Start at
@@ -56,7 +77,7 @@ question, the definition, and the proof technique. Every convention here follows
 
 ## Using the skills
 
-Run Claude Code from the repo root and all three skills load from `skills/`, via the
+Run Claude Code from the repo root and all five skills load from `skills/`, via the
 `.claude/skills` symlink. To use them outside this repo, install it as a plugin:
 
 ```
@@ -75,9 +96,16 @@ Run Claude Code from the repo root and all three skills load from `skills/`, via
   uncaptured board, naming what the recording points at but does not contain, and triaging which
   recordings are worth adapting at all.
 
-Route by the shape of the output first — a conversation is `study-mentor`, a file is one of the
-adapters — then by the source. All three hand off in every direction: adapt a chapter, then work
-through it in a session.
+Route by the shape of the output: a conversation is `study-mentor`, a file is one of the adapters,
+and between those, a transcript or recording is `adapt-recordings` and anything written is
+`adapt-material`.
+
+Two more skills — **`collect-materials`**, which finds and fetches material from a provider and
+owns the per-provider recipes, and **`normalise-materials`**, which converts a source into markdown
+split by section — live in the
+[library repository](https://github.com/Claptar/knowledge-base-library), because they operate on
+material rather than on understanding. All five hand off in every direction: find a chapter, convert
+it, adapt it, then work through it in a session.
 
 See [AGENTS.md](AGENTS.md) for the conventions both follow and
 `skills/study-mentor/references/kb-structure.md` for the file templates in full.

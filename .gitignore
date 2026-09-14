@@ -4,13 +4,17 @@ __pycache__/
 *.pyc
 .claude/settings.local.json
 
-# Downloaded source material — never committed. See sources/README.md.
-sources/*
-!sources/README.md
-
 # Adaptations of all-rights-reserved sources. Derivative works of material
 # that may not be redistributed, so they never reach the published site.
+#
+# Downloaded sources and their conversions are not here at all any more — they
+# live in the knowledge-base-library repository. See AGENTS.md.
 adapted-private/
+
+# A safety net, not a location. Downloaded source material belongs in the library
+# repository's sources/, never here — but a stray download should not become a commit.
+.sources/
+sources/
 
 # Site build
 _site/

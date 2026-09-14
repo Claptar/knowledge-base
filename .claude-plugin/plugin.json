@@ -1,7 +1,7 @@
 {
   "name": "study-kb",
-  "description": "A study mentor and two material-adapters for a personal mathematics and computational-biology knowledge base. Teaches motivation-first and Socratically, and rewrites chapters, papers and lecture recordings into the form they are actually learned from.",
-  "version": "0.2.0",
+  "description": "A study mentor and two material-adapters for a personal mathematics and computational-biology knowledge base. Rewrites chapters, papers and lecture recordings into the form they are actually learned from, and teaches motivation-first and Socratically. Collecting and converting source material is the companion study-library plugin.",
+  "version": "0.3.0",
   "author": {
     "name": "Claptar",
     "url": "https://github.com/Claptar"

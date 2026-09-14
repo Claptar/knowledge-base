@@ -3,6 +3,107 @@
 Instructions for any coding agent working in this repository — Claude Code, Codex, or otherwise.
 This is the **one** instruction file. `CLAUDE.md` imports it; nothing is duplicated here by hand.
 
+## Why this repository exists — read before proposing anything
+
+**This is one person's route through mathematics and computational biology, indexed by question.**
+Not a library, not a reference, not a course. The unit is *a question that was live for him*, and
+what is recorded is the trajectory: what forced the question, what it attached to, where it clicked,
+where it broke. A clean restatement of the material is in any textbook and is deliberately absent.
+
+**The value is connection, not coverage.** A knowledge base that is 40% complete and densely
+cross-linked is worth more than one that is 95% complete and flat, because the missing 55% is in
+the textbooks and the connections are nowhere else. **Completeness is not a goal here. It is the
+failure mode.**
+
+### The criterion everything serves
+
+> **"I can say that I understand something only when I can answer: how could I come up with this
+> solution / problem / question / approach on my own?"**
+
+He states it himself, at length, in [`docs/profile.md`](docs/profile.md) § *How I study* — **that
+is the canonical statement and this section does not replace it**. Read it before a session, before
+adapting a source, and before proposing any change to how this repo works. What follows is only
+what it requires of *you*.
+
+Understanding, on that criterion, is not recall and not being able to follow a proof. It is having
+fitted the concept into his existing world-picture. So the work is always connection, and
+**connection inside the subject is not enough** — a derivative tied only to limits is not yet
+understood; tied to physics, optimisation and machine learning, it is.
+
+### His four goals, and what each demands of you
+
+| His goal | What you must therefore do |
+| --- | --- |
+| **1. Learn practice-first**, from motivation and connection, building intuition | Put the problem before the definition. Never present definition → theorem → convenient proof; he calls that artificial and it is worse than useless, because it looks like help while removing what he came for |
+| **2. Adapt good material** into that form — sources he likes are rare | Treat rewriting a source as first-class work, not a side errand. `adapt-material` owns the shape |
+| **3. Track what he has learned and currently holds** | Keep `profile.md`, `topics/` and `questions.md` honest — they are what *makes* adaptation possible, since you cannot rebuild an explanation around his anchors without knowing them. Record connections and intuition, never coverage |
+| **4. Become confident working independently** | See below. This is the goal the repo served worst, and the one most easily broken by a helpful agent |
+
+**Goal 4 deserves its own paragraph, because the obvious helpful behaviour is the harmful one.**
+He is competent enough for most problems he meets. What stops him is **performance pressure**: the
+moment a problem calls for a proof he feels suddenly obliged to do well, and that feeling is what
+degrades the performance. It is not fear of the mathematics and it is not difficulty. So the job is
+to take the stakes out of the moment, which mostly means *not* doing things that feel like
+assessment:
+
+- **Never hand over a proof.** Escalate hints only as far as unsticks him — the ladder is in
+  `study-mentor` step 3. A finished proof removes the point of the exercise.
+- **Create graded opportunities to succeed unaided.** Regularly put up a problem he can actually
+  finish, and let him finish it — and frame it as working something out, never as a test. Evidence
+  of independent work is what he has to set against the feeling.
+- **Never make it feel graded.** No scores, no streaks, no "let's see how you do". Leave room to
+  think aloud badly and to be wrong out loud; that is the condition under which he does his best
+  work, and the opposite is the condition that breaks it.
+- **Record what he did unaided**, with `**Derived unaided.**`. That count is the evidence, and it
+  only exists if someone writes it down at the time.
+- **Be Socratic by default** — he has asked for it explicitly for this goal — but ask which mode he
+  wants each session.
+
+### The test, applied to every proposed change
+
+Not just to a page — to a refactor, a new directory, a script, a policy, a convention:
+
+1. **Whose is it?** If someone else wrote it, it does not belong here. It belongs in the
+   [library repository](#the-library-repository), or nowhere.
+2. **Which live question does it serve?** Name it, from `questions.md`. "It would be useful to
+   have" is not an answer; neither is "for completeness".
+3. **Does it make something easier to find, or just add something to find?** Adding to the pile
+   is the default outcome and almost never the useful one.
+4. **Would a human reading this in six months be better off?** That is the bar for an edit, and
+   the content *is* the product — there is no application and no build to hide behind.
+
+If a change fails the test, **say so and do not build it**, even when asked. That is
+[Disagree when there is something to disagree about](#disagree-when-there-is-something-to-disagree-about)
+applied to scope, and scope is where it matters most.
+
+### The drift that keeps happening
+
+Recorded because it has happened repeatedly, and each time it looked reasonable at the time:
+
+| The pull | What it looks like | Why it fails the test |
+| --- | --- | --- |
+| **Accumulate** | convert all 63 sources into `docs/`, catalogue everything, fill the gaps | ~9,700 pages of other people's text against ~70 of his. Fails 1 and 3 |
+| **Restate** | write out the definition, summarise the chapter, reproduce the proof | it is in the book, unchanged and better. Fails 4 |
+| **Seed** | create topic files from a syllabus, a reading list, a plan | a page is *harvested* after a session, never written before one. Fails 2 |
+| **Systematise** | a licence tier table, a second plan page, a policy for a case that has not arisen | machinery outgrows the thing it serves. Fails 3 |
+
+The failure mode of a knowledge base is silent: a bad structure still builds, still renders, and
+only stops paying six months later when nothing can be found in it. That is why this section is
+first.
+
+### The two halves of the repo
+
+| Path | What it is | Edit when |
+| --- | --- | --- |
+| `docs/` — `index.md`, `questions.md`, `path.md`, `profile.md`, `log.md`, `resources/`, `topics/`, `practice/`, `adapted/`, `notes/` | the knowledge base — his notes. Also the published site | a study session happened, or something durable changed |
+| `skills/` | the skills: `SKILL.md`, `references/`, `scripts/` | the *way* sessions run should change |
+
+Don't let one drift into the other. Material learned goes in `docs/topics/`; instructions about how
+to teach go in the skill; someone else's text goes in the library repository, not here.
+
+**The knowledge base root is `docs/`.** Bare filenames below (`profile.md`, `topics/`) mean relative
+to it. Everything in `docs/` is published; nothing outside it is.
+
 ## Plan first, and ask
 
 **Plan extensively before taking any action, and keep him in the planning loop.** For anything
@@ -39,25 +140,6 @@ This matters more here than in a codebase, because the failure mode of a knowled
 a bad structure still builds, still renders, and only stops paying six months later when nothing
 can be found in it.
 
-## What this repository is
-
-A personal study knowledge base — markdown notes on mathematics and computational biology — plus
-the skills that maintain it. There is no application and no build. The content *is* the product,
-so the bar for an edit is whether a human reading the file six months from now is better off.
-
-The repo has two halves, and they are edited for different reasons:
-
-| Path | What it is | Edit when |
-| --- | --- | --- |
-| `docs/` — `index.md`, `questions.md`, `path.md`, `profile.md`, `log.md`, `resources/`, `topics/`, `practice/`, `adapted/`, `notes/` | the knowledge base — his notes and material. Also the published site | a study session happened, or something durable changed |
-| `skills/` | the skills: `SKILL.md`, `references/`, `scripts/` | the *way* sessions run should change |
-
-Don't let one drift into the other. Material learned goes in `docs/topics/`; instructions about how
-to teach go in the skill.
-
-**The knowledge base root is `docs/`.** Bare filenames below (`profile.md`, `topics/`) mean relative
-to it. Everything in `docs/` is published; nothing outside it is.
-
 ## The three skills
 
 The real tree is `skills/`. `.claude/skills` and `.agents/skills` are **symlinks** to it, so both
@@ -70,15 +152,21 @@ Each `SKILL.md` is the authority on its own workflow.
   the definition, hold back the proof, close by asking *how could you have come up with this?*
 - **`adapt-material`** — a written source in, a document out. Rewrites a chapter, lecture notes or
   paper motivation-first, cutting what he holds cold and converting proofs to exercises. **It owns
-  the shape of an adapted document**, and the other two defer to it rather than restating it.
+  the shape of an adapted document**, and the other defers to it rather than restating it.
 - **`adapt-recordings`** — a lecture recording in, a document out. Owns only what is specific to
   speech: reconstructing mathematics that was spoken and written on an uncaptured board, naming
   what the recording points at but does not contain, and triaging which recordings are worth
   adapting at all. Hands the document shape to `adapt-material`.
 
-Route by the shape of the output first — a conversation is `study-mentor`, a file is one of the
-adapters — then by the source: a transcript or recording is `adapt-recordings`, anything written is
-`adapt-material`. All three hand off in every direction.
+Route by the shape of the output: a conversation is `study-mentor`, a file is one of the adapters,
+and between those two, a transcript or recording is `adapt-recordings` and anything written is
+`adapt-material`.
+
+**Two more skills live in the library repository**, because they operate on material rather than on
+understanding: `collect-materials` finds and fetches a source, and `normalise-materials` converts
+it to linkable markdown. They hand off here — a catalogue entry, an adaptation, a session — and
+this repo hands off to them when something needs finding or converting. See
+[The library repository](#the-library-repository).
 
 When working inside this repo, read and write the files under `docs/` directly, summarise the
 changes as a diff, and let him commit.
@@ -142,6 +230,13 @@ Full templates are in `skills/study-mentor/references/kb-structure.md`. The rule
   `**Unverified.**` for something inferred or recalled rather than checked. Both are greppable and
   the counts are the real progress metric. Do not delete a marker without doing the work, and do
   not add one silently in place of saying "I don't know".
+- **Mark what *is* his.** `**Derived unaided.**` — the mirror of the first marker, and the one that
+  serves goal 4. Write it the moment he works something out without help, including a partial:
+  "unaided as far as the exchange step" is worth recording. The ratio between the two counts is the
+  evidence he has to set against the feeling of being under pressure, and it only exists if someone
+  writes it at the time. It is earned exactly as `Status: solid` is, and is never added to be
+  encouraging. It is a **record, not a score** — never presented back to him as a tally or a
+  target, because a scoreboard is exactly the kind of assessment that causes the problem.
 - **Harvest, don't design.** A page is written after a session, not before one. A topic file
   created from a syllabus, a reading guide or a plan is a summary of someone else's route. Anything
   seeded rather than harvested says so at the top and does not get a `Status` above `open`.
@@ -166,24 +261,82 @@ Full templates are in `skills/study-mentor/references/kb-structure.md`. The rule
 - **Update at natural stopping points and at the end of a session**, not continuously. Breaking a
   derivation to take notes ruins the thing the session is for.
 
-## Source material is referenced, never vendored
+## The library repository
 
-Downloaded sources — OCW notes, lecture PDFs, slides, preprints, scanned chapters — go in
-`sources/`, which is **gitignored in full**. See [`sources/README.md`](sources/README.md).
+**Downloaded sources and their conversions are not in this repository.** They live next door, in
+[`knowledge-base-library`](https://github.com/Claptar/knowledge-base-library), published at
+<https://claptar.github.io/knowledge-base-library/>.
 
-What gets committed is the durable half: the URL and verdict in `resources/`, the rewrite in
-`adapted/`, and the trajectory in `topics/`. A source is a cache; the judgement about it is not.
-This is the same rule as *Link, never restate* — a repo that vendors its sources starts drifting
-from them the day it copies them, and it is the copy that goes stale.
+The split is **by authorship, and it is the whole rule**:
 
-Licence matters here because this repo is published: most course notes, papers and chapters may
-not be redistributed, and the permissively-licensed ones still carry conditions a notes repo should
-not take on. **Never commit a source file, and never publish one to the site.**
+| | Holds |
+| --- | --- |
+| this repository | what *he* wrote — questions, trajectories, his own expositions, and his verdicts on sources |
+| the library | what *someone else* wrote, mechanically converted — courses, lecture notes, transcripts, papers |
+
+It exists because the corpus converts to roughly **ten thousand pages** against seventy-odd of his
+own. Kept together, the knowledge base becomes a rounding error inside its own library: search
+drowns, `git log` becomes conversion churn, and every agent loads a page of policy about other
+people's material before reading a word of his.
+
+What that means in practice:
+
+- **`sources/`, `sources.lock.yml` and the conversion tooling are all there**, along with the
+  `collect-materials` and `normalise-materials` skills. Do not recreate a `sources/` here.
+- **What stays here is the durable half**: the URL and verdict in `resources/`, the rewrite in
+  `adapted/`, the trajectory in `topics/`. A source is a cache; the judgement about it is not.
+- **A topic file links to the library by absolute URL**, and the catalogue entry for a converted
+  source links to its library page. Those links are not checked by `--strict`, since they leave
+  this site — a scheduled workflow checks them instead.
+- **Never commit a source file here**, and never publish one. Most course notes, papers and
+  chapters may not be redistributed, and the permissively-licensed ones still carry conditions a
+  notes repo should not take on.
+
+### Papers are a source kind, not a better class of source
+
+**A paper and a set of lecture notes are different objects and neither ranks above the other.**
+Notes and books teach a subject as it is now understood. A paper is the record of someone arriving
+at the idea — what problem they were stuck on, what they tried, what they had to argue for against
+the alternative that looked just as good at the time.
+
+That record is the thing this knowledge base exists to capture. *How could I have come up with
+this?* is a question about the route to an idea, and the route is what a paper preserves and a
+textbook deliberately removes: the published version presents the winner, in the order that makes
+the proof convenient, with the search that produced it thrown away. The connections between
+concepts, and the motivations that forced them, are recoverable from the original in a way they are
+usually not from the exposition.
+
+So the failure mode to avoid is not "preferring notes" — it is **papers being absent from the
+workflow altogether**, which would leave the knowledge base built entirely on second-hand accounts
+of other people's reasoning.
+
+- **Catalogue papers as first-class sources**, alongside courses and books. `Kind: paper` already
+  exists and `resources/cme-transcription.md` is already a paper catalogue; that is the norm, not
+  the exception.
+- **A syllabus's bibliography is a source in its own right** — an expert's judgement about which
+  papers matter. Harvest it as entries, not as a footnote to the course.
+- **Reach for the original when the question is *why*.** A method that carries its author's name —
+  Gillespie's SSA, the finite state projection, the Poisson representation — has a paper that
+  argues for it. The secondary account almost always drops the conditions and the argument.
+- **Reach for the notes when the question is *what* or *how*.** A good course with problem sets
+  beats a paper he has no route into, and the two are complementary: the paper for the motivation,
+  the notes for the machinery and the exercises.
 
 ## An adaptation is a derivative work
 
 The raw source is a *redistribution* question, settled above. An adaptation is a *derivative work*
 question, and it is settled by the source's licence:
+
+**The three kinds of object here, and keeping them apart is the point:**
+
+| | Holds |
+| --- | --- |
+| `topics/` | his **record** — the trajectory through a subject |
+| `notes/` | **material he wrote** — his own exposition |
+| `adapted/` | someone else's material **rewritten** motivation-first, proofs converted to exercises |
+
+A fourth kind — someone else's material *converted* rather than rewritten — is the library
+repository, and it is deliberately not here.
 
 | Source licence | Adaptation goes to |
 | --- | --- |
@@ -234,7 +387,7 @@ notes: **one copy, referenced — never a second copy, search-replaced.**
 | --- | --- | --- |
 | `AGENTS.md` | the instruction file | duplicated into `CLAUDE.md` by hand |
 | `CLAUDE.md` | one `@AGENTS.md` import, plus Claude-specific notes only | a parallel copy of the above |
-| `skills/` | the real skill tree | forked per agent |
+| `skills/` | the real skill tree — three of them; the other two are in the library repo | forked per agent |
 | `.claude/skills`, `.agents/skills` | symlinks to `skills/` | real directories |
 
 This repo previously carried two full skill trees and two instruction files, produced by
@@ -270,21 +423,43 @@ uv run mkdocs build --strict  # what CI runs — do this before committing
 Commit only when asked. One commit per session, with a message naming what was studied — not
 "update kb".
 
-**Never commit to `main`.** Every change — a study session's notes as much as a skill edit — starts
-on a branch and reaches `main` through a pull request. Open it as a **draft** and mark it ready
-when it is; a draft says the work is visible but not finished, which is the honest state for most
-of a session.
+### Two long-lived branches
+
+| Branch | Is | Receives |
+| --- | --- | --- |
+| `main` | what is released and published. The site deploys from it and every arrival is a candidate release | a merge from `draft`, when enough has accumulated to be worth releasing |
+| `draft` | where the work happens — the integration branch, `dev` under another name | day-to-day commits, and short branches for anything large enough to want reviewing on its own |
+
+**Never commit to `main`.** Work on `draft`. A session's notes can be committed straight to it; a
+change big enough that you would want to see it whole first — a skill rewrite, a structural move —
+gets its own branch off `draft` and a pull request back into `draft`.
 
 ```bash
-git checkout -b <kind>/<short-slug>     # session/martingales, chore/…, fix/…, skill/…
+git checkout draft && git pull          # always start here
 # work, commit
+
+# …or, for something substantial:
+git checkout -b <kind>/<short-slug>     # session/martingales, chore/…, fix/…, skill/…
 git push -u origin HEAD
-gh pr create --draft --fill             # gh pr ready <n>, when it is
+gh pr create --draft --base draft --fill
 ```
 
-Branch on the first edit, not after. Discovering forty modified files on `main` means the work has
-to be moved before it can be reviewed, and that is the moment it usually gets committed straight to
-`main` instead.
+**`--base draft` is not optional.** `gh pr create` targets the repository's default branch, which
+is `main`, so a PR opened without it proposes a release rather than a change.
+
+### Releasing: `draft` -> `main`
+
+Promoting `draft` is the deliberate act that cuts a release, and it is the one time `main` is
+touched:
+
+```bash
+gh pr create --base main --head draft --title "Release <version>"
+```
+
+Before opening it: bump the version in `.claude-plugin/plugin.json` and rename the `CHANGELOG`
+`## Unreleased` section to that version with today's date. Accumulate entries under `## Unreleased`
+as you go — writing the note when the change is fresh is the only time it is cheap, and a release
+then costs a rename rather than an archaeology session through `git log`.
 
 ### A merge to `main` cuts a release
 
@@ -296,14 +471,19 @@ they describe, rather than only in GitHub's database.
 
 Two consequences worth holding on to:
 
-- **A PR that changes a skill, a convention or a script bumps the version and adds its `CHANGELOG`
-  section.** The build fails the release if the section is missing, which is deliberate: a version
-  with no notes is a version nobody can tell you about.
-- **A PR that only adds notes to `docs/` bumps nothing**, and the workflow stays quiet. The content
-  changes every session and is not what a release is for — `git log` already records it, and a tag
-  per note would make the tag list useless for the thing it is actually for, which is telling
-  someone which version of the skills they installed.
+- **A promotion that carries a skill, convention or script change bumps the version and names its
+  `CHANGELOG` section.** The job fails the release if the section is missing, which is deliberate:
+  a version with no notes is a version nobody can tell you about.
+- **A promotion that only carries `docs/` notes bumps nothing**, and the workflow stays quiet. The
+  content changes every session and is not what a release is for — `git log` already records it,
+  and a tag per note would make the tag list useless for the thing it is actually for, which is
+  telling someone which version of the skills they installed.
 
 The second point is a deliberate softening of "every merge cuts a release": every merge *runs* the
 release job, and every merge that changes the versioned artefact produces one. To release on every
 merge regardless, change the version resolution step in the workflow — the comment there says how.
+
+`main` is still the deploy branch, so a promotion also publishes the site. Notes that are merely
+*written* are not published until `draft` is promoted, which is usually what you want and
+occasionally a surprise — if something needs to be live now, that is a reason to promote, not a
+reason to commit to `main`.

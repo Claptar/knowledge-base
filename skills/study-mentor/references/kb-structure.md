@@ -3,6 +3,25 @@
 A git repository of plain markdown, readable on its own and renderable by a static site generator.
 Every file should make sense to a human reading it directly — it is his notes, not a machine log.
 
+## Before creating anything here
+
+**This is a route through ideas, indexed by question — not a library, a reference or a course.**
+Completeness is not a goal; it is the failure mode. A knowledge base 40% complete and densely
+cross-linked is worth more than one 95% complete and flat, because the missing 55% is in the
+textbooks and the connections are nowhere else.
+
+Four questions, and they apply to a refactor or a convention as much as to a page:
+
+1. **Whose is it?** Someone else's text is not a knowledge base entry. Cite it, or adapt it.
+2. **Which live question does it serve?** Name it. "For completeness" is not an answer.
+3. **Does it make something easier to find, or just add something to find?**
+4. **Would a human reading it in six months be better off?**
+
+If a proposal fails these, say so rather than building it. The failure mode of a knowledge base is
+silent: a bad structure still renders, and only stops paying six months later when nothing can be
+found in it. The four recurring pulls to resist are **accumulate**, **restate**, **seed** and
+**systematise** — each is expanded, with examples, in the repository's `AGENTS.md`.
+
 The knowledge base root is `docs/` — everything below is relative to it, and it is what the
 published site is built from. Paths named bare elsewhere in these skills (`profile.md`, `topics/`)
 mean relative to this root, not to the repository root.
@@ -21,10 +40,14 @@ study-kb/
     adapted/<topic>-<src>.md  # external material rewritten into the form he learns from
     notes/<subject>/        # his own exposition. Material, not record.
   skills/                   # these skills. Not published.
-  sources/<slug>/           # source material, normalised at ingest. Gitignored.
   adapted-private/          # adaptations of all-rights-reserved sources. Gitignored.
   mkdocs.yml                # site config
 ```
+
+`sources/<slug>/` — the downloaded material itself — is **not here**. It lives in the
+[library repository](https://github.com/Claptar/knowledge-base-library) with its converted
+markdown and the two skills that fetch and convert it. A `sources/<slug>` path in a catalogue
+entry resolves there; the slug is the same in both repositories.
 
 **A new question goes in `questions.md` first, with no page behind it.** That is the normal resting
 state of a question. A topic file is written after a session, not before one.
@@ -99,9 +122,13 @@ The heart of the knowledge base. Records the path through a topic, not a summary
 What problem made this topic necessary. Ideally a question he can still feel the force of.
 
 ## Attached to
-Existing knowledge this connects to, and how. Be specific about the connection — "related to
-linear algebra" is worthless; "the covariance operator is the Gram matrix of centred features,
+Inbound: existing knowledge this built on, and how. Be specific about the connection — "related
+to linear algebra" is worthless; "the covariance operator is the Gram matrix of centred features,
 so the spectral story is the same one as in PCA" is the actual content.
+
+## Where else this shows up
+Outbound, and deliberately across domains — physics, optimisation, machine learning, biology,
+engineering. Added whenever a connection is noticed, never filled in at creation.
 
 ## How I could have come up with this
 His own answer, in his own words, for each central definition or result. Absent here means
@@ -111,28 +138,45 @@ not yet understood, regardless of how well the derivation went.
 Open threads with enough context to resume cold — what he tried, where it broke down.
 
 ## Derived / proved myself
-Short list of what he worked out rather than read, with dates. This is the record of what he
-owns rather than recognizes.
+What he worked out rather than read, with dates, each marked `**Derived unaided.**`. This is the
+record of what he owns rather than recognizes, and the evidence goal 4 runs on.
 ```
 
 `Status: solid` is earned by the "how I could have come up with this" section being filled in,
 not by having covered the material.
 
+**Both connection sections matter, and the outbound one is the half usually skipped.** His own
+example: a derivative tied only to limits and the surrounding analysis is not yet understood;
+tied to physics, optimisation and machine learning, it is. Connections inside a subject are the
+cheap ones.
+
 ## practice/<topic>.md
+
+**An attempt log, not a mistake log.** It records what he *could* do as carefully as what he could
+not. The blocker for goal 4 is performance pressure rather than competence, and a file that
+accumulates only errors works against that goal — so the unaided fields are not decoration, they are the point.
 
 ```markdown
 # <Topic> — practice
 
 ## YYYY-MM-DD
 **Problem:** statement or a pointer to it
+**Worked unaided up to:** how far he got with no help. Be precise and generous — "unaided as far
+as setting up the exchange step" is a real result and belongs on the record
+**Where I asked for a hint:** which rung of the ladder, and what unstuck him
 **Attempt:** what he tried
 **Outcome:** solved / solved unconvincingly / stuck
-**What the mistake revealed:** the underlying gap — a definition held only formally, a false
-analogy from a neighbouring topic, a missing intuition. This field is the reason the file exists.
+**What it revealed:** the underlying gap — a definition held only formally, a false analogy from a
+neighbouring topic, a missing intuition — *or* the capability, when the thing revealed is that he
+could do it
 **Revisit:** when and what to try again
 ```
 
-Record near-misses too: right answer by an unconvincing route is a gap, not a success.
+Mark an unaided result `**Derived unaided.**` so it is greppable and counts.
+
+Record near-misses too: right answer by an unconvincing route is a gap, not a success. That rule
+survives unchanged — honesty about a shaky route is not in tension with recording capability, and
+inflating either field destroys the value of both.
 
 ## adapted/<topic>-<source>.md
 
@@ -228,7 +272,7 @@ Three fields carry the weight:
 
 `sources/<slug>/` holds the material itself, normalised at ingest to one layout regardless of
 publisher, with a `_manifest.csv` mapping back to the original filenames. The full convention is in
-`resources/index.md`; the scripts are in `../adapt-recordings/scripts/`.
+`resources/index.md`; the scripts are in the library repo's `skills/collect-materials/scripts/`.
 
 ## Update rules
 

@@ -13,6 +13,7 @@ The verdict is the expensive part; it is why this exists rather than a bookmark 
 | | |
 | --- | --- |
 | [Courses](courses.md) | MIT OCW course exports held locally — lecture notes, problem sets, transcripts |
+| [Berkeley statistics](berkeley-statistics.md) | Berkeley course sites and their GitHub repositories — located, not yet read |
 | [Doing mathematics](doing-mathematics.md) | process and heuristics rather than content |
 | [Analysis](analysis.md) | real and complex |
 | [Linear algebra](linear-algebra.md) | sources of *problems*, not courses |
@@ -20,6 +21,7 @@ The verdict is the expensive part; it is why this exists rather than a bookmark 
 | [Statistics](statistics.md) | inference, modelling judgement, experimental design |
 | [Stochastic processes](stochastic-processes.md) | the probability map and the mechanism map |
 | [CME and transcription](cme-transcription.md) | the primary literature the [learning path](../path.md) terminates in |
+| [Omics statistics](omics-statistics.md) | inference on proteomics and single-cell data — the closest material here to the day job |
 | [Modelling](modelling.md) | modelling craft, optimisation, validation and uncertainty |
 
 ## Entry format
@@ -36,6 +38,11 @@ be linked to directly — `resources/stochastic-processes.md#van-kampen-sppc` �
 
 The verdict, in prose: what it is good for, what is weak, whether it motivates or merely states.
 ```
+
+> **`sources/` is in the library repository**, not this one —
+> [knowledge-base-library](https://github.com/Claptar/knowledge-base-library), along with the
+> converted markdown and the skills that fetch and convert. Every `sources/<slug>` path below is
+> still correct; it just resolves there. What stays here is the entry and the verdict.
 
 That one slug ties every place a source appears, and the directory name **is** the slug:
 
@@ -77,7 +84,7 @@ be checked against its source, and the rule that every claim is checkable would 
 makes the rename reversible, which is how two bugs in this repo's own normaliser were caught and
 fixed without data loss.
 
-Scripts live in `skills/adapt-recordings/scripts/` — `course_inventory.py` to see what a source
+Scripts live in the library repo's `skills/collect-materials/scripts/` — `course_inventory.py` to see what a source
 holds, `organise_course.py` to sort a flat export into the folders above, `normalise_names.py` to
 rename, and `transcript_text.py` to turn a `.srt`/`.vtt` caption file into readable timestamped
 prose. Only the two that move files take `--apply`, and neither does anything without it;
@@ -111,7 +118,8 @@ the adaptation is allowed to live.
 | all rights reserved — textbooks, paywalled papers, unlicensed course pages | `adapted-private/` — gitignored, never published |
 | unclear | `adapted-private/`, and say the licence is unresolved. Never guess in the publishing direction |
 
-Raw sources are never committed under any licence — see [`sources/README.md`](https://github.com/Claptar/knowledge-base/blob/main/sources/README.md).
+Raw sources are never committed under any licence, here or in the library — see the library repo's
+[`sources/README.md`](https://github.com/Claptar/knowledge-base-library/blob/main/sources/README.md).
 
 ## Status
 

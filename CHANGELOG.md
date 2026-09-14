@@ -10,6 +10,80 @@ Versions are `MAJOR.MINOR.PATCH`:
 - **MINOR** — a skill, script or rule added or meaningfully reshaped.
 - **PATCH** — corrections that change no behaviour.
 
+Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
+renames that heading to the version and date, and the release job publishes the section as-is.
+
+## 0.3.0 — 2026-09-14
+
+### Structure
+
+- **The converted library is now a separate repository.**
+  [knowledge-base-library](https://github.com/Claptar/knowledge-base-library), published at
+  <https://claptar.github.io/knowledge-base-library/>. It holds `sources/`, the converted markdown,
+  and the two skills that produce them.
+
+  The reason is arithmetic. A full dry run over the corpus plans **9,657 pages from 1,948
+  documents**; this repository holds about seventy files of his own writing. Kept together, the
+  knowledge base becomes a rounding error inside its own library — search drowns, `git log` becomes
+  conversion churn, and every agent loads a page of policy about other people's material before
+  reading a word of his. **The split is by authorship**: what he wrote stays, what someone else
+  wrote goes.
+
+- **The plugin ships three skills, not five.** `collect-materials` and `normalise-materials` move
+  to the library repo as a companion plugin, `study-library`, along with the four source-handling
+  scripts that used to sit in `adapt-recordings/scripts/` — anything that touches `sources/` lives
+  where `sources/` lives. `adapt-recordings` keeps its `SKILL.md`: reconstructing spoken
+  mathematics is judgement, not tooling.
+
+- **`AGENTS.md` lost the republishing policy and the `docs/reference/` section**, 456 lines to 401,
+  and the removed half was the policy-dense half. Both now live in the library's own `AGENTS.md`,
+  where they are read only by whoever is converting something.
+
+- **Books and paywalled papers are simply never converted**, replacing the publish-versus-private
+  tiering with a single skip rule. `reference-private/` no longer exists anywhere.
+
+- **The strict site build went from 30 seconds to 1.1.**
+
+### Tooling
+
+- **`normalise_source.py`** — the converter named as the one unfinished thing in the previous
+  handoff — was written, and now lives in the library repo. It prefers the source format over the
+  render, splits on the source's own headings, rewrites every relative link to a converted sibling
+  or to the original, and refuses to convert anything it cannot classify or cite. Dry run by
+  default.
+- **`material:`, `open_access:` and `mirrors_upstream:` in `sources.lock.yml`** — hand-written,
+  never detected, preserved across a rescan. `mirrors_upstream` exists because MIT OCW exports are
+  renamed at ingest, so building a per-file URL from the tidied path produced a confident 404.
+- **A licence rescan no longer downgrades a resolved licence.** Several were settled by reading a
+  course site rather than a file in the repo.
+- **A scheduled check for links that leave the site.** `--strict` guarantees every internal link
+  resolves; it cannot see a link into the reference library or into another repo, which is exactly
+  where the cross-repo links now point. A weekly workflow resolves them all and fails if one rots.
+  Scoped to his own URLs — the hundreds of course and paper links would make it flaky, and a check
+  that cries wolf is one that gets switched off.
+
+### Knowledge base
+
+- **Six Pachter-lab theses catalogued** in `resources/cme-transcription.md`, four of them
+  biophysical and directly on the CME track. Gorin 2023 is the long-form version of four papers
+  already catalogued there. Five of the six are now held; only
+  `galvez-merchan-2023-mrna-degradation` is outstanding, and its entry says so. CaltechTHESIS began
+  refusing automated requests partway through the harvest, which is recorded in the library's
+  provider recipe as rate limiting rather than a gate — the remaining one is fetched by hand.
+
+- **Catalogued 16 Berkeley statistics courses** in `docs/resources/berkeley-statistics.md`, all
+  `unvetted`. Two of the requested courses turned out to be retired — `Stat 200A–B` was replaced by
+  `201A–B` in 2012–13, and `Stat C239A` was succeeded by `Stat 256` — and both are recorded as
+  such so the dead numbers resolve to their successors. `Stat C245E–F` (Statistical Genomics,
+  Dudoit) covers scRNA-Seq and is the closest thing in the set to the day job.
+
+### Conventions
+
+- **Two long-lived branches.** Work happens on `draft`; `main` holds what is released and
+  published. Promoting `draft` to `main` is the deliberate act that cuts a release. `AGENTS.md`
+  carries the rule and the commands, including the `--base draft` that `gh pr create` needs and
+  does not default to.
+
 ## 0.2.0 — 2026-09-13
 
 First tagged release. The repo had drifted since the three-skill split; this is the pass that

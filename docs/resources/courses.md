@@ -26,6 +26,7 @@ speech-to-text pass first, which is a separate job with its own failure modes �
 ### ocw-6041sc — MIT 6.041SC, *Probabilistic Systems Analysis and Applied Probability* { #ocw-6041sc }
 
 **Kind:** course · **Access:** local · `sources/ocw-6041sc/`
+**Converted:** [452 pages in the reference library](https://claptar.github.io/knowledge-base-library/probability/mit-ocw/6041sc/) — lectures, recitations and transcripts
 **Instructor:** John Tsitsiklis · Fall 2013
 **Licence:** CC BY-NC-SA — adaptations publishable with attribution and the same licence
 **Status:** unvetted · **Adapted:** none

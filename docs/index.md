@@ -9,6 +9,20 @@ biology. What is recorded here is the **trajectory**: which question opened a to
 attached to, where it clicked, and what is still loose. A clean restatement of the material is
 available in any textbook and is deliberately not stored.
 
+!!! abstract "What this is, and what it is not"
+
+    **A route through ideas, indexed by question** — not a library, a reference, or a course.
+    Completeness is not a goal here; it is the failure mode. A knowledge base that is 40%
+    complete and densely cross-linked is worth more than one that is 95% complete and flat,
+    because the missing 55% is in the textbooks and the connections are nowhere else.
+
+    Everyone else's material — the courses, lecture notes and transcripts these pages cite —
+    lives in a separate [reference library](https://claptar.github.io/knowledge-base-library/).
+    What is here is what I wrote.
+
+    **Why it is built this way** — the criterion and the four goals everything serves — is in
+    [Profile § How I study](profile.md#how-i-study).
+
 ## Start here
 
 **Looking for what's live?** → [Open questions](questions.md). The index is questions, not
@@ -44,13 +58,14 @@ words, not in a tidied-up version of them.
 
 ## What is not here
 
-Two greppable markers carry what is not yet known, and their count is the honest progress metric —
-more useful than counting pages:
+Greppable markers carry what is and is not yet mine, and their counts are the honest progress
+metric — more useful than counting pages:
 
 | Marker | Means |
 | --- | --- |
 | **Not yet derived.** | stated here, but taken on trust from a source rather than worked out |
 | **Unverified.** | inferred or recalled rather than checked against the source |
+| **Derived unaided.** | I worked it out without help — partials count, and say how far |
 
 Source material itself — lecture PDFs, course notes, papers — is **not** published here and not
 committed. [Resources](resources/index.md) carries the link and the verdict instead; the judgement is the
