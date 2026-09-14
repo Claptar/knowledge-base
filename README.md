@@ -21,16 +21,11 @@ docs/                          the knowledge base, and the published site
   practice/<topic>.md          attempts, mistakes, and what each mistake revealed
   adapted/<topic>-<src>.md     external material rewritten into the form I learn from
   notes/<subject>/             my own exposition — material, not evidence of understanding
-  reference/<slug>/            external material converted to markdown, split so it can be linked
 
 skills/study-mentor/           runs study sessions; reads and writes all of the above
 skills/adapt-material/         rewrites a written source into adapted/
 skills/adapt-recordings/       turns lecture transcripts into notes, not tidied speech
-skills/collect-materials/      finds material from a provider; owns the per-provider recipes
-skills/normalise-materials/    converts a source into markdown split by section, so it can be linked
-sources/                       downloaded source material — gitignored, never published
 adapted-private/               adaptations of all-rights-reserved sources — gitignored
-reference-private/             conversions of books and paywalled papers — gitignored
 
 AGENTS.md                      the one instruction file, for any agent
 CLAUDE.md                      imports AGENTS.md; Claude-specific notes only
@@ -38,6 +33,13 @@ CLAUDE.md                      imports AGENTS.md; Claude-specific notes only
 .claude-plugin/                makes the repo installable as a Claude Code plugin
 mkdocs.yml                     site config
 ```
+
+Downloaded sources, their converted markdown, and the two skills that fetch and convert them live
+in a **separate repository**:
+[knowledge-base-library](https://github.com/Claptar/knowledge-base-library)
+(<https://claptar.github.io/knowledge-base-library/>). The split is by authorship — this repo holds
+what I wrote, that one holds everyone else's material converted. It runs to roughly ten thousand
+pages against seventy here, which is the whole reason it is not in this repo.
 
 **Everything in `docs/` is published; nothing outside it is.** The index is **questions**, not
 subjects — subjects are how textbooks index, and the textbooks already exist. Start at
@@ -79,17 +81,16 @@ Run Claude Code from the repo root and all five skills load from `skills/`, via 
   uncaptured board, naming what the recording points at but does not contain, and triaging which
   recordings are worth adapting at all.
 
-- **`collect-materials`** — a provider in, catalogue entries out. Owns the recipes for finding
-  material: where a course site's files actually live, what is gated behind a campus login, and
-  which licence claim is about the website template rather than the content. It locates; it does
-  not judge, so its entries are always `unvetted`.
-- **`normalise-materials`** — converts a collected source into markdown split by lecture or section
-  so every part has a URL. It preserves rather than rewrites, and always converts the source file
-  rather than the PDF built from it, because a PDF keeps the prose and mangles the maths.
+Route by the shape of the output: a conversation is `study-mentor`, a file is one of the adapters,
+and between those, a transcript or recording is `adapt-recordings` and anything written is
+`adapt-material`.
 
-Route by the shape of the output first — a conversation is `study-mentor`, a file is one of the
-adapters, a catalogue entry is `collect-materials` — then by the source. All five hand off in every
-direction: find a chapter, adapt it, then work through it in a session.
+Two more skills — **`collect-materials`**, which finds and fetches material from a provider and
+owns the per-provider recipes, and **`normalise-materials`**, which converts a source into markdown
+split by section — live in the
+[library repository](https://github.com/Claptar/knowledge-base-library), because they operate on
+material rather than on understanding. All five hand off in every direction: find a chapter, convert
+it, adapt it, then work through it in a session.
 
 See [AGENTS.md](AGENTS.md) for the conventions both follow and
 `skills/study-mentor/references/kb-structure.md` for the file templates in full.

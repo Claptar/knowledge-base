@@ -21,10 +21,14 @@ study-kb/
     adapted/<topic>-<src>.md  # external material rewritten into the form he learns from
     notes/<subject>/        # his own exposition. Material, not record.
   skills/                   # these skills. Not published.
-  sources/<slug>/           # source material, normalised at ingest. Gitignored.
   adapted-private/          # adaptations of all-rights-reserved sources. Gitignored.
   mkdocs.yml                # site config
 ```
+
+`sources/<slug>/` — the downloaded material itself — is **not here**. It lives in the
+[library repository](https://github.com/Claptar/knowledge-base-library) with its converted
+markdown and the two skills that fetch and convert it. A `sources/<slug>` path in a catalogue
+entry resolves there; the slug is the same in both repositories.
 
 **A new question goes in `questions.md` first, with no page behind it.** That is the normal resting
 state of a question. A topic file is written after a session, not before one.
@@ -228,7 +232,7 @@ Three fields carry the weight:
 
 `sources/<slug>/` holds the material itself, normalised at ingest to one layout regardless of
 publisher, with a `_manifest.csv` mapping back to the original filenames. The full convention is in
-`resources/index.md`; the scripts are in `../adapt-recordings/scripts/`.
+`resources/index.md`; the scripts are in the library repo's `skills/collect-materials/scripts/`.
 
 ## Update rules
 

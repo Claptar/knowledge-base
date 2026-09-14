@@ -34,7 +34,7 @@ and a document does not. The reverse handoff is also common: once an adaptation 
 through it is a session for this skill.
 
 If the job is *gathering* material from a provider rather than judging it — a course site, a
-university department, a GitHub course org — that is `../collect-materials/SKILL.md`, which owns
+university department, a GitHub course org — that is the `collect-materials` skill in the library repository, which owns
 the per-provider recipes and the licence traps. It hands back catalogue entries marked `unvetted`;
 step 4 below is what turns one into a verdict. The two halves are deliberate: it knows where things
 are, this skill knows whether they are any good.

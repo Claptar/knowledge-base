@@ -53,12 +53,13 @@ The repo has two halves, and they are edited for different reasons:
 | `skills/` | the skills: `SKILL.md`, `references/`, `scripts/` | the *way* sessions run should change |
 
 Don't let one drift into the other. Material learned goes in `docs/topics/`; instructions about how
-to teach go in the skill.
+to teach go in the skill; someone else's text goes in the
+[library repository](#the-library-repository), not here.
 
 **The knowledge base root is `docs/`.** Bare filenames below (`profile.md`, `topics/`) mean relative
 to it. Everything in `docs/` is published; nothing outside it is.
 
-## The five skills
+## The three skills
 
 The real tree is `skills/`. `.claude/skills` and `.agents/skills` are **symlinks** to it, so both
 audiences read one copy and there is no way for them to drift. Never edit through a symlink path
@@ -70,24 +71,21 @@ Each `SKILL.md` is the authority on its own workflow.
   the definition, hold back the proof, close by asking *how could you have come up with this?*
 - **`adapt-material`** — a written source in, a document out. Rewrites a chapter, lecture notes or
   paper motivation-first, cutting what he holds cold and converting proofs to exercises. **It owns
-  the shape of an adapted document**, and the other two defer to it rather than restating it.
+  the shape of an adapted document**, and the other defers to it rather than restating it.
 - **`adapt-recordings`** — a lecture recording in, a document out. Owns only what is specific to
   speech: reconstructing mathematics that was spoken and written on an uncaptured board, naming
   what the recording points at but does not contain, and triaging which recordings are worth
   adapting at all. Hands the document shape to `adapt-material`.
-- **`collect-materials`** — a provider in, catalogue entries out. Owns the per-provider recipes:
-  where a site's material actually lives, what is gated behind a campus login, and which licence
-  claim is about the website template rather than the content. **It locates; it does not judge** —
-  its entries are always `unvetted`, and `study-mentor` step 4 is what earns a verdict. Its
-  standing obligation: harvesting from a provider with no recipe means writing one.
-- **`normalise-materials`** — a collected source in, uniform markdown out, split by lecture or
-  section so every part has a URL. **It preserves; it does not rewrite** — changing the text is
-  `adapt-material`'s job. Owns one rule above all: convert the *source* (`.qmd`, `.tex`) and not
-  the render, because a PDF keeps the prose and destroys the mathematics.
 
-Route by the shape of the output first — a conversation is `study-mentor`, a file is one of the
-adapters, a catalogue entry is `collect-materials` — then by the source: a transcript or recording
-is `adapt-recordings`, anything written is `adapt-material`. All five hand off in every direction.
+Route by the shape of the output: a conversation is `study-mentor`, a file is one of the adapters,
+and between those two, a transcript or recording is `adapt-recordings` and anything written is
+`adapt-material`.
+
+**Two more skills live in the library repository**, because they operate on material rather than on
+understanding: `collect-materials` finds and fetches a source, and `normalise-materials` converts
+it to linkable markdown. They hand off here — a catalogue entry, an adaptation, a session — and
+this repo hands off to them when something needs finding or converting. See
+[The library repository](#the-library-repository).
 
 When working inside this repo, read and write the files under `docs/` directly, summarise the
 changes as a diff, and let him commit.
@@ -175,19 +173,36 @@ Full templates are in `skills/study-mentor/references/kb-structure.md`. The rule
 - **Update at natural stopping points and at the end of a session**, not continuously. Breaking a
   derivation to take notes ruins the thing the session is for.
 
-## Source material is referenced, never vendored
+## The library repository
 
-Downloaded sources — OCW notes, lecture PDFs, slides, preprints, scanned chapters — go in
-`sources/`, which is **gitignored in full**. See [`sources/README.md`](sources/README.md).
+**Downloaded sources and their conversions are not in this repository.** They live next door, in
+[`knowledge-base-library`](https://github.com/Claptar/knowledge-base-library), published at
+<https://claptar.github.io/knowledge-base-library/>.
 
-What gets committed is the durable half: the URL and verdict in `resources/`, the rewrite in
-`adapted/`, and the trajectory in `topics/`. A source is a cache; the judgement about it is not.
-This is the same rule as *Link, never restate* — a repo that vendors its sources starts drifting
-from them the day it copies them, and it is the copy that goes stale.
+The split is **by authorship, and it is the whole rule**:
 
-Licence matters here because this repo is published: most course notes, papers and chapters may
-not be redistributed, and the permissively-licensed ones still carry conditions a notes repo should
-not take on. **Never commit a source file, and never publish one to the site.**
+| | Holds |
+| --- | --- |
+| this repository | what *he* wrote — questions, trajectories, his own expositions, and his verdicts on sources |
+| the library | what *someone else* wrote, mechanically converted — courses, lecture notes, transcripts, papers |
+
+It exists because the corpus converts to roughly **ten thousand pages** against seventy-odd of his
+own. Kept together, the knowledge base becomes a rounding error inside its own library: search
+drowns, `git log` becomes conversion churn, and every agent loads a page of policy about other
+people's material before reading a word of his.
+
+What that means in practice:
+
+- **`sources/`, `sources.lock.yml` and the conversion tooling are all there**, along with the
+  `collect-materials` and `normalise-materials` skills. Do not recreate a `sources/` here.
+- **What stays here is the durable half**: the URL and verdict in `resources/`, the rewrite in
+  `adapted/`, the trajectory in `topics/`. A source is a cache; the judgement about it is not.
+- **A topic file links to the library by absolute URL**, and the catalogue entry for a converted
+  source links to its library page. Those links are not checked by `--strict`, since they leave
+  this site — a scheduled workflow checks them instead.
+- **Never commit a source file here**, and never publish one. Most course notes, papers and
+  chapters may not be redistributed, and the permissively-licensed ones still carry conditions a
+  notes repo should not take on.
 
 ### Papers are a source kind, not a better class of source
 
@@ -224,6 +239,17 @@ of other people's reasoning.
 The raw source is a *redistribution* question, settled above. An adaptation is a *derivative work*
 question, and it is settled by the source's licence:
 
+**The three kinds of object here, and keeping them apart is the point:**
+
+| | Holds |
+| --- | --- |
+| `topics/` | his **record** — the trajectory through a subject |
+| `notes/` | **material he wrote** — his own exposition |
+| `adapted/` | someone else's material **rewritten** motivation-first, proofs converted to exercises |
+
+A fourth kind — someone else's material *converted* rather than rewritten — is the library
+repository, and it is deliberately not here.
+
 | Source licence | Adaptation goes to |
 | --- | --- |
 | CC BY-NC-SA (MIT OCW), CC BY, public domain | `docs/adapted/` — published, with attribution, and carrying **the same licence**, because share-alike propagates |
@@ -237,87 +263,6 @@ either way, because a trajectory in his own words is not a derivative of anyone.
 
 Every catalogue entry in `docs/resources/` carries the licence that decides this. If it does not,
 resolve it before adapting, and record it there.
-
-## What may be republished
-
-**Decided 2026-09-14, deliberately, after the conservative reading was argued and rejected.**
-
-A *conversion* — a source turned into markdown without rewriting it — is a derivative work like any
-other, so it needs the same decision as an adaptation. The rule here is **by kind of source**, not
-by licence:
-
-| Source | Republish | Goes to |
-| --- | --- | --- |
-| a **course** or **lecture notes**, public on the web | yes, **cited and linked to the original** | `docs/reference/` |
-| a **paper** — open access, arXiv, bioRxiv, PMC | yes, cited | `docs/reference/` |
-| a **paper** behind a paywall | no | `reference-private/` |
-| a **thesis** | no, unless its record's rights row has been read and permits it | `reference-private/` |
-| a **book** | **never**, however obtained | `reference-private/` |
-| anything with a visible "all rights reserved" | no | `reference-private/` |
-
-A thesis is its own row because "open access" is asserted by the repository and the *rights* are
-asserted per record by the author — CaltechTHESIS carries a Creative Commons grant on some theses
-and "no commercial reproduction rights are provided" on others. Reading the row is cheap; assuming
-it is the mistake this table exists to prevent.
-
-**The mechanism is `material:` in `sources/sources.lock.yml`** — `course`, `notes`, `paper`,
-`thesis`, `book`, `archive` or `data`, written by hand and never detected. `normalise_source.py`
-reads it to pick the destination, and anything unclassified, plus anything with no URL to cite,
-goes to `reference-private/`. `open_access: true` alongside `paper` or `thesis` is the one switch
-that promotes a source into the published tree, and it is an assertion someone made, not a
-detection.
-
-`reference-private/` is gitignored, exactly like `adapted-private/`.
-
-**The argument against, recorded so this reads as a choice rather than an oversight.** Publicly
-available is not the same as redistributable: copyright is automatic, citation answers plagiarism
-rather than copyright, and where no licence is granted, attribution does not create one. The
-conservative reading would publish only the ~28 sources carrying an explicit CC, CC0 or BSD grant
-and index the rest.
-
-**Why the broader rule was taken anyway.** Course notes published openly by an academic are
-published *to be read and taught from*, the convention in the field is that citation suffices, and
-the two categories where that convention does not hold — commercial books and paywalled papers —
-are excluded outright. Resolving licences one by one had also proved to be the real work rather
-than a policy question: a single better-targeted sweep moved 24 sources from "unresolved" to a
-confirmed CC BY, and most of the remainder are unchecked rather than restricted.
-
-Two obligations follow and are not optional:
-
-- **Every republished page cites its source and links to the original.** It is generated, not left
-  to an author to remember, because the whole arrangement rests on it.
-- **A real licence still governs.** Where a source carries CC BY-NC-SA or similar, share-alike
-  propagates and the output carries the same licence. The rule above widens what may be published;
-  it does not override a licence that says something specific.
-
-If a rights-holder objects, the remedy is to remove the page and record the reason in the catalogue
-entry — which is cheap, and is why the source URL is never dropped.
-
-## `docs/reference/` — converted material
-
-A fourth kind of object, and the distinctions between the four are the thing to keep sharp:
-
-| | Holds |
-| --- | --- |
-| `topics/` | his **record** — the trajectory through a subject |
-| `notes/` | **material he wrote** — his own exposition |
-| `adapted/` | someone else's material **rewritten** motivation-first, proofs converted to exercises |
-| `reference/` | someone else's material **converted**, not rewritten — the same text in markdown, split so it can be linked to |
-
-`reference/` exists because a PDF has no addressable parts. A topic file cannot cite "§3 of lecture
-7" when lecture 7 is a page range. Converted markdown gives every section a URL, which is what
-makes the cross-referencing the rest of this repo depends on actually possible.
-
-**Convert the source, not the render.** Verified on this repo's own material: a `.qmd` or `.tex`
-converts with the author's LaTeX intact, while the PDF built from the same file turns
-$\lambda(t) = f(t)/S(t)$ into `Sf((tt))becauseTiscontinuous`. Prose survives a PDF; mathematics does
-not. Scanned or handwritten PDFs have no text layer at all and are not converted — they get an
-index entry pointing at the original, because an almost-empty page that looks like a conversion is
-worse than an honest absence.
-
-**A converted file is regenerable output and is never edited by hand.** A hand edit is lost on the
-next run and silently diverges from the source it claims to reproduce. Fix the converter, or make
-an adaptation instead — `adapted/` is where changing the text is the point.
 
 ## How a page is shaped
 
@@ -354,7 +299,7 @@ notes: **one copy, referenced — never a second copy, search-replaced.**
 | --- | --- | --- |
 | `AGENTS.md` | the instruction file | duplicated into `CLAUDE.md` by hand |
 | `CLAUDE.md` | one `@AGENTS.md` import, plus Claude-specific notes only | a parallel copy of the above |
-| `skills/` | the real skill tree | forked per agent |
+| `skills/` | the real skill tree — three of them; the other two are in the library repo | forked per agent |
 | `.claude/skills`, `.agents/skills` | symlinks to `skills/` | real directories |
 
 This repo previously carried two full skill trees and two instruction files, produced by
