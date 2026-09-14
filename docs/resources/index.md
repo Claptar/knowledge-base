@@ -39,6 +39,11 @@ be linked to directly — `resources/stochastic-processes.md#van-kampen-sppc` �
 The verdict, in prose: what it is good for, what is weak, whether it motivates or merely states.
 ```
 
+> **`sources/` is in the library repository**, not this one —
+> [knowledge-base-library](https://github.com/Claptar/knowledge-base-library), along with the
+> converted markdown and the skills that fetch and convert. Every `sources/<slug>` path below is
+> still correct; it just resolves there. What stays here is the entry and the verdict.
+
 That one slug ties every place a source appears, and the directory name **is** the slug:
 
 ```
@@ -79,7 +84,7 @@ be checked against its source, and the rule that every claim is checkable would 
 makes the rename reversible, which is how two bugs in this repo's own normaliser were caught and
 fixed without data loss.
 
-Scripts live in `skills/adapt-recordings/scripts/` — `course_inventory.py` to see what a source
+Scripts live in the library repo's `skills/collect-materials/scripts/` — `course_inventory.py` to see what a source
 holds, `organise_course.py` to sort a flat export into the folders above, `normalise_names.py` to
 rename, and `transcript_text.py` to turn a `.srt`/`.vtt` caption file into readable timestamped
 prose. Only the two that move files take `--apply`, and neither does anything without it;
