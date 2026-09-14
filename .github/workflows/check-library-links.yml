@@ -1,0 +1,56 @@
+name: Check library links
+
+# `mkdocs build --strict` fails on a broken link inside this site, which is the guarantee the
+# notes are cross-referenced against. Links into the reference library leave this site, so
+# --strict cannot see them — this replaces that guarantee across the repository boundary.
+#
+# It is a schedule rather than a push check on purpose: these links break when the *other* repo
+# changes, which is an event this repo never sees.
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays, early
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Collect and check every link into the library
+        run: |
+          set -uo pipefail
+          grep -rhoE 'https://claptar\.github\.io/knowledge-base-library[^)"< ]*' docs/ \
+            | sed 's/[.,]$//' | sort -u > links.txt
+          count=$(wc -l < links.txt | tr -d ' ')
+          echo "Found $count distinct library links."
+          [ "$count" -eq 0 ] && exit 0
+
+          fail=0
+          while read -r url; do
+            # Follow redirects: MkDocs' use_directory_urls means a missing trailing slash is a 301.
+            code=$(curl -sSL -o /dev/null -m 30 -w '%{http_code}' "$url" || echo 000)
+            if [ "$code" = "200" ]; then
+              echo "  ok   $url"
+            else
+              echo "  $code  $url"
+              fail=1
+            fi
+          done < links.txt
+
+          if [ "$fail" -ne 0 ]; then
+            echo
+            echo "A link into the reference library no longer resolves."
+            echo "Either the page moved (re-run the converter and update the catalogue entry),"
+            echo "or the source was withdrawn. Do not delete the link without recording why:"
+            echo "the catalogue entry is the durable half, and its source URL is never dropped."
+            exit 1
+          fi
