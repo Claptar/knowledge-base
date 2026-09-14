@@ -4,20 +4,12 @@ __pycache__/
 *.pyc
 .claude/settings.local.json
 
-# Downloaded source material — never committed. See sources/README.md.
-# The lockfile is the exception: it is the committed record of what sources/ should
-# contain and which parts of it cannot be refetched, so a clone can rebuild the rest.
-sources/*
-!sources/README.md
-!sources/sources.lock.yml
-
 # Adaptations of all-rights-reserved sources. Derivative works of material
 # that may not be redistributed, so they never reach the published site.
+#
+# Downloaded sources and their conversions are not here at all any more — they
+# live in the knowledge-base-library repository. See AGENTS.md.
 adapted-private/
-
-# Conversions of books and paywalled papers. The two categories AGENTS.md
-# excludes from republishing under "What may be republished".
-reference-private/
 
 # Site build
 _site/
