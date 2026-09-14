@@ -11,6 +11,12 @@ __pycache__/
 # live in the knowledge-base-library repository. See AGENTS.md.
 adapted-private/
 
+# A safety net, not a location. Downloaded source material belongs in the library
+# repository's sources/, never here — but a stray download should not become a commit.
+.sources/
+sources/
+
 # Site build
 _site/
 .venv/
+.sources
