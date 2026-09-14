@@ -13,7 +13,7 @@ Versions are `MAJOR.MINOR.PATCH`:
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
-## Unreleased
+## 0.3.0 — 2026-09-14
 
 ### Structure
 
@@ -56,6 +56,11 @@ renames that heading to the version and date, and the release job publishes the 
   renamed at ingest, so building a per-file URL from the tidied path produced a confident 404.
 - **A licence rescan no longer downgrades a resolved licence.** Several were settled by reading a
   course site rather than a file in the repo.
+- **A scheduled check for links that leave the site.** `--strict` guarantees every internal link
+  resolves; it cannot see a link into the reference library or into another repo, which is exactly
+  where the cross-repo links now point. A weekly workflow resolves them all and fails if one rots.
+  Scoped to his own URLs — the hundreds of course and paper links would make it flaky, and a check
+  that cries wolf is one that gets switched off.
 
 ### Knowledge base
 
