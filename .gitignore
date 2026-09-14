@@ -19,4 +19,3 @@ sources/
 # Site build
 _site/
 .venv/
-.sources
