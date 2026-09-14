@@ -15,78 +15,55 @@ renames that heading to the version and date, and the release job publishes the 
 
 ## Unreleased
 
-### Skills
+### Structure
 
-- **`normalise-materials` now has its converter.** `normalise_source.py` turns a collected source
-  into markdown split on the source's own headings, one page per logical section, so a topic file
-  can cite a lecture's third argument rather than a page range. It prefers the source over the
-  render (a `.qmd` beside its `.pdf` converts from the `.qmd`, and the render is reported as
-  dropped), skips course administrivia unless `--include-all` is given, and rewrites every relative
-  link — to the converted sibling where there is one, to the upstream original otherwise, and to
-  plain text where the source has no upstream, because the site builds `--strict` and a dangling
-  link fails CI. Dry run by default.
+- **The converted library is now a separate repository.**
+  [knowledge-base-library](https://github.com/Claptar/knowledge-base-library), published at
+  <https://claptar.github.io/knowledge-base-library/>. It holds `sources/`, the converted markdown,
+  and the two skills that produce them.
 
-  Two things it refuses to do. It will not publish a source it cannot classify or cannot cite: no
-  `material:`, no source URL, anything unclassified — all go to `reference-private/`. And it will
-  not convert a scanned PDF, which has no text layer; those are reported, because a near-empty page
-  that looks like a conversion is worse than an honest absence.
+  The reason is arithmetic. A full dry run over the corpus plans **9,657 pages from 1,948
+  documents**; this repository holds about seventy files of his own writing. Kept together, the
+  knowledge base becomes a rounding error inside its own library — search drowns, `git log` becomes
+  conversion churn, and every agent loads a page of policy about other people's material before
+  reading a word of his. **The split is by authorship**: what he wrote stays, what someone else
+  wrote goes.
 
-- **A thesis is its own source kind.** Added to the republishing table in `AGENTS.md` and to the
-  skill: a repository asserts open access, but the author asserts the rights, per record —
-  CaltechTHESIS carries a Creative Commons grant on some theses and "no commercial reproduction
-  rights are provided" on others. A thesis converts to `reference-private/` until its rights row
-  has actually been read.
+- **The plugin ships three skills, not five.** `collect-materials` and `normalise-materials` move
+  to the library repo as a companion plugin, `study-library`, along with the four source-handling
+  scripts that used to sit in `adapt-recordings/scripts/` — anything that touches `sources/` lives
+  where `sources/` lives. `adapt-recordings` keeps its `SKILL.md`: reconstructing spoken
+  mathematics is judgement, not tooling.
 
-- **New recipe: CaltechTHESIS.** Record-page layout, the non-constant document slot in the PDF
-  path (`/16062/03/`, `/16368/10/`), and the failure worth naming — the site began refusing
-  automated requests partway through a harvest, with a timeout from `curl` and an `ECONNREFUSED`
-  from an agent fetch, while other hosts answered normally in the same minute. Diagnose it by
-  fetching an unrelated host.
+- **`AGENTS.md` lost the republishing policy and the `docs/reference/` section**, 456 lines to 401,
+  and the removed half was the policy-dense half. Both now live in the library's own `AGENTS.md`,
+  where they are read only by whoever is converting something.
+
+- **Books and paywalled papers are simply never converted**, replacing the publish-versus-private
+  tiering with a single skip rule. `reference-private/` no longer exists anywhere.
+
+- **The strict site build went from 30 seconds to 1.1.**
 
 ### Tooling
 
-- **`material:` in `sources.lock.yml`.** `course`, `notes`, `paper`, `thesis`, `book`, `archive` or
-  `data` — written by hand and never detected, because it decides whether a conversion may be
-  published and guessing it guesses in the publishing direction. `open_access: true` is the one
-  switch that promotes a paper or a thesis into the published tree. All 63 sources are classified.
+- **`normalise_source.py`** — the converter named as the one unfinished thing in the previous
+  handoff — was written, and now lives in the library repo. It prefers the source format over the
+  render, splits on the source's own headings, rewrites every relative link to a converted sibling
+  or to the original, and refuses to convert anything it cannot classify or cite. Dry run by
+  default.
+- **`material:`, `open_access:` and `mirrors_upstream:` in `sources.lock.yml`** — hand-written,
+  never detected, preserved across a rescan. `mirrors_upstream` exists because MIT OCW exports are
+  renamed at ingest, so building a per-file URL from the tidied path produced a confident 404.
 - **A licence rescan no longer downgrades a resolved licence.** Several were settled by reading a
-  course site rather than a file in the repo; `unresolved` means *not found*, and re-running
-  `lock_sources.py` must not undo that work.
-- **The converted tree's nav is generated.** `mkdocs-literate-nav` reads
-  `docs/reference/SUMMARY.md`, so several hundred entries stay out of the hand-written
-  `mkdocs.yml`, which carries one line for the whole subtree. `nbconvert` is dropped: notebooks are
-  read straight from their JSON, so that image outputs become a named omission rather than links to
-  files the converter never writes.
-
-### Skills
-
-- **New skill: `collect-materials`.** Finds and fetches material from a provider, and owns the
-  per-provider recipes — URL patterns, where the real files live, what is gated behind a campus
-  login, which licence claims are traps. It **locates and does not judge**: entries are always
-  `unvetted`, and `study-mentor` step 4 remains the only thing that earns a verdict. Its standing
-  obligation is that harvesting from a provider with no recipe means writing one. Ships with
-  recipes for MIT OCW, Berkeley and GitHub-hosted courses.
-- **Prefer the paper over the lecture notes where the paper is the argument.** Added to
-  `AGENTS.md` and to `study-mentor` step 4: a course is a route through settled material, a paper
-  is the moment someone had to argue for something, and a syllabus's bibliography is often worth
-  more than its slides. Stated as a judgement rather than a rule — a good set of notes with problem
-  sets still beats a paper with no route into it.
-
-### Tooling
-
-- **`sources/` is now reproducible.** `sources.lock.yml` is committed — the one exception to the
-  directory's gitignore — recording every source with a `restorable` field: `upstream` for a git
-  repo pinned to a commit or files under a base URL, `never` for anything added by hand, `dead` for
-  an upstream that stopped resolving. `restore_sources.py` rebuilds what it can and prints what it
-  cannot; `--check` verifies on-disk copies against recorded checksums, which is how link rot and
-  a quietly-replaced PDF become visible. `lock_sources.py` generates the file and reads licences
-  from disk rather than trusting a metadata field.
-
-  The design point is the `never` list: it is what a backup actually needs to cover, and it is a
-  small fraction of the tree — 0.81 GB of 3.5 GB here, mostly books and publisher archives, with
-  everything clonable excluded.
+  course site rather than a file in the repo.
 
 ### Knowledge base
+
+- **Six Pachter-lab theses catalogued** in `resources/cme-transcription.md`, four of them
+  biophysical and directly on the CME track. Gorin 2023 is the long-form version of four papers
+  already catalogued there. Not yet fetched: CaltechTHESIS began refusing automated requests
+  partway through the harvest, which is recorded in the library's provider recipe as rate limiting
+  rather than a gate.
 
 - **Catalogued 16 Berkeley statistics courses** in `docs/resources/berkeley-statistics.md`, all
   `unvetted`. Two of the requested courses turned out to be retired — `Stat 200A–B` was replaced by

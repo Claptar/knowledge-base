@@ -8,7 +8,8 @@ rewrite this file when the work below is finished — a stale handoff is worse t
 
 1. **[AGENTS.md](AGENTS.md)** — the one instruction file. Conventions, the branching model, the
    republishing policy. `CLAUDE.md` is a one-line import of it plus Claude-specific notes.
-2. **The five `skills/*/SKILL.md`** — each is the authority on its own workflow.
+2. **The three `skills/*/SKILL.md`** — each is the authority on its own workflow. Two more live
+   in the library repository; see § *What just happened*.
 3. **[CHANGELOG.md](CHANGELOG.md) § Unreleased** — what has changed since `v0.2.0`, in the words
    used at the time.
 
@@ -19,52 +20,61 @@ are counter-intuitive on purpose.
 
 | | |
 | --- | --- |
-| Branch | **`draft`**, 28 commits ahead of `main` |
+| Branch | **`draft`**, 32 commits ahead of `main` |
 | Released | `v0.2.0`, tagged and published as a GitHub release |
-| Skills | 5 — `study-mentor`, `adapt-material`, `adapt-recordings`, `collect-materials`, `normalise-materials` |
-| `sources/` | 63 sources, gitignored. 59 restorable from upstream, 4 local-only. All 63 classified with `material:` |
-| Licences | 24 CC BY 4.0, 6 CC BY-NC-SA 4.0 (MIT OCW), 2 CC0, 1 BSD-3, 1 CC BY-NC, **29 unresolved** |
-| `docs/reference/` | the converted tree, wired into the site nav. Stat 210A fall 2026 converted |
-| Site | builds `--strict` clean; `uv run mkdocs build --strict` |
+| Skills | **3** — `study-mentor`, `adapt-material`, `adapt-recordings`. The other two moved |
+| Library | **[knowledge-base-library](https://github.com/Claptar/knowledge-base-library)** — `sources/`, the converted markdown, and the two skills that make it |
+| Site | builds `--strict` clean in ~1s; `uv run mkdocs build --strict` |
+| Tracked files in `docs/` | ~73, down from 536 |
 
 **Never commit to `main`.** Work lands on `draft`; promoting `draft` to `main` cuts a release.
 `gh pr create` defaults to `main`, so `--base draft` is mandatory — see AGENTS.md § Git.
 
-## What was just finished
+## What just happened: the repository split in two
 
-**The converter exists.** `skills/normalise-materials/scripts/normalise_source.py` — the job the
-previous handoff named as the one unfinished thing. It converts one source at a time, prefers the
-source format over the render, splits on the source's own headings, generates front matter and the
-nav, and routes anything it cannot classify or cite to the gitignored `reference-private/`. Dry run
-by default, like every script here.
+**The converted library moved out.** A full dry run over the corpus plans **9,657 pages from 1,948
+documents**, against roughly seventy files of his own writing here. Kept together the knowledge base
+becomes a rounding error inside its own library, so:
 
-```bash
-uv sync --group dev --group convert
-uv run --group convert --group dev python \
-    skills/normalise-materials/scripts/normalise_source.py sources/<slug>            # dry run
-uv run ... normalise_source.py sources/<slug> --apply                                # write
-uv run ... normalise_source.py --all                                                 # plan the corpus
-uv run ... normalise_source.py --summary-only --apply                                # rebuild nav only
-```
+| | |
+| --- | --- |
+| **this repo** | what *he* wrote — questions, trajectories, his own expositions, verdicts on sources |
+| **the library** | what *someone else* wrote, converted — courses, lecture notes, transcripts |
+
+`sources/`, the converted markdown, and the `collect-materials` and `normalise-materials` skills all
+live in [knowledge-base-library](https://github.com/Claptar/knowledge-base-library) now, along with
+the four source-handling scripts that used to sit in `adapt-recordings/scripts/` — **anything that
+touches `sources/` lives where `sources/` lives**. `adapt-recordings` keeps its `SKILL.md`, because
+reconstructing spoken mathematics is judgement rather than tooling.
+
+Three consequences worth holding on to:
+
+- **`AGENTS.md` lost the republishing policy and the `docs/reference/` section** — 456 lines to 401,
+  and the removed half was the policy-dense half. It is in the library's own `AGENTS.md` now, read
+  only by whoever is converting something.
+- **Books and paywalled papers are simply never converted.** That one skip rule replaced the whole
+  publish-versus-private tier system; `reference-private/` no longer exists anywhere.
+- **The strict build went from 30 seconds to 1.1.**
 
 ## The unfinished things
 
-- **Only one source of 63 is converted.** Stat 210A fall 2026: 83 documents, 408 pages, 26 skipped.
-  The decision taken was to convert two or three, look at the output, then sweep. Pick sources that
-  exercise different routes — a Quarto course, a PDF-and-transcripts OCW course, an `.Rmd` course
-  with material and logistics mixed.
-- **The six Pachter-lab theses are catalogued but not fetched.** See
-  [`docs/resources/cme-transcription.md`](docs/resources/cme-transcription.md) — CaltechTHESIS
-  began refusing automated requests partway through the harvest. **Download the PDFs by hand** into
-  the `sources/` slug each entry names, then convert. Four of the six are biophysical and sit
-  directly on the CME track; Gorin 2023 is the long-form version of four papers already catalogued.
-- **The theses' rights rows were never read**, so all six are `unresolved` and their conversions go
-  to `reference-private/`. Reading one row promotes a thesis into the published tree by setting
-  `open_access: true` in the lockfile.
-- **A maths-repair pass is designed but not built.** `normalise-materials` step 3a specifies it:
-  repair mangled equations against the original page, mark every repair `**Unverified.**`, report
-  the count. Now more valuable than before, because the lossy PDF route is actually producing
-  pages. Precedent is `adapt-recordings` step 3.
+- **Neither repository has been pushed.** This branch is 32 commits ahead of `origin/draft`; the
+  library repo exists only locally, with one commit, and `Claptar/knowledge-base-library` has not
+  been created. Creating it is a *public* repo containing other people's course material — worth a
+  deliberate moment rather than a reflex.
+- **Only 3 sources of 63 are converted** — Stat 210A fall 2026, 6.041SC and StatOmics SGA21, about
+  1,300 pages. The rest is a `--all --apply` run away, and the dry run above says what it will cost.
+- **The cross-links do not exist yet.** Catalogue entries in `docs/resources/` should link to their
+  converted pages in the library, and no scheduled link-check workflow has been written. That
+  workflow is what replaces the `--strict` guarantee across the repository boundary — without it,
+  a link into the library can rot silently.
+- **The six Pachter-lab theses are catalogued but not fetched.** CaltechTHESIS began refusing
+  automated requests partway through the harvest. **Download the PDFs by hand** into the library's
+  `sources/` under the slug each entry names. Four of the six are biophysical and sit directly on
+  the CME track; Gorin 2023 is the long-form version of four papers already catalogued.
+- **A maths-repair pass is designed but not built.** The library's `normalise-materials` step 3a
+  specifies it: repair mangled equations against the original, mark every repair `**Unverified.**`,
+  report the count. 1,016 pages came through the lossy PDF route, so it now has real work to do.
 
 ## Traps found the hard way
 
@@ -104,8 +114,9 @@ things most likely to be rediscovered.
 
 ## Open threads
 
-- **29 sources have an unresolved licence.** They are *unchecked*, not restricted. A targeted sweep
-  is cheap and moves material into the publishable tier. MIT OCW's six were resolved this session.
+- **29 of 63 sources have an unresolved licence** (in the library's lockfile). They are *unchecked*,
+  not restricted. It matters less than it did — conversions no longer depend on the licence, only
+  adaptations do — but it is still the field that decides whether an adaptation may be published.
 - **`mkdocs-literate-nav` prints a MkDocs 2.0 advertisement on every build.** Its author now
   maintains a fork, and the plugin nags about it. Harmless, silenced with
   `DISABLE_MKDOCS_2_WARNING=true`, but worth knowing given that `mkdocs<2` is pinned deliberately —
@@ -142,10 +153,13 @@ Stated because they were corrected more than once.
 
 ## Environment
 
-- `uv` for everything Python. `uv sync --group dev` for the site, `--group convert` for conversion.
+- `uv` for everything Python. `uv sync --group dev` for the site. The conversion toolchain
+  (`--group convert`) is in the library repo, not here.
 - `gh` installed and authenticated as `Claptar`, with `repo` and `workflow` scopes.
-- `sources/` is gitignored except `README.md` and `sources.lock.yml`. Rebuild with
-  `uv run python skills/collect-materials/scripts/restore_sources.py --apply`; verify on-disk copies
-  with `--check`.
+- `sources/` is in the library repo, gitignored except `README.md` and `sources.lock.yml`. Rebuild
+  it from there with `skills/collect-materials/scripts/restore_sources.py --apply`; `--check`
+  verifies on-disk copies against recorded checksums.
 - Repo: <https://github.com/Claptar/knowledge-base> · site:
   <https://claptar.github.io/knowledge-base/>
+- Library: <https://github.com/Claptar/knowledge-base-library> (not yet created) · site:
+  <https://claptar.github.io/knowledge-base-library/>
