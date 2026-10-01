@@ -39,9 +39,10 @@ argument is the reason to read it here rather than a modern summary.
 
 ### gillespie-2000-cle — Gillespie 2000, *The chemical Langevin equation* { #gillespie-2000-cle }
 
-**Kind:** paper · **Access:** unreadable — institutional access only
-**Licence:** publisher's copyright; no open copy found — Crossref, Europe PMC, bioRxiv and arXiv checked 2026-10-02. Adaptations stay in `adapted-private/`
+**Kind:** paper · **Access:** local — supplied by hand to `sources/papers/gillespie-2000-cle/` in the library repo
+**Licence:** publisher's copyright; no open copy exists. Summarised from a copy supplied by hand on 2026-10-02, which is not redistributed. Adaptations stay in `adapted-private/`
 **Status:** unvetted · **Adapted:** none
+**Library:** [summary](https://claptar.github.io/knowledge-base-library/papers/computational-biology/gillespie-2000-cle/)
 [DOI](https://doi.org/10.1063/1.481811)
 
 *(unvetted)* Derives the CLE from the CME under two explicit timescale conditions. Valuable
@@ -49,9 +50,10 @@ precisely because the conditions are stated as conditions rather than absorbed i
 
 ### gillespie-2001-tau-leaping — Gillespie 2001, *Approximate accelerated stochastic simulation* { #gillespie-2001-tau-leaping }
 
-**Kind:** paper · **Access:** unreadable — institutional access only
-**Licence:** publisher's copyright; no open copy found — Crossref, Europe PMC, bioRxiv and arXiv checked 2026-10-02. Adaptations stay in `adapted-private/`
+**Kind:** paper · **Access:** local — supplied by hand to `sources/papers/gillespie-2001-tau-leaping/` in the library repo
+**Licence:** publisher's copyright; no open copy exists. Summarised from a copy supplied by hand on 2026-10-02, which is not redistributed. Adaptations stay in `adapted-private/`
 **Status:** unvetted · **Adapted:** none
+**Library:** [summary](https://claptar.github.io/knowledge-base-library/papers/computational-biology/gillespie-2001-tau-leaping/)
 [DOI](https://doi.org/10.1063/1.1378322)
 
 *(unvetted)* $\tau$-leaping. Read after [1976](#gillespie-1976-ssa), for where the exactness is
@@ -114,9 +116,10 @@ results.
 
 ### thomas-2014-conditional-lna — Thomas et al. 2014, *Phenotypic switching in gene regulatory networks* { #thomas-2014-conditional-lna }
 
-**Kind:** paper · **Access:** unreadable — institutional access only
-**Licence:** publisher's copyright; free to read in PubMed Central but not openly licensed, and PMC refuses scripted downloads — checked 2026-10-02. Adaptations stay in `adapted-private/`
+**Kind:** paper · **Access:** local — supplied by hand to `sources/papers/thomas-2014-conditional-lna/` in the library repo
+**Licence:** publisher's copyright; free to read in PubMed Central but not openly licensed. Summarised from a copy supplied by hand on 2026-10-02, which is not redistributed. Adaptations stay in `adapted-private/`
 **Status:** unvetted · **Adapted:** none
+**Library:** [summary](https://claptar.github.io/knowledge-base-library/papers/computational-biology/thomas-2014-conditional-lna/)
 [DOI](https://doi.org/10.1073/pnas.1400049111)
 
 *(unvetted)* Conditional LNA — i.e. where the plain LNA fails.
@@ -136,18 +139,20 @@ picture everything downstream assumes.
 
 ### shahrezaei-swain-2008-analytical-distributions — Shahrezaei & Swain 2008, *Analytical distributions for stochastic gene expression* { #shahrezaei-swain-2008-analytical-distributions }
 
-**Kind:** paper · **Access:** unreadable — institutional access only
-**Licence:** publisher's copyright; free to read in PubMed Central but not openly licensed, and PMC refuses scripted downloads — checked 2026-10-02. Adaptations stay in `adapted-private/`
+**Kind:** paper · **Access:** local — supplied by hand to `sources/papers/shahrezaei-swain-2008-analytical-distributions/` in the library repo
+**Licence:** publisher's copyright; free to read in PubMed Central but not openly licensed. Summarised from a copy supplied by hand on 2026-10-02, which is not redistributed. Adaptations stay in `adapted-private/`
 **Status:** unvetted · **Adapted:** none
+**Library:** [summary](https://claptar.github.io/knowledge-base-library/papers/computational-biology/shahrezaei-swain-2008-analytical-distributions/)
 [DOI](https://doi.org/10.1073/pnas.0803850105)
 
 *(unvetted)* Protein distributions via mRNA/protein timescale separation.
 
 ### singh-bokes-2012-mrna-transport — Singh & Bokes 2012, *Consequences of mRNA transport on stochastic variability in protein levels* { #singh-bokes-2012-mrna-transport }
 
-**Kind:** paper · **Access:** unreadable — institutional access only
-**Licence:** publisher's copyright; free to read in PubMed Central but not openly licensed, and PMC refuses scripted downloads — checked 2026-10-02. Adaptations stay in `adapted-private/`
+**Kind:** paper · **Access:** local — supplied by hand to `sources/papers/singh-bokes-2012-mrna-transport/` in the library repo
+**Licence:** publisher's copyright; free to read in PubMed Central but not openly licensed. Summarised from a copy supplied by hand on 2026-10-02, which is not redistributed. Adaptations stay in `adapted-private/`
 **Status:** unvetted · **Adapted:** none
+**Library:** [summary](https://claptar.github.io/knowledge-base-library/papers/computational-biology/singh-bokes-2012-mrna-transport/)
 [DOI](https://doi.org/10.1016/j.bpj.2012.07.015)
 
 *(unvetted)* The bursty model solved by generating functions — the worked example of the technique,
