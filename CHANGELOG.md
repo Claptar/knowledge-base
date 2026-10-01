@@ -13,6 +13,20 @@ Versions are `MAJOR.MINOR.PATCH`:
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
+## 0.5.0 — 2026-10-02
+
+### Conventions
+
+- **The library is described as it now is**: courses rewritten as books, and papers summarised,
+  with the full text only where the paper's own licence allows — no longer "mechanically
+  converted".
+
+### Tooling
+
+- **The library's `paper-summary-writer` agent is linked into `.claude/agents/`**, beside the two
+  writing agents linked in 0.4.0. It summarises a paper the library may not republish, in its own
+  words and without reproducing figures, tables or passages.
+
 ## 0.4.0 — 2026-10-01
 
 ### Conventions
