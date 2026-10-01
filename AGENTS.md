@@ -272,7 +272,7 @@ The split is **by authorship, and it is the whole rule**:
 | | Holds |
 | --- | --- |
 | this repository | what *he* wrote — questions, trajectories, his own expositions, and his verdicts on sources |
-| the library | what *someone else* wrote, mechanically converted — courses, lecture notes, transcripts, papers |
+| the library | what *someone else* wrote — courses rewritten as books, and papers summarised, with the full text only where the paper's licence allows |
 
 It exists because the corpus converts to roughly **ten thousand pages** against seventy-odd of his
 own. Kept together, the knowledge base becomes a rounding error inside its own library: search
