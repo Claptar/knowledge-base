@@ -19,3 +19,6 @@ sources/
 # Site build
 _site/
 .venv/
+.env
+# handwritten working, synced from tablet
+scratch/

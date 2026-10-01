@@ -341,6 +341,7 @@ repository, and it is deliberately not here.
 | Source licence | Adaptation goes to |
 | --- | --- |
 | CC BY-NC-SA (MIT OCW), CC BY, public domain | `docs/adapted/` — published, with attribution, and carrying **the same licence**, because share-alike propagates |
+| **CC BY-ND, CC BY-NC-ND** | `adapted-private/` — **`ND` forbids distributing an adaptation.** It gets its own row precisely because it reads as permissive: it is a Creative Commons licence, and it is the one CC family that rules out publishing a rewrite. Two Caltech theses in the library are CC BY-NC-ND, where `NC` alone would have been fine |
 | all rights reserved | `adapted-private/` — gitignored, never published |
 | unclear | `adapted-private/`, and say the licence is unresolved |
 

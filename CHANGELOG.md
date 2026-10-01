@@ -13,6 +13,20 @@ Versions are `MAJOR.MINOR.PATCH`:
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
+## 0.4.0 — 2026-10-01
+
+### Conventions
+
+- **CC BY-ND and CC BY-NC-ND get their own row** in AGENTS.md's adaptation table. `ND` forbids
+  distributing an adaptation, and it is the one Creative Commons family that does — easy to misread
+  as permissive. Two Caltech theses in the library carry CC BY-NC-ND.
+
+### Tooling
+
+- **The library's two writing agents are linked into `.claude/agents/`** —
+  `course-chapter-writer` and `pdf-to-markdown`, as symlinks into the sibling
+  `knowledge-base-library` checkout, so they resolve only where both repositories sit side by side.
+
 ## 0.3.0 — 2026-09-14
 
 ### Structure
