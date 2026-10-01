@@ -398,8 +398,9 @@ course, and that is the thing worth not losing.
 ### hines-2021-demystifying-eif — Hines, Dukes, Diaz-Ordaz & Vansteelandt 2021, *Demystifying statistical learning based on efficient influence functions* { #hines-2021-demystifying-eif }
 
 **Kind:** paper · **Access:** fetchable · <https://arxiv.org/abs/2107.00681>
-**Licence:** arXiv — check the per-paper licence before adapting
+**Licence:** arXiv's non-exclusive distribution licence, which grants distribution to arXiv only — adaptations stay in `adapted-private/`
 **Status:** unvetted · **Adapted:** none
+**Library:** [summary](https://claptar.github.io/knowledge-base-library/papers/statistics/hines-2021-demystifying-eif/)
 
 *(unvetted)* Derives the efficient influence function as a Gâteaux derivative of the target
 functional, then uses the von Mises expansion to show why the plug-in bias correction is *forced*
@@ -413,8 +414,9 @@ fast enough for inference. Short, and it defers the tangent-space geometry elsew
 ### fisher-kennedy-influence-functions — Fisher & Kennedy, *Visually Communicating and Teaching Intuition for Influence Functions* { #fisher-kennedy-influence-functions }
 
 **Kind:** paper · **Access:** fetchable · <https://arxiv.org/abs/1810.03260>
-**Licence:** arXiv — check the per-paper licence before adapting
+**Licence:** arXiv's non-exclusive distribution licence, which grants distribution to arXiv only — adaptations stay in `adapted-private/`
 **Status:** unvetted · **Adapted:** none
+**Library:** [summary](https://claptar.github.io/knowledge-base-library/papers/statistics/fisher-kennedy-influence-functions/)
 
 *(unvetted)* The geometric companion to the above: the influence function as a direction in
 $L^2(P)$. Should land quickly given the PCA-as-Gram-matrix and $L^2$ picture already held — it is
