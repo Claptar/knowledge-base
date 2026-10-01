@@ -28,9 +28,10 @@ The primary literature the [learning path](../path.md) terminates in. These are 
 
 ### gillespie-1976-ssa — Gillespie 1976, *A general method for numerically simulating the stochastic time evolution of coupled chemical reactions* { #gillespie-1976-ssa }
 
-**Kind:** paper · **Access:** unreadable — institutional access only
-**Licence:** publisher's copyright; no open copy found — Crossref, Europe PMC, bioRxiv and arXiv checked 2026-10-02. Adaptations stay in `adapted-private/`
+**Kind:** paper · **Access:** local — supplied by hand to `sources/papers/gillespie-1976-ssa/` in the library repo
+**Licence:** publisher's copyright; no open copy exists. Summarised from a copy supplied by hand on 2026-10-02, which is not redistributed. Adaptations stay in `adapted-private/`
 **Status:** unvetted · **Adapted:** none
+**Library:** [summary](https://claptar.github.io/knowledge-base-library/papers/computational-biology/gillespie-1976-ssa/)
 [DOI](<https://doi.org/10.1016/0021-9991(76)90041-3>)
 
 *(unvetted)* The SSA. The original, so it argues for the algorithm rather than presenting it; that
@@ -58,9 +59,10 @@ traded away.
 
 ### gardiner-chaturvedi-1977-poisson-representation — Gardiner & Chaturvedi 1977, *The Poisson Representation I* { #gardiner-chaturvedi-1977-poisson-representation }
 
-**Kind:** paper · **Access:** unreadable — institutional access only
-**Licence:** publisher's copyright; no open copy found — Crossref, Europe PMC, bioRxiv and arXiv checked 2026-10-02. Adaptations stay in `adapted-private/`
+**Kind:** paper · **Access:** local — supplied by hand to `sources/papers/gardiner-chaturvedi-1977-poisson-representation/` in the library repo
+**Licence:** publisher's copyright; no open copy exists. Summarised from a copy supplied by hand on 2026-10-02, which is not redistributed. Adaptations stay in `adapted-private/`
 **Status:** unvetted · **Adapted:** none
+**Library:** [summary](https://claptar.github.io/knowledge-base-library/papers/computational-biology/gardiner-chaturvedi-1977-poisson-representation/)
 [DOI](https://doi.org/10.1007/BF01014349)
 
 *(unvetted)* Expands the distribution over Poissons with a quasi-probability weight — which may be
@@ -69,18 +71,20 @@ and SDE form. The likely bridge to why count data is mixed-Poisson rather than P
 
 ### munsky-khammash-2006-fsp — Munsky & Khammash 2006, *The finite state projection algorithm* { #munsky-khammash-2006-fsp }
 
-**Kind:** paper · **Access:** unreadable — institutional access only
-**Licence:** publisher's copyright; no open copy found — Crossref, Europe PMC, bioRxiv and arXiv checked 2026-10-02. Adaptations stay in `adapted-private/`
+**Kind:** paper · **Access:** local — supplied by hand to `sources/papers/munsky-khammash-2006-fsp/` in the library repo
+**Licence:** publisher's copyright; no open copy exists. Summarised from a copy supplied by hand on 2026-10-02, which is not redistributed. Adaptations stay in `adapted-private/`
 **Status:** unvetted · **Adapted:** none
+**Library:** [summary](https://claptar.github.io/knowledge-base-library/papers/computational-biology/munsky-khammash-2006-fsp/)
 [DOI](https://doi.org/10.1063/1.2145882)
 
 *(unvetted)* Truncation of the state space with an error bound.
 
 ### jahnke-huisinga-2007-monomolecular — Jahnke & Huisinga 2007, *Solving the CME for monomolecular reaction systems analytically* { #jahnke-huisinga-2007-monomolecular }
 
-**Kind:** paper · **Access:** unreadable — institutional access only
-**Licence:** publisher's copyright; no open copy found — Crossref, Europe PMC, bioRxiv and arXiv checked 2026-10-02. Adaptations stay in `adapted-private/`
+**Kind:** paper · **Access:** local — supplied by hand to `sources/papers/jahnke-huisinga-2007-monomolecular/` in the library repo
+**Licence:** publisher's copyright; no open copy exists. Summarised from a copy supplied by hand on 2026-10-02, which is not redistributed. Adaptations stay in `adapted-private/`
 **Status:** unvetted · **Adapted:** none
+**Library:** [summary](https://claptar.github.io/knowledge-base-library/papers/computational-biology/jahnke-huisinga-2007-monomolecular/)
 [DOI](https://doi.org/10.1007/s00285-006-0034-x)
 
 *(unvetted)* The exact solution for the monomolecular case, as a convolution of multinomial and
@@ -99,9 +103,10 @@ the cross-check on whether the routes agree.
 
 ### paulsson-2004-summing-up-noise — Paulsson 2004, *Summing up the noise in gene networks* { #paulsson-2004-summing-up-noise }
 
-**Kind:** paper · **Access:** unreadable — institutional access only
-**Licence:** publisher's copyright; no open copy found — Crossref, Europe PMC, bioRxiv and arXiv checked 2026-10-02. Adaptations stay in `adapted-private/`
+**Kind:** paper · **Access:** local — supplied by hand to `sources/papers/paulsson-2004-summing-up-noise/` in the library repo
+**Licence:** publisher's copyright; no open copy exists. Summarised from a copy supplied by hand on 2026-10-02, which is not redistributed. Adaptations stay in `adapted-private/`
 **Status:** unvetted · **Adapted:** none
+**Library:** [summary](https://claptar.github.io/knowledge-base-library/papers/computational-biology/paulsson-2004-summing-up-noise/)
 [DOI](https://doi.org/10.1038/nature02257)
 
 *(unvetted)* Fluctuation–dissipation applied to gene expression noise; unifies scattered earlier
@@ -120,9 +125,10 @@ results.
 
 ### peccoud-ycart-1995-telegraph — Peccoud & Ycart 1995, *Markovian modeling of gene-product synthesis* { #peccoud-ycart-1995-telegraph }
 
-**Kind:** paper · **Access:** unreadable — institutional access only
-**Licence:** publisher's copyright; no open copy found — Crossref, Europe PMC, bioRxiv and arXiv checked 2026-10-02. Adaptations stay in `adapted-private/`
+**Kind:** paper · **Access:** local — supplied by hand to `sources/papers/peccoud-ycart-1995-telegraph/` in the library repo
+**Licence:** publisher's copyright; no open copy exists. Summarised from a copy supplied by hand on 2026-10-02, which is not redistributed. Adaptations stay in `adapted-private/`
 **Status:** unvetted · **Adapted:** none
+**Library:** [summary](https://claptar.github.io/knowledge-base-library/papers/computational-biology/peccoud-ycart-1995-telegraph/)
 [DOI](https://doi.org/10.1006/tpbi.1995.1027)
 
 *(unvetted)* The telegraph model and its analytical steady state. The origin of the two-state
