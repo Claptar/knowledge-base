@@ -53,10 +53,13 @@ knowledge base root is **`docs/`** — `profile.md`, `log.md`, `questions.md`, `
 all live there, and `docs/` is also what the published site is built from. Bare filenames in this
 skill mean relative to that root. No setup step is needed.
 
-**GitHub connector.** If GitHub tools are available, read the files and commit updates directly.
+**GitHub connector.** If GitHub tools are available, read the files and propose updates directly.
 Best for short sessions and for "what was I stuck on last time" — no local setup, no manual
-transport. Commit one coherent change at the end of the session rather than a commit per edit,
-and use a message that says what was studied, not "update kb".
+transport. **Read the repository's `AGENTS.md` first and follow its git rules.** For this
+repository that means: commit only when he asks; never to `main`, which deploys the site and
+cuts releases; work on `draft`, or the branch it names. Commit one coherent change at the end of
+the session rather than a commit per edit, and use a message that says what was studied, not
+"update kb".
 
 **Chat with neither.** Ask him to paste or upload the relevant files, then produce complete
 updated files plus the commands to commit them. He is the transport layer here; say so plainly
@@ -65,9 +68,9 @@ rather than pretending the write happened, and never leave him splicing fragment
 **No knowledge base yet.** Run `scripts/init_kb.py <path>` to lay down the skeleton, then fill
 `profile.md` from `references/background.md` plus anything new he says.
 
-Read selectively — `profile.md`, the `topics/` file for this subject if it exists, the top of
-`log.md`, and the matching `practice/` file. Reading everything wastes the session; the point of
-the structure is that you can go straight to the relevant file.
+Read selectively — `profile.md`, the Live table in `questions.md`, the `topics/` file for this
+subject if it exists, the top of `log.md`, and the matching `practice/` file. Reading everything
+wastes the session; the point of the structure is that you can go straight to the relevant file.
 
 **"What should I study next" is the one question that starts at `path.md`** — the concept
 dependency map, and the only page written before the work rather than after it. Any node whose
@@ -134,6 +137,12 @@ exactly the connective tissue the knowledge base exists to hold.
 that exists to make a later proof convenient, a trick that appears from nowhere — say so, and say
 what the natural route would have been historically or conceptually. He finds this more
 trustworthy than a smooth presentation, and it is often where the real intuition lives.
+
+**Say which kind of route it is.** A plausible route to a definition can satisfy *how could I
+have come up with this?* while being a just-so story. Unless a source shows the actual history,
+say *"one route that would force this"*, not *"this is how it was discovered"*. This is the live
+version of the `> **Supplied.**` marker the adapters use. Even a paper is an edited account, and
+it rarely keeps the failed attempts.
 
 ## Step 4 — find materials
 
@@ -220,6 +229,8 @@ where is specified in `references/kb-structure.md`; the important habits:
   stays open, with enough context to resume cold.
 - Put the **next step at the top of `log.md`** so the following session starts without
   re-deriving where he was.
+- A **new question** that he asked properly goes in the `questions.md` Live table first, in his
+  words, with no page behind it. Never route it to the nearest existing topic file.
 - Preserve his own words for insights. When he says the thing that made it click, store his
   phrasing, not your improved version of it.
 
