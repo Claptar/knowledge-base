@@ -27,7 +27,7 @@ published site is built from. Paths named bare elsewhere in these skills (`profi
 mean relative to this root, not to the repository root.
 
 ```
-study-kb/
+knowledge-base/
   docs/                     # <- the knowledge base root, and the site
     index.md                # the site front door
     questions.md            # open questions — the index, and where each one lives

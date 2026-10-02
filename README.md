@@ -77,7 +77,7 @@ question, the definition, and the proof technique. Every convention here follows
 
 ## Using the skills
 
-Run Claude Code from the repo root and all five skills load from `skills/`, via the
+Run Claude Code from the repo root and the three skills load from `skills/`, via the
 `.claude/skills` symlink. To use them outside this repo, install it as a plugin:
 
 ```

@@ -30,6 +30,8 @@ technique recall — but likely below the level I need given the Murphy/ISL/ESL 
 martingales as the organising principle, exercises central. Bridge toward
 [stochastic processes](stochastic-processes.md).
 
-Already the target of a live question — *what problem forces the definition of a martingale?* — see
-[questions](../questions.md). This is the highest-priority acquisition in the whole catalogue:
-there is an open question pointed directly at it and no copy to work from.
+The source for Layer 1 of the [learning path](../path.md#layer-1-conditioning-and-information),
+whose node 3 asks *what problem forces the definition of a martingale?* That question is a path
+node, not yet a live one: it left the [Live table](../questions.md#live) on 2026-09-13. This is
+the highest-priority acquisition in the whole catalogue, because the path starts here and there
+is no copy to work from.
