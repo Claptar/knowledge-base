@@ -183,7 +183,13 @@ TOPIC_TEMPLATE = """# <Topic>
 
 ## Attached to
 
+<!-- Inbound: what I already held that this built on. -->
+
 ## Where else this shows up
+
+<!-- Outbound, and across domains — physics, optimisation, ML, biology, engineering — not just the
+     neighbouring mathematics. Added whenever a connection is noticed, not filled in at creation.
+     A concept tied only to its own subject is not yet understood. -->
 
 ## How I could have come up with this
 
@@ -194,7 +200,9 @@ TOPIC_TEMPLATE = """# <Topic>
 
 PRACTICE_TEMPLATE = """# <Topic> — practice
 
-An attempt log, not a mistake log: what I could do is recorded as carefully as what I could not.
+<!-- An attempt log, not a mistake log. It records what I could do as carefully as what I could
+     not, because the blocker is performance pressure rather than competence, and a record of
+     unaided work is what answers it. See profile.md § How I study, goal 4. -->
 
 ## YYYY-MM-DD
 **Problem:**
