@@ -77,6 +77,7 @@ a README.
 ### gtpb-psls20 — *Practical Statistics for the Life Sciences 2020* { #gtpb-psls20 }
 
 **Kind:** course · **Access:** local · `sources/gtpb-psls20/` — 125 files: 49 Rmd, 40 HTML
+**Converted:** [a book of 42 chapters in the reference library](https://claptar.github.io/knowledge-base-library/omics-statistics/gtpb/psls20/)
 **Licence:** **CC BY 4.0** — adaptable *and* publishable with attribution
 **Status:** unvetted · **Adapted:** none
 <https://gtpb.github.io/PSLS20/> · <https://github.com/GTPB/PSLS20>

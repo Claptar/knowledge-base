@@ -221,6 +221,7 @@ file opened before any adaptation.
 ### berkeley-stat243 — Stat 243, *Introduction to Statistical Computing* { #berkeley-stat243 }
 
 **Kind:** course · **Access:** local · `sources/berkeley-stat243/` — 12 offerings, 30–53 PDFs each
+**Converted:** [a book of 46 chapters in the reference library](https://claptar.github.io/knowledge-base-library/statistical-computing/berkeley/stat243/)
 **Licence:** **varies by offering** — 2024/2025/2026 CC BY 4.0; `stat243-fall-2021` CC0; `stat243-fall-2023` BSD-3-Clause; 2014–2020 and 2022 unlicensed
 **Status:** unvetted · **Adapted:** none
 <https://stat243.berkeley.edu/>
@@ -236,6 +237,7 @@ methods, optimisation, simulation, reproducibility, working in R and Python.
 ### berkeley-stat153 — Stat 153, *Introduction to Time Series* { #berkeley-stat153 }
 
 **Kind:** course · **Access:** local · `sources/berkeley-stat153/` — 5 offerings, 91 PDFs in Fall 2024 alone
+**Converted:** [a book of 128 chapters in the reference library](https://claptar.github.io/knowledge-base-library/statistics/berkeley/stat153/)
 **Licence:** Fall 2024 **CC BY 4.0**; the other four offerings unlicensed
 **Status:** unvetted · **Adapted:** none
 <https://stat153.berkeley.edu/>
@@ -268,6 +270,7 @@ repositories. Topics vary by offering; check `classes.berkeley.edu` for whether 
 ### berkeley-stat156-256 — Stat 156 / Stat 256, *Causal Inference* { #berkeley-stat156-256 }
 
 **Kind:** course · **Access:** local · `sources/berkeley-stat156/fall-2024/` — 11 PDFs incl. the 256 syllabus
+**Converted:** [a book of 9 chapters in the reference library](https://claptar.github.io/knowledge-base-library/statistics/berkeley/stat156/)
 **Licence:** **CC BY-NC 4.0** — adaptable and publishable with attribution, non-commercial
 **Status:** unvetted · **Adapted:** none
 <https://stat156.berkeley.edu/> · syllabus: <https://stat156.berkeley.edu/fall-2024/stat256-syllabus.pdf>
