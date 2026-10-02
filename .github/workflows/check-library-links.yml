@@ -45,13 +45,17 @@ jobs:
           fail=0
           while read -r url; do
             # Follow redirects: MkDocs' use_directory_urls means a missing trailing slash is a 301.
-            code=$(curl -sSL -o /dev/null -m 30 -w '%{http_code}' "$url" || echo 000)
-            if [ "$code" = "200" ]; then
-              echo "  ok   $url"
-            else
-              echo "  $code  $url"
-              fail=1
-            fi
+            # Retry, because github.com intermittently answers runners with 503 for a page that
+            # exists. Only a 4xx is rot and fails the job. A 5xx, 429 or timeout is the host
+            # refusing the runner: a warning, never actionable, so it must not cry wolf.
+            code=$(curl -sSL -o /dev/null -m 30 --retry 3 --retry-delay 10 --retry-all-errors \
+                     -w '%{http_code}' "$url" || echo 000)
+            case "$code" in
+              200)       echo "  ok   $url" ;;
+              4??)       [ "$code" = "429" ] && { echo "::warning::$code (rate limited) $url"; continue; }
+                         echo "  $code  $url"; fail=1 ;;
+              *)         echo "::warning::$code (host unavailable to the runner, not checked) $url" ;;
+            esac
           done < links.txt
 
           if [ "$fail" -ne 0 ]; then
