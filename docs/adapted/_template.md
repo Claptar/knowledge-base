@@ -47,6 +47,7 @@
 
 ---
 
-<!-- Required for a CC-licensed source. Delete only if this file is in adapted-private/. -->
+<!-- Required for a source published under adapt-material step 6. Delete only if this file is
+     in adapted-private/. -->
 *Adapted from <author, title>, <course/publisher>, licensed <licence>. This adaptation is a
 derivative work and is offered under the same licence.*

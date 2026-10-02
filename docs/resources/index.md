@@ -115,7 +115,8 @@ the adaptation is allowed to live.
 
 | Licence | Adaptation goes to |
 | --- | --- |
-| CC BY-NC-SA (MIT OCW), CC BY, public domain | `docs/adapted/` — **published**, with attribution, and the file carries the same licence, since share-alike propagates |
+| CC BY-NC-SA (MIT OCW), CC BY, CC BY-SA, CC BY-NC, CC0 / public domain | `docs/adapted/` — **published**, with attribution, and the file carries the same licence, since share-alike propagates |
+| **CC BY-ND, CC BY-NC-ND** | `adapted-private/` — **`ND` forbids distributing an adaptation**, although it is a Creative Commons licence |
 | all rights reserved — textbooks, paywalled papers, unlicensed course pages | `adapted-private/` — gitignored, never published |
 | unclear | `adapted-private/`, and say the licence is unresolved. Never guess in the publishing direction |
 

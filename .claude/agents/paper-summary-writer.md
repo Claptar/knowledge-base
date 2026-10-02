@@ -1,1 +1,0 @@
-../../../knowledge-base-library/.claude/agents/paper-summary-writer.md

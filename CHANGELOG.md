@@ -13,6 +13,48 @@ Versions are `MAJOR.MINOR.PATCH`:
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
+## 0.6.0 — 2026-10-02
+
+Corrections from the 2026-10-02 audits of this repo and the library. Every change here
+makes a skill agree with a rule the repo already had.
+
+### Skills
+
+- **The ND exclusion now ships in the plugin.** `adapt-material`'s licence table gains the
+  CC BY-ND / BY-NC-ND row and is declared the single authority. Before this, the row existed only
+  in `AGENTS.md`, which an installed plugin does not load (`claude plugin validate` confirms it),
+  while `kb-structure.md` and `init_kb.py` said *"CC-licensed sources adapt into `adapted/`"*. The
+  allow-list now also names CC BY-SA, CC BY-NC and CC0, matching the library's gate.
+- **`adapt-material` no longer creates topic files.** An adaptation that opens a question adds it
+  to `questions.md`; the topic file comes from a session. It also adapts from the original source,
+  never from a library book (a rewrite of a rewrite). It no longer includes a default full proof,
+  only a pointer to the source's proof unless one is asked for. A private adaptation is recorded as
+  text, never linked from the public catalogue. And a topic is cut as "held cold" only after it is
+  confirmed in the form the source needs.
+- **`study-mentor`**: GitHub-connector mode follows the repo's git rules (commit only when asked;
+  never to `main`). Step 1 reads the `questions.md` Live table, and new questions are written there.
+  Reconstructed routes are presented as *one route that would force this*, not as history.
+- **`adapt-recordings`**: recordings are located in the library repository's `sources/`, and a
+  non-OCW recording is treated as *unresolved until checked* rather than asserted all rights
+  reserved.
+
+### Conventions
+
+- **`practice/_template.md` names performance pressure, not fear**, matching the correction to
+  goal 4 in `profile.md`. `init_kb.py`'s generated templates are byte-identical to the committed
+  ones again.
+
+### Tooling
+
+- **Removed the `.claude/agents/` symlinks into the sibling library checkout** (added in 0.4.0 and
+  0.5.0). They broke in any clone without the sibling, and `.claude/agents/` is not a plugin
+  component directory, so they never reached a plugin user. The agents belong to, and run from, the
+  library repository.
+- **New `check.yml` workflow**: the strict build on every push and pull request, so `draft` is
+  checked before release. It uses `uv sync --locked`.
+- `pyproject.toml` version aligned with the plugin (0.5.0); `CLAUDE.md` and `README.md` now say
+  three skills, not five.
+
 ## 0.5.0 — 2026-10-02
 
 ### Conventions
