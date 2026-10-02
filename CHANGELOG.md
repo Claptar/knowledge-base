@@ -13,7 +13,7 @@ Versions are `MAJOR.MINOR.PATCH`:
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
-## Unreleased
+## 0.6.0 — 2026-10-02
 
 Corrections from the 2026-10-02 audits of this repo and the library. Every change here
 makes a skill agree with a rule the repo already had.
