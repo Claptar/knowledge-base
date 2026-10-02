@@ -51,6 +51,13 @@ Do not start rewriting from a partial read. Whatever the form:
 
 If the source is long, ask which part he wants adapted before spending the session on chapter one.
 
+**Adapt from the original, never from a library book.** The companion library publishes course
+"books" that a model wrote from the course material. They are useful for orientation, but they
+are already a rewrite, and they consolidate several course years into one account. Adapting one
+would be a rewrite of a rewrite, and a `> **Supplied.**` marker could no longer separate the
+lecturer's reasoning from the book-writer's. Work from the source itself, or from its faithful
+conversion.
+
 ## Step 2 — load the reader
 
 Read `profile.md` at the knowledge base root — that is the current state of what he knows and how
@@ -85,7 +92,11 @@ Work this out explicitly before writing a line of the adaptation. It is most of 
    sources bury it. Everything in the adaptation gets ordered by its distance from that question.
 2. **Mark what he holds cold.** Spectral theory, quadratic forms, tensor constructions, PCA and
    L² geometry, convex duality, the HMM forward-backward machinery. These get cut to a pointer,
-   not explained. Cutting them is what buys the room for the rest.
+   not explained. Cutting them is what buys the room for the rest. But cut a topic only after
+   confirming, against `profile.md` (which supersedes `background.md`), that he holds it *in the
+   form this source needs*. Holding a subject in general is not the same as holding the
+   particular move the chapter turns on. If you are unsure, keep a one-line reminder rather than
+   a recap.
 3. **Mark the genuine prerequisites he may lack.** Different from the above and easy to confuse.
    Name them at the top rather than silently assuming them.
 4. **Locate the unmotivated joints.** The definitions that arrive from nowhere; the conditions in
@@ -139,8 +150,8 @@ Left blank, for him. One prompt per central definition or result.
 Every omission, one line each, so nothing disappears silently.
 
 ---
-*Attribution footer — required for a CC-licensed source, naming the original and stating that this
-adaptation carries the same licence. Omitted only in `adapted-private/`.*
+*Attribution footer — required for a source published under step 6's table, naming the original
+and stating that this adaptation carries the same licence. Omitted only in `adapted-private/`.*
 ```
 
 `adapted/_template.md` is this shape as a working file, with the hint ladder and the footer spelled
@@ -159,8 +170,10 @@ What does this remind you of from the L² picture?
 </details>
 ```
 
-The full derivation goes in a final `<details>` marked as such, or is left out entirely when the
-source's own proof is available at the pointer you gave.
+Do not include the full derivation. A finished proof hidden in the document is still handed
+over, before he has asked for it. Point at the source's own proof (§, page, timestamp) instead.
+Write a full derivation only when he asks for one for that proof, and then only in a
+`<details>` block of its own.
 
 **Mark provenance.** Motivation you supplied rather than found in the source is marked:
 
@@ -196,9 +209,14 @@ it; if it does not, resolve it now and record it there.
 
 | Source licence | Goes to | Published |
 | --- | --- | --- |
-| CC BY-NC-SA (MIT OCW), CC BY, public domain | `docs/adapted/<topic>-<source-slug>.md` | yes — with attribution, and the file carries **the same licence**, because share-alike propagates |
-| all rights reserved — textbooks, paywalled papers, unlicensed course pages | `adapted-private/<topic>-<source-slug>.md` | no — gitignored |
+| CC BY-NC-SA (MIT OCW), CC BY, CC BY-SA, CC BY-NC, CC0 / public domain | `docs/adapted/<topic>-<source-slug>.md` | yes — with attribution, and the file carries **the same licence**, because share-alike propagates |
+| **CC BY-ND, CC BY-NC-ND** | `adapted-private/<topic>-<source-slug>.md` | **no — `ND` forbids distributing an adaptation.** It reads as permissive because it is Creative Commons, and it is the one CC family that rules a published rewrite out |
+| all rights reserved — textbooks, paywalled papers, unlicensed course pages; a software licence (MIT, BSD) on a course repo | `adapted-private/<topic>-<source-slug>.md` | no — gitignored |
 | unclear | `adapted-private/` | no — and say plainly that the licence is unresolved |
+
+**This table is the single authority on where an adaptation goes.** The skill must stand alone
+when installed as a plugin, and the repository's root instruction files are not loaded then. So
+other files point here rather than restating the table.
 
 **Never guess in the publishing direction.** An unresolved licence goes to `adapted-private/`, not
 to `docs/`. Say which you chose and why, in one line, when you hand the work over — this is a
@@ -212,10 +230,13 @@ Both locations use the same template and the same rules; only the destination di
   they are what a later reader needs to know whether the file can be shared.
 - Add the source to `docs/resources/` with the verdict from step 4.6, its `Access:` and `Licence:`,
   and set its `Adapted:` field to point at what you just wrote. The judgement is the expensive
-  part; it is why that catalogue exists.
-- If the topic has a `topics/` file, link the adaptation from it. If it doesn't and this opens a
-  real topic, create one — the adaptation is material, the topic file is his trajectory through
-  it, and they are not the same record.
+  part; it is why that catalogue exists. **For a file in `adapted-private/`, write
+  `Adapted: private (not published)` as plain text, never as a link.** A link from the public
+  catalogue to an unpublished file breaks the strict build and leaks the private path.
+- If the topic has a `topics/` file, link the adaptation from it. If it doesn't, **do not create
+  one.** An adaptation is material, not a session, and a topic file is harvested from a session.
+  If the adaptation opens a real question, add it to `questions.md` with no page behind it. The
+  topic file comes when a session works through the adaptation.
 - If working through it should be the next thing, put that at the top of `log.md` as a concrete
   step: which sections, which proofs to attempt.
 

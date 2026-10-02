@@ -340,7 +340,7 @@ repository, and it is deliberately not here.
 
 | Source licence | Adaptation goes to |
 | --- | --- |
-| CC BY-NC-SA (MIT OCW), CC BY, public domain | `docs/adapted/` — published, with attribution, and carrying **the same licence**, because share-alike propagates |
+| CC BY-NC-SA (MIT OCW), CC BY, CC BY-SA, CC BY-NC, CC0 / public domain | `docs/adapted/` — published, with attribution, and carrying **the same licence**, because share-alike propagates |
 | **CC BY-ND, CC BY-NC-ND** | `adapted-private/` — **`ND` forbids distributing an adaptation.** It gets its own row precisely because it reads as permissive: it is a Creative Commons licence, and it is the one CC family that rules out publishing a rewrite. Two Caltech theses in the library are CC BY-NC-ND, where `NC` alone would have been fine |
 | all rights reserved | `adapted-private/` — gitignored, never published |
 | unclear | `adapted-private/`, and say the licence is unresolved |
@@ -352,6 +352,10 @@ either way, because a trajectory in his own words is not a derivative of anyone.
 
 Every catalogue entry in `docs/resources/` carries the licence that decides this. If it does not,
 resolve it before adapting, and record it there.
+
+**The table above mirrors `skills/adapt-material/SKILL.md` § Step 6, which is the authority.**
+An installed plugin does not load this file, so the skill has to carry the rule itself. Change
+the skill first and this table second, never the other way round.
 
 ## How a page is shaped
 
