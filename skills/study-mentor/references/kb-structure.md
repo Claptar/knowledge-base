@@ -47,7 +47,8 @@ knowledge-base/
 `sources/<slug>/` — the downloaded material itself — is **not here**. It lives in the
 [library repository](https://github.com/Claptar/knowledge-base-library) with its converted
 markdown and the two skills that fetch and convert it. A `sources/<slug>` path in a catalogue
-entry resolves there; the slug is the same in both repositories.
+entry resolves there; the slug is the same in both repositories. The library's *published* books
+and paper summaries can be read from anywhere by URL: see `library.md` in this directory.
 
 **A new question goes in `questions.md` first, with no page behind it.** That is the normal resting
 state of a question. A topic file is written after a session, not before one.
