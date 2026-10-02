@@ -13,6 +13,14 @@ Versions are `MAJOR.MINOR.PATCH`:
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
+## Unreleased
+
+### Tooling
+
+- **The outbound-link check no longer cries wolf.** It retries, fails only on a 4xx (real rot),
+  and warns on a 5xx, 429 or timeout. github.com was answering the runners with 503 for an
+  existing page, which failed the 0.7.0 run without anything to fix.
+
 ## 0.7.0 — 2026-10-02
 
 ### Skills
