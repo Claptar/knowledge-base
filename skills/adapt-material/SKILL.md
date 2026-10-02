@@ -44,6 +44,9 @@ Do not start rewriting from a partial read. Whatever the form:
   a paper).
 - **A lecture video** — work from the transcript plus the slides if both exist. Note timestamps
   for the parts you keep, so he can go back to the moment rather than the hour.
+- **A source in the library** — a course written up as a book, or a paper on the Papers shelf.
+  Find it through `../study-mentor/references/library.md`, then follow the chapter's `## Sources`
+  to the original lecture, slides or paper. Adapt from those, never from the book (see below).
 - **A book chapter he names but doesn't have** — say plainly that you're working from the
   literature about it rather than the text, and offer to adapt properly once he supplies it.
   Reconstructing a chapter from memory and presenting it as adapted is the worst failure mode
@@ -250,3 +253,5 @@ Shared with the `study-mentor` skill, which is the authority on how he is taught
   every adaptation.
 - `../study-mentor/references/background.md` — durable background and anchors.
 - `../study-mentor/references/kb-structure.md` — where the output goes and why.
+- `../study-mentor/references/library.md` — reaching the library's books and paper summaries,
+  and what to check before relying on one.
