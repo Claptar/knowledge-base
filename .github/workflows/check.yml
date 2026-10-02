@@ -1,0 +1,30 @@
+name: Check
+
+# The strict build on every push and pull request, on every branch. `deploy-docs.yml` only runs
+# on `main`, so before this a broken link committed to `draft` surfaced at release time instead of
+# at the commit that broke it. `--locked` fails if uv.lock is out of step with pyproject.toml,
+# rather than quietly re-resolving it in CI.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Sync dependencies
+        run: uv sync --locked --group dev
+
+      - name: Build site (strict)
+        run: uv run --locked mkdocs build --strict
