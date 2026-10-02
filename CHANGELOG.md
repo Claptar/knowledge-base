@@ -13,6 +13,24 @@ Versions are `MAJOR.MINOR.PATCH`:
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
+## 0.7.0 — 2026-10-02
+
+### Skills
+
+- **The library is reachable from anywhere.** New `study-mentor/references/library.md`: where the
+  library is, how to find any book chapter or paper in one fetch through its generated
+  `SUMMARY.md` (raw on GitHub), how a listed path maps to a raw or site URL, and what to check
+  before relying on a model-written book. `study-mentor` and `adapt-material` point at it, and
+  `study-mentor`'s trigger mentions the library.
+- **`study-mentor` can read the knowledge base by URL** (the public raw files of `draft`) when
+  there is neither a clone nor a GitHub connector, as in a phone or browser chat. Writes still go
+  out as complete files.
+
+### Knowledge base
+
+- The nine library books that were missing from their catalogue entries are now linked
+  (`**Converted:**`), so all twelve are reachable from `docs/resources/`.
+
 ## 0.6.0 — 2026-10-02
 
 Corrections from the 2026-10-02 audits of this repo and the library. Every change here

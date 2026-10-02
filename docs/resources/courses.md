@@ -45,6 +45,7 @@ redundant with DeGroot, while the clips may not be.
 ### ocw-6047 — MIT 6.047, *Computational Biology* { #ocw-6047 }
 
 **Kind:** course · **Access:** local · `sources/ocw-6047/`
+**Converted:** [a book of 16 chapters in the reference library](https://claptar.github.io/knowledge-base-library/computational-biology/mit-ocw/6047/)
 **Instructor:** Manolis Kellis · Fall 2015
 **Licence:** CC BY-NC-SA
 **Status:** unvetted · **Adapted:** none
@@ -58,6 +59,7 @@ something the working knowledge does not already cover.
 ### ocw-7091j — MIT 7.91J, *Foundations of Computational and Systems Biology* { #ocw-7091j }
 
 **Kind:** course · **Access:** local · `sources/ocw-7091j/`
+**Converted:** [a book of 23 chapters in the reference library](https://claptar.github.io/knowledge-base-library/computational-biology/mit-ocw/7091j/)
 **Instructors:** Christopher Burge, David Gifford, Ernest Fraenkel · Spring 2014
 **Licence:** CC BY-NC-SA
 **Status:** unvetted · **Adapted:** none
@@ -75,6 +77,7 @@ descriptions are derived from mechanism rather than assumed.
 ### ocw-8592j — MIT 8.592J, *Statistical Physics in Biology* { #ocw-8592j }
 
 **Kind:** course · **Access:** local · `sources/ocw-8592j/`
+**Converted:** [a book of 15 chapters in the reference library](https://claptar.github.io/knowledge-base-library/computational-biology/mit-ocw/8592j/)
 **Instructors:** Mehran Kardar, Leonid Mirny · Spring 2011
 **Licence:** CC BY-NC-SA
 **Status:** unvetted · **Adapted:** none
@@ -90,6 +93,7 @@ notes, not a textbook.
 ### ocw-8591j-2014 — MIT 8.591J, *Systems Biology* { #ocw-8591j-2014 }
 
 **Kind:** course · **Access:** local · `sources/ocw-8591j-2014/`
+**Converted:** [a book of 24 chapters in the reference library](https://claptar.github.io/knowledge-base-library/computational-biology/mit-ocw/8591j-2014/)
 **Instructor:** Jeff Gore · Fall 2014
 **Licence:** CC BY-NC-SA
 **Status:** unvetted · **Adapted:** none
@@ -103,6 +107,7 @@ literature.
 ### ocw-8591j-2004 — MIT 8.591J, *Systems Biology* (2004) { #ocw-8591j-2004 }
 
 **Kind:** course · **Access:** local · `sources/ocw-8591j-2004/`
+**Converted:** [a book of 20 chapters in the reference library](https://claptar.github.io/knowledge-base-library/computational-biology/mit-ocw/8591j-2004/)
 **Instructor:** Alexander van Oudenaarden · Fall 2004
 **Licence:** CC BY-NC-SA
 **Status:** unvetted · **Adapted:** none
