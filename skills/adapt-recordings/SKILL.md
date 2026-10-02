@@ -23,13 +23,15 @@ reconstruction gets marked. See step 3.
 
 ## Step 1 — find what exists, and check the licence
 
-Recordings live in `sources/<course>/` as `.srt` or `.vtt` alongside the PDFs. The catalogue entry
-in `docs/resources/` says which courses have them and how many.
+Recordings live in the companion library repository's `sources/<course>/`, as `.srt` or `.vtt`
+files alongside the PDFs. They are not in this repository. The catalogue entry in
+`docs/resources/` says which courses have them and how many.
 
-**Licence first, as in `adapt-material` step 6.** MIT OCW is CC BY-NC-SA, so these adaptations are
-publishable in `docs/adapted/` with attribution and the same licence. A recording from anywhere else
-— a paywalled course, a conference talk, a departmental seminar — is all-rights-reserved, and its
-adaptation goes to `adapted-private/`. Never guess in the publishing direction.
+**Licence first, using the table in `adapt-material` step 6.** MIT OCW is CC BY-NC-SA, so these
+adaptations are publishable in `docs/adapted/` with attribution and the same licence. Treat a
+recording from anywhere else (a paywalled course, a conference talk, a departmental seminar) as
+**unresolved until its licence is checked**. Its adaptation goes to `adapted-private/` until then.
+Never guess in the publishing direction.
 
 **No captions?** Then there is no transcript to work from, and producing one is a separate step
 requiring the media file and a speech-to-text pass. Say so rather than working from the slides and
