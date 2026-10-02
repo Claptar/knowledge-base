@@ -151,9 +151,11 @@ the `sources/<slug>/` directory, and the `adapted/<topic>-<slug>.md` filename.
 **Access:** `fetchable` / `local` / `private-host` / `unreadable`. An out-of-reach source is
 reported as such, never reconstructed from memory.
 
-**Licence:** decides where an adaptation may live — `adapted/` for CC-licensed sources (carrying
-the same licence), `adapted-private/` for everything else. Unclear licence goes private; never
-guess in the publishing direction.
+**Licence:** decides where an adaptation may live — `adapted/` for a licence that permits
+adaptation (CC BY, BY-SA, BY-NC, BY-NC-SA, CC0), carrying the same licence; `adapted-private/` for
+everything else, **including CC BY-ND and BY-NC-ND**, since ND forbids a published adaptation. The
+authority is the `adapt-material` skill, step 6. Unclear licence goes private; never guess in the
+publishing direction.
 """
 
 NOTES_INDEX = """# Notes
@@ -253,7 +255,8 @@ ADAPTED_TEMPLATE = """# <Topic> — adapted from <source>
 
 ---
 
-<!-- Required for a CC-licensed source. Delete only if this file is in adapted-private/. -->
+<!-- Required for a source published under adapt-material step 6. Delete only if this file is
+     in adapted-private/. -->
 *Adapted from <author, title>, <course/publisher>, licensed <licence>. This adaptation is a
 derivative work and is offered under the same licence.*
 """

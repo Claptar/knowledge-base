@@ -139,8 +139,8 @@ Left blank, for him. One prompt per central definition or result.
 Every omission, one line each, so nothing disappears silently.
 
 ---
-*Attribution footer — required for a CC-licensed source, naming the original and stating that this
-adaptation carries the same licence. Omitted only in `adapted-private/`.*
+*Attribution footer — required for a source published under step 6's table, naming the original
+and stating that this adaptation carries the same licence. Omitted only in `adapted-private/`.*
 ```
 
 `adapted/_template.md` is this shape as a working file, with the hint ladder and the footer spelled
@@ -196,8 +196,9 @@ it; if it does not, resolve it now and record it there.
 
 | Source licence | Goes to | Published |
 | --- | --- | --- |
-| CC BY-NC-SA (MIT OCW), CC BY, public domain | `docs/adapted/<topic>-<source-slug>.md` | yes — with attribution, and the file carries **the same licence**, because share-alike propagates |
-| all rights reserved — textbooks, paywalled papers, unlicensed course pages | `adapted-private/<topic>-<source-slug>.md` | no — gitignored |
+| CC BY-NC-SA (MIT OCW), CC BY, CC BY-SA, CC BY-NC, CC0 / public domain | `docs/adapted/<topic>-<source-slug>.md` | yes — with attribution, and the file carries **the same licence**, because share-alike propagates |
+| **CC BY-ND, CC BY-NC-ND** | `adapted-private/<topic>-<source-slug>.md` | **no — `ND` forbids distributing an adaptation.** It reads as permissive because it is Creative Commons, and it is the one CC family that rules a published rewrite out |
+| all rights reserved — textbooks, paywalled papers, unlicensed course pages; a software licence (MIT, BSD) on a course repo | `adapted-private/<topic>-<source-slug>.md` | no — gitignored |
 | unclear | `adapted-private/` | no — and say plainly that the licence is unresolved |
 
 **Never guess in the publishing direction.** An unresolved licence goes to `adapted-private/`, not
@@ -213,6 +214,10 @@ Both locations use the same template and the same rules; only the destination di
 - Add the source to `docs/resources/` with the verdict from step 4.6, its `Access:` and `Licence:`,
   and set its `Adapted:` field to point at what you just wrote. The judgement is the expensive
   part; it is why that catalogue exists.
+**This table is the single authority on where an adaptation goes.** The skill must stand alone
+when installed as a plugin, and the repository's root instruction files are not loaded then. So
+other files point here rather than restating the table.
+
 - If the topic has a `topics/` file, link the adaptation from it. If it doesn't and this opens a
   real topic, create one — the adaptation is material, the topic file is his trajectory through
   it, and they are not the same record.
