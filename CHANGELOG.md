@@ -17,6 +17,15 @@ renames that heading to the version and date, and the release job publishes the 
 
 ## Unreleased
 
+### Skills
+
+- **`study-mentor` runs a session the way the 2026-10-06 retrospective asked.** Step 2 opens with
+  the stake rather than a syllabus, agrees one question and a stopping point, hands him the hint
+  ladder, and offers a rebuild warm-up when resuming. Step 3 gains route-first, objects-first and
+  step-size rules, one question per turn, following his route, asking where a failed intuition is
+  right, reading confusion as a report on the session, and checkable hints. The loop is closed
+  before offering to stop, and practice records where a misleading intuition holds.
+
 ### Conventions
 
 - **Versions are calendar dates, `YY-DDD`, and the tag is the version without a `v`.** The release
@@ -29,7 +38,9 @@ renames that heading to the version and date, and the release job publishes the 
 
 - **`pyproject.toml` no longer carries the release version.** Python's version rules cannot spell
   `26-280.1`, so it is pinned to `0.0.0` and points at `.claude-plugin/plugin.json`, the one copy.
-
+- **New notes under `docs/notes/` are tracked again.** The `notes/` ignore rule added in 0.7.0 to
+  keep the root audit notes out was unanchored, so it also matched `docs/notes/` and silently left
+  any new note out of a commit. It, and `scratch/`, are now anchored to the root.
 - **The outbound-link check no longer cries wolf.** It retries, fails only on a 4xx (real rot),
   and warns on a 5xx, 429 or timeout. github.com was answering the runners with 503 for an
   existing page, which failed the 0.7.0 run without anything to fix.
