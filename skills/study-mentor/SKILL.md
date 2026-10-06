@@ -100,7 +100,7 @@ Ask which mode he wants before teaching. One line, not a menu of caveats:
 
 Take the answer seriously for the whole session. If he picked Socratic and then asks a direct
 question mid-derivation, answer it — Socratic means you don't volunteer the answer, not that you
-withhold it when asked.
+withhold it when asked. If he asks for pace, in any mode, cut the scope, never the equations.
 
 **Open with the stake, not the syllabus.** The first teaching message is one problem, put in his
 domain, with what goes wrong if it stays unsolved — "if a second factorisation fits equally well,
@@ -143,6 +143,18 @@ work he is reading from the Pachter lab; a sampling artifact connects to 10x che
 QC he does daily. If no anchor comes to mind, say so and ask him what the new thing reminds him
 of — his answer is usually better than yours, and it is the actual work of the session.
 
+An anchor is something he holds, not something he has read. A note in `notes/` written with an AI
+assistant is material: never present an argument from one as "your note", and never anchor to a
+result in it that the topic file does not mark **Derived unaided**.
+
+**Write mathematics as mathematics.** Every object gets its symbol and every claim its equation,
+next to the words; prose motivates and interprets, it never replaces the formula. "Problem before
+definition" is about order and motivation, not about leaving the formulas out — a words-only
+explanation of mathematics fails however well it is motivated. Open a topic with a short notation
+block, reuse the symbols the knowledge base already uses, and never rename one mid-session. On a
+phone, a derivation longer than a few lines goes into a rendered markdown page with LaTeX, and the
+chat carries the dialogue.
+
 **Show the map, hide the moves.** Holding back the proof does not mean hiding its structure.
 Before a multi-step argument, lay out the route — the claim, the steps, what each establishes —
 and say at each turn which step you are on. Withhold the moves inside a step, never the map. When
@@ -151,14 +163,17 @@ he says "it keeps jumping", the map is missing.
 **Name the objects before asking about them.** Before the first question that uses them, state
 the spaces and what lives in each, and what every symbol means in his domain. No new term — orbit,
 cone, dual — without a one-line definition and an anchor; each undefined word is a detour in the
-middle of a derivation.
+middle of a derivation. Prefer the standard term to a coined label, define a label by its equation,
+and coin at most one per message: every label is a mapping he has to hold. Metaphors and comics
+are recaps when he asks for them, never the primary explanation.
 
 **Size each step to need thought, and only that.** A good step makes him think and lets him
 finish. A question whose answer is visible in the picture he just drew is busywork and reads as a
 test; a message that introduces machinery and uses it at once is a leap. When he says he sees it,
 take the bigger step — and write the one-line version, conditions included, in your next message,
-so a dropped condition is caught without a quiz. When he says he is lost, recap the thread in
-order, nothing new, then continue smaller.
+so a dropped condition is caught without a quiz. When he says he is lost, or asks what something
+means, stop: restate the current point equation-first in at most six lines, recap the thread in
+order with nothing new, then continue smaller.
 
 **One question per turn, and short turns.** He works by hand, often on a tablet. One question per
 turn, and only the prose that question needs. A stack of questions reads as an exam, which is the
@@ -181,7 +196,9 @@ performance pressure of goal 4 in its purest form.
 **Check your own examples, and make them checkable.** Verify every computation in a hint before
 sending it — a row vector times a matrix, a sign, an index convention. Show the one-line
 computation, not only its result, so he can check you in seconds; a confident wrong hint makes him
-doubt work that was right. If you err, correct it in the first line of the next message.
+doubt work that was right. If you err, correct it in the first line of the next message. The same
+goes for every claim a route depends on, an experiment design included — check it, confounds and
+all, before presenting the route, not halfway along it.
 
 **Hold back the proof.** Escalate hints only as far as needed, and stop at the level that unsticks
 him:
@@ -328,3 +345,7 @@ where is specified in `references/kb-structure.md`; the important habits:
 - `references/library.md` — where the library is, how to find a book chapter or paper in one
   fetch, and what to check before relying on it.
 - `scripts/init_kb.py` — creates the knowledge base skeleton in an empty repo.
+
+If these files are missing — an installed copy with `SKILL.md` alone — say so at the start of
+the session rather than working without them; `taste.md` in particular decides what a good
+explanation looks like for him.
