@@ -68,10 +68,16 @@ $\tilde X$, so no comparison between runs can reveal it.
 
 **Telling the bins apart from the runs alone.**
 
-1. If $W'H' \neq WH$, the pair is in bin 2. A worse fit usually shows as
-   $L(W', H') > L(W, H)$, but two different optima can tie on the loss, so compare the products.
-2. Otherwise solve $\hat S = H' H^{+}$ with $H^{+} = H^\top (H H^\top)^{-1}$. If $\hat S$ is a
-   permutation times a positive diagonal, the pair is in bin 1; if not, bin 3.
+1. If $L(W', H') > L(W, H)$, the worse run is in bin 2.
+2. If the losses tie but $W'H' \neq WH$, the runs are different optima with the same fit. No $S$
+   relates them, and no optimiser can prefer one: the data's fault, as in bin 3, but outside the
+   $S$ picture. With noise this can happen at the global minimum — for $X = \mathrm{Id}_2$ and
+   $K = 1$, both $e_1 e_1^\top$ and $e_2 e_2^\top$ are best fits.
+3. If $W'H' = WH$ and the product has rank $K$, solve $\hat S = H' H^{+}$ with
+   $H^{+} = H^\top (H H^\top)^{-1}$. If $\hat S$ is a permutation times a positive diagonal, the
+   pair is in bin 1; if not, bin 3. If the product has rank below $K$ — a program with zero
+   usage, or one split into two copies (§4) — $HH^\top$ can be singular and no invertible $S$
+   need exist: that is a sign of $K$ too large, not a bin.
 
 With noise, "equal" and "a permutation times a diagonal" hold only up to the solver's tolerance.
 
@@ -115,8 +121,12 @@ $$
 \bar d_l = \frac{1}{m} \sum_{l' \in N_m(l)} \lVert \hat h_l - \hat h_{l'} \rVert_2 < \tau . \tag{2.2}
 $$
 
-With $\rho = 0.3$, a program must turn up, approximately, in about 30% of runs to survive. Rare
-components, the splits and merges of bin 2, are dropped.
+With $\rho = 0.3$, a component is judged by its $0.3R$ nearest neighbours among the pooled
+components. Roughly, a program that turns up once in well under 30% of runs borrows neighbours
+from other clusters, gets a large $\bar d_l$ and is dropped — so rare components, the splits and
+merges of bin 2, go. It is a heuristic, not a recurrence threshold: neighbours are components, not
+runs (a split contributes two per run), and survival also depends on $\tau$ (0.5 by default in the
+code, 0.03 in the paper's simulations).
 
 **Step 3, cluster** the kept vectors with k-means into $K$ clusters $A_1, \dots, A_K$. Labels never
 need matching, which removes $P$.
@@ -393,8 +403,18 @@ with the activity. By Frisch–Waugh–Lovell, $\beta_{ja}$ is the slope of $z_{
 $w^c_{:,a}$ orthogonal to the other usages, so the cell-type association is removed. Un-normalised
 usages do not sum to one, so they are not collinear with a constant.
 
-**Code is not the paper.** Since version 1.4, the code refits the usages once more from
-$H^{\mathrm{TPM}}$; the changelog credits this with better accuracy in simulations.
+**Code is not the paper.** Since version 1.4 (`refit_usage=True`, the default), the code refits
+the usages a final time with the TPM programs fixed, on the 2000 genes in TPM, each gene divided by
+its TPM standard deviation $\sigma_j$ ($\Sigma = \operatorname{diag}(\sigma_j)$):
+
+$$
+w^{\mathrm{f}}_i = \mathop{\mathrm{arg\,min}}_{w \ge 0} \lVert t_i \Sigma^{-1} - w\, H^{\mathrm{TPM}} \Sigma^{-1} \rVert_2^2 . \tag{5.3}
+$$
+
+These un-normalised $W^{\mathrm{f}}$ are the usages the code saves (normalised only when loaded with
+`norm_usage=True`); $\tilde W$ is an intermediate used to fit $H^{\mathrm{TPM}}$, and the gene
+scores use the earlier $W^c$. The changelog credits the final refit with better accuracy in
+simulations.
 
 **No single objective.**
 
@@ -403,6 +423,7 @@ $H^{\mathrm{TPM}}$; the changelog credits this with better accuracy in simulatio
 | $\tilde W$ | $H^c$ | $\tilde X$, 2000 genes | variance-scaled |
 | $H^{\mathrm{TPM}}$ | $\tilde W$ | $T$, all genes | TPM |
 | gene scores $\beta$ | $W^c$, un-normalised | z-scored expression | z-scores |
+| $W^{\mathrm{f}}$, saved (v1.4+) | $H^{\mathrm{TPM}}$ | $T$, 2000 genes, each $/\sigma_j$ | scaled TPM, un-normalised |
 
 Each fit is conditional on the one before, and no single loss is minimised by the outputs together.
 
