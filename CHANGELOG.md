@@ -15,7 +15,10 @@ The number says when, not how much, so an entry that makes existing notes wrong 
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
-## Unreleased
+## 26-280.1 — 2026-10-07
+
+The second release of the day, carrying the lessons of the 2026-10-07 cNMF session into
+`study-mentor`.
 
 ### Skills
 
