@@ -3,13 +3,16 @@ name: Release
 # A merge to main cuts a release: a tag at the merge commit, with the release
 # notes for that version taken from CHANGELOG.md and attached to it.
 #
-# The version comes from .claude-plugin/plugin.json, and the job stops if a tag
-# for that version already exists. So the release fires on the merges that bump
-# the version and stays quiet on the ones that don't — which is what keeps a
-# repo whose docs/ changes every study session from accumulating a tag per note.
+# The version comes from .claude-plugin/plugin.json and is the release date,
+# YY-DDD, or YY-DDD.N for a later release the same day (see AGENTS.md § Git). The
+# tag is the version itself, with no `v`. The job stops if that tag already
+# exists, so the release fires on the merges that set a new version and stays
+# quiet on the ones that don't — which is what keeps a repo whose docs/ changes
+# every study session from accumulating a tag per note.
 #
-# To release on *every* merge instead, replace the version resolution below with
-# a date or run-number scheme; the rest of the job is unchanged.
+# To release on *every* merge instead, derive the version from the date here
+# (`date -u +%y-%j`, plus the next free .N) rather than reading plugin.json; the
+# rest of the job is unchanged.
 
 on:
   push:
@@ -40,7 +43,7 @@ jobs:
             exit 1
           fi
           echo "version=$version"     >> "$GITHUB_OUTPUT"
-          echo "tag=v$version"        >> "$GITHUB_OUTPUT"
+          echo "tag=$version"         >> "$GITHUB_OUTPUT"
 
       - name: Skip if this version is already released
         id: check
@@ -52,14 +55,39 @@ jobs:
             echo "exists=false" >> "$GITHUB_OUTPUT"
           fi
 
+      # Checked only for a version about to be released, so a merge that leaves an
+      # already-tagged version alone stays quiet whatever its shape. The day must
+      # round-trip through a real date: 26-000, 26-367 and 26-366 (2026 is not a
+      # leap year) are typos, and a tag is permanent.
+      - name: Check the version is a date
+        if: steps.check.outputs.exists == 'false'
+        env:
+          VERSION: ${{ steps.v.outputs.version }}
+        run: |
+          python3 - <<'PY'
+          import os, re, sys
+          from datetime import datetime
+          v = os.environ["VERSION"]
+          m = re.fullmatch(r"(\d{2}-\d{3})(\.[1-9]\d*)?", v)
+          try:
+              ok = bool(m) and datetime.strptime(m[1], "%y-%j").strftime("%y-%j") == m[1]
+          except ValueError:
+              ok = False
+          if not ok:
+              print(f"::error::version {v} is not YY-DDD or YY-DDD.N for a real date (date +%y-%j)")
+              sys.exit(1)
+          PY
+
       # The notes are the CHANGELOG section for this version: everything between
-      # its heading and the next one. A release with no section is a mistake, so
-      # fail rather than publish an empty one.
+      # its heading and the next one. The heading must be the version exactly,
+      # alone or followed by a space, so 26-280 never matches `## 26-280.1`. A
+      # release with no section is a mistake, so fail rather than publish an
+      # empty one.
       - name: Extract release notes
         if: steps.check.outputs.exists == 'false'
         run: |
           awk -v v="## ${{ steps.v.outputs.version }}" '
-            index($0, v) == 1 { found = 1; next }
+            $0 == v || index($0, v " ") == 1 { found = 1; next }
             found && /^## / { exit }
             found { print }
           ' CHANGELOG.md > RELEASE_NOTES.md
