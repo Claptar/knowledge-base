@@ -21,5 +21,7 @@ _site/
 .venv/
 .env
 # handwritten working, synced from tablet
-scratch/
-notes/
+/scratch/
+/notes/
+# downloaded bundles and other local scratch, never committed
+/.tmp/

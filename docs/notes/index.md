@@ -10,7 +10,7 @@ sharp:
 
 | | Holds | Earned by |
 | --- | --- | --- |
-| **Topics** | the **record** of my trajectory through a subject — none yet | a session. `Status: solid` requires *How I could have come up with this* in my own words |
+| **Topics** | the **record** of my trajectory through a subject — first: [NMF](../topics/nmf.md) | a session. `Status: solid` requires *How I could have come up with this* in my own words |
 | **Notes** (here) | **material** I wrote — exposition, aimed at a reader | writing it |
 | **Adapted** | someone else's material, rewritten motivation-first — nothing filed yet | a source going through `adapt-material` |
 
@@ -68,6 +68,13 @@ information.
 These connect directly to the PCA-as-Gram-matrix anchor in [profile](../profile.md) — the covariance
 operator as a Gram matrix in $L^2(\Omega)$ is the same spectral story, which makes them the most
 load-bearing notes here for what comes next.
+
+## Matrix factorisation
+
+Written from a study session rather than imported, so its record is a topic file.
+
+- [NMF — what the data pins down, and what the loss assumes](matrix-factorisation/nmf-identifiability-and-loss.md)
+  · record: [topics/nmf.md](../topics/nmf.md)
 
 ## Written elsewhere
 
