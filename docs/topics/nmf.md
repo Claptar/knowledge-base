@@ -29,8 +29,9 @@ question "is the answer unique, and can I read anything into it?"
   as rows, the same matrix appears transposed, $S = C^\top$.
 - [Quotient spaces](../notes/linear-algebra/quotient-spaces.md) and
   [symmetries and groups](../notes/structures/04-symmetries-and-groups.md): the data identifies
-  only an orbit of $GL(K)$; what survives the sign constraints is the orthant's symmetry group,
-  permutations times positive diagonals.
+  only an orbit of $GL(K)$. The sign constraints alone keep every $S$ with $SH \ge 0$ and
+  $WS^{-1} \ge 0$, which need not be monomial; only with pure cells and marker genes is what
+  survives the orthant's symmetry group, permutations times positive diagonals.
 - HMM label switching (Rabiner, Durbin): the small case of "identifiable only up to a group".
 - PCA — as the source of a false analogy, not a support: its orthonormal convention was held as a
   fact about the problem, twice ([practice](../practice/nmf.md)).

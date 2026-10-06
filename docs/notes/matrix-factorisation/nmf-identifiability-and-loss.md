@@ -31,12 +31,14 @@ $h_{kj} = \partial x_{ij} / \partial w_{ik}$ — the amount of gene $j$ that pro
 per unit of usage, the same in every cell. A recipe picture works: $h_k$ is an ingredient list for
 one batch, $w_{ik}$ is how many batches cell $i$ cooks.
 
-**Clustering is the special case** where every row of $W$ has exactly one non-zero entry. Then the
-best $H$ is the matrix of cluster means, and the problem is $k$-means. NMF relaxes the one-hot
-constraint, so a cell can be 70% one cell type plus 20% cell cycle, and a doublet can be half and
-half. Kotliar et al. split programs into *identity* programs (a cell type) and *activity* programs
-(cell cycle, hypoxia, a stimulus response) that ride on top of many identities. Keep the activity
-programs in mind: they are where section 5 bites.
+**Clustering is the special case** where every row of $W$ is one-hot: a single entry, equal to
+$1$. Then the best $H$ under squared error is the matrix of cluster means, and the problem is
+$k$-means. (Let the single entry be any positive number and each cell can rescale its program, so
+it is fitted to a ray rather than to a centroid.) NMF relaxes the one-hot constraint, so a cell
+can be 70% one cell type plus 20% cell cycle, and a doublet can be half and half. Kotliar et al.
+split programs into *identity* programs (a cell type) and *activity* programs (cell cycle,
+hypoxia, a stimulus response) that ride on top of many identities. Keep the activity programs in
+mind: they are where section 5 bites.
 
 ## 2 What the data alone determines
 
@@ -305,7 +307,8 @@ loss (`beta_loss='kullback-leibler'`).
   step size; the KL version is EM over hidden per-program counts
   $Z_{ijk} \sim \mathrm{Poisson}(w_{ik} h_{kj})$, $X_{ij} = \sum_k Z_{ijk}$.
 - **Local optima.** NMF is NP-hard in general (Vavasis) but tractable under separability (Arora et
-  al.) — the same condition as section 4. Different runs land in different optima, which is the
+  al.) — a one-sided anchor condition, the analogue of marker genes (M) alone, weaker than the two
+  pins section 4 needs for uniqueness. Different runs land in different optima, which is the
   problem cNMF's consensus step addresses.
 - **Overdispersion.** UMI counts are better described by a negative binomial,
   variance $\approx \mu + \mu^2/\theta$, which bursty transcription produces directly.
