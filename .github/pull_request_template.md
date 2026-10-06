@@ -10,7 +10,8 @@
 - [ ] **Into `draft`** — ordinary work. Add a note under `## Unreleased` in `CHANGELOG.md` if this
       touches a skill, convention or script; `docs/` notes need nothing.
 - [ ] **`draft` -> `main`, a release.** Then:
-  - [ ] bumped `version` in `.claude-plugin/plugin.json` (and `pyproject.toml` if it moved too)
+  - [ ] set `version` in `.claude-plugin/plugin.json` to today's `YY-DDD` (`date +%y-%j`), or
+        `YY-DDD.1`, `.2`… if that tag already exists
   - [ ] renamed `## Unreleased` to `## <version> — <date>` in `CHANGELOG.md`
 
 A release whose version has no `CHANGELOG` section fails the release job on merge, by design.
