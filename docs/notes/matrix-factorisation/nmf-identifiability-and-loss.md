@@ -35,10 +35,13 @@ one batch, $w_{ik}$ is how many batches cell $i$ cooks.
 $1$. Then the best $H$ under squared error is the matrix of cluster means, and the problem is
 $k$-means. (Let the single entry be any positive number and each cell can rescale its program, so
 it is fitted to a ray rather than to a centroid.) NMF relaxes the one-hot constraint, so a cell
-can be 70% one cell type plus 20% cell cycle, and a doublet can be half and half. Kotliar et al.
-split programs into *identity* programs (a cell type) and *activity* programs (cell cycle,
-hypoxia, a stimulus response) that ride on top of many identities. Keep the activity programs in
-mind: they are where section 5 bites.
+can be a mixture of several programs, and a doublet an even mixture of two. Percentages — "70%
+one cell type plus 20% cell cycle" — need a normalisation first, because any column of $W$ can be
+scaled up and the matching row of $H$ down without changing the fit. Fix each program's total,
+say each row of $H$ summing to one, and $w_{ik}$ becomes the counts program $k$ contributes to
+cell $i$; a row of $W$ divided by its sum is then each program's share. Kotliar et al. split programs into *identity* programs (a cell
+type) and *activity* programs (cell cycle, hypoxia, a stimulus response) that ride on top of many
+identities. Keep the activity programs in mind: they are where section 5 bites.
 
 ## 2 What the data alone determines
 
