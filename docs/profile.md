@@ -30,6 +30,12 @@ Background, habits and anchors. Updated when something changes, not every sessio
 _To fill in as they come up: index conventions, measure-theoretic vs elementary phrasing,
 where I want rigour and where I don't._
 
+- **Change of basis, rows versus columns.** My notes write $e' = eC$, with a new vector's
+  coordinates in a *column* of $C$ ([change of basis](notes/linear-algebra/change-of-basis.md)).
+  When basis vectors are stacked as *rows* — programs in $H$ — the same matrix appears transposed:
+  $H' = SH$ with $S = C^\top$. Slipped on this twice on 2026-10-06
+  ([practice/nmf.md](practice/nmf.md)).
+
 ## Anchors worth building on
 
 - **Inner products, projections, spectra, low-rank structure** -> PCA as Gram-matrix / L^2 geometry.

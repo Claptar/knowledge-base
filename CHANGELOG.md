@@ -4,19 +4,46 @@ Releases of the `study-kb` plugin and the repository around it. The knowledge ba
 `docs/` changes continuously and is not itemised here — a release records changes to the **skills,
 the conventions and the tooling**, which are the things another machine installs.
 
-Versions are `MAJOR.MINOR.PATCH`:
+Versions are the release date, `YY-DDD`: two-digit year and zero-padded day of the year
+(`date +%y-%j`), so 2026-10-07 is `26-280`. A second release the same day is `YY-DDD.1`, a third
+`YY-DDD.2`. The tag is the version itself. Releases up to `0.7.0` used `MAJOR.MINOR.PATCH` and keep
+their `v`-prefixed tags.
 
-- **MAJOR** — a convention changed in a way that makes existing notes wrong.
-- **MINOR** — a skill, script or rule added or meaningfully reshaped.
-- **PATCH** — corrections that change no behaviour.
+The number says when, not how much, so an entry that makes existing notes wrong starts with
+**Breaking.**
 
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
-## Unreleased
+## 26-280 — 2026-10-07
+
+The first release versioned by date: `26-280` is 2026-10-07. Earlier releases keep their
+`v0.x.y` tags.
+
+### Skills
+
+- **`study-mentor` runs a session the way the 2026-10-06 retrospective asked.** Step 2 opens with
+  the stake rather than a syllabus, agrees one question and a stopping point, hands him the hint
+  ladder, and offers a rebuild warm-up when resuming. Step 3 gains route-first, objects-first and
+  step-size rules, one question per turn, following his route, asking where a failed intuition is
+  right, reading confusion as a report on the session, and checkable hints. The loop is closed
+  before offering to stop, and practice records where a misleading intuition holds.
+
+### Conventions
+
+- **Versions are calendar dates, `YY-DDD`, and the tag is the version without a `v`.** The release
+  job refuses a version in any other shape or one that is not a real date (`26-367`), and matches
+  the `CHANGELOG` heading exactly, so `26-280` cannot pick up the notes for `26-280.1`. A change
+  that makes existing notes wrong is flagged **Breaking.** in its entry instead of by a major
+  version. `AGENTS.md` and the PR template say how to pick the number.
 
 ### Tooling
 
+- **`pyproject.toml` no longer carries the release version.** Python's version rules cannot spell
+  `26-280.1`, so it is pinned to `0.0.0` and points at `.claude-plugin/plugin.json`, the one copy.
+- **New notes under `docs/notes/` are tracked again.** The `notes/` ignore rule added in 0.7.0 to
+  keep the root audit notes out was unanchored, so it also matched `docs/notes/` and silently left
+  any new note out of a commit. It, and `scratch/`, are now anchored to the root.
 - **The outbound-link check no longer cries wolf.** It retries, fails only on a 4xx (real rot),
   and warns on a 5xx, 429 or timeout. github.com was answering the runners with 503 for an
   existing page, which failed the 0.7.0 run without anything to fix.

@@ -8,6 +8,10 @@ stays skimmable however long the habit lasts, and `Next` never drifts below the 
 is created when the threshold is actually crossed, not in advance.
 
 ## Next
+- **cNMF, the consensus step** ([topic](topics/nmf.md)) — what does a median over many NMF local
+  optima estimate? First move: sort run-to-run differences into those consensus can remove
+  (different local optima) and those it cannot (a pin the data lacks). Optional ten-minute warm-up
+  before reading anything: rebuild the identifiability theorem's three steps from a blank page.
 - [Path node 1](path.md#1-conditional-expectation-as-an-orthogonal-projection) — conditional
   expectation as orthogonal projection. Specific first move: derive the tower property as a
   statement about nested projections in $L^2$, without computing an integral. If that works, the
@@ -18,6 +22,17 @@ is created when the threshold is actually crossed, not in advance.
 - Parallel branch, if Layer 1 stalls: [node 4](path.md#4-markov-property-in-continuous-time) then
   [node 5](path.md#5-jump-chain-and-holding-times) — why the holding time must be exponential.
   Node 4 needs only node 1, and this branch is what unlocks Layer 3.
+
+---
+
+## 2026-10-06 — NMF: identifiability and the loss as a noise model
+
+Mode: socratic
+A detour from `Next`, reading Kotliar et al. 2019 (cNMF). Derived the separable identifiability
+theorem except its lemma, and read the NMF losses as noise models — [topics/nmf.md](topics/nmf.md),
+with [practice/nmf.md](practice/nmf.md) and [a note](notes/matrix-factorisation/nmf-identifiability-and-loss.md).
+Clicked: the cone picture, and the outside pin by transposing. Didn't: the first half had no stake
+and no route, so "why do we even care about S?" came late — a session failure, not a gap.
 
 ---
 

@@ -461,32 +461,46 @@ touched:
 gh pr create --base main --head draft --title "Release <version>"
 ```
 
-Before opening it: bump the version in `.claude-plugin/plugin.json` and rename the `CHANGELOG`
+Before opening it: set the version in `.claude-plugin/plugin.json` and rename the `CHANGELOG`
 `## Unreleased` section to that version with today's date. Accumulate entries under `## Unreleased`
 as you go — writing the note when the change is fresh is the only time it is cheap, and a release
 then costs a rename rather than an archaeology session through `git log`.
 
+**A version is the release date, `YY-DDD`**: two-digit year and zero-padded day of the year, so
+2026-10-07 is `26-280`. A second release the same day is `YY-DDD.1`, a third `YY-DDD.2`. Pick it
+when the release PR is cut, and keep it if the merge lands after midnight:
+
+```bash
+date +%y-%j                       # today's version
+git tag -l "$(date +%y-%j)*"      # anything listed: take the next .N instead
+```
+
+The number says *when*, not *how much*. A change that makes existing notes wrong is therefore
+flagged **Breaking.** at the start of its `CHANGELOG` entry, which is the one thing the old
+`MAJOR` digit carried. Tags up to `v0.7.0` predate the scheme and keep their names.
+
 ### A merge to `main` cuts a release
 
 `.github/workflows/release.yml` runs on every push to `main`. It reads the version from
-`.claude-plugin/plugin.json`, and if no tag exists for it, creates an annotated tag `v<version>`
-and publishes a GitHub release whose notes are that version's section of
+`.claude-plugin/plugin.json`, refuses one that is not a real date as `YY-DDD` or `YY-DDD.N`, and if no tag
+exists for it, creates an annotated tag named exactly the version (`26-280`, no `v`) and publishes a GitHub release whose notes are that version's section of
 [`CHANGELOG.md`](CHANGELOG.md) — so the notes live in the repo, in the same commit as the change
 they describe, rather than only in GitHub's database.
 
 Two consequences worth holding on to:
 
-- **A promotion that carries a skill, convention or script change bumps the version and names its
-  `CHANGELOG` section.** The job fails the release if the section is missing, which is deliberate:
+- **A promotion that carries a skill, convention or script change sets a new version and names
+  its `CHANGELOG` section.** The job fails the release if the section is missing, which is deliberate:
   a version with no notes is a version nobody can tell you about.
-- **A promotion that only carries `docs/` notes bumps nothing**, and the workflow stays quiet. The
+- **A promotion that only carries `docs/` notes leaves the version alone**, and the workflow
+  stays quiet. The
   content changes every session and is not what a release is for — `git log` already records it,
   and a tag per note would make the tag list useless for the thing it is actually for, which is
   telling someone which version of the skills they installed.
 
 The second point is a deliberate softening of "every merge cuts a release": every merge *runs* the
 release job, and every merge that changes the versioned artefact produces one. To release on every
-merge regardless, change the version resolution step in the workflow — the comment there says how.
+merge regardless, derive the version from the date in the workflow — the comment there says how.
 
 `main` is still the deploy branch, so a promotion also publishes the site. Notes that are merely
 *written* are not published until `draft` is promoted, which is usually what you want and

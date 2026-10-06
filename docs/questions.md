@@ -13,6 +13,7 @@ session has actually been spent on it — see [Harvest, don't design](#harvest-d
 | --- | --- | --- |
 | Does organising applied maths by *modelling task* rather than by technique survive contact with a real derivation, or does it dissolve? | open | no page yet |
 | Is the verification/validation split meaningful in single-cell work, where "reality" is itself a noisy, heavily-processed measurement rather than a clean experiment? | open | no page yet — the [capstone](path.md#capstone) is where it gets answered |
+| Do we really care about the other factorisations that fit equally well — when does NMF's answer actually pin down the programs? | open | [topics/nmf.md](topics/nmf.md) |
 
 ## Proposed, not live
 
