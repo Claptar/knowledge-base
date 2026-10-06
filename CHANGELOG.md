@@ -20,10 +20,10 @@ renames that heading to the version and date, and the release job publishes the 
 ### Conventions
 
 - **Versions are calendar dates, `YY-DDD`, and the tag is the version without a `v`.** The release
-  job refuses a version in any other shape and matches the `CHANGELOG` heading exactly, so
-  `26-280` cannot pick up the notes for `26-280.1`. A change that makes existing notes wrong is
-  flagged **Breaking.** in its entry instead of by a major version. `AGENTS.md` and the PR template
-  say how to pick the number.
+  job refuses a version in any other shape or one that is not a real date (`26-367`), and matches
+  the `CHANGELOG` heading exactly, so `26-280` cannot pick up the notes for `26-280.1`. A change
+  that makes existing notes wrong is flagged **Breaking.** in its entry instead of by a major
+  version. `AGENTS.md` and the PR template say how to pick the number.
 
 ### Tooling
 

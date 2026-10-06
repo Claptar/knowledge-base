@@ -482,7 +482,7 @@ flagged **Breaking.** at the start of its `CHANGELOG` entry, which is the one th
 ### A merge to `main` cuts a release
 
 `.github/workflows/release.yml` runs on every push to `main`. It reads the version from
-`.claude-plugin/plugin.json`, refuses one that is not `YY-DDD` or `YY-DDD.N`, and if no tag
+`.claude-plugin/plugin.json`, refuses one that is not a real date as `YY-DDD` or `YY-DDD.N`, and if no tag
 exists for it, creates an annotated tag named exactly the version (`26-280`, no `v`) and publishes a GitHub release whose notes are that version's section of
 [`CHANGELOG.md`](CHANGELOG.md) — so the notes live in the repo, in the same commit as the change
 they describe, rather than only in GitHub's database.
