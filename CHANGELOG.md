@@ -15,6 +15,15 @@ renames that heading to the version and date, and the release job publishes the 
 
 ## Unreleased
 
+### Skills
+
+- **`study-mentor` runs a session the way the 2026-10-06 retrospective asked.** Step 2 opens with
+  the stake rather than a syllabus, agrees one question and a stopping point, hands him the hint
+  ladder, and offers a rebuild warm-up when resuming. Step 3 gains route-first, objects-first and
+  step-size rules, one question per turn, following his route, asking where a failed intuition is
+  right, reading confusion as a report on the session, and checkable hints. The loop is closed
+  before offering to stop, and practice records where a misleading intuition holds.
+
 ### Tooling
 
 - **New notes under `docs/notes/` are tracked again.** The `notes/` ignore rule added in 0.7.0 to
