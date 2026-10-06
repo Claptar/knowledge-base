@@ -17,6 +17,9 @@ renames that heading to the version and date, and the release job publishes the 
 
 ### Tooling
 
+- **New notes under `docs/notes/` are tracked again.** The `notes/` ignore rule added in 0.7.0 to
+  keep the root audit notes out was unanchored, so it also matched `docs/notes/` and silently left
+  any new note out of a commit. It, and `scratch/`, are now anchored to the root.
 - **The outbound-link check no longer cries wolf.** It retries, fails only on a 4xx (real rot),
   and warns on a 5xx, 429 or timeout. github.com was answering the runners with 503 for an
   existing page, which failed the 0.7.0 run without anything to fix.
