@@ -39,9 +39,10 @@ can be a mixture of several programs, and a doublet an even mixture of two. Perc
 one cell type plus 20% cell cycle" — need a normalisation first, because any column of $W$ can be
 scaled up and the matching row of $H$ down without changing the fit. Fix each program's total,
 say each row of $H$ summing to one, and $w_{ik}$ becomes the counts program $k$ contributes to
-cell $i$; a row of $W$ divided by its sum is then each program's share. Kotliar et al. split programs into *identity* programs (a cell
-type) and *activity* programs (cell cycle, hypoxia, a stimulus response) that ride on top of many
-identities. Keep the activity programs in mind: they are where section 5 bites.
+cell $i$; a row of $W$ divided by its sum is then each program's share. Kotliar et al. split
+programs into *identity* programs (a cell type) and *activity* programs (cell cycle, hypoxia, a
+stimulus response) that ride on top of many identities. Keep the activity programs in mind: they
+are where section 5 bites.
 
 ## 2 What the data alone determines
 
