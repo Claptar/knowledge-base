@@ -1,10 +1,11 @@
 # NMF — if many factorisations fit, do the programs mean anything?
 
 **Status:** open
-**Opened:** 2026-10-06  **Last touched:** 2026-10-06
+**Opened:** 2026-10-06  **Last touched:** 2026-10-07
 
 Practice: [practice/nmf.md](../practice/nmf.md) · Material:
-[the NMF note](../notes/matrix-factorisation/nmf-identifiability-and-loss.md) · Read alongside
+[the NMF note](../notes/matrix-factorisation/nmf-identifiability-and-loss.md) and
+[the cNMF note](../notes/matrix-factorisation/cnmf-consensus.md) · Read alongside
 Kotliar et al. 2019 (cNMF), eLife 8:e43803.
 
 ## The question that opened it
@@ -50,6 +51,10 @@ constraints are $SH \ge 0$ and $WS^{-1} \ge 0$", could I have predicted that the
 conditions are pure cells and marker genes, acting on $S^{-1}$ and $S$ respectively? What would
 have made me look at the transpose first?
 
+*cNMF consensus step (2026-10-07): not yet.* The loop question was skipped by choice. Prompt: from
+the four bins alone, could I have designed steps (2.1)–(2.3) of the cNMF note myself, and would
+I have judged components by frequency or whole runs by likelihood?
+
 ## Still loose
 
 - *How I could have come up with this*, above.
@@ -60,8 +65,19 @@ have made me look at the transpose first?
   The derivations were handed over on request. **Not yet derived.**
 - Separability is sufficient, not necessary; weaker "sufficiently scattered" conditions exist
   (Fu et al. 2019). **Unverified.** Not read.
-- The activity-program case quantitatively: what exactly is lost when only some programs have pure
-  cells, beyond "the inside pin is missing for that arrow".
+- The activity-program case quantitatively. Given on 2026-10-07: with marker genes and pure
+  identity cells, an activity program carried by one cell type can tilt toward it by
+  $t \le (1-\varphi_{\max})/\varphi_{\max}$, and one carried by two or more types is pinned
+  without a pure cell (Propositions A and B in
+  [the cNMF note](../notes/matrix-factorisation/cnmf-consensus.md)). **Not yet derived.** The NMF
+  note's §5 had claimed the opposite for the paper's simulation; corrected.
+- cNMF stops 1–4 (2026-10-07): covered in prose, **Not yet derived.** The session was given with
+  almost no equations; redo it from the cNMF note, equation-first: the $2 \times 2$ table of $S$,
+  Proposition B, $E(K+1) \le E(K)$ and the continuum at $K = K^* + 1$, uniqueness of the usage
+  refit, and what an entry of $H^{\mathrm{TPM}}$ means.
+- Frequency or likelihood: is cNMF's consensus ever worse than keeping the best-loss run?
+  Experiment B in the cNMF note. Designed, not run.
+- The stop-5 experiments (simulator with known truth; runs A1–A3, B, C, D): designed, not run.
 - Overdispersion: UMI variance is closer to $\mu + \mu^2/\theta$ than $\mu$; bursty transcription
   produces the negative binomial, so the honest loss links back to the CME thread.
 - Outbound candidates raised by the mentor, not yet mine: label switching in mixture models; topic
@@ -69,7 +85,8 @@ have made me look at the transpose first?
   consensus step comes from.
 - **Parked by choice, 2026-10-06:** how NMF is fitted (multiplicative updates; KL updates as EM
   over hidden per-program counts — the Baum–Welch anchor), NP-hardness, Bayesian Poisson
-  factorisation. Not needed for cNMF.
+  factorisation. Not needed for cNMF; the one fact used on 2026-10-07 (with one factor fixed, the
+  other is a convex non-negative least-squares problem) was given. **Not yet derived.**
 - Traps hit, with what each revealed: [practice/nmf.md](../practice/nmf.md).
 
 ## Derived / proved myself
@@ -91,3 +108,7 @@ have made me look at the transpose first?
 - 2026-10-06 — the Poisson negative log-likelihood and its local form $(\lambda - x)^2 / 2x$.
   **Derived unaided.** as far as setting up the expansion; a one-$\lambda$ template slip and the
   evaluation of the coefficients were corrected.
+- 2026-10-07 — two runs that stopped at different local optima are not related by any $S$, since
+  $W'H' \neq WH$; compare their likelihoods to detect them. **Derived unaided.** In my words: "in
+  such case they should not be handled with H' = SH. I would compute the log likelihood and see how
+  those differ."
