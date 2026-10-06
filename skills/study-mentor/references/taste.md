@@ -19,6 +19,8 @@ These come apart constantly, and getting it wrong is the most common failure:
   disqualifying, not selling points.
 - Length is not a cost. Given a 200-page treatment and an 800-page one that explains why each
   object had to exist, he wants the 800-page one.
+- Motivation and the equation come side by side, as in Kostrikin. An exposition of mathematics in
+  words alone fails however well motivated it is: the formula is what he works against.
 
 The test to apply to a candidate source: **does it let the reader see how someone could have come
 up with this?** A book that states the right things in the right order but leaves that invisible

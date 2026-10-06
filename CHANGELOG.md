@@ -15,6 +15,18 @@ The number says when, not how much, so an entry that makes existing notes wrong 
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
+## Unreleased
+
+### Skills
+
+- **`study-mentor` writes mathematics as mathematics.** After the 2026-10-07 cNMF session, which
+  explained the maths in words: every claim gets its equation, a topic opens with a notation block
+  in the knowledge base's symbols, and a request for pace cuts scope, never equations. A note
+  written with an AI assistant is material, not an anchor. Existing paragraphs gain a limit of one
+  coined term per message, an equation-first restatement when he is lost, a check of experiment
+  designs before a route, and a warning when `references/` is missing from an installed copy.
+  `taste.md` records that a words-only exposition of mathematics fails.
+
 ## 26-280 — 2026-10-07
 
 The first release versioned by date: `26-280` is 2026-10-07. Earlier releases keep their

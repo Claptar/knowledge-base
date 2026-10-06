@@ -8,10 +8,14 @@ stays skimmable however long the habit lasts, and `Next` never drifts below the 
 is created when the threshold is actually crossed, not in advance.
 
 ## Next
-- **cNMF, the consensus step** ([topic](topics/nmf.md)) — what does a median over many NMF local
-  optima estimate? First move: sort run-to-run differences into those consensus can remove
-  (different local optima) and those it cannot (a pin the data lacks). Optional ten-minute warm-up
-  before reading anything: rebuild the identifiability theorem's three steps from a blank page.
+- **Redo cNMF equation-first** ([note](notes/matrix-factorisation/cnmf-consensus.md),
+  [topic](topics/nmf.md)) — the 2026-10-07 session covered it in prose without equations, so
+  nothing past stop 1's first answer is mine yet. In order, before opening any folded proof: the
+  $2 \times 2$ table of $S$; the monomial lemma, $2 \times 2$ first; Proposition B;
+  $E(K+1) \le E(K)$ and the continuum at $K = K^* + 1$; the usage refit's uniqueness and what
+  $H^{\mathrm{TPM}}_{kj}$ means. Then close the loop: how could I have come up with cNMF?
+- Optional, hands-on: experiment A of the cNMF note (simulator, runs A1–A3), predictions written
+  into [practice](practice/nmf.md) before running.
 - [Path node 1](path.md#1-conditional-expectation-as-an-orthogonal-projection) — conditional
   expectation as orthogonal projection. Specific first move: derive the tower property as a
   statement about nested projections in $L^2$, without computing an integral. If that works, the
@@ -22,6 +26,17 @@ is created when the threshold is actually crossed, not in advance.
 - Parallel branch, if Layer 1 stalls: [node 4](path.md#4-markov-property-in-continuous-time) then
   [node 5](path.md#5-jump-chain-and-holding-times) — why the holding time must be exponential.
   Node 4 needs only node 1, and this branch is what unlocks Layer 3.
+
+---
+
+## 2026-10-07 — cNMF: consensus, K and refits
+
+Mode: socratic, then motivate-then-prove for pace
+From `Next`: the consensus step, the choice of $K$, the refits — [topics/nmf.md](topics/nmf.md),
+[practice/nmf.md](practice/nmf.md), [a note](notes/matrix-factorisation/cnmf-consensus.md). Derived:
+runs at different local optima are not related by any $S$, so compare likelihoods; the rest was
+given. Corrected the NMF note's §5 and §8 (iii). Didn't: the form — maths in words, almost no
+equations, too much per message. A session failure, not a gap; it ran on a stale installed skill.
 
 ---
 

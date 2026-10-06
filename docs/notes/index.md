@@ -71,9 +71,11 @@ load-bearing notes here for what comes next.
 
 ## Matrix factorisation
 
-Written from a study session rather than imported, so its record is a topic file.
+Written from study sessions rather than imported, so their record is a topic file.
 
 - [NMF — what the data pins down, and what the loss assumes](matrix-factorisation/nmf-identifiability-and-loss.md)
+  · record: [topics/nmf.md](../topics/nmf.md)
+- [cNMF — what the consensus estimates, how K is chosen, and what the refits mean](matrix-factorisation/cnmf-consensus.md)
   · record: [topics/nmf.md](../topics/nmf.md)
 
 ## Written elsewhere

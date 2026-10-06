@@ -191,16 +191,25 @@ uniqueness (Fu et al. 2019 survey).
         the second has pure cells ($W' = I$) but no marker genes. Each pair satisfies one pin,
         never both — as the theorem requires.
 
-## 5 Why activity programs are the hard case
+## 5 Activity programs: no pure cell, but not necessarily free
 
-An activity program never appears alone: a dividing cell is still some cell type. So there is no
-pure cell for it, and the inside pin is missing for that arrow. It can tilt toward the identity
-programs it always co-occurs with, absorbing some of their genes or leaking some of its own. This
-is the geometry behind the paper's observation that the activity program is recovered in about 30%
-to 100% of simulations as its signal strengthens (Kotliar et al., Fig. 2d), while identity
-programs are found far more reliably. Note what consensus over many runs can and cannot fix: it
-averages out *which local optimum* a run lands in. It cannot restore a pin the data does not
-contain.
+An activity program never appears alone: a dividing cell is still some cell type, so the inside
+pin of section 4 is missing for that arrow. That alone does not leave it free. If the activity
+program rides on a single cell type $I$, it can tilt toward it: $h'_a = h_a + t\,h_I$, with each
+carrier's $I$-usage lowered by $t\,w_{ia}$, fits exactly as well for
+$0 \le t \le (1-\varphi_{\max})/\varphi_{\max}$, where $\varphi_{\max}$ is the largest activity
+usage. If it rides on two or more cell types, carriers of another type have no $I$-usage to give
+up, and, with marker genes for every program and pure cells for every identity program, only
+relabelling and rescaling survive. Kotliar et al.'s simulated activity program rides on four cell
+types, so this geometry does not explain its lower recovery rate (30%, 80% and 100% of replicates
+as the signal strengthens, against 98–100% for identity programs, Fig. 2d); its smaller signal,
+about half the usage of an identity program, is the likelier cause. Statements and proofs are in §3.1 of
+[the cNMF note](cnmf-consensus.md). What consensus over many runs can and cannot fix is unchanged:
+it averages out *which local optimum* a run lands in, and it cannot restore a pin the data does not
+contain. The correction is in checking first whether a pin is really missing.
+
+*Corrected 2026-10-07: the earlier version said the activity program can tilt toward the identity
+programs it co-occurs with, which is false for two or more carrier types.*
 
 ## 6 A trap: coordinates are not projections
 
@@ -297,8 +306,10 @@ about $1/\lambda_{ij}$.
   $\sum_j \lambda_{ij}/s_j^2 \propto c_i$ under the patch, but
   $\sum_j \lambda_{ij}/\lambda_{ij} = G$ for every cell under Poisson — deep cells get their
   noise fitted. (iii) $s_j^2$ includes the biological signal, so a strongly program-specific gene
-  is down-weighted for being informative (softened by cNMF first keeping only the 2000 most
-  over-dispersed genes). (iv) Near zero the loss is still flat and symmetric.
+  is down-weighted for being informative. Separately, cNMF keeps only the 2000
+  most over-dispersed genes before scaling; the paper's reason is that unit-variance
+  scaling would otherwise put noise-only genes on the same scale as real signal
+  (corrected 2026-10-07). (iv) Near zero the loss is still flat and symmetric.
 
 Its real advantage is speed: squared error is cheap to optimise. The cNMF code also offers the KL
 loss (`beta_loss='kullback-leibler'`).
@@ -313,7 +324,8 @@ loss (`beta_loss='kullback-leibler'`).
 - **Local optima.** NMF is NP-hard in general (Vavasis) but tractable under separability (Arora et
   al.) — a one-sided anchor condition, the analogue of marker genes (M) alone, weaker than the two
   pins section 4 needs for uniqueness. Different runs land in different optima, which is the
-  problem cNMF's consensus step addresses.
+  problem cNMF's consensus step addresses; continued in
+  [the cNMF note](cnmf-consensus.md).
 - **Overdispersion.** UMI counts are better described by a negative binomial,
   variance $\approx \mu + \mu^2/\theta$, which bursty transcription produces directly.
 

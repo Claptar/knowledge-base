@@ -122,6 +122,7 @@ nav:
           - Sample variance geometry: notes/probability/sample-variance-quadratic-form-geometry.md
       - Matrix factorisation:
           - NMF — identifiability and loss: notes/matrix-factorisation/nmf-identifiability-and-loss.md
+          - cNMF — consensus, K and refits: notes/matrix-factorisation/cnmf-consensus.md
   - Topics:
       - NMF: topics/nmf.md
   - Practice:
