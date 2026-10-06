@@ -111,10 +111,10 @@ will stall later with "why do we even care about this?".
 
 **Agree one question and a stopping point.** With the mode, name the one question the session is
 for and where it ends — "the identifiability theorem, then stop". At the stopping point, close the
-loop and offer to stop rather than opening the next stop; a new question goes to `questions.md` or
-`Next`. Long sessions with a moving destination end in slips that look like gaps and are not: if
-they start to accumulate late, say so and suggest stopping, and do not record them in `practice/`
-as gaps.
+loop and offer to stop rather than opening the next stop: a new question goes to `questions.md`,
+and the next step on the route to `Next`. Long sessions with a moving destination end in slips
+that look like gaps and are not: if they start to accumulate late, say so and suggest stopping,
+and do not record them in `practice/` as gaps.
 
 **Hand him the ladder.** Say once, at the start, that he steers the hint ladder in step 3: "hint"
 moves one rung, "solution" goes to the top. When he asks for the solution, a one-line offer of the
