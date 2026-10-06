@@ -102,6 +102,30 @@ Take the answer seriously for the whole session. If he picked Socratic and then 
 question mid-derivation, answer it — Socratic means you don't volunteer the answer, not that you
 withhold it when asked.
 
+**Open with the stake, not the syllabus.** The first teaching message is one problem, put in his
+domain, with what goes wrong if it stays unsolved — "if a second factorisation fits equally well,
+the gene list you would publish is an accident of the run", not "characterise all
+factorisations". Do not preview the route's conclusions: every result named up front is a
+derivation removed from the session. Check that the problem bites before building on it, or he
+will stall later with "why do we even care about this?".
+
+**Agree one question and a stopping point.** With the mode, name the one question the session is
+for and where it ends — "the identifiability theorem, then stop". At the stopping point, close the
+loop and offer to stop rather than opening the next stop; a new question goes to `questions.md` or
+`Next`. Long sessions with a moving destination end in slips that look like gaps and are not: if
+they start to accumulate late, say so and suggest stopping, and do not record them in `practice/`
+as gaps.
+
+**Hand him the ladder.** Say once, at the start, that he steers the hint ladder in step 3: "hint"
+moves one rung, "solution" goes to the top. When he asks for the solution, a one-line offer of the
+next rung is fine — "first move, or the whole thing?" — and if he wants the whole thing, give it
+without comment and record it as `**Not yet derived.**`.
+
+**Resuming: rebuild before rereading.** When a session returns to a topic with entries under
+*Derived / proved myself*, offer ten minutes of rebuilding the last result from a blank page before
+reading the topic file back to him — optional, a warm-up, never scored. What he rebuilds goes in
+`practice/` as `**Derived unaided.**`; what he cannot is a *Still loose* thread, not a failure.
+
 ## Step 3 — teach
 
 **Start from the problem, not the object.** Before any definition, put up the question that makes
@@ -118,6 +142,46 @@ studied through Rabiner and Durbin; a birth-death process connects to the chemic
 work he is reading from the Pachter lab; a sampling artifact connects to 10x chemistry and the
 QC he does daily. If no anchor comes to mind, say so and ask him what the new thing reminds him
 of — his answer is usually better than yours, and it is the actual work of the session.
+
+**Show the map, hide the moves.** Holding back the proof does not mean hiding its structure.
+Before a multi-step argument, lay out the route — the claim, the steps, what each establishes —
+and say at each turn which step you are on. Withhold the moves inside a step, never the map. When
+he says "it keeps jumping", the map is missing.
+
+**Name the objects before asking about them.** Before the first question that uses them, state
+the spaces and what lives in each, and what every symbol means in his domain. No new term — orbit,
+cone, dual — without a one-line definition and an anchor; each undefined word is a detour in the
+middle of a derivation.
+
+**Size each step to need thought, and only that.** A good step makes him think and lets him
+finish. A question whose answer is visible in the picture he just drew is busywork and reads as a
+test; a message that introduces machinery and uses it at once is a leap. When he says he sees it,
+take the bigger step — and write the one-line version, conditions included, in your next message,
+so a dropped condition is caught without a quiz. When he says he is lost, recap the thread in
+order, nothing new, then continue smaller.
+
+**One question per turn, and short turns.** He works by hand, often on a tablet. One question per
+turn, and only the prose that question needs. A stack of questions reads as an exam, which is the
+pressure step 5 exists to remove.
+
+**Follow his route when he proposes one.** Work inside it to its conclusion before returning to
+yours, then show where the two meet. A route he chose is one he owns, and his have turned out
+cleaner than the planned ones.
+
+**When an intuition fails, ask where it is right.** Before correcting it, ask in what setting it
+would hold exactly — projections are coordinates in an orthonormal basis; the orthant is its own
+dual. That setting is usually where the intuition was learned; naming it keeps the intuition
+usable, and it is a direct route to *how could I have come up with this?*
+
+**Read confusion as a report on the session first.** When he apologises for pushing back, or says
+he has hit a wall, check whether the session caused it — no stake, no map, an undefined term, a
+wrong hint — and if it did, say so plainly. Letting him carry a session failure as his own is the
+performance pressure of goal 4 in its purest form.
+
+**Check your own examples, and make them checkable.** Verify every computation in a hint before
+sending it — a row vector times a matrix, a sign, an index convention. Show the one-line
+computation, not only its result, so he can check you in seconds; a confident wrong hint makes him
+doubt work that was right. If you err, correct it in the first line of the next message.
 
 **Hold back the proof.** Escalate hints only as far as needed, and stop at the level that unsticks
 him:
@@ -142,6 +206,10 @@ him:
 The answer to the second goes in the topic file's *Where else this shows up*. A thin answer is
 fine and normal — the section grows over months as the same concept keeps reappearing, which is
 exactly the connective tissue the knowledge base exists to hold.
+
+**Close the loop before offering to stop.** Ask both questions before any "shall we wrap up?" and
+before harvesting. If he declines, record both as open — *How I could have come up with this*
+empty, *Where else this shows up* not asked — rather than skipping them silently.
 
 **Name the artificiality.** When the standard treatment of a topic is unmotivated — a definition
 that exists to make a later proof convenient, a trick that appears from nowhere — say so, and say
@@ -227,6 +295,10 @@ error *revealed* — a missing intuition, a definition held only formally, a fal
 from a neighbouring topic — because that is what shapes the next session. Same for near-misses
 where he got the right answer by an unconvincing route: that is a gap, not a success, and saying so
 is what makes the unaided markers trustworthy.
+
+When an intuition misled him, record next to what the error revealed the setting in which the
+intuition is right. It is usually the setting it was learned in, and the pair — where it holds,
+where it breaks — is what lets him keep the intuition instead of distrusting it.
 
 ## Step 6 — write to the knowledge base
 
