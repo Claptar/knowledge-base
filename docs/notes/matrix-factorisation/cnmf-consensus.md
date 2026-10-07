@@ -179,9 +179,11 @@ $\tilde X$. Three consequences follow.
    $\mathcal{A}$ over $\theta$ with $\tilde X$ fixed. A perfectly reliable solver on very noisy data
    gives a perfectly tight cluster. Alexandrov et al. ran each iteration on a bootstrap resample
    $\tilde X^*_r$, which puts sampling noise into the spread; cNMF does not resample.
-2. **Pinned program**, $\mathcal{S} = \{DP\}$. Every run that escapes bin 2 returns the same
-   $\hat h_k$, so the consensus is the global optimum of $L$, and its value is insurance against
-   bad runs. Its distance from $h^*_k$ is bin 4.
+2. **Pinned program**, $\mathcal{S} = \{DP\}$, *and* a unique optimal product $WH$. Then every
+   run that escapes bin 2 returns the same $\hat h_k$, so the consensus is the global optimum of
+   $L$, and its value is insurance against bad runs. Its distance from $h^*_k$ is bin 4. The pin
+   alone is not enough: with tied optima of different products (§1, $X = \mathrm{Id}_2$, $K = 1$)
+   each is pinned, yet good runs return different programs and their median need not be optimal.
 3. **Unpinned program.** Runs land anywhere on the flat set $\{(SH)_k : S \in \mathcal{S}\}$ at
    equal loss, and the median is wherever $\mathcal{A}$ and $\Pi$ tend to put them. Change the
    solver or the initialisation and the consensus moves with no change in fit. A wide cluster also
@@ -286,7 +288,7 @@ $$
 W' = \begin{bmatrix} W & 0 \end{bmatrix}, \qquad H' = \begin{bmatrix} H \\ h \end{bmatrix}, \qquad W'H' = WH \quad \text{for any } h \ge 0 .
 $$
 
-**What cNMF plots.** For each $K$, the consensus error $E^c(K) = \lVert \tilde X - W^c H^c \rVert_F$
+**What cNMF plots.** For each $K$, the consensus error $E^c(K) = \lVert \tilde X - W^c H^c \rVert_F^2$
 (with $W^c$ from §5) and the stability
 
 $$
