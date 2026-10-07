@@ -98,3 +98,39 @@ $\lambda_{ij}$; wrote "maximize" for the negative log-likelihood.
 down. Near-miss: "$\lambda^2$ — more penalty" than $\lambda$ holds only for $\lambda > 1$; the
 meaningful comparison is shape.
 **Revisit:** state the model in words first — "each entry has its own mean, observed once".
+
+## 2026-10-07 — sort the differences between two runs
+
+**Problem:** two runs $(W, H)$ and $(W', H')$ on the same $\tilde X$: sort every difference into
+not real, the optimiser's fault and the data's fault; for each, say whether it is an $S$ and how to
+recognise it from the runs alone.
+**Worked unaided up to:** the optimiser's bin completely: no $S$ relates the runs, and their
+likelihoods differ. **Derived unaided.** The not-real bin partly, as "an orthogonal $S$": right
+for permutations, wrong for rotations, and rescaling missed — a near-miss, not unaided work.
+**Where I asked for a hint:** none; the other bins were completed by the mentor after I switched to
+motivate-then-prove for pace.
+**Attempt:** not-real differences "could be traced by looking for an orthogonal S that would align
+those"; for the data's bin, "looking if there are pure cells and genes for each of the program. If
+there are few such, then I would assume that something is going very wrong".
+**Outcome:** partly solved.
+**What it revealed:** the orthonormal reflex, third appearance. "Orthogonal" lets in rotations,
+which are either invalid or genuine alternatives, and leaves out rescaling, which is harmless
+($\operatorname{diag}(2,1)$ is the counterexample). Rescaling was missed altogether. The data's bin
+got a test on one run instead of a comparison between runs, and pins are sufficient, not necessary,
+so their absence is not a verdict (Proposition B in
+[the cNMF note](../notes/matrix-factorisation/cnmf-consensus.md) is the counterexample).
+**Revisit:** before naming the group of harmless $S$, test one $2 \times 2$ element of each
+candidate: $\operatorname{diag}(2,1)$ and a $45^\circ$ rotation.
+
+## 2026-10-07 — not attempted
+
+**Problem:** the proofs set at stops 1–4: the $2 \times 2$ table of four $S$; the monomial lemma
+($2 \times 2$ first); Propositions A ($t \le 3/7$) and B; $E(K+1) \le E(K)$ and the continuum at
+$K = K^* + 1$; uniqueness of the usage refit; what an entry of $H^{\mathrm{TPM}}$ means.
+**Worked unaided up to:** —
+**Where I asked for a hint:** —
+**Attempt:** none; I chose pace over proofs, and the answers were given.
+**Outcome:** not attempted.
+**What it revealed:** nothing about the material yet: the explanations had almost no equations to
+work against.
+**Revisit:** next session, from the cNMF note, before opening the folded proofs.
