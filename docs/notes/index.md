@@ -78,6 +78,13 @@ Written from study sessions rather than imported, so their record is a topic fil
 - [cNMF — what the consensus estimates, how K is chosen, and what the refits mean](matrix-factorisation/cnmf-consensus.md)
   · record: [topics/nmf.md](../topics/nmf.md)
 
+## Measurement
+
+Written from a study session, so its record is a topic file.
+
+- [Ambient RNA — the likelihood from the physics, and SoupX's estimator](measurement/ambient-rna.md)
+  · record: [topics/ambient-rna.md](../topics/ambient-rna.md)
+
 ## Written elsewhere
 
 Work of mine that lives in its own repository and is deliberately not absorbed:

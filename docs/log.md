@@ -8,6 +8,14 @@ stays skimmable however long the habit lasts, and `Next` never drifts below the 
 is created when the threshold is actually crossed, not in advance.
 
 ## Next
+- **Ambient RNA, Problem 2 step 3** ([topic](topics/ambient-rna.md),
+  [note §2](notes/measurement/ambient-rna.md#2-soupxs-contamination-estimator)). First the cold-check
+  owed: reproduce $p_g = (1-\alpha)\mu_g + \alpha a_g$ and the per-UMI label argument without
+  looking — both were given, not derived. Then read the bias already computed,
+  $\mathbb E[\hat\alpha_c] = \alpha_c + (1-\alpha_c)\varepsilon_G/a_G$: write the *relative*
+  bias, say which two quantities it compares, and decide what makes a good or a bad gene set $G$ for
+  a cell type, in biological terms. Then step 4 (what the ratio of sums estimates if
+  $\alpha_i \approx \Lambda/T_i$), then Problems 3–5 in the topic file.
 - **Redo cNMF equation-first** ([note](notes/matrix-factorisation/cnmf-consensus.md),
   [topic](topics/nmf.md)) — the 2026-10-07 session covered it in prose without equations, so
   nothing past stop 1's first answer is mine yet. In order, before opening any folded proof: the
@@ -26,6 +34,20 @@ is created when the threshold is actually crossed, not in advance.
 - Parallel branch, if Layer 1 stalls: [node 4](path.md#4-markov-property-in-continuous-time) then
   [node 5](path.md#5-jump-chain-and-holding-times) — why the holding time must be exponential.
   Node 4 needs only node 1, and this branch is what unlocks Layer 3.
+
+---
+
+## 2026-10-10 — Ambient RNA: the likelihood from the physics, and SoupX's estimator
+
+Mode: socratic
+New topic — [topics/ambient-rna.md](topics/ambient-rna.md),
+[practice/ambient-rna.md](practice/ambient-rna.md), [a note](notes/measurement/ambient-rna.md).
+Derived the droplet likelihood: landing as a binomial, capture as thinning by two routes, a shared
+droplet factor as the source of the mixed Poisson, conditioning on $T$ to the multinomial; then
+SoupX's estimator as far as its bias. Clicked: "It's just an event"; my question "why is μ a
+fraction and not a physical quantity?" carried the session. Didn't: the mixture decomposition
+(given on request); Le Cam and PGFs had to be supplied by name. Ran on claude.ai with a stale
+installed skill missing its `references/`; filed here on 2026-10-12.
 
 ---
 
