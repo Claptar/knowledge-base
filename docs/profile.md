@@ -35,6 +35,11 @@ where I want rigour and where I don't._
   When basis vectors are stacked as *rows* — programs in $H$ — the same matrix appears transposed:
   $H' = SH$ with $S = C^\top$. Slipped on this twice on 2026-10-06
   ([practice/nmf.md](practice/nmf.md)).
+- **What is already summed over.** Index and aggregation slips are the recurring kind: three on
+  2026-10-10 — an exponent dropped from a multinomial denominator, a missing $T_i$, an extra $n_c$
+  on an already-summed $T_C$ ([practice/ambient-rna.md](practice/ambient-rna.md)) — after the
+  row/column ones on 2026-10-06. The ideas were right each time. Write next to a line what each
+  index already ranges over.
 
 ## Anchors worth building on
 

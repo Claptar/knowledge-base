@@ -168,6 +168,10 @@ different algebra.
 **Source.** Jahnke & Huisinga 2007 and Singh & Bokes 2012, in
 [resources/cme-transcription.md](resources/cme-transcription.md).
 
+**Connects to.** [topics/ambient-rna.md](topics/ambient-rna.md) — the first real use of PGFs:
+capture as thinning, $G_A(1-q+qs)$, and a random sum as composition. They arrived as MGFs in other
+coordinates, which is the anchor to build this node from.
+
 ### 10. Gillespie SSA and $\tau$-leaping
 
 **Needs** 5, 8. **Source.** Gillespie 1976 and 2001, in
@@ -281,6 +285,10 @@ this question needs.
 
 **Sources.** Tang et al. 2020 and 2023, in
 [resources/cme-transcription.md](resources/cme-transcription.md).
+
+**Connects to.** [topics/ambient-rna.md](topics/ambient-rna.md) — a small instance of this node:
+a Poisson stays Poisson under capture thinning, ambient RNA adds a second Poisson source before the
+same thinning, and conditioning on the total cancels droplet-wide factors but not droplet volume.
 
 ### 18. Inference from a CME model
 
