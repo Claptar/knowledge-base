@@ -123,7 +123,11 @@ nav:
       - Matrix factorisation:
           - NMF — identifiability and loss: notes/matrix-factorisation/nmf-identifiability-and-loss.md
           - cNMF — consensus, K and refits: notes/matrix-factorisation/cnmf-consensus.md
+      - Measurement:
+          - Ambient RNA — likelihood and SoupX: notes/measurement/ambient-rna.md
   - Topics:
       - NMF: topics/nmf.md
+      - Ambient RNA: topics/ambient-rna.md
   - Practice:
       - NMF: practice/nmf.md
+      - Ambient RNA: practice/ambient-rna.md

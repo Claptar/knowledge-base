@@ -15,6 +15,17 @@ The number says when, not how much, so an entry that makes existing notes wrong 
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
+## 26-285 — 2026-10-12
+
+Notes only, released on request. No skill, convention or tooling has changed since 26-280.1, so an
+installed `study-kb` behaves exactly as before.
+
+### Knowledge base
+
+- **The 2026-10-10 ambient-RNA session** (#16). This adds a topic file, a practice log and a note on
+  where the droplet likelihood comes from and how far SoupX's estimator holds, plus ten new entries
+  in `resources/ambient-rna.md`, with their licences checked.
+
 ## 26-280.1 — 2026-10-07
 
 The second release of the day, carrying the lessons of the 2026-10-07 cNMF session into
