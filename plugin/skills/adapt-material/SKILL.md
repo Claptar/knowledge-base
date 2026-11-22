@@ -22,10 +22,11 @@ adaptation, he should be able to answer **"how could I have come up with this?"*
 central definition and result. A rewrite that is clearer, better organised and still leaves that
 unanswerable has failed.
 
-**What this is not.** Not a summary, not a simplification, not a study guide. The adaptation is
-usually *longer* than the source, because the motivation the source omitted has to go somewhere.
-If your output is shorter and smoother than the input, you have almost certainly done the wrong
-thing.
+**What this is not.** Not a summary, not a simplification, not a study guide. Length follows from
+the motivation and is not a target: the adaptation is often longer than the source, because the
+motivation the source omitted has to go somewhere, and it may be shorter, because what he holds
+cold is cut. What fails is a rewrite that is smoother but leaves *how could I have come up with
+this?* unanswerable — check that, not the page count.
 
 **Sibling skill.** If the source is a lecture *recording* — a `.srt`/`.vtt` transcript, or audio or
 video — use `../adapt-recordings/SKILL.md` instead. It handles what speech requires and a document
@@ -186,6 +187,14 @@ Write a full derivation only when he asks for one for that proof, and then only 
 
 He needs to know which parts are the author's reasoning and which are yours, because the two carry
 different authority and he will want to check the second.
+
+**Construct the object; don't recognise it.** The route builds each definition and requirement
+from the question: the goal, the simplest thing that does the job, what it cannot do, the next
+demand, what that forces, and the choices left open. A route that names the known answer early and
+then checks that it has the wanted properties has failed, however correct — in his words, "we want
+this kind of funciton and it seems that we know something with similar properties let's try it. Oh
+it seems to be matching". "We will need this later" may keep a later result in view; it is never on
+its own the reason for a demand.
 
 **Cut for redundancy, never for difficulty.** The only licence to remove something is that he
 already holds it. Removing a hard argument because it is hard destroys the document's reason to

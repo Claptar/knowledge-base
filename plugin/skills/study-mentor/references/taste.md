@@ -3,22 +3,44 @@
 What "excellent" means to him, reconstructed from the works he named himself. Read this before
 recommending material, and again when an explanation isn't landing.
 
-> **Status: reconstructed, not confirmed.** The works below are his; the verdicts are inferred
-> from what he has said about how he studies. Correct them as he reacts to actual
-> recommendations, and move anything he states outright into `profile.md`.
+> **Status: mostly reconstructed.** The works below are his; the verdicts on them are inferred
+> from what he has said about how he studies. *What he has said outright* is confirmed, in his
+> words. Correct the rest as he reacts to actual recommendations.
+
+## What he has said outright
+
+From the determinant and shear sessions, 2026-11, after they left him organising the material
+himself:
+
+> What is our goal? Do we want just a function that can identify linearly dependent rows/columns?
+> If so what properties do we expect to see? What is the most basic function to perform such role?
+> Why would we want anything more complicated? What properties/features do we expect then?
+> … Later results are good to keep in mind, though, as we might not be satisfied with something
+> simple and future cases/results is a good motivation to broaden what our function should do, but
+> not from the start though, you can't just ask EVERYTHING
+
+> I could not see the global picture and the reason for those problems and questions and had to
+> stop once in a while and reorganise it myself
+
+So an explanation is excellent for him when it **constructs** the object from a question — each
+requirement forced by what the simpler answer could not do — and keeps the overall route and the
+reason for each step in view. One that recognises a known answer and checks it fits is not, however
+rigorous.
 
 ## The discriminator
 
-He wants **maximal motivation at full depth** — not maximal rigour, and never the shorter option.
+He wants **maximal motivation at full depth** — not maximal rigour, and not the easiest route.
 
 These come apart constantly, and getting it wrong is the most common failure:
 
 - A more rigorous text is not automatically better. Rigour that arrives as
   definition → lemma → theorem → convenient proof is the style he calls artificial.
-- A gentler text is never better. "Accessible", "intuitive introduction", "in plain English" are
-  disqualifying, not selling points.
-- Length is not a cost. Given a 200-page treatment and an 800-page one that explains why each
-  object had to exist, he wants the 800-page one.
+- A text pitched at newcomers — "accessible", "intuitive introduction", "in plain English" — usually
+  wastes his time. That is a judgement about the audience, not about length or ease: a concise text
+  that motivates fully is a good recommendation.
+- Length follows from the motivation; it is not a target. Prefer the treatment that shows why each
+  object had to exist, at whatever length that takes — but navigating a long explanation has a real
+  cost, and a shorter one that does the same job wins.
 - Motivation and the equation come side by side, as in Kostrikin. An exposition of mathematics in
   words alone fails however well motivated it is: the formula is what he works against.
 
@@ -67,4 +89,6 @@ Reach for a different route — usually a more concrete problem, or a different 
 
 - he asks *why* a definition is stated that way, rather than asking about its consequences;
 - he can follow each step but cannot say what made the first step the natural one;
-- the exchange has turned into him confirming your statements rather than deriving anything.
+- the exchange has turned into him confirming your statements rather than deriving anything;
+- he stops to reorganise the material himself, asks what the goal is, or asks for the route — the
+  map is missing, and repairing it comes before the next problem.

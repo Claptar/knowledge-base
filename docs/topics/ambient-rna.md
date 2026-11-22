@@ -73,17 +73,18 @@ From the session's anchors; the outbound question was not asked separately.
   $\mathbb E[\hat\alpha_c] = \alpha_c + (1-\alpha_c)\varepsilon_G/a_G$ but have not read it yet:
   write the *relative* bias, say which two quantities it compares, and from that decide what makes
   a good or a bad gene set $G$ for a cell type $C$, in biological terms.
-- **Problem 2, step 4.** If $\alpha_i \approx \Lambda/T_i$, what does the pooled ratio-of-sums
-  estimator actually estimate, and what happens when that single value is applied to every cell in
-  $C$?
+- **Problem 2, step 4.** $\alpha_i$ is not a free number: what does the physics of Problem 1 make
+  it depend on, and what could be measured per cell that stands in for it? Then: what does the
+  pooled ratio-of-sums estimator actually estimate, and what happens when that single value is
+  applied to every cell in $C$?
 - **Problems 3–5, set but not started.**
-  - *CellSweep.* Write the E-step responsibilities for one UMI of gene $g$ in cell $i$ across the
-    three sources (cell type, ambient, bulk). Why are the E- and M-steps closed form here, and what
-    does CellBender's VAE destroy that makes them not closed form?
-  - *souporcell.* Why is $\rho$ identifiable from allele counts when it is not from expression?
-    Which biological phenomenon would quietly break it? Model: observed allele fraction
-    $= (1-\rho)\,g_{kl} + \rho\,\bar a_l$ with $g_{kl} \in \{0, \tfrac12, 1\}$ and one global
-    $\rho$.
+  - *CellSweep.* From the physics of Problem 1, what sources can a UMI in cell $i$ come from, and
+    what mixture does that give? Derive it before reading the paper's model, then compare. Then
+    write the E-step responsibilities for one UMI. Why are the E- and M-steps closed form here,
+    and what does CellBender's VAE destroy that makes them not closed form?
+  - *souporcell.* Why is the contamination fraction identifiable from allele counts when it is not
+    from expression? Start by writing what a droplet's allele fraction at one SNP should be, from
+    the genotypes involved and the soup. Which biological phenomenon would quietly break it?
   - *Benchmarks.* List the design choices that could make scAR look best in one benchmark and
     pathological in another — the April 2026 preprint and GSE337237 disagree on exactly this
     ([resources](../resources/ambient-rna.md#benchmarks)).

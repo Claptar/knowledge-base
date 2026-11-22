@@ -3,7 +3,7 @@ name: Release
 # A merge to main cuts a release: a tag at the merge commit, with the release
 # notes for that version taken from CHANGELOG.md and attached to it.
 #
-# The version comes from .claude-plugin/plugin.json and is the release date,
+# The version comes from plugin/.claude-plugin/plugin.json and is the release date,
 # YY-DDD, or YY-DDD.N for a later release the same day (see AGENTS.md § Git). The
 # tag is the version itself, with no `v`. The job stops if that tag already
 # exists, so the release fires on the merges that set a new version and stays
@@ -37,9 +37,9 @@ jobs:
       - name: Resolve version
         id: v
         run: |
-          version=$(jq -r .version .claude-plugin/plugin.json)
+          version=$(jq -r .version plugin/.claude-plugin/plugin.json)
           if [ -z "$version" ] || [ "$version" = "null" ]; then
-            echo "::error::no version in .claude-plugin/plugin.json"
+            echo "::error::no version in plugin/.claude-plugin/plugin.json"
             exit 1
           fi
           echo "version=$version"     >> "$GITHUB_OUTPUT"
@@ -78,6 +78,20 @@ jobs:
               sys.exit(1)
           PY
 
+      # study-mentor names its version in every session record, which is the only way a stale copy
+      # on claude.ai becomes visible. That line is a second copy of the version, so it must match.
+      - name: Check study-mentor names the same version
+        if: steps.check.outputs.exists == 'false'
+        env:
+          VERSION: ${{ steps.v.outputs.version }}
+        run: |
+          line=$(grep -m1 -E '^\*\*Version:\*\* ' plugin/skills/study-mentor/SKILL.md || true)
+          named=$(printf '%s' "$line" | sed -E 's/^\*\*Version:\*\* ([^ ]+).*/\1/')
+          if [ "$named" != "$VERSION" ]; then
+            echo "::error::study-mentor SKILL.md says Version: '${named}', plugin.json says ${VERSION}"
+            exit 1
+          fi
+
       # The notes are the CHANGELOG section for this version: everything between
       # its heading and the next one. The heading must be the version exactly,
       # alone or followed by a space, so 26-280 never matches `## 26-280.1`. A
@@ -97,6 +111,22 @@ jobs:
           fi
           cat RELEASE_NOTES.md
 
+      # One zip per skill, for uploading to claude.ai by hand when the plugin route is not used.
+      # Each holds the whole folder, `<skill>/SKILL.md` with its references/ and scripts/: a copy
+      # of SKILL.md alone is what ran stale before. Built before the tag, so a failure here leaves
+      # no half-made release behind.
+      - name: Zip each skill
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          out="$RUNNER_TEMP/skill-zips"
+          mkdir -p "$out"
+          cd plugin/skills
+          for dir in */; do
+            name="${dir%/}"
+            zip -qr "$out/${name}-${{ steps.v.outputs.version }}.zip" "$name" -x '*/__pycache__/*'
+          done
+          ls -l "$out"
+
       - name: Create annotated tag
         if: steps.check.outputs.exists == 'false'
         run: |
@@ -113,4 +143,5 @@ jobs:
           gh release create "${{ steps.v.outputs.tag }}" \
             --title "${{ steps.v.outputs.tag }}" \
             --notes-file RELEASE_NOTES.md \
-            --verify-tag
+            --verify-tag \
+            "$RUNNER_TEMP"/skill-zips/*.zip

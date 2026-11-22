@@ -44,18 +44,19 @@ evidence. Neither is set to tidy the record.
 
 ## Markers
 
-Greppable markers carry what is and is not yet mine, and the counts are the honest progress
-metric — more useful than counting pages.
+Greppable markers carry what is and is not yet mine. They are a record to look things up in —
+dated, specific entries — not a number to watch, and they are more useful than counting pages.
 
 | Marker | Means |
 | --- | --- |
 | `**Not yet derived.**` | stated here, but I have not worked it out myself. Taken on trust from a source |
-| `**Unverified.**` | inferred or recalled rather than checked against the source |
-| `**Derived unaided.**` | I worked this out without help. Partials count: say how far |
+| `**Unverified.**` | inferred or recalled rather than checked against the source — a fact about the claim, not about me |
+| `**Derived unaided.**` | I worked this out without help. Partials count: say how far, and what help came before it |
 
 ```bash
-grep -rn "Not yet derived\|Unverified" topics/ adapted/ practice/ | wc -l   # what is not yet mine
-grep -rn "Derived unaided" topics/ practice/ | wc -l                        # what is
+grep -rn "Not yet derived" topics/ adapted/ practice/   # taken on trust: not yet mine
+grep -rn "Unverified" topics/ adapted/ practice/        # not yet checked against a source
+grep -rn "Derived unaided" topics/ practice/            # what I worked out, and how far
 ```
 
 Resolving one of the first two is worth more than adding a page. Do not delete a marker without
@@ -66,7 +67,7 @@ performance pressure rather than competence, and what answers it is evidence —
 worked out unaided, there for when the feeling says otherwise. It is earned the same way
 `Status: solid` is, and never added to be encouraging.
 
-It is a **record, not a score.** The count is something to look back on, not a target to hit; a
+It is a **record, not a score.** The entries are something to look back on, not a target to hit; a
 tally to live up to would recreate the pressure it exists to relieve.
 
 ## Harvest, don't design

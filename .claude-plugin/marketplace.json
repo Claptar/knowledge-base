@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "study-kb",
-      "source": "./",
+      "source": "./plugin",
       "description": "Study mentor and material adapters for a personal maths / comp-bio knowledge base."
     }
   ]

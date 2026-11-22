@@ -15,6 +15,66 @@ The number says when, not how much, so an entry that makes existing notes wrong 
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
+## 26-326 — 2026-11-22
+
+study-mentor is rewritten so the tutor keeps the question, the route and the reason for each step
+in view, and the skills now reach claude.ai whole. To pick it up there, publish `plugin/` or upload
+all three zips from this release, and remove any older copy so only one runs.
+
+### Tooling
+
+- **The plugin is `plugin/` and holds only the skills.** `skills/` moved to `plugin/skills/` and
+  the manifest to `plugin/.claude-plugin/plugin.json`; the root `marketplace.json` points at
+  `./plugin`, so `/plugin marketplace add Claptar/knowledge-base` works as before. Publishing the
+  plugin to claude.ai now sends the three skills and nothing from `docs/`. `.claude/skills` and
+  `.agents/skills` point at the new path.
+- **Every release attaches one zip per skill** — the whole folder, `references/` included — for
+  uploading to claude.ai by hand. The 2026-10 sessions there ran on an upload of `SKILL.md` alone,
+  which had silently lost `references/` and predated the repository rename.
+- **study-mentor names its version.** A `**Version:**` line in `SKILL.md`, which the release job
+  checks against `plugin.json`, and which each session record repeats, so a stale installed copy
+  shows up in the log instead of in a later audit.
+- The README says how to get the skills onto claude.ai (the plugin or the zips, never both) and
+  what a Windows checkout needs for `.claude/skills` to be a working link.
+
+### Skills
+
+- **`study-mentor` is rewritten around one division of labour: the tutor keeps the structure, he
+  does the decisive moves.** From two audits of the October–November sessions
+  (`notes/2026-11-22-study-mentor-audit.md`, `notes/codex-audit-22-11-2026.md`, both local), whose
+  common finding was that he had to stop and reorganise the material himself. The session now
+  opens with the question, its stake and a visible map — each step as a question with its reason,
+  optional extensions marked — kept apart from any plan that holds answers. New requirements arrive
+  by his own ladder (goal → simplest candidate → what it cannot do → the next demand), not as
+  givens justified by later results. Each turn is one coherent task with its purpose; a pre-send
+  check covers well-posed statements, defined terms, fixed notation, LaTeX, verified claims and
+  corrections, and not handing over what the task is for. His work is answered with what it
+  establishes first and only the gaps that matter; when he is stuck the tutor diagnoses what is
+  missing instead of asking a smaller question; when he asks for the answer he gets it at once.
+  The closing question moves to each result, and a tired session stops with a session record
+  instead of being pressed. Resuming strips answers from stored next steps. Notes he asks for are
+  built from his own recap when he gives one, and bottom-up otherwise. The file is shorter than
+  before; the access modes moved to `references/access.md`.
+- **`taste.md`** records what he has said outright, and drops three absolutes ("never the shorter
+  option", "a gentler text is never better", "length is not a cost") that it had inferred.
+- **`adapt-material`** no longer treats a shorter output as evidence of failure, and requires a
+  route that constructs the object from the question rather than recognising a known answer.
+
+### Conventions
+
+- **The session record** (`kb-structure.md`): one block that ends every session, filed straight
+  into the knowledge base with repository access and kept for later without it. The log entry gains
+  `Skill:` and `Teaching — keep / change` lines; `Next` is posed as forward questions.
+- **`Derived unaided` names its unit** — how far, and what help came first — and an unasked
+  hand-over is recorded as one. `Unverified` and `Not yet derived` are separate greps, and the
+  markers are described as a record to look things up in, not a count (`AGENTS.md`,
+  `questions.md`).
+
+### Knowledge base
+
+- `profile.md` § How I study quotes his two statements of what a tutor must do; two stored
+  problems in `log.md` and `topics/ambient-rna.md` no longer carry the answers they ask for.
+
 ## 26-285 — 2026-10-12
 
 Notes only, released on request. No skill, convention or tooling has changed since 26-280.1, so an

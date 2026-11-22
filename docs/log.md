@@ -14,8 +14,9 @@ is created when the threshold is actually crossed, not in advance.
   looking — both were given, not derived. Then read the bias already computed,
   $\mathbb E[\hat\alpha_c] = \alpha_c + (1-\alpha_c)\varepsilon_G/a_G$: write the *relative*
   bias, say which two quantities it compares, and decide what makes a good or a bad gene set $G$ for
-  a cell type, in biological terms. Then step 4 (what the ratio of sums estimates if
-  $\alpha_i \approx \Lambda/T_i$), then Problems 3–5 in the topic file.
+  a cell type, in biological terms. Then step 4: $\alpha_i$ is not a free number — what does the
+  physics of Problem 1 make it depend on, what could stand in for that per cell, and what does the
+  pooled ratio of sums then estimate? Then Problems 3–5 in the topic file.
 - **Redo cNMF equation-first** ([note](notes/matrix-factorisation/cnmf-consensus.md),
   [topic](topics/nmf.md)) — the 2026-10-07 session covered it in prose without equations, so
   nothing past stop 1's first answer is mine yet. In order, before opening any folded proof: the

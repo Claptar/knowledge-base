@@ -34,7 +34,7 @@ understood; tied to physics, optimisation and machine learning, it is.
 
 | His goal | What you must therefore do |
 | --- | --- |
-| **1. Learn practice-first**, from motivation and connection, building intuition | Put the problem before the definition. Never present definition → theorem → convenient proof; he calls that artificial and it is worse than useless, because it looks like help while removing what he came for |
+| **1. Learn practice-first**, from motivation and connection, building intuition | Put the problem before the definition, and keep the route in view: the question, why each step is needed, where we are. Never present definition → theorem → convenient proof; he calls that artificial and it is worse than useless, because it looks like help while removing what he came for. Leaving him to reorganise the material himself is the same failure |
 | **2. Adapt good material** into that form — sources he likes are rare | Treat rewriting a source as first-class work, not a side errand. `adapt-material` owns the shape |
 | **3. Track what he has learned and currently holds** | Keep `profile.md`, `topics/` and `questions.md` honest — they are what *makes* adaptation possible, since you cannot rebuild an explanation around his anchors without knowing them. Record connections and intuition, never coverage |
 | **4. Become confident working independently** | See below. This is the goal the repo served worst, and the one most easily broken by a helpful agent |
@@ -46,16 +46,19 @@ degrades the performance. It is not fear of the mathematics and it is not diffic
 to take the stakes out of the moment, which mostly means *not* doing things that feel like
 assessment:
 
-- **Never hand over a proof.** Escalate hints only as far as unsticks him — the ladder is in
-  `study-mentor` step 3. A finished proof removes the point of the exercise.
+- **Never hand over a proof he has not asked for.** Escalate hints only as far as unsticks him —
+  the ladder is in `study-mentor` step 3. An unasked finished proof removes the point of the
+  exercise. When he asks for it, give it at once and record it as not yet derived.
+- **Withhold the move, never the map.** What the current task is for stays his; the question, the
+  route and the reason for each step are the tutor's to keep visible.
 - **Create graded opportunities to succeed unaided.** Regularly put up a problem he can actually
   finish, and let him finish it — and frame it as working something out, never as a test. Evidence
   of independent work is what he has to set against the feeling.
 - **Never make it feel graded.** No scores, no streaks, no "let's see how you do". Leave room to
   think aloud badly and to be wrong out loud; that is the condition under which he does his best
   work, and the opposite is the condition that breaks it.
-- **Record what he did unaided**, with `**Derived unaided.**`. That count is the evidence, and it
-  only exists if someone writes it down at the time.
+- **Record what he did unaided**, with `**Derived unaided.**` and how far it went. Those dated,
+  specific entries are the evidence, and they only exist if someone writes them down at the time.
 - **Be Socratic by default** — he has asked for it explicitly for this goal — but ask which mode he
   wants each session.
 
@@ -96,7 +99,7 @@ first.
 | Path | What it is | Edit when |
 | --- | --- | --- |
 | `docs/` — `index.md`, `questions.md`, `path.md`, `profile.md`, `log.md`, `resources/`, `topics/`, `practice/`, `adapted/`, `notes/` | the knowledge base — his notes. Also the published site | a study session happened, or something durable changed |
-| `skills/` | the skills: `SKILL.md`, `references/`, `scripts/` | the *way* sessions run should change |
+| `plugin/skills/` | the skills: `SKILL.md`, `references/`, `scripts/` | the *way* sessions run should change |
 
 Don't let one drift into the other. Material learned goes in `docs/topics/`; instructions about how
 to teach go in the skill; someone else's text goes in the library repository, not here.
@@ -142,9 +145,12 @@ can be found in it.
 
 ## The three skills
 
-The real tree is `skills/`. `.claude/skills` and `.agents/skills` are **symlinks** to it, so both
-audiences read one copy and there is no way for them to drift. Never edit through a symlink path
-and never create a second copy — see [Two audiences, one source](#two-audiences-one-source).
+The real tree is `plugin/skills/`. `.claude/skills` and `.agents/skills` are **symlinks** to it, so
+both audiences read one copy and there is no way for them to drift. Never edit through a symlink
+path and never create a second copy — see [Two audiences, one source](#two-audiences-one-source).
+
+`plugin/` is the `study-kb` plugin and holds **only** the skills and the manifest, so publishing it
+to claude.ai sends nothing from `docs/`. The root `.claude-plugin/marketplace.json` points at it.
 
 Each `SKILL.md` is the authority on its own workflow.
 
@@ -201,12 +207,13 @@ he actually holds one.
 as a node or a layer in this one, or nowhere.
 
 The full rules and the page template are in
-`skills/study-mentor/references/kb-structure.md`, which is the single copy: the skill has to stand
-alone when installed as a plugin, so that file carries them rather than this one.
+`plugin/skills/study-mentor/references/kb-structure.md`, which is the single copy: the skill has to
+stand alone when installed as a plugin, so that file carries them rather than this one.
 
 ## Writing to the knowledge base
 
-Full templates are in `skills/study-mentor/references/kb-structure.md`. The rules that matter most:
+Full templates are in `plugin/skills/study-mentor/references/kb-structure.md`. The rules that
+matter most:
 
 - **Trajectories, not summaries.** Record what question opened a topic, what existing knowledge it
   attached to, where it clicked, what is still loose.
@@ -227,14 +234,15 @@ Full templates are in `skills/study-mentor/references/kb-structure.md`. The rule
   in — never set it to tidy the record. An honest open thread is worth more than a clean status
   field.
 - **Mark what is not yet his.** `**Not yet derived.**` for something taken on trust from a source;
-  `**Unverified.**` for something inferred or recalled rather than checked. Both are greppable and
-  the counts are the real progress metric. Do not delete a marker without doing the work, and do
-  not add one silently in place of saying "I don't know".
+  `**Unverified.**` for something inferred or recalled rather than checked. They mean different
+  things — one is about him, the other about the claim — and both are greppable, so the open work
+  can be found. Do not delete a marker without doing the work, and do not add one silently in place
+  of saying "I don't know".
 - **Mark what *is* his.** `**Derived unaided.**` — the mirror of the first marker, and the one that
   serves goal 4. Write it the moment he works something out without help, including a partial:
-  "unaided as far as the exchange step" is worth recording. The ratio between the two counts is the
-  evidence he has to set against the feeling of being under pressure, and it only exists if someone
-  writes it at the time. It is earned exactly as `Status: solid` is, and is never added to be
+  "unaided as far as the exchange step" is worth recording, and the marker says how far and what
+  help came first. Those entries are the evidence he has to set against the feeling of being under
+  pressure, and they only exist if someone writes them at the time. It is earned exactly as `Status: solid` is, and is never added to be
   encouraging. It is a **record, not a score** — never presented back to him as a tally or a
   target, because a scoreboard is exactly the kind of assessment that causes the problem.
 - **Harvest, don't design.** A page is written after a session, not before one. A topic file
@@ -353,8 +361,8 @@ either way, because a trajectory in his own words is not a derivative of anyone.
 Every catalogue entry in `docs/resources/` carries the licence that decides this. If it does not,
 resolve it before adapting, and record it there.
 
-**The table above mirrors `skills/adapt-material/SKILL.md` § Step 6, which is the authority.**
-An installed plugin does not load this file, so the skill has to carry the rule itself. Change
+**The table above mirrors `plugin/skills/adapt-material/SKILL.md` § Step 6, which is the
+authority.** An installed plugin does not load this file, so the skill has to carry the rule itself. Change
 the skill first and this table second, never the other way round.
 
 ## How a page is shaped
@@ -392,8 +400,8 @@ notes: **one copy, referenced — never a second copy, search-replaced.**
 | --- | --- | --- |
 | `AGENTS.md` | the instruction file | duplicated into `CLAUDE.md` by hand |
 | `CLAUDE.md` | one `@AGENTS.md` import, plus Claude-specific notes only | a parallel copy of the above |
-| `skills/` | the real skill tree — three of them; the other two are in the library repo | forked per agent |
-| `.claude/skills`, `.agents/skills` | symlinks to `skills/` | real directories |
+| `plugin/skills/` | the real skill tree — three of them; the other two are in the library repo | forked per agent |
+| `.claude/skills`, `.agents/skills` | symlinks to `plugin/skills/` | real directories |
 
 This repo previously carried two full skill trees and two instruction files, produced by
 search-replacing `.claude/` to `.Codex/`. Every replaced path pointed at a directory that did not
@@ -461,8 +469,10 @@ touched:
 gh pr create --base main --head draft --title "Release <version>"
 ```
 
-Before opening it: set the version in `.claude-plugin/plugin.json` and rename the `CHANGELOG`
-`## Unreleased` section to that version with today's date. Accumulate entries under `## Unreleased`
+Before opening it: set the version in `plugin/.claude-plugin/plugin.json` **and** in the
+`Version:` line of `plugin/skills/study-mentor/SKILL.md` (the release job refuses a mismatch, because
+that line is how a session names the copy it ran on), and rename the `CHANGELOG` `## Unreleased`
+section to that version with today's date. Accumulate entries under `## Unreleased`
 as you go — writing the note when the change is fresh is the only time it is cheap, and a release
 then costs a rename rather than an archaeology session through `git log`.
 
@@ -482,10 +492,13 @@ flagged **Breaking.** at the start of its `CHANGELOG` entry, which is the one th
 ### A merge to `main` cuts a release
 
 `.github/workflows/release.yml` runs on every push to `main`. It reads the version from
-`.claude-plugin/plugin.json`, refuses one that is not a real date as `YY-DDD` or `YY-DDD.N`, and if no tag
-exists for it, creates an annotated tag named exactly the version (`26-280`, no `v`) and publishes a GitHub release whose notes are that version's section of
-[`CHANGELOG.md`](CHANGELOG.md) — so the notes live in the repo, in the same commit as the change
-they describe, rather than only in GitHub's database.
+`plugin/.claude-plugin/plugin.json`, refuses one that is not a real date as `YY-DDD` or `YY-DDD.N`
+or that differs from study-mentor's `Version:` line, and if no tag exists for it, creates an
+annotated tag named exactly the version (`26-280`, no `v`) and publishes a GitHub release whose
+notes are that version's section of [`CHANGELOG.md`](CHANGELOG.md) — so the notes live in the repo,
+in the same commit as the change they describe, rather than only in GitHub's database. It attaches
+one zip per skill (`study-mentor-<version>.zip` and so on: the whole folder, `references/`
+included) for uploading to claude.ai by hand; the README says when to use them.
 
 Two consequences worth holding on to:
 
