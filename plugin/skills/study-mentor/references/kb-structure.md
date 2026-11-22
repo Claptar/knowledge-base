@@ -164,7 +164,8 @@ accumulates only errors works against that goal — so the unaided fields are no
 **Problem:** statement or a pointer to it
 **Worked unaided up to:** how far he got with no help. Be precise and generous — "unaided as far
 as setting up the exchange step" is a real result and belongs on the record
-**Where I asked for a hint:** which rung of the ladder, and what unstuck him
+**Where I asked for a hint:** which rung of the ladder, and what unstuck him. Anything supplied
+without his asking goes here too, marked *unasked* — that is a session failure, not his
 **Attempt:** what he tried
 **Outcome:** solved / solved unconvincingly / stuck
 **What it revealed:** the underlying gap — a definition held only formally, a false analogy from a
@@ -173,7 +174,10 @@ could do it
 **Revisit:** when and what to try again
 ```
 
-Mark an unaided result `**Derived unaided.**` so it is greppable and counts.
+Mark an unaided result `**Derived unaided.**` so it is greppable, and give it a unit: how far it
+went, and what help came before it ("unaided from the joint PMF on, once a mean was shown not to fix
+a distribution"). The marker never sits on a problem that needed a hint without saying where. It is
+a record to look things up in, not a count.
 
 Record near-misses too: right answer by an unconvincing route is a gap, not a success. That rule
 survives unchanged — honesty about a shaky route is not in tension with recording capability, and
@@ -218,15 +222,48 @@ Newest first. The top of the file is what the next session reads.
 
 ```markdown
 ## Next
-One or two concrete next steps, specific enough to start cold.
+One or two concrete next steps, specific enough to start cold — each posed as a forward question,
+with no answer, equation or premise in it that he could derive himself.
 
 ---
 
 ## YYYY-MM-DD — <topic>
-Mode: socratic | motivate-then-prove | guided
+Mode: socratic | motivate-then-prove | guided · Skill: study-mentor <version> · Where: <surface>
 What was covered, what clicked, what didn't. Two to five lines. Link to the topic file rather
 than duplicating its content.
+Teaching — keep: … · change: …
 ```
+
+`Skill:` records which copy of the skill ran, which is how a stale installed copy gets noticed.
+`Teaching` records what helped and what got in the way, from his reactions, so session craft can be
+judged from the record rather than reconstructed later.
+
+## The session record
+
+Every session ends with one, even a session that stops early. With repository access it is filed
+straight into the files below; without it (claude.ai, a phone) it is the whole of the write-back —
+one block he keeps and files in the repository later. Never end a session with "paste the files
+next time".
+
+```markdown
+## Session record — YYYY-MM-DD — <topic>
+
+**Skill:** study-mentor <version> · **Where:** claude.ai | Claude Code | Cowork · **Mode:** …
+**Question:** the one question, in his words where he gave them
+**Map, as it stood:** the steps, each as a question, marked where reached
+**Resume at:** the next step as a forward question — no answer, and no premise he could derive
+**Derived unaided:** each result, with its unit — how far, and what help came before it
+**Given:** each result that was supplied, and whether he asked for it (asked / unasked)
+**Traps:** what each slip or failed intuition revealed, and where the intuition is right
+**His words:** what clicked, verbatim
+**Loop:** *How I could have come up with this* and *Where else this shows up* — his answer, or open
+**Teaching — keep / change:** what helped and what got in the way
+**New questions:** for `questions.md`, in his words
+```
+
+Filing it: *Resume at* becomes `Next`; the entry goes in `log.md`; *Derived unaided*, *Given*
+and *Traps* go to `practice/`; *Question*, *His words* and *Loop* to the topic file; *New
+questions* to the Live table.
 
 **It holds `Next` plus the current year.** A session log is the one file here that grows without
 bound — an entry per session, forever — so past roughly 400 lines, entries from finished years move
@@ -285,5 +322,7 @@ publisher, with a `_manifest.csv` mapping back to the original filenames. The fu
 - Preserve his phrasing for insights. The value is in how *he* formulated it.
 - Never mark a topic solid to tidy the record. An honest open thread is worth more than a clean
   status field.
-- In chat mode with no filesystem access, produce complete updated files plus the commit
-  commands. Don't hand over fragments he has to splice in by hand.
+- With no repository access, the session ends with the session record above — one self-contained
+  block, filed later in the repository. Don't hand over fragments he has to splice in by hand, and
+  don't postpone the record to "next time": sessions that did that never reached the knowledge
+  base.
