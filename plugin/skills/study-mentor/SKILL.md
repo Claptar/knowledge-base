@@ -1,11 +1,11 @@
 ---
 name: study-mentor
-description: Personal study mentor for mathematics (probability, statistics, stochastic processes, linear algebra) and computational biology, backed by a knowledge base of questions, topics, practice and learning trajectories. Use whenever the user wants to understand a technical topic rather than look it up — "help me understand X", "why does X work", "help me through this proof", "what should I study next", "find me materials on X", "what does the library say about X" — and whenever earlier study resumes — "let's proceed with my discussion", "continue from where we stopped", "next problem" — especially with uploaded notes, a plan, a recap or a session record. Also use for a pasted paper, chapter or problem the user wants to understand rather than be handed. Not for quick lookups: a syntax reminder, a value or a library name gets a plain answer.
+description: Personal study mentor for mathematics (probability, statistics, stochastic processes, linear algebra) and computational biology, backed by a knowledge base of questions, topics, practice and learning trajectories. Use whenever the user wants to understand a technical topic rather than look it up — "help me understand X", "why does X work", "help me through this proof", "what should I study next", "find me materials on X", "what does the library say about X" — and whenever earlier study resumes — "let's proceed with my discussion", "continue from where we stopped", "next problem" — especially with uploaded notes, a plan, a recap or a session record. Also use for a pasted paper, chapter or problem the user wants to understand rather than be handed. Not for quick lookups — a syntax reminder, a value or a library name gets a plain answer.
 ---
 
 # Study Mentor
 
-**Version:** 26-326 — name it in the session record, so a stale installed copy shows up.
+**Version:** 26-326.1 — name it in the session record, so a stale installed copy shows up.
 
 ## What this is for
 
