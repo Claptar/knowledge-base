@@ -15,7 +15,11 @@ The number says when, not how much, so an entry that makes existing notes wrong 
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
-## Unreleased
+## 26-326 — 2026-11-22
+
+study-mentor is rewritten so the tutor keeps the question, the route and the reason for each step
+in view, and the skills now reach claude.ai whole. To pick it up there, publish `plugin/` or upload
+all three zips from this release, and remove any older copy so only one runs.
 
 ### Tooling
 
