@@ -37,15 +37,17 @@ docs/                          the knowledge base, and the published site
   adapted/<topic>-<src>.md     external material rewritten into the form I learn from
   notes/<subject>/             my own exposition — material, not evidence of understanding
 
-skills/study-mentor/           runs study sessions; reads and writes all of the above
-skills/adapt-material/         rewrites a written source into adapted/
-skills/adapt-recordings/       turns lecture transcripts into notes, not tidied speech
+plugin/                        the study-kb plugin — the skills and nothing else
+  .claude-plugin/plugin.json   its manifest, and the release version
+  skills/study-mentor/         runs study sessions; reads and writes all of the above
+  skills/adapt-material/       rewrites a written source into adapted/
+  skills/adapt-recordings/     turns lecture transcripts into notes, not tidied speech
 adapted-private/               adaptations of all-rights-reserved sources — gitignored
 
 AGENTS.md                      the one instruction file, for any agent
 CLAUDE.md                      imports AGENTS.md; Claude-specific notes only
-.claude/skills, .agents/skills symlinks to skills/
-.claude-plugin/                makes the repo installable as a Claude Code plugin
+.claude/skills, .agents/skills symlinks to plugin/skills/
+.claude-plugin/marketplace.json  makes the repo a Claude Code marketplace for plugin/
 mkdocs.yml                     site config
 ```
 
@@ -77,13 +79,28 @@ question, the definition, and the proof technique. Every convention here follows
 
 ## Using the skills
 
-Run Claude Code from the repo root and the three skills load from `skills/`, via the
-`.claude/skills` symlink. To use them outside this repo, install it as a plugin:
+Run Claude Code from the repo root and the three skills load from `plugin/skills/`, via the
+`.claude/skills` symlink. On Windows that needs symlinks enabled (Developer Mode, then
+`git config core.symlinks true` and a fresh checkout of `.claude/skills` and `.agents/skills`);
+without them both are plain text files and no skill loads. To use the skills outside this repo,
+install the plugin:
 
 ```
 /plugin marketplace add Claptar/knowledge-base
 /plugin install study-kb@claptar-study
 ```
+
+**On claude.ai**, which does not read this repo — what runs there is whatever was last put there,
+so it goes stale silently. Two routes, and use one, never both:
+
+- **The plugin.** From Claude Code in this repo, ask to publish the plugin in `plugin/`. It lists
+  every file and asks before sending; only the three skills go, nothing from `docs/`.
+- **The zips.** Every release attaches `study-mentor-<version>.zip`, `adapt-material-<version>.zip`
+  and `adapt-recordings-<version>.zip`. Upload all three: the adapters read study-mentor's
+  `references/`. A zip of `SKILL.md` alone is the copy that ran stale before.
+
+Then remove any older copy. Every study session's record names the skill version it ran on, so a
+stale copy shows up in the first log entry after it.
 
 - **`study-mentor`** — a live session. Reads `profile.md` and the relevant topic and practice
   files, teaches Socratically by default, and writes back at natural stopping points.
@@ -108,7 +125,7 @@ material rather than on understanding. All five hand off in every direction: fin
 it, adapt it, then work through it in a session.
 
 See [AGENTS.md](AGENTS.md) for the conventions both follow and
-`skills/study-mentor/references/kb-structure.md` for the file templates in full.
+`plugin/skills/study-mentor/references/kb-structure.md` for the file templates in full.
 
 ## The site
 

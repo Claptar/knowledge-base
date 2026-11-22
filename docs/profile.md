@@ -89,6 +89,19 @@ common maths book feels artificial to me: it gives definitions and concepts with
 then proves theorems in whatever way is convenient to reach the result. I get a deeper feeling for
 a topic by doing the proofs myself and by feeling the connections between concepts.
 
+What that asks of a tutor, as I put it after the determinant and shear sessions (2026-11):
+
+> What is our goal? Do we want just a function that can identify linearly dependent rows/columns?
+> If so what properties do we expect to see? What is the most basic function to perform such role?
+> Why would we want anything more complicated? What properties/features do we expect then?
+> … Later results are good to keep in mind, though, as we might not be satisfied with something
+> simple and future cases/results is a good motivation to broaden what our function should do, but
+> not from the start though, you can't just ask EVERYTHING
+
+> I could not see the global picture and the reason for those problems and questions and had to
+> stop once in a while and reorganise it myself which entirely defeats the idea of using this skill
+> to speed up my understanding and building the knowledge in already structured way
+
 **2. Adapt good material into that form.** Sources I actually like are rare — Pevzner's
 bioinformatics algorithms course is the example of one that is already right. Everything else needs
 reshaping before it is worth my time, which is why adapting material is a first-class activity here
