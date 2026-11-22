@@ -96,7 +96,7 @@ first.
 | Path | What it is | Edit when |
 | --- | --- | --- |
 | `docs/` — `index.md`, `questions.md`, `path.md`, `profile.md`, `log.md`, `resources/`, `topics/`, `practice/`, `adapted/`, `notes/` | the knowledge base — his notes. Also the published site | a study session happened, or something durable changed |
-| `skills/` | the skills: `SKILL.md`, `references/`, `scripts/` | the *way* sessions run should change |
+| `plugin/skills/` | the skills: `SKILL.md`, `references/`, `scripts/` | the *way* sessions run should change |
 
 Don't let one drift into the other. Material learned goes in `docs/topics/`; instructions about how
 to teach go in the skill; someone else's text goes in the library repository, not here.
@@ -142,9 +142,12 @@ can be found in it.
 
 ## The three skills
 
-The real tree is `skills/`. `.claude/skills` and `.agents/skills` are **symlinks** to it, so both
-audiences read one copy and there is no way for them to drift. Never edit through a symlink path
-and never create a second copy — see [Two audiences, one source](#two-audiences-one-source).
+The real tree is `plugin/skills/`. `.claude/skills` and `.agents/skills` are **symlinks** to it, so
+both audiences read one copy and there is no way for them to drift. Never edit through a symlink
+path and never create a second copy — see [Two audiences, one source](#two-audiences-one-source).
+
+`plugin/` is the `study-kb` plugin and holds **only** the skills and the manifest, so publishing it
+to claude.ai sends nothing from `docs/`. The root `.claude-plugin/marketplace.json` points at it.
 
 Each `SKILL.md` is the authority on its own workflow.
 
@@ -201,12 +204,13 @@ he actually holds one.
 as a node or a layer in this one, or nowhere.
 
 The full rules and the page template are in
-`skills/study-mentor/references/kb-structure.md`, which is the single copy: the skill has to stand
-alone when installed as a plugin, so that file carries them rather than this one.
+`plugin/skills/study-mentor/references/kb-structure.md`, which is the single copy: the skill has to
+stand alone when installed as a plugin, so that file carries them rather than this one.
 
 ## Writing to the knowledge base
 
-Full templates are in `skills/study-mentor/references/kb-structure.md`. The rules that matter most:
+Full templates are in `plugin/skills/study-mentor/references/kb-structure.md`. The rules that
+matter most:
 
 - **Trajectories, not summaries.** Record what question opened a topic, what existing knowledge it
   attached to, where it clicked, what is still loose.
@@ -353,8 +357,8 @@ either way, because a trajectory in his own words is not a derivative of anyone.
 Every catalogue entry in `docs/resources/` carries the licence that decides this. If it does not,
 resolve it before adapting, and record it there.
 
-**The table above mirrors `skills/adapt-material/SKILL.md` § Step 6, which is the authority.**
-An installed plugin does not load this file, so the skill has to carry the rule itself. Change
+**The table above mirrors `plugin/skills/adapt-material/SKILL.md` § Step 6, which is the
+authority.** An installed plugin does not load this file, so the skill has to carry the rule itself. Change
 the skill first and this table second, never the other way round.
 
 ## How a page is shaped
@@ -392,8 +396,8 @@ notes: **one copy, referenced — never a second copy, search-replaced.**
 | --- | --- | --- |
 | `AGENTS.md` | the instruction file | duplicated into `CLAUDE.md` by hand |
 | `CLAUDE.md` | one `@AGENTS.md` import, plus Claude-specific notes only | a parallel copy of the above |
-| `skills/` | the real skill tree — three of them; the other two are in the library repo | forked per agent |
-| `.claude/skills`, `.agents/skills` | symlinks to `skills/` | real directories |
+| `plugin/skills/` | the real skill tree — three of them; the other two are in the library repo | forked per agent |
+| `.claude/skills`, `.agents/skills` | symlinks to `plugin/skills/` | real directories |
 
 This repo previously carried two full skill trees and two instruction files, produced by
 search-replacing `.claude/` to `.Codex/`. Every replaced path pointed at a directory that did not
@@ -461,8 +465,10 @@ touched:
 gh pr create --base main --head draft --title "Release <version>"
 ```
 
-Before opening it: set the version in `.claude-plugin/plugin.json` and rename the `CHANGELOG`
-`## Unreleased` section to that version with today's date. Accumulate entries under `## Unreleased`
+Before opening it: set the version in `plugin/.claude-plugin/plugin.json` **and** in the
+`Version:` line of `plugin/skills/study-mentor/SKILL.md` (the release job refuses a mismatch, because
+that line is how a session names the copy it ran on), and rename the `CHANGELOG` `## Unreleased`
+section to that version with today's date. Accumulate entries under `## Unreleased`
 as you go — writing the note when the change is fresh is the only time it is cheap, and a release
 then costs a rename rather than an archaeology session through `git log`.
 
@@ -482,10 +488,13 @@ flagged **Breaking.** at the start of its `CHANGELOG` entry, which is the one th
 ### A merge to `main` cuts a release
 
 `.github/workflows/release.yml` runs on every push to `main`. It reads the version from
-`.claude-plugin/plugin.json`, refuses one that is not a real date as `YY-DDD` or `YY-DDD.N`, and if no tag
-exists for it, creates an annotated tag named exactly the version (`26-280`, no `v`) and publishes a GitHub release whose notes are that version's section of
-[`CHANGELOG.md`](CHANGELOG.md) — so the notes live in the repo, in the same commit as the change
-they describe, rather than only in GitHub's database.
+`plugin/.claude-plugin/plugin.json`, refuses one that is not a real date as `YY-DDD` or `YY-DDD.N`
+or that differs from study-mentor's `Version:` line, and if no tag exists for it, creates an
+annotated tag named exactly the version (`26-280`, no `v`) and publishes a GitHub release whose
+notes are that version's section of [`CHANGELOG.md`](CHANGELOG.md) — so the notes live in the repo,
+in the same commit as the change they describe, rather than only in GitHub's database. It attaches
+one zip per skill (`study-mentor-<version>.zip` and so on: the whole folder, `references/`
+included) for uploading to claude.ai by hand; the README says when to use them.
 
 Two consequences worth holding on to:
 

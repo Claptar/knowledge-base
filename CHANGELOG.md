@@ -15,6 +15,24 @@ The number says when, not how much, so an entry that makes existing notes wrong 
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
+## Unreleased
+
+### Tooling
+
+- **The plugin is `plugin/` and holds only the skills.** `skills/` moved to `plugin/skills/` and
+  the manifest to `plugin/.claude-plugin/plugin.json`; the root `marketplace.json` points at
+  `./plugin`, so `/plugin marketplace add Claptar/knowledge-base` works as before. Publishing the
+  plugin to claude.ai now sends the three skills and nothing from `docs/`. `.claude/skills` and
+  `.agents/skills` point at the new path.
+- **Every release attaches one zip per skill** — the whole folder, `references/` included — for
+  uploading to claude.ai by hand. The 2026-10 sessions there ran on an upload of `SKILL.md` alone,
+  which had silently lost `references/` and predated the repository rename.
+- **study-mentor names its version.** A `**Version:**` line in `SKILL.md`, which the release job
+  checks against `plugin.json`, and which each session record repeats, so a stale installed copy
+  shows up in the log instead of in a later audit.
+- The README says how to get the skills onto claude.ai (the plugin or the zips, never both) and
+  what a Windows checkout needs for `.claude/skills` to be a working link.
+
 ## 26-285 — 2026-10-12
 
 Notes only, released on request. No skill, convention or tooling has changed since 26-280.1, so an

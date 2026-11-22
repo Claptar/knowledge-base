@@ -19,7 +19,7 @@ in `sources/_archives/`.
 produced by speech-to-text. Three of the six courses have them; the other three have no recordings
 at all, so there is nothing to transcribe. A recording without published captions would need a
 speech-to-text pass first, which is a separate job with its own failure modes — see
-`skills/adapt-recordings/SKILL.md`.
+`plugin/skills/adapt-recordings/SKILL.md`.
 
 ## Probability
 

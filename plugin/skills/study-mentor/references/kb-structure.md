@@ -39,7 +39,7 @@ knowledge-base/
     practice/<topic>.md     # attempts, mistakes, what each mistake revealed
     adapted/<topic>-<src>.md  # external material rewritten into the form he learns from
     notes/<subject>/        # his own exposition. Material, not record.
-  skills/                   # these skills. Not published.
+  plugin/skills/            # these skills — the study-kb plugin. Not published.
   adapted-private/          # adaptations of all-rights-reserved sources. Gitignored.
   mkdocs.yml                # site config
 ```

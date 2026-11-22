@@ -1,6 +1,6 @@
 [project]
 name = "knowledge-base"
-# Not the release version, which lives only in .claude-plugin/plugin.json as YY-DDD.
+# Not the release version, which lives in plugin/.claude-plugin/plugin.json as YY-DDD.
 # Python's version rules cannot spell that, and uv needs a value here.
 version = "0.0.0"
 description = "Static site build for the study knowledge base"
