@@ -1,6 +1,6 @@
 ---
 name: adapt-material
-description: Rewrites public lecture materials, course notes, book chapters and paper sections into the form this user actually learns from — the problem before the definition, his own knowledge as the starting point, proofs left for him to do. Use when he supplies or points at a source and wants it reshaped rather than explained live: "adapt this chapter", "rewrite these lecture notes for me", "here are the slides / the transcript / the PDF", "make this into something I can work through", "turn this into notes I could teach from", "give me a route through this book". Produces a document filed in the study knowledge base, not a conversation. Use the study-mentor skill instead when he wants to be taught interactively.
+description: Rewrites public lecture materials, course notes, book chapters and paper sections into the form this user actually learns from — the problem before the definition, his own knowledge as the starting point, proofs left for him to do. Use when he supplies or points at a source and wants it reshaped rather than explained live, as in "adapt this chapter", "rewrite these lecture notes for me", "here are the slides / the transcript / the PDF", "make this into something I can work through", "turn this into notes I could teach from", "give me a route through this book". Produces a document filed in the study knowledge base, not a conversation. Use the study-mentor skill instead when he wants to be taught interactively.
 ---
 
 # Adapt Material

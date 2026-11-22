@@ -15,6 +15,16 @@ The number says when, not how much, so an entry that makes existing notes wrong 
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
+## 26-326.1 — 2026-11-22
+
+A fix to 26-326, whose skill zips carry the frontmatter below. Use these instead.
+
+### Skills
+
+- **Every skill's frontmatter parses as YAML.** Each `description` held a `: ` inside an unquoted
+  value, which strict YAML reads as a second key, so plugin validation refused all three skills.
+  Reworded at those three points, with no change in meaning.
+
 ## 26-326 — 2026-11-22
 
 study-mentor is rewritten so the tutor keeps the question, the route and the reason for each step
