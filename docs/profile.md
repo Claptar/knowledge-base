@@ -40,6 +40,10 @@ where I want rigour and where I don't._
   on an already-summed $T_C$ ([practice/ambient-rna.md](practice/ambient-rna.md)) — after the
   row/column ones on 2026-10-06. The ideas were right each time. Write next to a line what each
   index already ranges over.
+- **A hat marks a map, no hat its matrix.** $\hat A : V \to V$ is the map; $A$ is its matrix in a
+  chosen basis, and $\hat P^{-1}\hat A\hat P$ is a different map where $P^{-1}AP$ is the same map in
+  another basis. My convention from handwritten notes; asked for on 2026-11-01 when a note mixed
+  the two ([the size of a map](topics/size-of-a-map.md)).
 
 ## Anchors worth building on
 

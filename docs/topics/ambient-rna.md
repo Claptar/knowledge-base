@@ -1,7 +1,7 @@
 # Ambient RNA — what lets a tool tell soup from cell?
 
 **Status:** open
-**Opened:** 2026-10-10  **Last touched:** 2026-10-10
+**Opened:** 2026-10-10  **Last touched:** 2026-10-20
 
 Practice: [practice/ambient-rna.md](../practice/ambient-rna.md) · Material:
 [the ambient-RNA note](../notes/measurement/ambient-rna.md) · Sources:
@@ -99,6 +99,20 @@ From the session's anchors; the outbound question was not asked separately.
   droplet factor, as opposed to per-gene overdispersion. Could be checked on our 10x runs.
 - Practice owed: negative-binomial thinning by PGF composition (one line), and Poisson thinning by
   PGFs.
+- **2026-10-20, filed from excerpts only.** The transcript is not on disk; what is recorded here is
+  what an audit of the session quotes, and nothing between the quotes.
+  - *CellSweep's bulk term* (Problem 3). The session opened on the paper's equation and asked for a
+    mechanism that fits it: "Wait, this equation is just given to me, but I haven't actually derived
+    it, which is the most interesting part". Re-posed forward, from the physics, with the paper only
+    at the end. How far that went is not in the excerpts, so it is still to do.
+  - *PCR chimeras and the UMI majority vote.* How chimeras form was given on request — my account
+    had put it on the flow cell. Whether one UMI family's majority vote can flip to the chimera's
+    gene, and how likely that is, was given on request. **Not yet derived.** My own route,
+    conditioning on a chimera made in cycle 1, was valid and was carried through for me; the point
+    drawn from it was supplied: a matching mean does not fix the probability of a majority, because
+    that probability is the mean of an indicator, which is not linear in the chimeric fraction.
+  - The cold-check owed from 2026-10-10 was raised at the start; whether it was done is not in the
+    excerpts, so it stays owed.
 - Traps hit, with what each revealed: [practice/ambient-rna.md](../practice/ambient-rna.md).
 
 ## Derived / proved myself
@@ -129,3 +143,6 @@ From the session's anchors; the outbound question was not asked separately.
 - 2026-10-10 — the bias under leaky expression,
   $\mathbb E[\hat\alpha_c] = \alpha_c + (1-\alpha_c)\varepsilon_G/a_G$. **Derived unaided.** The
   reading of it is still open.
+- 2026-10-20 — a copy made in PCR cycle $k$, with its descendants, is $2^{n-k}$ of a family's $2^n$
+  final molecules: "It's obviously 2 ^ (n - k) / 2 ^ n". **Derived unaided.** The answer was
+  visible in the set-up; the step was sized too small.

@@ -128,6 +128,12 @@ nav:
   - Topics:
       - NMF: topics/nmf.md
       - Ambient RNA: topics/ambient-rna.md
+      - Where the determinant comes from: topics/where-the-determinant-comes-from.md
+      - The size of a map: topics/size-of-a-map.md
+      - Shears: topics/shear.md
   - Practice:
       - NMF: practice/nmf.md
       - Ambient RNA: practice/ambient-rna.md
+      - Where the determinant comes from: practice/where-the-determinant-comes-from.md
+      - The size of a map: practice/size-of-a-map.md
+      - Shears: practice/shear.md
