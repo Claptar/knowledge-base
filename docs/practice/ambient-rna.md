@@ -106,3 +106,52 @@ $\mathbb E[\hat\alpha_c] = \alpha_c + (1 - \alpha_c)\varepsilon_G / a_G$. **Deri
 **What it revealed:** —
 **Revisit:** next session — the relative bias, which two quantities it compares, and the
 gene-selection criterion that follows.
+
+> **The 2026-10-20 entries are filed from excerpts only.** The session's transcript is not on disk;
+> they record what an audit of the session quotes verbatim, filed on 2026-11-23, and nothing that
+> happened between the quotes.
+
+## 2026-10-20 — CellSweep's bulk term (Problem 3)
+
+**Problem:** where CellSweep's bulk term comes from.
+**Worked unaided up to:** not in the excerpts.
+**Where I asked for a hint:** — The session opened by giving the paper's equation as a premise,
+unasked, and asking for a mechanism that fits it: "Wait, this equation is just given to me, but I
+haven't actually derived it, which is the most interesting part". Re-posed forward from the physics.
+**Attempt:** not in the excerpts.
+**Outcome:** unknown.
+**What it revealed:** a session failure — a paper's equation is a destination, compared with only
+after I have my own version.
+**Revisit:** derive the bulk term forward, then compare with the paper.
+
+## 2026-10-20 — does the number of cells matter?
+
+**Problem:** a claim made to me that the number of cells does not matter.
+**Worked unaided up to:** the objection: "Number of cells matters because it influences (kind of)
+the ratio of Vd/Vs".
+**Where I asked for a hint:** —
+**Attempt:** as above.
+**Outcome:** right. The claim was too strong; the precise relation,
+$p_d = V_d/V_s \approx 1/N_{\text{drops}} \lesssim 1/N_{\text{cells}}$, was supplied.
+**What it revealed:** the capability — an overstated claim caught from the physics of Problem 1.
+**Revisit:** —
+
+## 2026-10-20 — PCR chimeras and the UMI majority vote
+
+**Problem:** a chimeric copy made in PCR cycle $k$: what share of a UMI family's $2^n$ final
+molecules is it and its descendants? Can one chimera alone give the wrong gene a majority; if not,
+what else must happen, and how likely is a flip?
+**Worked unaided up to:** the share: "It's obviously 2 ^ (n - k) / 2 ^ n". **Derived unaided.**
+**Where I asked for a hint:** asked for a per-molecule model of chimera formation, I gave my account
+of the mechanism, "melt off and fly over to another cluster(??)", which put it on the flow cell.
+Then: "Okay, then I don't understand the mechanism of chimera creation at all. Explain it to me
+with illustrations please." Given. After two turns of three-part questions: "okay, I'm a bit
+confused, just give it to me at this point." Given. **Not yet derived.**
+**Attempt:** my own route for the flip — conditioning on a chimera made in cycle 1, as the audit
+describes it; my words for it are not in the excerpts. Valid, and carried through for me.
+**Outcome:** given on request. The session ended: "Okay, it seems like I got tired at this point."
+**What it revealed:** where a chimera forms is a physical fact, not something to derive; the model
+was asked for before I had the mechanism — a session failure. And a matching mean does not fix a
+threshold probability: the chance of a majority is the mean of an indicator, not of the fraction
+(supplied).
+**Revisit:** restate the chimera mechanism in my own words first; then the flip probability, cold.
