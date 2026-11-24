@@ -15,6 +15,25 @@ The number says when, not how much, so an entry that makes existing notes wrong 
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
+## 26-328 — 2026-11-24
+
+No skill has changed since 26-326.1 beyond its version line, so an installed `study-kb` behaves
+exactly as before.
+
+### Tooling
+
+- **The Check workflow parses every skill's frontmatter** on each push and pull request. It fails
+  if the YAML does not parse, if `name` differs from the skill's folder, or if `description` is
+  missing or over 1024 characters. 26-326 shipped frontmatter that only the claude.ai publish
+  refused.
+
+### Knowledge base
+
+- **The sessions of 2026-10-20 to 2026-11-14** (#22), which ran on claude.ai and in Cowork without
+  repository access, filed from their transcripts. Three new topics, each with a practice file:
+  where the determinant comes from, the size of a map, and shears. Also seven questions in the
+  Live table, and the 2026-10-20 ambient-RNA session, filed from the audit's excerpts only.
+
 ## 26-326.1 — 2026-11-22
 
 A fix to 26-326, whose skill zips carry the frontmatter below. Use these instead.

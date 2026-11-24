@@ -15,6 +15,13 @@ session has actually been spent on it — see [Harvest, don't design](#harvest-d
 | Is the verification/validation split meaningful in single-cell work, where "reality" is itself a noisy, heavily-processed measurement rather than a clean experiment? | open | no page yet — the [capstone](path.md#capstone) is where it gets answered |
 | Do we really care about the other factorisations that fit equally well — when does NMF's answer actually pin down the programs? | open | [topics/nmf.md](topics/nmf.md) |
 | How is ambient RNA modelled — in general, and in SoupX, DecontX, CellBender, souporcell and CellSweep — and what lets any of them tell soup from cell? | open | [topics/ambient-rna.md](topics/ambient-rna.md) |
+| "Ideally I would want to come up with the operation itself and not just check it's definition" — where does the determinant come from, if not from its definition? | open | [topics/where-the-determinant-comes-from.md](topics/where-the-determinant-comes-from.md) |
+| «А на сколько в «среднем» увеличивается размер векторов при таком отображении?» — by how much, "on average", does a map change sizes, and how come the answer is the determinant? | open | [topics/size-of-a-map.md](topics/size-of-a-map.md) |
+| «я вот не понимаю, что мы теряем, если мы выкидываем вот это свойство» — what is lost if a size of maps need not respect composition? | open | [size of a map, *Still loose*](topics/size-of-a-map.md#still-loose) |
+| «Но почему тоже полиномиальную функцию? Тоже … непонятно.» — why ask for a polynomial at all? | open | [size of a map, *Still loose*](topics/size-of-a-map.md#still-loose) |
+| «Что это значит, что у нас ничего не меняется?» — what does adding one column to another leave unchanged? | open | [topics/shear.md](topics/shear.md) |
+| Why not $\Sigma^{-1}$ in Pearson's χ²? *The project memory's paraphrase — no transcript survives.* | open | no page yet — the determinant thread is headed for it (its Step 3) |
+| Can continuous tools go back to the discrete case — the "round-trip question" behind the KS test? *The project memory's paraphrase — no transcript survives.* | open | no page yet |
 
 ## Proposed, not live
 

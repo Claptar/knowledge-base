@@ -26,5 +26,45 @@ jobs:
       - name: Sync dependencies
         run: uv sync --locked --group dev
 
+      # Each skill's frontmatter must parse as YAML and carry what claude.ai validates: a `name`
+      # equal to its folder and a `description` of at most 1024 characters. A `: ` inside an
+      # unquoted description reads as a second key. 26-326 shipped three such skills, and only
+      # the claude.ai publish caught it. PyYAML arrives with MkDocs.
+      - name: Check skill frontmatter
+        run: |
+          uv run --locked python - <<'EOF'
+          import pathlib, sys, yaml
+
+          problems = []
+          skills = sorted(pathlib.Path("plugin/skills").glob("*/SKILL.md"))
+          if not skills:
+              problems.append("no plugin/skills/*/SKILL.md found")
+          for path in skills:
+              text = path.read_text(encoding="utf-8")
+              head, sep, _ = text.removeprefix("---\n").partition("\n---\n")
+              if not text.startswith("---\n") or not sep:
+                  problems.append(f"{path}: no frontmatter between --- lines")
+                  continue
+              try:
+                  meta = yaml.safe_load(head)
+              except yaml.YAMLError as err:
+                  problems.append(f"{path}: frontmatter is not valid YAML: {' '.join(str(err).split())}")
+                  continue
+              if not isinstance(meta, dict):
+                  problems.append(f"{path}: frontmatter is not a mapping")
+                  continue
+              if meta.get("name") != path.parent.name:
+                  problems.append(f"{path}: name is {meta.get('name')!r}, not the folder name {path.parent.name!r}")
+              description = meta.get("description")
+              if not isinstance(description, str) or not description.strip():
+                  problems.append(f"{path}: description is missing or not text")
+              elif len(description) > 1024:
+                  problems.append(f"{path}: description is {len(description)} characters, over 1024")
+          for problem in problems:
+              print(f"::error::{problem}")
+          print(f"checked {len(skills)} skills, {len(problems)} problems")
+          sys.exit(1 if problems else 0)
+          EOF
+
       - name: Build site (strict)
         run: uv run --locked mkdocs build --strict

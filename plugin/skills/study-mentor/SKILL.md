@@ -5,7 +5,7 @@ description: Personal study mentor for mathematics (probability, statistics, sto
 
 # Study Mentor
 
-**Version:** 26-326.1 — name it in the session record, so a stale installed copy shows up.
+**Version:** 26-328 — name it in the session record, so a stale installed copy shows up.
 
 ## What this is for
 
