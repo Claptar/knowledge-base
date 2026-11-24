@@ -15,6 +15,15 @@ The number says when, not how much, so an entry that makes existing notes wrong 
 Entries accumulate under **Unreleased** as the work happens on `draft`. Promoting `draft` to `main`
 renames that heading to the version and date, and the release job publishes the section as-is.
 
+## Unreleased
+
+### Tooling
+
+- **The Check workflow parses every skill's frontmatter** on each push and pull request. It fails
+  if the YAML does not parse, if `name` differs from the skill's folder, or if `description` is
+  missing or over 1024 characters. 26-326 shipped frontmatter that only the claude.ai publish
+  refused.
+
 ## 26-326.1 — 2026-11-22
 
 A fix to 26-326, whose skill zips carry the frontmatter below. Use these instead.
